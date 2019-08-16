@@ -2,7 +2,7 @@
 //  MainFlowControllerTests.swift
 //  AIropress
 //
-//  Created by Skypy on 16/08/2019.
+//  Created by Tomas Skypala on 16/08/2019.
 //  Copyright © 2019 Tomas Skypala. All rights reserved.
 //
 
@@ -30,6 +30,11 @@ protocol DesiredTasteSceneFC {
 
 protocol AIProcessingSceneFC {
     func onProcessingDone(recipe: BrewRecipe)
+}
+
+protocol ViewRecipeSceneFC {
+    func onRecipeReset()
+    func onPrepared(recipe: BrewRecipe)
 }
 
 struct BrewParameters: Equatable {
@@ -63,8 +68,6 @@ class MainFlowController {
 extension MainFlowController: DesiredTasteSceneFC {
     
     func onParametersSet(brewParameters: BrewParameters) {
-        navigationController.pop()
-        
         switchTo(scene: .aiProcessing(brewParameters: brewParameters))
     }
     
@@ -76,6 +79,17 @@ extension MainFlowController: AIProcessingSceneFC {
         navigationController.pop()
         
         switchTo(scene: .viewRecipe(recipe: recipe))
+    }
+}
+
+extension MainFlowController: ViewRecipeSceneFC {
+    
+    func onRecipeReset() {
+        navigationController.pop()
+    }
+    
+    func onPrepared(recipe: BrewRecipe) {
+        fatalError("not implemented")
     }
 }
 
@@ -120,7 +134,8 @@ class MockNavigationController: BaseNavigationController {
     }
     
     func resetPushPop() {
-        
+        didPush = false
+        didPop = false
     }
 }
 
@@ -176,32 +191,51 @@ class MainFlowControllerTests: XCTestCase {
     func testDesiredTasteSceneFlowOnCalculate() {
         let expectedViewControllerOnStack = viewControllerProvider.aiProcessingSceneVC
         let brewParameters = BrewParameters()
+        
         mainFlowController.startFlow()
         navigationController.resetPushPop()
         
         mainFlowController.onParametersSet(brewParameters: brewParameters)
         
-        XCTAssertTrue(navigationController.didPop)
+        XCTAssertFalse(navigationController.didPop)
         XCTAssertTrue(navigationController.didPush)
-        XCTAssertTrue(navigationController.stack.count == 1)
-        XCTAssertEqual(expectedViewControllerOnStack, navigationController.stack[0])
+        XCTAssertTrue(navigationController.stack.count == 2)
+        XCTAssertEqual(expectedViewControllerOnStack, navigationController.stack[1])
         XCTAssertEqual(brewParameters, viewControllerProvider.receivedBrewParameters)
     }
     
     func testAIProcessingSceneFlowOnDone() {
         let expectedViewControllerOnStack = viewControllerProvider.viewRecipeSceneVC
-        let brewParameters = BrewParameters()
-        mainFlowController.startFlow()
-        mainFlowController.onParametersSet(brewParameters: brewParameters)
         let recipe = BrewRecipe()
+        
+        mainFlowController.startFlow()
+        mainFlowController.onParametersSet(brewParameters: BrewParameters())
         navigationController.resetPushPop()
         
         mainFlowController.onProcessingDone(recipe: recipe)
         
         XCTAssertTrue(navigationController.didPop)
         XCTAssertTrue(navigationController.didPush)
-        XCTAssertTrue(navigationController.stack.count == 1)
-        XCTAssertEqual(expectedViewControllerOnStack, navigationController.stack[0])
+        XCTAssertTrue(navigationController.stack.count == 2)
+        XCTAssertEqual(expectedViewControllerOnStack, navigationController.stack[1])
         XCTAssertEqual(recipe, viewControllerProvider.receivedBrewRecipe)
     }
+    
+    func testViewRecipeSceneFlowOnRecipeReset() {
+        let expectedViewControllerOnStack = viewControllerProvider.desiredTasteSceneVC
+        
+        mainFlowController.startFlow()
+        mainFlowController.onParametersSet(brewParameters: BrewParameters())
+        mainFlowController.onProcessingDone(recipe: BrewRecipe())
+        navigationController.resetPushPop()
+        
+        mainFlowController.onRecipeReset()
+        
+        XCTAssertTrue(navigationController.didPop)
+        XCTAssertFalse(navigationController.didPush)
+        XCTAssertTrue(navigationController.stack.count == 1)
+        XCTAssertEqual(expectedViewControllerOnStack, navigationController.stack[0])
+    }
+    
+    // TODO implement all flow control tests (when all scene fcs are done)
 }
