@@ -81,9 +81,9 @@ extension MainFlowController: AIProcessingSceneFC {
 
 class MockViewControllerProvider: ViewControllerProvider {
     
-    let scene1VC = UIViewController()
-    let scene2VC = UIViewController()
-    let scene3VC = UIViewController()
+    let desiredTasteSceneVC = UIViewController()
+    let aiProcessingSceneVC = UIViewController()
+    let viewRecipeSceneVC = UIViewController()
     
     var receivedBrewParameters: BrewParameters? = nil
     var receivedBrewRecipe: BrewRecipe? = nil
@@ -91,13 +91,13 @@ class MockViewControllerProvider: ViewControllerProvider {
     func getViewController(for scene: Scene) -> UIViewController {
         switch (scene) {
         case .desiredTaste:
-            return scene1VC
+            return desiredTasteSceneVC
         case .aiProcessing(let parameters):
             receivedBrewParameters = parameters
-            return scene2VC
+            return aiProcessingSceneVC
         case .viewRecipe(let recipe):
             receivedBrewRecipe = recipe
-            return scene3VC
+            return viewRecipeSceneVC
         }
     }
 }
@@ -151,7 +151,7 @@ class MainFlowControllerTests: XCTestCase {
     }
     
     func testSwitchToScene() {
-        let expectedViewControllerOnStack = viewControllerProvider.scene1VC
+        let expectedViewControllerOnStack = viewControllerProvider.desiredTasteSceneVC
         navigationController.resetPushPop()
         
         mainFlowController.switchTo(scene: .desiredTaste)
@@ -162,7 +162,7 @@ class MainFlowControllerTests: XCTestCase {
     }
     
     func testStartFlow() {
-        let expectedViewControllerOnStack = viewControllerProvider.scene1VC
+        let expectedViewControllerOnStack = viewControllerProvider.desiredTasteSceneVC
         navigationController.resetPushPop()
         
         mainFlowController.startFlow()
@@ -174,7 +174,7 @@ class MainFlowControllerTests: XCTestCase {
     }
 
     func testDesiredTasteSceneFlowOnCalculate() {
-        let expectedViewControllerOnStack = viewControllerProvider.scene2VC
+        let expectedViewControllerOnStack = viewControllerProvider.aiProcessingSceneVC
         let brewParameters = BrewParameters()
         mainFlowController.startFlow()
         navigationController.resetPushPop()
@@ -189,7 +189,7 @@ class MainFlowControllerTests: XCTestCase {
     }
     
     func testAIProcessingSceneFlowOnDone() {
-        let expectedViewControllerOnStack = viewControllerProvider.scene3VC
+        let expectedViewControllerOnStack = viewControllerProvider.viewRecipeSceneVC
         let brewParameters = BrewParameters()
         mainFlowController.startFlow()
         mainFlowController.onParametersSet(brewParameters: brewParameters)
