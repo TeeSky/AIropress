@@ -24,8 +24,8 @@
 		35833E5A230753E9002F986B /* BrewRecipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35833E5523075398002F986B /* BrewRecipe.swift */; };
 		35833E5B230753EC002F986B /* MainFlowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35833E4C230752E4002F986B /* MainFlowController.swift */; };
 		35833E5C230753EE002F986B /* FlowControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35833E512307534F002F986B /* FlowControl.swift */; };
-		3E1F055C124F056749F2FAD8 /* Pods_AIropress.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 334547A53CA48626A40AC4F2 /* Pods_AIropress.framework */; };
 		9D4D9DF19362E8AEB40E0CE7 /* Pods_AIropressTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A5852E60E9844BC2CBA60ED7 /* Pods_AIropressTests.framework */; };
+		F7B66FA1FB5B19955EBC0B36 /* Pods_AIropress.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 334547A53CA48626A40AC4F2 /* Pods_AIropress.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -68,7 +68,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3E1F055C124F056749F2FAD8 /* Pods_AIropress.framework in Frameworks */,
+				F7B66FA1FB5B19955EBC0B36 /* Pods_AIropress.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
