@@ -9,13 +9,31 @@
 import XCTest
 
 
+enum Scene {
+    case desiredTaste
+    case aiProcessing(brewParameters: BrewParameters)
+    case viewRecipe(recipe: BrewRecipe)
+}
+
 protocol BaseNavigationController {
     func push(viewController: UIViewController)
     func pop()
 }
 
 protocol ViewControllerProvider {
-    func getViewController(forScene index: Int) -> UIViewController
+    func getViewController(for scene: Scene) -> UIViewController
+}
+
+protocol DesiredTasteSceneFC {
+    func onCalculate(brewParameters: BrewParameters)
+}
+
+struct BrewParameters: Equatable {
+    
+}
+
+struct BrewRecipe {
+    
 }
 
 class MainFlowController {
@@ -29,8 +47,19 @@ class MainFlowController {
     }
     
     func startFlow() {
-        navigationController.push(viewController: viewControllerProvider.getViewController(forScene: 0))
+        let nextViewController = viewControllerProvider.getViewController(for: Scene.desiredTaste)
+        navigationController.push(viewController: nextViewController)
     }
+}
+
+extension MainFlowController: DesiredTasteSceneFC {
+    
+    func onCalculate(brewParameters: BrewParameters) {
+        navigationController.pop()
+        let nextViewController = viewControllerProvider.getViewController(for: Scene.aiProcessing(brewParameters: brewParameters))
+        navigationController.push(viewController: nextViewController)
+    }
+    
 }
 
 class MockViewControllerProvider: ViewControllerProvider {
@@ -39,14 +68,20 @@ class MockViewControllerProvider: ViewControllerProvider {
     let scene2VC = UIViewController()
     let scene3VC = UIViewController()
     
-    let sceneControllers: [UIViewController]
+    var receivedBrewParameters: BrewParameters? = nil
+    var receivedBrewRecipe: BrewRecipe? = nil
     
-    init() {
-        sceneControllers = [scene1VC, scene2VC, scene3VC]
-    }
-    
-    func getViewController(forScene index: Int) -> UIViewController {
-        return sceneControllers[index]
+    func getViewController(for scene: Scene) -> UIViewController {
+        switch (scene) {
+        case .desiredTaste:
+            return scene1VC
+        case .aiProcessing(let parameters):
+            receivedBrewParameters = parameters
+            return scene2VC
+        case .viewRecipe(let recipe):
+            receivedBrewRecipe = recipe
+            return scene3VC
+        }
     }
 }
 
@@ -54,12 +89,22 @@ class MockNavigationController: BaseNavigationController {
     
     var stack: [UIViewController] = []
     
+    var didPop: Bool = false
+    var didPush: Bool = false
+    
     func push(viewController: UIViewController) {
+        didPush = true
         stack.append(viewController)
     }
     
     func pop() {
+        didPop = true
         _ = stack.popLast()
+    }
+    
+    func resetPopPush() {
+        didPop = false
+        didPush = false
     }
 }
 
@@ -98,4 +143,18 @@ class MainFlowControllerTests: XCTestCase {
         XCTAssertEqual(expectedViewControllerOnStack, navigationController.stack[0])
     }
 
+    func testDesiredTasteSceneFlowOnCalculate() {
+        let expectedViewControllerOnStack = viewControllerProvider.scene2VC
+        let brewParameters = BrewParameters()
+        mainFlowController.startFlow()
+        navigationController.resetPopPush()
+        
+        mainFlowController.onCalculate(brewParameters: brewParameters)
+        
+        XCTAssertTrue(navigationController.didPop)
+        XCTAssertTrue(navigationController.didPush)
+        XCTAssertTrue(navigationController.stack.count == 1)
+        XCTAssertEqual(expectedViewControllerOnStack, navigationController.stack[0])
+        XCTAssertEqual(brewParameters, viewControllerProvider.receivedBrewParameters)
+    }
 }
