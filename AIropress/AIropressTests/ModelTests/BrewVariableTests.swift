@@ -8,32 +8,6 @@
 
 import XCTest
 
-struct BrewVariableBundle: Equatable {
-    let label: String
-    let variables: [BrewVariable]
-}
-
-struct BrewVariable: Equatable {
-    typealias Id = Int
-    
-    let id: Id
-    let stepCount: Int
-    let labelSet: VariableLabelSet
-}
-
-extension BrewVariable: Hashable {
-    
-    func hash(into hasher: inout Hasher) {
-        hasher.combine(id)
-    }
-}
-
-struct VariableLabelSet: Equatable {
-    let mainLabel: String
-    let minLabel: String
-    let maxLabel: String
-}
-
 class BrewVariableTests: BaseTestCase {
     
     var brewVariable: BrewVariable!
