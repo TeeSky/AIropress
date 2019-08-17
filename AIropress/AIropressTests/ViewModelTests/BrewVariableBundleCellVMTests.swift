@@ -8,14 +8,38 @@
 
 import XCTest
 
+protocol VariableBundleCellValueDelegate: class {
+    func onValueChanged(brewVariable: BrewVariable, value: Double)
+}
+
 class BrewVariableBundleCellVM {
     
     let variableBundle: BrewVariableBundle
+    
+    weak var valueDelegate: VariableBundleCellValueDelegate?
     
     init(variableBundle: BrewVariableBundle) {
         self.variableBundle = variableBundle
     }
     
+    func onSliderValueChanged(brewVariable: BrewVariable, valueIndex: Int) {
+        let normalizedValue = normalize(sliderValueIndex: valueIndex, of: brewVariable)
+        
+        valueDelegate?.onValueChanged(brewVariable: brewVariable, value: normalizedValue)
+    }
+    
+    private func normalize(sliderValueIndex: Int, of brewVariable: BrewVariable) -> Double {
+        return Double(sliderValueIndex + 1) / Double(brewVariable.stepCount)
+    }
+}
+
+class MockValueDelegate: VariableBundleCellValueDelegate {
+    
+    var valueChange: (BrewVariable, Double)? = nil
+    
+    func onValueChanged(brewVariable: BrewVariable, value: Double) {
+        valueChange = (brewVariable, value)
+    }
 }
 
 class BrewVariableBundleCellVMTests: BaseTestCase {
@@ -39,5 +63,18 @@ class BrewVariableBundleCellVMTests: BaseTestCase {
         
         XCTAssertEqual(expectedVariableBundle, variableBundleCellVM.variableBundle)
     }
-
+    
+    func testOnSliderValueChanged() {
+        let expectedBrewVariable = MockBrewVars.bitternessVariable
+        let valueIndex = 2
+        let expectedDoubleValue = Double((valueIndex + 1)) / Double(expectedBrewVariable.stepCount)
+        let valueDelegate = MockValueDelegate()
+        variableBundleCellVM.valueDelegate = valueDelegate
+        
+        variableBundleCellVM.onSliderValueChanged(brewVariable: expectedBrewVariable, valueIndex: valueIndex)
+        
+        XCTAssertNotNil(valueDelegate.valueChange)
+        XCTAssertEqual(expectedBrewVariable, valueDelegate.valueChange!.0)
+        XCTAssertEqual(expectedDoubleValue, valueDelegate.valueChange!.1)
+    }
 }
