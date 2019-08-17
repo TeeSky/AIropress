@@ -14,6 +14,10 @@ protocol VariableBundleCellValueDelegate: class {
 
 class BrewVariableBundleCellVM {
     
+    static let cellIdentifier: String = {
+        return "BrewVariableBundleCellVM"
+    }()
+    
     let variableBundle: BrewVariableBundle
     
     weak var valueDelegate: VariableBundleCellValueDelegate?
@@ -30,6 +34,13 @@ class BrewVariableBundleCellVM {
     
     private func normalize(sliderValueIndex: Int, of brewVariable: BrewVariable) -> Double {
         return Double(sliderValueIndex + 1) / Double(brewVariable.stepCount)
+    }
+}
+
+extension BrewVariableBundleCellVM: BaseTableCellVM {
+    
+    var identifier: String {
+        return BrewVariableBundleCellVM.cellIdentifier
     }
 }
 
@@ -76,5 +87,11 @@ class BrewVariableBundleCellVMTests: BaseTestCase {
         XCTAssertNotNil(valueDelegate.valueChange)
         XCTAssertEqual(expectedBrewVariable, valueDelegate.valueChange!.0)
         XCTAssertEqual(expectedDoubleValue, valueDelegate.valueChange!.1)
+    }
+    
+    func testBaseTableCellVMIdentifier() {
+        let expectedCellIdentifier = BrewVariableBundleCellVM.cellIdentifier
+        
+        XCTAssertEqual(expectedCellIdentifier, variableBundleCellVM.identifier)
     }
 }
