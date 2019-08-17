@@ -24,6 +24,8 @@
 		35833E5A230753E9002F986B /* BrewRecipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35833E5523075398002F986B /* BrewRecipe.swift */; };
 		35833E5B230753EC002F986B /* MainFlowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35833E4C230752E4002F986B /* MainFlowController.swift */; };
 		35833E5C230753EE002F986B /* FlowControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35833E512307534F002F986B /* FlowControl.swift */; };
+		35E0E5E423076B14004A86FD /* DesiredTasteVMTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35E0E5E323076B14004A86FD /* DesiredTasteVMTests.swift */; };
+		35EC73F72308273500964665 /* BrewParametersTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35EC73F62308273500964665 /* BrewParametersTests.swift */; };
 		73CEEAB2EF96AA6276E48A9F /* Pods_AIropressTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4DA8033607392551CCA2F0A5 /* Pods_AIropressTests.framework */; };
 		85AF326F656DC5FB03F26AAF /* Pods_AIropress.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C5DE7E97D5832D15F91D83EE /* Pods_AIropress.framework */; };
 /* End PBXBuildFile section */
@@ -55,6 +57,8 @@
 		35833E512307534F002F986B /* FlowControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlowControl.swift; sourceTree = "<group>"; };
 		35833E532307537C002F986B /* BrewParameters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrewParameters.swift; sourceTree = "<group>"; };
 		35833E5523075398002F986B /* BrewRecipe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrewRecipe.swift; sourceTree = "<group>"; };
+		35E0E5E323076B14004A86FD /* DesiredTasteVMTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesiredTasteVMTests.swift; sourceTree = "<group>"; };
+		35EC73F62308273500964665 /* BrewParametersTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrewParametersTests.swift; sourceTree = "<group>"; };
 		4DA8033607392551CCA2F0A5 /* Pods_AIropressTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AIropressTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		73DCB98EDA12910FCCC07D77 /* Pods-AIropressTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AIropressTests.release.xcconfig"; path = "Target Support Files/Pods-AIropressTests/Pods-AIropressTests.release.xcconfig"; sourceTree = "<group>"; };
 		82F617CABEF1402A5A3CB0AE /* Pods-AIropress.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AIropress.release.xcconfig"; path = "Target Support Files/Pods-AIropress/Pods-AIropress.release.xcconfig"; sourceTree = "<group>"; };
@@ -130,6 +134,8 @@
 		35076C4E230468F6006BBDDF /* AIropressTests */ = {
 			isa = PBXGroup;
 			children = (
+				35EC73F52308270800964665 /* ModelTests */,
+				35E0E5E223076A5C004A86FD /* ViewModelTests */,
 				3560123B23071ACA003AF91D /* FlowControllerTests */,
 				35076C4F230468F6006BBDDF /* AIropressTests.swift */,
 				35076C51230468F6006BBDDF /* Info.plist */,
@@ -162,6 +168,22 @@
 				35833E5523075398002F986B /* BrewRecipe.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		35E0E5E223076A5C004A86FD /* ViewModelTests */ = {
+			isa = PBXGroup;
+			children = (
+				35E0E5E323076B14004A86FD /* DesiredTasteVMTests.swift */,
+			);
+			path = ViewModelTests;
+			sourceTree = "<group>";
+		};
+		35EC73F52308270800964665 /* ModelTests */ = {
+			isa = PBXGroup;
+			children = (
+				35EC73F62308273500964665 /* BrewParametersTests.swift */,
+			);
+			path = ModelTests;
 			sourceTree = "<group>";
 		};
 		394AF8840DC61A7D7E63C5C9 /* Pods */ = {
@@ -341,10 +363,12 @@
 				35833E5B230753EC002F986B /* MainFlowController.swift in Sources */,
 				3560123E23071AEA003AF91D /* MainFlowControllerTests.swift in Sources */,
 				35833E5A230753E9002F986B /* BrewRecipe.swift in Sources */,
+				35E0E5E423076B14004A86FD /* DesiredTasteVMTests.swift in Sources */,
 				35076C50230468F6006BBDDF /* AIropressTests.swift in Sources */,
 				35833E58230753E5002F986B /* Scene.swift in Sources */,
 				35833E5C230753EE002F986B /* FlowControl.swift in Sources */,
 				35833E59230753E7002F986B /* BrewParameters.swift in Sources */,
+				35EC73F72308273500964665 /* BrewParametersTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
