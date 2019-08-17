@@ -17,36 +17,69 @@ protocol BaseTableCellVM {
 
 protocol BaseTableVM: BaseViewModel {
     func numberOfSections() -> Int
-    func numberOfRows(in section: Int) -> Int
+    func numberOfRows(section: Int) -> Int
     func cellViewModel(for path: IndexPath) -> BaseTableCellVM
 }
 
-class DesiredTasteVM: BaseTableVM {
+class DesiredTasteVM {
     
-    let brewParameters: BrewParametersImpl
+    private(set) var cellVMs: [BrewVariableBundleCellVM]
+    let brewParameters: BrewParameters
+    
+    weak var flowController: DesiredTasteSceneFC?
     
     init(brewVariableBundles: [BrewVariableBundle], values: [BrewVariable.Id: Double?] = [:]) {
-        self.brewParameters = BrewParametersImpl(brewVariableBundles: brewVariableBundles, values: values)
+        self.brewParameters = BrewParameters(brewVariableBundles: brewVariableBundles, values: values)
+        
+        self.cellVMs = []
+        for variableBundle in brewVariableBundles {
+            let vm = BrewVariableBundleCellVM(variableBundle: variableBundle)
+            vm.valueDelegate = self
+            cellVMs.append(vm)
+        }
     }
-    
-    func numberOfSections() -> Int {
-        return 0
+
+    func onCalculateClicked() {
+        flowController?.onParametersSet(brewParameters: brewParameters)
     }
+}
+
+extension DesiredTasteVM: VariableBundleCellValueDelegate {
     
-    func numberOfRows(in section: Int) -> Int {
-        return 0
-    }
-    
-    func cellViewModel(for path: IndexPath) -> BaseTableCellVM {
-        return MockTableCellVM()
+    func onValueChanged(brewVariable: BrewVariable, value: Double) {
+        brewParameters.valueMap[brewVariable.id] = value
     }
     
 }
 
-class MockTableCellVM: BaseTableCellVM {
-    var identifier: String {
-        return "xyz"
+extension DesiredTasteVM: BaseTableVM {
+    
+    func numberOfSections() -> Int {
+        return 1
     }
+    
+    func numberOfRows(section: Int) -> Int {
+        guard section == 0 else { fatalError("Unexpected section") }
+        
+        return cellVMs.count
+    }
+    
+    func cellViewModel(for path: IndexPath) -> BaseTableCellVM {
+        guard path.section == 0 else { fatalError("Unexpected section") }
+        
+        return cellVMs[path.row]
+    }
+    
+}
+
+class MockDesiredTasteFlowController: DesiredTasteSceneFC {
+    
+    var setParameters: BrewParameters? = nil
+    
+    func onParametersSet(brewParameters: BrewParameters) {
+        setParameters = brewParameters
+    }
+    
 }
 
 class DesiredTasteVMTests: XCTestCase {
@@ -63,9 +96,9 @@ class DesiredTasteVMTests: XCTestCase {
     }
     
     func testInit() {
-        let expectedBrewParameters = BrewParametersImpl(brewVariableBundles: brewVariableBundles, values: [:])
-        let unexpectedBrewParameters1 = BrewParametersImpl(brewVariableBundles: [MockBrewVars.acidityBundle], values: [:])
-        let unexpectedBrewParameters2 = BrewParametersImpl(brewVariableBundles: brewVariableBundles, values: [brewVariableBundles[0].variables[0].id: 0.9])
+        let expectedBrewParameters = BrewParameters(brewVariableBundles: brewVariableBundles, values: [:])
+        let unexpectedBrewParameters1 = BrewParameters(brewVariableBundles: [MockBrewVars.acidityBundle], values: [:])
+        let unexpectedBrewParameters2 = BrewParameters(brewVariableBundles: brewVariableBundles, values: [brewVariableBundles[0].variables[0].id: 0.9])
         
         let desiredTasteVM = DesiredTasteVM(brewVariableBundles: brewVariableBundles)
         

@@ -8,31 +8,6 @@
 
 import XCTest
 
-class BrewParametersImpl {
-    
-    static let defaultBrewValue = 0.5
-    
-    private(set) var valueMap: [BrewVariable.Id: Double]
-    
-    convenience init(brewVariableBundles: [BrewVariableBundle], values: [BrewVariable.Id: Double?]) {
-        self.init(brewVariables: brewVariableBundles.flatMap { $0.variables }, values: values)
-    }
-    
-    init(brewVariables: [BrewVariable], values: [BrewVariable.Id: Double?]) {
-        self.valueMap = brewVariables.reduce(into: [BrewVariable.Id: Double]()) {
-            $0[$1.id] = values[$1.id] ?? BrewParametersImpl.defaultBrewValue
-        }
-    }
-}
-
-extension BrewParametersImpl: Equatable {
-    
-    static func == (lhs: BrewParametersImpl, rhs: BrewParametersImpl) -> Bool {
-        return lhs.valueMap == rhs.valueMap
-    }
-    
-}
-
 struct MockBrewVars {
     
     static let bitternessLabelSet = VariableLabelSet(mainLabel: "Bitterness", minLabel: "Watery", maxLabel: "Bitter")
@@ -47,6 +22,8 @@ struct MockBrewVars {
     
     static let bundles = [tasteBundle,
                           acidityBundle]
+    
+    static let brewParameters = BrewParameters(brewVariableBundles: bundles, values: [:])
 }
 
 class BrewParametersTests: BaseTestCase {
@@ -54,7 +31,7 @@ class BrewParametersTests: BaseTestCase {
     var brewVariableBundles: [BrewVariableBundle]!
     var values: [BrewVariable.Id: Double?]!
     
-    var parameters: BrewParametersImpl!
+    var parameters: BrewParameters!
 
     override func setUp() {
         super.setUp()
@@ -65,16 +42,16 @@ class BrewParametersTests: BaseTestCase {
         values[brewVariableBundles[0].variables[0].id] = 0.8
         values[brewVariableBundles[1].variables[0].id] = 0.3
         
-        parameters = BrewParametersImpl(brewVariableBundles: brewVariableBundles, values: values)
+        parameters = BrewParameters(brewVariableBundles: brewVariableBundles, values: values)
     }
 
     func testInit() {
         let allVariables = brewVariableBundles.flatMap { $0.variables }
         
-        let brewParameters = BrewParametersImpl(brewVariableBundles: brewVariableBundles, values: values)
+        let brewParameters = BrewParameters(brewVariableBundles: brewVariableBundles, values: values)
         
         for brewVariable in allVariables {
-            let expectedValue = values[brewVariable.id] ?? BrewParametersImpl.defaultBrewValue
+            let expectedValue = values[brewVariable.id] ?? BrewParameters.defaultBrewValue
             
             XCTAssertEqual(expectedValue, brewParameters.valueMap[brewVariable.id])
         }
