@@ -8,15 +8,15 @@
 
 import Foundation
 
-protocol DesiredTasteSceneFC {
+protocol DesiredTasteSceneFC: class {
     func onParametersSet(brewParameters: BrewParameters)
 }
 
-protocol AIProcessingSceneFC {
+protocol AIProcessingSceneFC: class {
     func onProcessingDone(recipe: BrewRecipe)
 }
 
-protocol ViewRecipeSceneFC {
+protocol ViewRecipeSceneFC: class {
     func onRecipeReset()
     func onPrepared(recipe: BrewRecipe)
 }
