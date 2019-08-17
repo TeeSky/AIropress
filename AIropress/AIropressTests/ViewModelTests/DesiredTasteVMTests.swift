@@ -21,30 +21,6 @@ protocol BaseTableVM: BaseViewModel {
     func cellViewModel(for path: IndexPath) -> BaseTableCellVM
 }
 
-struct BrewVariableBundle {
-    let label: String
-    let variables: [BrewVariable]
-}
-
-struct BrewVariable: Equatable {
-    let id: Int
-    let stepCount: Int
-    let labelSet: VariableLabelSet
-}
-
-extension BrewVariable: Hashable {
-    
-    func hash(into hasher: inout Hasher) {
-        hasher.combine(id)
-    }
-}
-
-struct VariableLabelSet: Equatable {
-    let mainLabel: String
-    let minLabel: String
-    let maxLabel: String
-}
-
 class DesiredTasteVM: BaseTableVM {
     
     
@@ -70,19 +46,6 @@ class MockTableCellVM: BaseTableCellVM {
     var identifier: String {
         return "xyz"
     }
-}
-
-struct MockBrewVariables {
-    
-    private static let tasteBundle = BrewVariableBundle(label: "Taste",
-                                                              variables: [
-                                                                BrewVariable(id: 1, stepCount: 10, labelSet: VariableLabelSet(mainLabel: "Bitterness", minLabel: "Watery", maxLabel: "Bitter")),
-                                                                BrewVariable(id: 2, stepCount: 10, labelSet: VariableLabelSet(mainLabel: "Flavour", minLabel: "Light", maxLabel: "Full"))])
-    private static let acidityBundle = BrewVariableBundle(label: "Acidity",
-                                                          variables: [BrewVariable(id: 3, stepCount: 10, labelSet: VariableLabelSet(mainLabel: "Intensity", minLabel: "Minimal", maxLabel: "Intensive"))])
-    
-    static let bundles = [MockBrewVariables.tasteBundle,
-                          MockBrewVariables.acidityBundle]
 }
 
 class DesiredTasteVMTests: XCTestCase {
