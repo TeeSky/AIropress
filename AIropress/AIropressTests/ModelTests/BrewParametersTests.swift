@@ -8,32 +8,6 @@
 
 import XCTest
 
-struct BrewVariableBundle: Equatable {
-    let label: String
-    let variables: [BrewVariable]
-}
-
-struct BrewVariable: Equatable {
-    typealias Id = Int
-    
-    let id: Id
-    let stepCount: Int
-    let labelSet: VariableLabelSet
-}
-
-extension BrewVariable: Hashable {
-    
-    func hash(into hasher: inout Hasher) {
-        hasher.combine(id)
-    }
-}
-
-struct VariableLabelSet: Equatable {
-    let mainLabel: String
-    let minLabel: String
-    let maxLabel: String
-}
-
 class BrewParametersImpl {
     
     static let defaultBrewValue = 0.5
@@ -59,17 +33,20 @@ extension BrewParametersImpl: Equatable {
     
 }
 
-struct MockBrewVariables {
+struct MockBrewVars {
+    
+    static let bitternessLabelSet = VariableLabelSet(mainLabel: "Bitterness", minLabel: "Watery", maxLabel: "Bitter")
+    
+    static let bitternessVariable = BrewVariable(id: 1, stepCount: 10, labelSet: bitternessLabelSet)
     
     static let tasteBundle = BrewVariableBundle(label: "Taste",
-                                                        variables: [
-                                                            BrewVariable(id: 1, stepCount: 10, labelSet: VariableLabelSet(mainLabel: "Bitterness", minLabel: "Watery", maxLabel: "Bitter")),
+                                                        variables: [bitternessVariable,
                                                             BrewVariable(id: 2, stepCount: 10, labelSet: VariableLabelSet(mainLabel: "Flavour", minLabel: "Light", maxLabel: "Full"))])
     static let acidityBundle = BrewVariableBundle(label: "Acidity",
                                                           variables: [BrewVariable(id: 3, stepCount: 10, labelSet: VariableLabelSet(mainLabel: "Intensity", minLabel: "Minimal", maxLabel: "Intensive"))])
     
-    static let bundles = [MockBrewVariables.tasteBundle,
-                          MockBrewVariables.acidityBundle]
+    static let bundles = [tasteBundle,
+                          acidityBundle]
 }
 
 class BrewParametersTests: BaseTestCase {
@@ -82,7 +59,7 @@ class BrewParametersTests: BaseTestCase {
     override func setUp() {
         super.setUp()
         
-        brewVariableBundles = MockBrewVariables.bundles
+        brewVariableBundles = MockBrewVars.bundles
         
         values = [BrewVariable.Id: Double?]()
         values[brewVariableBundles[0].variables[0].id] = 0.8

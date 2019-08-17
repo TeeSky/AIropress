@@ -58,13 +58,13 @@ class DesiredTasteVMTests: XCTestCase {
         super.setUp()
         continueAfterFailure = false
         
-        brewVariableBundles = MockBrewVariables.bundles
+        brewVariableBundles = MockBrewVars.bundles
         desiredTasteVM = DesiredTasteVM(brewVariableBundles: brewVariableBundles)
     }
     
     func testInit() {
         let expectedBrewParameters = BrewParametersImpl(brewVariableBundles: brewVariableBundles, values: [:])
-        let unexpectedBrewParameters1 = BrewParametersImpl(brewVariableBundles: [MockBrewVariables.acidityBundle], values: [:])
+        let unexpectedBrewParameters1 = BrewParametersImpl(brewVariableBundles: [MockBrewVars.acidityBundle], values: [:])
         let unexpectedBrewParameters2 = BrewParametersImpl(brewVariableBundles: brewVariableBundles, values: [brewVariableBundles[0].variables[0].id: 0.9])
         
         let desiredTasteVM = DesiredTasteVM(brewVariableBundles: brewVariableBundles)

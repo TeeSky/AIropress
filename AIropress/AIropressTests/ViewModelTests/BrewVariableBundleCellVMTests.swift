@@ -27,7 +27,7 @@ class BrewVariableBundleCellVMTests: BaseTestCase {
     override func setUp() {
         super.setUp()
         
-        brewVariableBundle = MockBrewVariables.tasteBundle
+        brewVariableBundle = MockBrewVars.tasteBundle
         
         variableBundleCellVM = BrewVariableBundleCellVM(variableBundle: brewVariableBundle)
     }

@@ -28,6 +28,7 @@
 		35EC73F72308273500964665 /* BrewParametersTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35EC73F62308273500964665 /* BrewParametersTests.swift */; };
 		35EC73F923082D7100964665 /* BaseTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35EC73F823082D7100964665 /* BaseTestCase.swift */; };
 		35EC73FB23084E7D00964665 /* BrewVariableBundleCellVMTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35EC73FA23084E7D00964665 /* BrewVariableBundleCellVMTests.swift */; };
+		35EC73FD2308541400964665 /* BrewVariableTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35EC73FC2308541400964665 /* BrewVariableTests.swift */; };
 		73CEEAB2EF96AA6276E48A9F /* Pods_AIropressTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4DA8033607392551CCA2F0A5 /* Pods_AIropressTests.framework */; };
 		85AF326F656DC5FB03F26AAF /* Pods_AIropress.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C5DE7E97D5832D15F91D83EE /* Pods_AIropress.framework */; };
 /* End PBXBuildFile section */
@@ -63,6 +64,7 @@
 		35EC73F62308273500964665 /* BrewParametersTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrewParametersTests.swift; sourceTree = "<group>"; };
 		35EC73F823082D7100964665 /* BaseTestCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTestCase.swift; sourceTree = "<group>"; };
 		35EC73FA23084E7D00964665 /* BrewVariableBundleCellVMTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrewVariableBundleCellVMTests.swift; sourceTree = "<group>"; };
+		35EC73FC2308541400964665 /* BrewVariableTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrewVariableTests.swift; sourceTree = "<group>"; };
 		4DA8033607392551CCA2F0A5 /* Pods_AIropressTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AIropressTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		73DCB98EDA12910FCCC07D77 /* Pods-AIropressTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AIropressTests.release.xcconfig"; path = "Target Support Files/Pods-AIropressTests/Pods-AIropressTests.release.xcconfig"; sourceTree = "<group>"; };
 		82F617CABEF1402A5A3CB0AE /* Pods-AIropress.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AIropress.release.xcconfig"; path = "Target Support Files/Pods-AIropress/Pods-AIropress.release.xcconfig"; sourceTree = "<group>"; };
@@ -188,6 +190,7 @@
 			isa = PBXGroup;
 			children = (
 				35EC73F62308273500964665 /* BrewParametersTests.swift */,
+				35EC73FC2308541400964665 /* BrewVariableTests.swift */,
 			);
 			path = ModelTests;
 			sourceTree = "<group>";
@@ -377,6 +380,7 @@
 				35833E5C230753EE002F986B /* FlowControl.swift in Sources */,
 				35833E59230753E7002F986B /* BrewParameters.swift in Sources */,
 				35EC73F72308273500964665 /* BrewParametersTests.swift in Sources */,
+				35EC73FD2308541400964665 /* BrewVariableTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
