@@ -23,9 +23,10 @@ protocol BaseTableVM: BaseViewModel {
 
 class DesiredTasteVM: BaseTableVM {
     
+    let brewParameters: BrewParametersImpl
     
-    init(brewVariableBundles: [BrewVariableBundle]) {
-        
+    init(brewVariableBundles: [BrewVariableBundle], values: [BrewVariable.Id: Double?] = [:]) {
+        self.brewParameters = BrewParametersImpl(brewVariableBundles: brewVariableBundles, values: values)
     }
     
     func numberOfSections() -> Int {
@@ -62,6 +63,14 @@ class DesiredTasteVMTests: XCTestCase {
     }
     
     func testInit() {
-//        XCTAssertNotNil(desiredTasteVM.brewParameters)
+        let expectedBrewParameters = BrewParametersImpl(brewVariableBundles: brewVariableBundles, values: [:])
+        let unexpectedBrewParameters1 = BrewParametersImpl(brewVariableBundles: [MockBrewVariables.acidityBundle], values: [:])
+        let unexpectedBrewParameters2 = BrewParametersImpl(brewVariableBundles: brewVariableBundles, values: [brewVariableBundles[0].variables[0].id: 0.9])
+        
+        let desiredTasteVM = DesiredTasteVM(brewVariableBundles: brewVariableBundles)
+        
+        XCTAssertEqual(expectedBrewParameters, desiredTasteVM.brewParameters)
+        XCTAssertNotEqual(unexpectedBrewParameters1, desiredTasteVM.brewParameters)
+        XCTAssertNotEqual(unexpectedBrewParameters2, desiredTasteVM.brewParameters)
     }
 }
