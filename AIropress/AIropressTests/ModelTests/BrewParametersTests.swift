@@ -8,7 +8,7 @@
 
 import XCTest
 
-struct BrewVariableBundle {
+struct BrewVariableBundle: Equatable {
     let label: String
     let variables: [BrewVariable]
 }
