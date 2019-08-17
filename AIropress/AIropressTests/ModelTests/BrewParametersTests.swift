@@ -51,13 +51,21 @@ class BrewParametersImpl {
     }
 }
 
+extension BrewParametersImpl: Equatable {
+    
+    static func == (lhs: BrewParametersImpl, rhs: BrewParametersImpl) -> Bool {
+        return lhs.valueMap == rhs.valueMap
+    }
+    
+}
+
 struct MockBrewVariables {
     
-    private static let tasteBundle = BrewVariableBundle(label: "Taste",
+    static let tasteBundle = BrewVariableBundle(label: "Taste",
                                                         variables: [
                                                             BrewVariable(id: 1, stepCount: 10, labelSet: VariableLabelSet(mainLabel: "Bitterness", minLabel: "Watery", maxLabel: "Bitter")),
                                                             BrewVariable(id: 2, stepCount: 10, labelSet: VariableLabelSet(mainLabel: "Flavour", minLabel: "Light", maxLabel: "Full"))])
-    private static let acidityBundle = BrewVariableBundle(label: "Acidity",
+    static let acidityBundle = BrewVariableBundle(label: "Acidity",
                                                           variables: [BrewVariable(id: 3, stepCount: 10, labelSet: VariableLabelSet(mainLabel: "Intensity", minLabel: "Minimal", maxLabel: "Intensive"))])
     
     static let bundles = [MockBrewVariables.tasteBundle,
