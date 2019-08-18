@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-class DesiredTasteViewController: UIViewController {
+class DesiredTasteViewController: BaseViewController<DesiredTasteSceneView> {
     
     var viewModel: DesiredTasteVM?
     
