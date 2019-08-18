@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		350457EE23096CE300F4B8DC /* DesiredTasteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 350457ED23096CE300F4B8DC /* DesiredTasteViewController.swift */; };
+		350457F32309A3C900F4B8DC /* MainViewControllerProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 350457F22309A3C900F4B8DC /* MainViewControllerProvider.swift */; };
+		350457F52309A47300F4B8DC /* AppOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 350457F42309A47300F4B8DC /* AppOptions.swift */; };
+		350457F82309ACB400F4B8DC /* MainViewControllerProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 350457F22309A3C900F4B8DC /* MainViewControllerProvider.swift */; };
 		35076C3B230468F5006BBDDF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35076C3A230468F5006BBDDF /* AppDelegate.swift */; };
 		35076C3D230468F5006BBDDF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35076C3C230468F5006BBDDF /* ViewController.swift */; };
 		35076C40230468F5006BBDDF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 35076C3E230468F5006BBDDF /* Main.storyboard */; };
@@ -53,6 +56,8 @@
 
 /* Begin PBXFileReference section */
 		350457ED23096CE300F4B8DC /* DesiredTasteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesiredTasteViewController.swift; sourceTree = "<group>"; };
+		350457F22309A3C900F4B8DC /* MainViewControllerProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewControllerProvider.swift; sourceTree = "<group>"; };
+		350457F42309A47300F4B8DC /* AppOptions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppOptions.swift; sourceTree = "<group>"; };
 		35076C37230468F5006BBDDF /* AIropress.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AIropress.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		35076C3A230468F5006BBDDF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		35076C3C230468F5006BBDDF /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -203,6 +208,8 @@
 				35833E532307537C002F986B /* BrewParameters.swift */,
 				35833E5523075398002F986B /* BrewRecipe.swift */,
 				35EC73FE2308B73200964665 /* BrewVariable.swift */,
+				350457F22309A3C900F4B8DC /* MainViewControllerProvider.swift */,
+				350457F42309A47300F4B8DC /* AppOptions.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -395,6 +402,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				350457F32309A3C900F4B8DC /* MainViewControllerProvider.swift in Sources */,
 				35833E502307530E002F986B /* Scene.swift in Sources */,
 				35EC74092308BF1400964665 /* BrewVariableBundleCellVM.swift in Sources */,
 				350457EE23096CE300F4B8DC /* DesiredTasteViewController.swift in Sources */,
@@ -403,6 +411,7 @@
 				35EC74062308BEE300964665 /* DesiredTasteVM.swift in Sources */,
 				35EC73FF2308B73200964665 /* BrewVariable.swift in Sources */,
 				35833E5623075398002F986B /* BrewRecipe.swift in Sources */,
+				350457F52309A47300F4B8DC /* AppOptions.swift in Sources */,
 				35EC74032308BEBC00964665 /* BaseViewModel.swift in Sources */,
 				35833E542307537C002F986B /* BrewParameters.swift in Sources */,
 				35833E522307534F002F986B /* FlowControl.swift in Sources */,
@@ -418,6 +427,7 @@
 				3560123E23071AEA003AF91D /* MainFlowControllerTests.swift in Sources */,
 				35EC73F923082D7100964665 /* XCTestCase+setUp.swift in Sources */,
 				35EC74042308BEBF00964665 /* BaseViewModel.swift in Sources */,
+				350457F82309ACB400F4B8DC /* MainViewControllerProvider.swift in Sources */,
 				35833E5A230753E9002F986B /* BrewRecipe.swift in Sources */,
 				35E0E5E423076B14004A86FD /* DesiredTasteVMTests.swift in Sources */,
 				35833E58230753E5002F986B /* Scene.swift in Sources */,
