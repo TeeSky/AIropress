@@ -18,7 +18,7 @@ class MockValueDelegate: VariableBundleCellValueDelegate {
     }
 }
 
-class BrewVariableBundleCellVMTests: BaseTestCase {
+class BrewVariableBundleCellVMTests: XCTestCase{
 
     var brewVariableBundle: BrewVariableBundle!
     

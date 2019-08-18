@@ -8,7 +8,7 @@
 
 import XCTest
 
-class BrewVariableTests: BaseTestCase {
+class BrewVariableTests: XCTestCase {
     
     var brewVariable: BrewVariable!
 

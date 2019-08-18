@@ -37,6 +37,11 @@
                BlueprintName = "AIropressTests"
                ReferencedContainer = "container:AIropress.xcodeproj">
             </BuildableReference>
+            <SkippedTests>
+               <Test
+                  Identifier = "BaseTestCase">
+               </Test>
+            </SkippedTests>
          </TestableReference>
       </Testables>
       <MacroExpansion>
