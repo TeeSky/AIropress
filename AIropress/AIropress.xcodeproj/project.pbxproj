@@ -11,6 +11,7 @@
 		350457F32309A3C900F4B8DC /* MainViewControllerProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 350457F22309A3C900F4B8DC /* MainViewControllerProvider.swift */; };
 		350457F52309A47300F4B8DC /* AppOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 350457F42309A47300F4B8DC /* AppOptions.swift */; };
 		350457F82309ACB400F4B8DC /* MainViewControllerProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 350457F22309A3C900F4B8DC /* MainViewControllerProvider.swift */; };
+		350457FB2309AEB500F4B8DC /* UINavigationController+BaseNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 350457FA2309AEB500F4B8DC /* UINavigationController+BaseNavigationController.swift */; };
 		35076C3B230468F5006BBDDF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35076C3A230468F5006BBDDF /* AppDelegate.swift */; };
 		35076C3D230468F5006BBDDF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35076C3C230468F5006BBDDF /* ViewController.swift */; };
 		35076C40230468F5006BBDDF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 35076C3E230468F5006BBDDF /* Main.storyboard */; };
@@ -58,6 +59,7 @@
 		350457ED23096CE300F4B8DC /* DesiredTasteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesiredTasteViewController.swift; sourceTree = "<group>"; };
 		350457F22309A3C900F4B8DC /* MainViewControllerProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewControllerProvider.swift; sourceTree = "<group>"; };
 		350457F42309A47300F4B8DC /* AppOptions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppOptions.swift; sourceTree = "<group>"; };
+		350457FA2309AEB500F4B8DC /* UINavigationController+BaseNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UINavigationController+BaseNavigationController.swift"; sourceTree = "<group>"; };
 		35076C37230468F5006BBDDF /* AIropress.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AIropress.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		35076C3A230468F5006BBDDF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		35076C3C230468F5006BBDDF /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -134,6 +136,14 @@
 			path = ViewControllerTests;
 			sourceTree = "<group>";
 		};
+		350457F92309AE8A00F4B8DC /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				350457FA2309AEB500F4B8DC /* UINavigationController+BaseNavigationController.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
 		35076C2E230468F5006BBDDF = {
 			isa = PBXGroup;
 			children = (
@@ -157,6 +167,7 @@
 		35076C39230468F5006BBDDF /* AIropress */ = {
 			isa = PBXGroup;
 			children = (
+				350457F92309AE8A00F4B8DC /* Extension */,
 				350457EC23096CC800F4B8DC /* ViewController */,
 				35EC74012308BE9800964665 /* ViewModel */,
 				35833E4E23075302002F986B /* Model */,
@@ -406,6 +417,7 @@
 				35833E502307530E002F986B /* Scene.swift in Sources */,
 				35EC74092308BF1400964665 /* BrewVariableBundleCellVM.swift in Sources */,
 				350457EE23096CE300F4B8DC /* DesiredTasteViewController.swift in Sources */,
+				350457FB2309AEB500F4B8DC /* UINavigationController+BaseNavigationController.swift in Sources */,
 				35833E4D230752E4002F986B /* MainFlowController.swift in Sources */,
 				35076C3D230468F5006BBDDF /* ViewController.swift in Sources */,
 				35EC74062308BEE300964665 /* DesiredTasteVM.swift in Sources */,

@@ -12,10 +12,24 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
+    var navigationController: UINavigationController?
 
+    var flowController: MainFlowController?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        let navigationController = UINavigationController()
+        self.navigationController = navigationController
+        
+        let window = UIWindow(frame: UIScreen.main.bounds)
+        window.rootViewController = navigationController
+        self.window = window
+        
+        let flowController = MainFlowController(navigationController: navigationController, viewControllerProvider: MainViewControllerProvider())
+        self.flowController = flowController
+        
+        window.makeKeyAndVisible()
+        flowController.startFlow()
         
         return true
     }
