@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		350457EE23096CE300F4B8DC /* DesiredTasteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 350457ED23096CE300F4B8DC /* DesiredTasteViewController.swift */; };
 		35076C3B230468F5006BBDDF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35076C3A230468F5006BBDDF /* AppDelegate.swift */; };
 		35076C3D230468F5006BBDDF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35076C3C230468F5006BBDDF /* ViewController.swift */; };
 		35076C40230468F5006BBDDF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 35076C3E230468F5006BBDDF /* Main.storyboard */; };
@@ -51,6 +52,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		350457ED23096CE300F4B8DC /* DesiredTasteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesiredTasteViewController.swift; sourceTree = "<group>"; };
 		35076C37230468F5006BBDDF /* AIropress.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AIropress.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		35076C3A230468F5006BBDDF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		35076C3C230468F5006BBDDF /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -112,6 +114,21 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		350457EC23096CC800F4B8DC /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				350457ED23096CE300F4B8DC /* DesiredTasteViewController.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		350457EF23096CFB00F4B8DC /* ViewControllerTests */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewControllerTests;
+			sourceTree = "<group>";
+		};
 		35076C2E230468F5006BBDDF = {
 			isa = PBXGroup;
 			children = (
@@ -135,6 +152,7 @@
 		35076C39230468F5006BBDDF /* AIropress */ = {
 			isa = PBXGroup;
 			children = (
+				350457EC23096CC800F4B8DC /* ViewController */,
 				35EC74012308BE9800964665 /* ViewModel */,
 				35833E4E23075302002F986B /* Model */,
 				35833E4B230752CD002F986B /* FlowController */,
@@ -151,6 +169,7 @@
 		35076C4E230468F6006BBDDF /* AIropressTests */ = {
 			isa = PBXGroup;
 			children = (
+				350457EF23096CFB00F4B8DC /* ViewControllerTests */,
 				35EC73F52308270800964665 /* ModelTests */,
 				35E0E5E223076A5C004A86FD /* ViewModelTests */,
 				3560123B23071ACA003AF91D /* FlowControllerTests */,
@@ -378,6 +397,7 @@
 			files = (
 				35833E502307530E002F986B /* Scene.swift in Sources */,
 				35EC74092308BF1400964665 /* BrewVariableBundleCellVM.swift in Sources */,
+				350457EE23096CE300F4B8DC /* DesiredTasteViewController.swift in Sources */,
 				35833E4D230752E4002F986B /* MainFlowController.swift in Sources */,
 				35076C3D230468F5006BBDDF /* ViewController.swift in Sources */,
 				35EC74062308BEE300964665 /* DesiredTasteVM.swift in Sources */,
