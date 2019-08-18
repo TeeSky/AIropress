@@ -1,16 +1,16 @@
 //
-//  BaseTestCase.swift
+//  XCTestCase+setUp.swift
 //  AIropressTests
 //
-//  Created by Skypy on 17/08/2019.
+//  Created by Tomas Skypala on 17/08/2019.
 //  Copyright © 2019 Tomas Skypala. All rights reserved.
 //
 
 import XCTest
 
-class BaseTestCase: XCTestCase {
+extension XCTestCase {
 
-    override func setUp() {
+    override open func setUp() {
         super.setUp()
         
         continueAfterFailure = false

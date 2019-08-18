@@ -26,7 +26,7 @@ struct MockBrewVars {
     static let brewParameters = BrewParameters(brewVariableBundles: bundles, values: [:])
 }
 
-class BrewParametersTests: BaseTestCase {
+class BrewParametersTests: XCTestCase {
     
     var brewVariableBundles: [BrewVariableBundle]!
     var values: [BrewVariable.Id: Double?]!
