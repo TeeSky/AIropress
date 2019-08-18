@@ -59,7 +59,6 @@
 		35076C44230468F6006BBDDF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		35076C46230468F6006BBDDF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		35076C4B230468F6006BBDDF /* AIropressTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AIropressTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		35076C4F230468F6006BBDDF /* AIropressTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AIropressTests.swift; sourceTree = "<group>"; };
 		35076C51230468F6006BBDDF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3560123C23071AEA003AF91D /* MainFlowControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainFlowControllerTests.swift; sourceTree = "<group>"; };
 		35833E4C230752E4002F986B /* MainFlowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainFlowController.swift; sourceTree = "<group>"; };
@@ -155,7 +154,6 @@
 				35EC73F52308270800964665 /* ModelTests */,
 				35E0E5E223076A5C004A86FD /* ViewModelTests */,
 				3560123B23071ACA003AF91D /* FlowControllerTests */,
-				35076C4F230468F6006BBDDF /* AIropressTests.swift */,
 				35076C51230468F6006BBDDF /* Info.plist */,
 				35EC73F823082D7100964665 /* XCTestCase+setUp.swift */,
 			);
@@ -402,7 +400,6 @@
 				35EC74042308BEBF00964665 /* BaseViewModel.swift in Sources */,
 				35833E5A230753E9002F986B /* BrewRecipe.swift in Sources */,
 				35E0E5E423076B14004A86FD /* DesiredTasteVMTests.swift in Sources */,
-				35076C50230468F6006BBDDF /* AIropressTests.swift in Sources */,
 				35833E58230753E5002F986B /* Scene.swift in Sources */,
 				35EC73FB23084E7D00964665 /* BrewVariableBundleCellVMTests.swift in Sources */,
 				35833E5C230753EE002F986B /* FlowControl.swift in Sources */,
