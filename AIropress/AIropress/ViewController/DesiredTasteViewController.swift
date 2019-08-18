@@ -7,3 +7,10 @@
 //
 
 import Foundation
+import UIKit
+
+class DesiredTasteViewController: UIViewController {
+    
+    var viewModel: DesiredTasteVM?
+    
+}
