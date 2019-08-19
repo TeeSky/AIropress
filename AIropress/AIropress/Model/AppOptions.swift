@@ -7,14 +7,15 @@
 //
 
 import Foundation
+import UIKit
 
 struct AppOptions {
     
     static let brewVariableBundles = AppBrewVariableBundles().bundles
+    static let color = AppColor()
     
     private init() {}
 }
-
 
 struct AppBrewVariableBundles {
     
@@ -23,7 +24,6 @@ struct AppBrewVariableBundles {
     let bundles: [BrewVariableBundle]
     
     fileprivate init() {
-        
         let tasteBundle = BrewVariableBundle(label: "Taste",
                                              variables: [BrewVariable(id: 1, stepCount: AppBrewVariableBundles.defaultStepCount,
                                                                       labelSet: VariableLabelSet(mainLabel: "Bitterness", minLabel: "Watery", maxLabel: "Bitter")),
@@ -35,5 +35,13 @@ struct AppBrewVariableBundles {
         
         self.bundles = [tasteBundle,
                        acidityBundle]
+    }
+}
+
+struct AppColor {
+    
+    let button =  UIColor(red: 62/255, green: 39/255, blue: 35/255, alpha: 1)
+    
+    fileprivate init() {
     }
 }
