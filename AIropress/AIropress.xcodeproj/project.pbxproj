@@ -311,6 +311,7 @@
 				35076C47230468F6006BBDDF /* Sources */,
 				35076C48230468F6006BBDDF /* Frameworks */,
 				35076C49230468F6006BBDDF /* Resources */,
+				AFAF644CABFBF9D301313641 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -380,6 +381,23 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		AFAF644CABFBF9D301313641 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-AIropressTests/Pods-AIropressTests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-AIropressTests/Pods-AIropressTests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-AIropressTests/Pods-AIropressTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		C44D96A515FF866BAA48B6D6 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -680,7 +698,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = DD14950032619E994894DF06 /* Pods-AIropressTests.debug.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = B4UQ3LXCE4;
 				INFOPLIST_FILE = AIropressTests/Info.plist;
@@ -700,7 +717,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 73DCB98EDA12910FCCC07D77 /* Pods-AIropressTests.release.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = B4UQ3LXCE4;
 				INFOPLIST_FILE = AIropressTests/Info.plist;
