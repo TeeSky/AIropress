@@ -12,5 +12,15 @@ import UIKit
 class BaseSceneView: UIView {
     
     func render() {
+        self.backgroundColor = .white
+        
+        self.addViews()
+        self.setContraints()
+    }
+    
+    func addViews() {
+    }
+    
+    func setContraints() {
     }
 }
