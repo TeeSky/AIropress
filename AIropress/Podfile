@@ -5,6 +5,7 @@ target 'AIropress' do
   use_frameworks!
 
   # Pods for AIropress
+  pod "TinyConstraints"
 
   target 'AIropressTests' do
     inherit! :search_paths
