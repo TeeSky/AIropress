@@ -12,51 +12,64 @@ import TinyConstraints
 
 class DesiredTasteSceneView: BaseSceneView {
     
-    var sceneLabel: UILabel!
-    var calculateButton: UIButton!
-    var tableView: UITableView!
+    lazy var safeAreaContainer: UIView = {
+        return UIView()
+    }()
     
-    override func render() {
-        self.backgroundColor = .white
+    lazy var sceneLabelContainer: UIView = {
+        let container = UIView()
         
-        setupLabel()
-        setupCalculateButton()
-//        setupTableView(under: sceneLabel, above: calculateButton)
+        let label = UILabel()
+        label.text = "Desired"
+        label.textColor = .black
+        label.textAlignment = .left
+        label.font = UIFont.systemFont(ofSize: 35, weight: .heavy)
+        
+        container.addSubview(label)
+        label.centerYToSuperview()
+        label.leftToSuperview(offset: 15)
+        
+        return container
+    }()
+    
+    lazy var tableView: UITableView = {
+        let tableView = UITableView()
+//        tableView.separatorStyle = .none
+        return tableView
+    }()
+    
+    private lazy var bottomButtonContainer: UIView = {
+        return UIView()
+    }()
+    
+    lazy var calculateButton: UIButton = {
+        let button = UIButton()
+        button.layer.cornerRadius = 5
+        button.backgroundColor = AppOptions.color.button
+        button.setTitleColor(.white, for: .normal)
+        button.setTitle("Calculate", for: .normal)
+        return button
+    }()
+    
+    override func addViews() {
+        addSubview(safeAreaContainer)
+        addSubview(sceneLabelContainer)
+        addSubview(tableView)
+        addSubview(bottomButtonContainer)
+        addSubview(calculateButton)
     }
     
-    private func setupLabel() {
-        sceneLabel = UILabel(frame: CGRect(x: 0, y: 0, width: 200, height: 50))
-        sceneLabel.text = "Desired"
-        sceneLabel.textColor = .black
-        sceneLabel.textAlignment = .left
-        sceneLabel.font = UIFont.systemFont(ofSize: 35, weight: .heavy)
+    override func setContraints() {
+        safeAreaContainer.edgesToSuperview(usingSafeArea: true)
         
-        self.addSubview(sceneLabel)
+        sceneLabelContainer.height(120)
+        bottomButtonContainer.height(65)
         
-        sceneLabel.topToSuperview(offset: 75)
-        sceneLabel.leftToSuperview(offset: 15)
-        sceneLabel.rightToSuperview()
-    }
-    
-    private func setupCalculateButton() {
-        calculateButton = UIButton(type: .roundedRect)
-        calculateButton.frame = CGRect(x: 0, y: 0, width: 250, height: 150)
-        calculateButton.backgroundColor = .green
-        calculateButton.setTitle("Calculate", for: .normal)
+        calculateButton.width(150)
         
-        self.addSubview(calculateButton)
+        safeAreaContainer.stack([sceneLabelContainer, tableView, bottomButtonContainer], axis: .vertical, spacing: 5)
         
-        calculateButton.centerInSuperview()
-    }
-    
-    private func setupTableView(under label: UIView, above: UIView) {
-        tableView = UITableView()
-
-        self.addSubview(tableView)
-        
-        tableView.topToBottom(of: label)
-        tableView.leftToSuperview()
-        tableView.rightToSuperview()
-        tableView.bottomToTop(of: above)
+        calculateButton.centerY(to: bottomButtonContainer)
+        calculateButton.right(to: bottomButtonContainer, offset: -15)
     }
 }
