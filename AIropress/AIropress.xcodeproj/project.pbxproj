@@ -23,6 +23,7 @@
 		35072E43230B0C0200689F75 /* BaseSceneView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 350457FF230A0C8F00F4B8DC /* BaseSceneView.swift */; };
 		35072E44230B0C1400689F75 /* DesiredTasteSceneView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35045801230A0E3300F4B8DC /* DesiredTasteSceneView.swift */; };
 		35072E47230B43A200689F75 /* DiscreteSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35072E3E230B002000689F75 /* DiscreteSlider.swift */; };
+		35072E50230B48D700689F75 /* BaseViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35072E4F230B48D700689F75 /* BaseViewControllerTests.swift */; };
 		35076C3B230468F5006BBDDF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35076C3A230468F5006BBDDF /* AppDelegate.swift */; };
 		35076C3D230468F5006BBDDF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35076C3C230468F5006BBDDF /* ViewController.swift */; };
 		35076C40230468F5006BBDDF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 35076C3E230468F5006BBDDF /* Main.storyboard */; };
@@ -76,6 +77,7 @@
 		35045801230A0E3300F4B8DC /* DesiredTasteSceneView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesiredTasteSceneView.swift; sourceTree = "<group>"; };
 		35072E3C230AFBFB00689F75 /* DiscreteSliderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscreteSliderTests.swift; sourceTree = "<group>"; };
 		35072E3E230B002000689F75 /* DiscreteSlider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscreteSlider.swift; sourceTree = "<group>"; };
+		35072E4F230B48D700689F75 /* BaseViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewControllerTests.swift; sourceTree = "<group>"; };
 		35076C37230468F5006BBDDF /* AIropress.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AIropress.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		35076C3A230468F5006BBDDF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		35076C3C230468F5006BBDDF /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -149,6 +151,7 @@
 		350457EF23096CFB00F4B8DC /* ViewControllerTests */ = {
 			isa = PBXGroup;
 			children = (
+				35072E4F230B48D700689F75 /* BaseViewControllerTests.swift */,
 			);
 			path = ViewControllerTests;
 			sourceTree = "<group>";
@@ -520,6 +523,7 @@
 				35EC74042308BEBF00964665 /* BaseViewModel.swift in Sources */,
 				35072E42230B0BFA00689F75 /* BaseViewController.swift in Sources */,
 				35072E43230B0C0200689F75 /* BaseSceneView.swift in Sources */,
+				35072E50230B48D700689F75 /* BaseViewControllerTests.swift in Sources */,
 				350457F82309ACB400F4B8DC /* MainViewControllerProvider.swift in Sources */,
 				35072E3D230AFBFB00689F75 /* DiscreteSliderTests.swift in Sources */,
 				35833E5A230753E9002F986B /* BrewRecipe.swift in Sources */,
