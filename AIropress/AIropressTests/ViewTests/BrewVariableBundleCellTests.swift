@@ -7,31 +7,25 @@
 //
 
 import XCTest
-import UIKit
 
-class BrewVariableBundleCell: UITableViewCell {
+class MockBrewVariableBundleCellVM: BrewVariableBundleCellVM {
     
-    var viewModel: BrewVariableBundleCellVM! {
-        didSet {
-            label.text = viewModel.variableBundle.label
-        }
+    var valueChange: (BrewVariable, valueIndex: Int)?
+    
+    override func onSliderValueChanged(brewVariable: BrewVariable, valueIndex: Int) {
+        valueChange = (brewVariable, valueIndex)
     }
-    
-    lazy var label: UILabel = {
-        return UILabel()
-    }()
-    var sliders: [DiscreteSlider]!
 }
 
 class BrewVariableBundleCellTests: XCTestCase {
 
-    var viewModel: BrewVariableBundleCellVM!
+    var viewModel: MockBrewVariableBundleCellVM!
     var brewVariableBundleCell: BrewVariableBundleCell!
     
     override func setUp() {
         super.setUp()
         
-        viewModel = BrewVariableBundleCellVM(variableBundle: MockBrewVars.tasteBundle)
+        viewModel = MockBrewVariableBundleCellVM(variableBundle: MockBrewVars.tasteBundle)
         brewVariableBundleCell = BrewVariableBundleCell()
         brewVariableBundleCell.viewModel = viewModel
     }
@@ -42,5 +36,21 @@ class BrewVariableBundleCellTests: XCTestCase {
         XCTAssertEqual(expectedLabel, brewVariableBundleCell.label.text)
     }
     
-    // TODO implement the rest
+    func testSliderCount() {
+        let expectedSliderCount = viewModel.variableBundle.variables.count
+        
+        XCTAssertEqual(expectedSliderCount, brewVariableBundleCell.sliders.count)
+    }
+    
+    func testSliderValueOnChange() {
+        let variableIndex = 0
+        let brewVariable = viewModel.variableBundle.variables[variableIndex]
+        let value = brewVariable.stepCount - 1
+        let expectedSliderValueChange = (brewVariable, value)
+        
+        brewVariableBundleCell.sliders[variableIndex].delegate!.onValueChanged(value: SliderValue(index: value, raw: Float(value) / Float(brewVariable.stepCount), text: "test"))
+        
+        XCTAssertEqual(expectedSliderValueChange.0, viewModel.valueChange!.0)
+        XCTAssertEqual(expectedSliderValueChange.1, viewModel.valueChange!.1)
+    }
 }
