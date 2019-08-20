@@ -10,19 +10,38 @@ import XCTest
 
 class DiscreteSliderTests: XCTestCase {
     
-    var sliderValues: [String]!
     var slider: DiscreteSlider!
     
     override func setUp() {
         super.setUp()
         
-        sliderValues = ["smthn", "smthnels", "smthnelstoo"]
         slider = DiscreteSlider()
-        slider.values = sliderValues
     }
     
-    func testInit() {
-        let expectedSliderValues = sliderValues
+    func testValuesInit() {
+        let expectedSliderValues = ["smthn", "smthnels", "smthnelstoo"]
+        let expectedStepCount = 3
+        
+        slider.values = expectedSliderValues
+        
+        XCTAssertEqual(expectedSliderValues, slider.values)
+        XCTAssertEqual(expectedStepCount, slider.stepCount)
+    }
+    
+    func testStepCountInit() {
+        let stepCount = 4
+        let expectedSliderValues = ["0", "1", "2", "3"]
+        
+        slider.stepCount = stepCount
+        
+        XCTAssertEqual(expectedSliderValues, slider.values)
+    }
+    
+    func testLowStepCountInitFail() {
+        let stepCount = 1
+        let expectedSliderValues: [String]? = nil
+        
+        slider.stepCount = stepCount
         
         XCTAssertEqual(expectedSliderValues, slider.values)
     }

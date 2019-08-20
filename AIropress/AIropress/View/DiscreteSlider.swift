@@ -23,6 +23,19 @@ protocol DiscreteSliderDelegate {
 class DiscreteSlider: UISlider {
     
     var delegate: DiscreteSliderDelegate?
+    
+    var stepCount: Int {
+        set {
+            let sliderMax = newValue - 1
+            guard sliderMax > 0 else { return }
+            
+            values = Array(0...sliderMax).map { "\($0)" }
+        }
+        get {
+            return values?.count ?? 0
+        }
+    }
+    
     var values: [String]? {
         didSet {
             guard let values = values else { return }
