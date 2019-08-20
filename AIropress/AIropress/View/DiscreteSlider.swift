@@ -16,13 +16,10 @@ struct SliderValue {
     let text: String
 }
 
-protocol DiscreteSliderDelegate {
-    func onValueChanged(value: SliderValue)
-}
-
 class DiscreteSlider: UISlider {
+    typealias Delegate = ((SliderValue) -> ())
     
-    var delegate: DiscreteSliderDelegate?
+    var delegate: Delegate?
     
     var stepCount: Int {
         set {
@@ -42,20 +39,30 @@ class DiscreteSlider: UISlider {
             
             self.minimumValue = 0
             self.maximumValue = Float(values.count - 1)
+            
+            self.addTarget(self, action: #selector(actionTarget), for: .valueChanged) // TODO make sendAction work even without adding a target
         }
+    }
+    
+    @objc
+    func actionTarget() {
     }
     
     override func sendAction(_ action: Selector, to target: Any?, for event: UIEvent?) {
         guard let values = values else { fatalError("Property values must be set beforehand.") }
         
         let valueRounded = self.value.rounded()
-        guard self.value.truncatingRemainder(dividingBy: 1) == 0 else {
+        let sliderIsOnRoundValue = self.value.truncatingRemainder(dividingBy: 1) == 0
+        guard sliderIsOnRoundValue else {
             self.setValue(valueRounded, animated: true)
             return
         }
         
         let valueIndex = Int(valueRounded)
-        delegate?.onValueChanged(value: SliderValue(index: valueIndex, raw: self.value / maximumValue, text: values[valueIndex]))
+        let sliderValue = SliderValue(index: valueIndex,
+                                      raw: self.value / maximumValue,
+                                      text: values[valueIndex])
+        delegate?(sliderValue)
         
         super.sendAction(action, to: target, for: event)
     }

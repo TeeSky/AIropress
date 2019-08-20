@@ -8,44 +8,103 @@
 
 import Foundation
 import UIKit
+import TinyConstraints
 
 class BrewVariableBundleCell: UITableViewCell {
     
-    var viewModel: BrewVariableBundleCellVM! {
-        didSet {
-            let variableBundle = viewModel.variableBundle
-            label.text = variableBundle.label
-            
-            sliders = []
-            for variable in variableBundle.variables {
-                let slider = DiscreteSlider()
-                slider.stepCount = variable.stepCount
-                slider.delegate = BrewVariableSliderDelegate(brewVariable: variable,
-                                                             onChange: viewModel.onSliderValueChanged(brewVariable:valueIndex:))
-                
-                sliders.append(slider)
-            }
-        }
-    }
+    private var didSetConstraints = false
+    
+    private lazy var contentContainer: UIView = {
+        return UIView()
+    }()
     
     lazy var label: UILabel = {
-        return UILabel()
+        let label = UILabel()
+        label.font = UIFont.systemFont(ofSize: 25, weight: .regular)
+        return label
     }()
-    var sliders: [DiscreteSlider]!
+    
+    lazy var slidersContainer: UIView = {
+        let container = UIView()
+        return container
+    }()
+    
+    var sliders: [BrewVariableSlider]!
+    
+    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
+        super.init(style: style, reuseIdentifier: reuseIdentifier)
+        
+        addViews()
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        
+        label.text = ""
+        sliders.forEach { $0.removeFromSuperview() }
+        sliders = nil
+    }
+    
+    override func layoutSubviews() {
+        super.layoutSubviews()
+    }
+    
+    override func updateConstraints() {
+        if !didSetConstraints {
+            contentContainer.edgesToSuperview(insets: TinyEdgeInsets(top: 5, left: 5, bottom: 5, right: 5))
+            
+            slidersContainer.leftToSuperview(offset: 5)
+            slidersContainer.rightToSuperview(offset: -5)
+            slidersContainer.stack(sliders, axis: .vertical)
+            
+            label.centerX(to: contentContainer)
+            label.top(to: contentContainer)
+            
+            slidersContainer.bottom(to: contentContainer)
+            
+            didSetConstraints = true
+        }
+        
+        super.updateConstraints()
+    }
+    
+    private func addViews() {
+        addSubview(contentContainer)
+        addSubview(label)
+        addSubview(slidersContainer)
+    }
 }
 
-class BrewVariableSliderDelegate: DiscreteSliderDelegate {
+extension BrewVariableBundleCell: BaseTableCell {
     
-    let brewVariable: BrewVariable
-    let onChange: (BrewVariable, Int) -> ()
-    
-    init(brewVariable: BrewVariable, onChange: @escaping (BrewVariable, Int) -> ()) {
-        self.brewVariable = brewVariable
-        self.onChange = onChange
+    func configure(viewModel: BaseTableCellVM) {
+        guard let viewModel = viewModel as? BrewVariableBundleCellVM else { fatalError("Unexpected view model type.") }
+        
+        setupLabel(viewModel: viewModel)
+        setupSliders(viewModel: viewModel)
+        
+        didSetConstraints = false // TODO fix on-scroll broken slider cell layout
+        needsUpdateConstraints()
     }
     
-    func onValueChanged(value: SliderValue) {
-        onChange(brewVariable, value.index)
+    private func setupLabel(viewModel: BrewVariableBundleCellVM) {
+        label.text = viewModel.variableBundle.label
     }
     
+    private func setupSliders(viewModel: BrewVariableBundleCellVM) {
+        sliders = []
+        for variable in viewModel.variableBundle.variables {
+            let slider = BrewVariableSlider(brewVariable: variable)
+            slider.delegate = { sliderValue in
+                viewModel.onSliderValueChanged(brewVariable: variable, valueIndex: sliderValue.index)
+            }
+            
+            sliders.append(slider)
+            slidersContainer.addSubview(slider)
+        }
+    }
 }
