@@ -31,6 +31,7 @@ class DesiredTasteVM {
         tableView.register(BrewVariableBundleCell.self, forCellReuseIdentifier: BrewVariableBundleCellVM.cellIdentifier)
     }
     
+    @objc
     func onCalculateClicked() {
         flowController?.onParametersSet(brewParameters: brewParameters)
     }
