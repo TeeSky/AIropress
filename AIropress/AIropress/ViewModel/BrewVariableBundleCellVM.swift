@@ -7,7 +7,7 @@
 //
 
 import Foundation
-
+import CoreGraphics
 
 protocol VariableBundleCellValueDelegate: class {
     func onValueChanged(brewVariable: BrewVariable, value: Double)
@@ -42,5 +42,11 @@ extension BrewVariableBundleCellVM: BaseTableCellVM {
     
     var identifier: String {
         return BrewVariableBundleCellVM.cellIdentifier
+    }
+    
+    var cellHeight: CGFloat {
+        let labelHeight = 55
+        let slidersHeight = variableBundle.variables.count * BrewVariableSlider.height
+        return CGFloat(labelHeight + slidersHeight)
     }
 }

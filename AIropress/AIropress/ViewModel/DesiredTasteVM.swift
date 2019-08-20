@@ -7,7 +7,7 @@
 //
 
 import Foundation
-
+import UIKit
 
 class DesiredTasteVM {
     
@@ -25,6 +25,10 @@ class DesiredTasteVM {
             vm.valueDelegate = self
             cellVMs.append(vm)
         }
+    }
+    
+    func configure(tableView: UITableView) {
+        tableView.register(BrewVariableBundleCell.self, forCellReuseIdentifier: BrewVariableBundleCellVM.cellIdentifier)
     }
     
     func onCalculateClicked() {
@@ -57,5 +61,10 @@ extension DesiredTasteVM: BaseTableVM {
         
         return cellVMs[path.row]
     }
+    
+    func cellHeight(for path: IndexPath) -> CGFloat {
+        return cellViewModel(for: path).cellHeight
+    }
+    
     
 }

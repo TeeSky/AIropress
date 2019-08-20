@@ -12,7 +12,7 @@ import UIKit
 
 class BrewVariableSlider: UIView {
     
-    static let height: CGFloat = 75
+    static let height = 75
     
     var delegate: DiscreteSlider.Delegate? {
         didSet {
@@ -56,7 +56,7 @@ class BrewVariableSlider: UIView {
     
     override func updateConstraints() {
         if !didUpdateConstraints {
-            self.height(BrewVariableSlider.height)
+            self.height(CGFloat(BrewVariableSlider.height))
             
             self.stack([slider, bottomLabelsContainer], axis: .vertical, spacing: 5)
             

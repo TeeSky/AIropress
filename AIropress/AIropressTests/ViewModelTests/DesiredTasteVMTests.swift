@@ -55,16 +55,28 @@ class DesiredTasteVMTests: XCTestCase {
     }
     
     func testCellViewModelForPath(){
-        let expectedCell1VMBrewVariableBundle = brewVariableBundles[0]
-        let expectedCell2VMBrewVariableBundle = brewVariableBundles[1]
+        let cell1Path = IndexPath(row: 0, section: 0)
+        let expectedCell1VMBrewVariableBundle = brewVariableBundles[cell1Path.row]
+        let cell2Path = IndexPath(row: 1, section: 0)
+        let expectedCell2VMBrewVariableBundle = brewVariableBundles[cell2Path.row]
         
-        let cell1VM = desiredTasteVM.cellViewModel(for: IndexPath(row: 0, section: 0))
+        let cell1VM = desiredTasteVM.cellViewModel(for: cell1Path)
         XCTAssertEqual(expectedCell1VMBrewVariableBundle,
                        (cell1VM as? BrewVariableBundleCellVM)?.variableBundle)
         
-        let cell2VM = desiredTasteVM.cellViewModel(for: IndexPath(row: 1, section: 0))
+        let cell2VM = desiredTasteVM.cellViewModel(for: cell2Path)
         XCTAssertEqual(expectedCell2VMBrewVariableBundle,
                        (cell2VM as? BrewVariableBundleCellVM)?.variableBundle)
+    }
+    
+    func testHeightForPath() {
+        let cell1Path = IndexPath(row: 0, section: 0)
+        let expectedCell1Height = desiredTasteVM.cellVMs[cell1Path.row].cellHeight
+        let cell2Path = IndexPath(row: 1, section: 0)
+        let expectedCell2Height = desiredTasteVM.cellVMs[cell2Path.row].cellHeight
+        
+        XCTAssertEqual(expectedCell1Height, desiredTasteVM.cellHeight(for: cell1Path))
+        XCTAssertEqual(expectedCell2Height, desiredTasteVM.cellHeight(for: cell2Path))
     }
     
     func testOnCalculateClicked() {
