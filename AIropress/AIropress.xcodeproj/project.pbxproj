@@ -241,11 +241,11 @@
 		35076C4E230468F6006BBDDF /* AIropressTests */ = {
 			isa = PBXGroup;
 			children = (
-				35072E51230B4AD400689F75 /* ViewTests */,
-				350457EF23096CFB00F4B8DC /* ViewControllerTests */,
-				35EC73F52308270800964665 /* ModelTests */,
-				35E0E5E223076A5C004A86FD /* ViewModelTests */,
 				3560123B23071ACA003AF91D /* FlowControllerTests */,
+				350457EF23096CFB00F4B8DC /* ViewControllerTests */,
+				35E0E5E223076A5C004A86FD /* ViewModelTests */,
+				35EC73F52308270800964665 /* ModelTests */,
+				35072E51230B4AD400689F75 /* ViewTests */,
 				35076C51230468F6006BBDDF /* Info.plist */,
 				35EC73F823082D7100964665 /* XCTestCase+setUp.swift */,
 			);
