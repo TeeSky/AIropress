@@ -45,4 +45,15 @@ class DiscreteSliderTests: XCTestCase {
         
         XCTAssertEqual(expectedSliderValues, slider.values)
     }
+    
+    func testSetInitialValue() {
+        let stepCount = 10
+        let initialValue: Float = 0.5
+        let expectedSliderValue: Float = 5
+        
+        slider.stepCount = stepCount
+        slider.initialValue = initialValue
+        
+        XCTAssertEqual(expectedSliderValue, slider.value)
+    }
 }

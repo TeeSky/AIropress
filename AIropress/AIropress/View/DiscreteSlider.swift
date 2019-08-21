@@ -33,6 +33,12 @@ class DiscreteSlider: UISlider {
         }
     }
     
+    var initialValue: Float! {
+        didSet {
+            value = initialValue * Float(stepCount)
+        }
+    }
+    
     var values: [String]? {
         didSet {
             guard let values = values else { return }
