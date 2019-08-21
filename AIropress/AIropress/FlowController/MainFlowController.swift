@@ -9,7 +9,6 @@
 import Foundation
 import UIKit
 
-
 protocol BaseNavigationController {
     func push(viewController: UIViewController)
     func pop()

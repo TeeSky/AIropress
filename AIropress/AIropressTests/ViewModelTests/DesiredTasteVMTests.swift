@@ -8,8 +8,7 @@
 
 import XCTest
 
-
-class MockDesiredTasteFlowController: DesiredTasteSceneFC {
+private class MockDesiredTasteFlowController: DesiredTasteSceneFC {
     
     var setParameters: BrewParameters? = nil
     
@@ -21,8 +20,8 @@ class MockDesiredTasteFlowController: DesiredTasteSceneFC {
 
 class DesiredTasteVMTests: XCTestCase {
     
-    var brewVariableBundles: [BrewVariableBundle]!
-    var desiredTasteVM: DesiredTasteVM!
+    private var brewVariableBundles: [BrewVariableBundle]!
+    private var desiredTasteVM: DesiredTasteVM!
     
     override func setUp() {
         super.setUp()

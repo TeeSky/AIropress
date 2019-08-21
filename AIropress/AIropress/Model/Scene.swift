@@ -8,7 +8,6 @@
 
 import Foundation
 
-
 enum Scene {
     case desiredTaste
     case aiProcessing(brewParameters: BrewParameters)

@@ -10,7 +10,7 @@ import XCTest
 
 class BrewVariableTests: XCTestCase {
     
-    var brewVariable: BrewVariable!
+    private var brewVariable: BrewVariable!
 
     override func setUp() {
         super.setUp()

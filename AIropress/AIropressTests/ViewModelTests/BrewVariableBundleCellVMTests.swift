@@ -8,8 +8,7 @@
 
 import XCTest
 
-
-class MockValueDelegate: VariableBundleCellValueDelegate {
+private class MockValueDelegate: VariableBundleCellValueDelegate {
     
     var valueChange: (BrewVariable, Double)? = nil
     
@@ -20,9 +19,9 @@ class MockValueDelegate: VariableBundleCellValueDelegate {
 
 class BrewVariableBundleCellVMTests: XCTestCase{
 
-    var brewVariableBundle: BrewVariableBundle!
+    private var brewVariableBundle: BrewVariableBundle!
     
-    var variableBundleCellVM: BrewVariableBundleCellVM!
+    private var variableBundleCellVM: BrewVariableBundleCellVM!
     
     override func setUp() {
         super.setUp()
