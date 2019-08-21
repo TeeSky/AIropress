@@ -18,7 +18,7 @@ class MockViewControllerProvider: ViewControllerProvider {
     var receivedBrewParameters: BrewParameters? = nil
     var receivedBrewRecipe: BrewRecipe? = nil
     
-    func getViewController(for scene: Scene) -> UIViewController {
+    func getViewController(_ flowController: MainFlowController, for scene: Scene) -> UIViewController {
         switch (scene) {
         case .desiredTaste:
             return desiredTasteSceneVC

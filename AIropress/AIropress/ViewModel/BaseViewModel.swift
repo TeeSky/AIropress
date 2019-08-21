@@ -7,17 +7,19 @@
 //
 
 import Foundation
-
+import CoreGraphics
 
 protocol BaseViewModel {
 }
 
 protocol BaseTableCellVM {
     var identifier: String { get }
+    var cellHeight: CGFloat { get }
 }
 
 protocol BaseTableVM: BaseViewModel {
     func numberOfSections() -> Int
     func numberOfRows(section: Int) -> Int
     func cellViewModel(for path: IndexPath) -> BaseTableCellVM
+    func cellHeight(for path: IndexPath) -> CGFloat
 }

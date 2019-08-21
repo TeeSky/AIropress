@@ -16,7 +16,7 @@ protocol BaseNavigationController {
 }
 
 protocol ViewControllerProvider {
-    func getViewController(for scene: Scene) -> UIViewController
+    func getViewController(_ flowController: MainFlowController, for scene: Scene) -> UIViewController
 }
 
 class MainFlowController {
@@ -34,7 +34,7 @@ class MainFlowController {
     }
     
     func switchTo(scene: Scene) {
-        let nextViewController = viewControllerProvider.getViewController(for: scene)
+        let nextViewController = viewControllerProvider.getViewController(self, for: scene)
         navigationController.push(viewController: nextViewController)
     }
 }
