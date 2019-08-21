@@ -10,7 +10,7 @@ import XCTest
 
 class DiscreteSliderTests: XCTestCase {
     
-    var slider: DiscreteSlider!
+    private var slider: DiscreteSlider!
     
     override func setUp() {
         super.setUp()

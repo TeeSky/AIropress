@@ -8,8 +8,7 @@
 
 import XCTest
 
-
-class MockViewControllerProvider: ViewControllerProvider {
+private class MockViewControllerProvider: ViewControllerProvider {
     
     let desiredTasteSceneVC = UIViewController()
     let aiProcessingSceneVC = UIViewController()
@@ -32,7 +31,7 @@ class MockViewControllerProvider: ViewControllerProvider {
     }
 }
 
-class MockNavigationController: BaseNavigationController {
+private class MockNavigationController: BaseNavigationController {
     
     var stack: [UIViewController] = []
     
@@ -55,14 +54,12 @@ class MockNavigationController: BaseNavigationController {
     }
 }
 
-
-
 class MainFlowControllerTests: XCTestCase {
     
-    var navigationController: MockNavigationController!
-    var viewControllerProvider: MockViewControllerProvider!
+    private var navigationController: MockNavigationController!
+    private var viewControllerProvider: MockViewControllerProvider!
     
-    var mainFlowController: MainFlowController!
+    private var mainFlowController: MainFlowController!
     
     override func setUp() {
         super.setUp()

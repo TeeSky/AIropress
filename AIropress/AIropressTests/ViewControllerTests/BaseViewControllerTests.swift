@@ -8,7 +8,7 @@
 
 import XCTest
 
-class MockSceneView: BaseSceneView {
+private class MockSceneView: BaseSceneView {
 
     var didCallRender: Bool = false
     
@@ -19,7 +19,7 @@ class MockSceneView: BaseSceneView {
 
 class BaseViewControllerTests: XCTestCase {
     
-    var viewController: BaseViewController<MockSceneView>!
+    private var viewController: BaseViewController<MockSceneView>!
     
     override func setUp() {
         super.setUp()

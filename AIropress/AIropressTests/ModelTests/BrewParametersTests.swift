@@ -32,10 +32,10 @@ struct MockBrewVars {
 
 class BrewParametersTests: XCTestCase {
     
-    var brewVariableBundles: [BrewVariableBundle]!
-    var values: [BrewVariable.Id: Double?]!
+    private var brewVariableBundles: [BrewVariableBundle]!
+    private var values: [BrewVariable.Id: Double?]!
     
-    var parameters: BrewParameters!
+    private var parameters: BrewParameters!
 
     override func setUp() {
         super.setUp()
