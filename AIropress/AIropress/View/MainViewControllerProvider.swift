@@ -20,6 +20,12 @@ struct MainViewControllerProvider: ViewControllerProvider {
             let desiredTasteViewController = DesiredTasteViewController()
             desiredTasteViewController.viewModel = desiredTasteVM
             controller = desiredTasteViewController
+        case .aiProcessing(let brewParameters):
+            let aiProcessingVM = AIProcessingVM(brewParameters: brewParameters)
+            aiProcessingVM.flowController = flowController
+            let aiProcessingViewController = AIProcessingViewController()
+            aiProcessingViewController.viewModel = aiProcessingVM
+            controller = aiProcessingViewController
         default:
             fatalError("not implemented")
         }

@@ -34,6 +34,15 @@
 		35076C45230468F6006BBDDF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 35076C43230468F6006BBDDF /* LaunchScreen.storyboard */; };
 		35124275230C5CA600C692DD /* BrewVariableSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35124274230C5CA600C692DD /* BrewVariableSlider.swift */; };
 		35124276230C8EF400C692DD /* BrewVariableSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35124274230C5CA600C692DD /* BrewVariableSlider.swift */; };
+		3527AF09230DCC4C00ED0E26 /* AIProcessingVMTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3527AF08230DCC4C00ED0E26 /* AIProcessingVMTests.swift */; };
+		3527AF0B230DF4C200ED0E26 /* AIProcessingVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3527AF0A230DF4C200ED0E26 /* AIProcessingVM.swift */; };
+		3527AF0C230DF4D500ED0E26 /* AIProcessingVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3527AF0A230DF4C200ED0E26 /* AIProcessingVM.swift */; };
+		3527AF0E230DF51700ED0E26 /* AIProcessingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3527AF0D230DF51700ED0E26 /* AIProcessingViewController.swift */; };
+		3527AF10230DF54700ED0E26 /* AIProcessingSceneView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3527AF0F230DF54700ED0E26 /* AIProcessingSceneView.swift */; };
+		3527AF11230DFDCF00ED0E26 /* AIProcessingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3527AF0D230DF51700ED0E26 /* AIProcessingViewController.swift */; };
+		3527AF12230DFDD300ED0E26 /* AIProcessingSceneView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3527AF0F230DF54700ED0E26 /* AIProcessingSceneView.swift */; };
+		3527AF14230DFFCA00ED0E26 /* UIView+fadeTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3527AF13230DFFCA00ED0E26 /* UIView+fadeTransition.swift */; };
+		3527AF15230E018900ED0E26 /* UIView+fadeTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3527AF13230DFFCA00ED0E26 /* UIView+fadeTransition.swift */; };
 		3560123E23071AEA003AF91D /* MainFlowControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3560123C23071AEA003AF91D /* MainFlowControllerTests.swift */; };
 		35833E4D230752E4002F986B /* MainFlowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35833E4C230752E4002F986B /* MainFlowController.swift */; };
 		35833E502307530E002F986B /* Scene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35833E4F2307530E002F986B /* Scene.swift */; };
@@ -94,6 +103,11 @@
 		35076C4B230468F6006BBDDF /* AIropressTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AIropressTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		35076C51230468F6006BBDDF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		35124274230C5CA600C692DD /* BrewVariableSlider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrewVariableSlider.swift; sourceTree = "<group>"; };
+		3527AF08230DCC4C00ED0E26 /* AIProcessingVMTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AIProcessingVMTests.swift; sourceTree = "<group>"; };
+		3527AF0A230DF4C200ED0E26 /* AIProcessingVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AIProcessingVM.swift; sourceTree = "<group>"; };
+		3527AF0D230DF51700ED0E26 /* AIProcessingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AIProcessingViewController.swift; sourceTree = "<group>"; };
+		3527AF0F230DF54700ED0E26 /* AIProcessingSceneView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AIProcessingSceneView.swift; sourceTree = "<group>"; };
+		3527AF13230DFFCA00ED0E26 /* UIView+fadeTransition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+fadeTransition.swift"; sourceTree = "<group>"; };
 		3560123C23071AEA003AF91D /* MainFlowControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainFlowControllerTests.swift; sourceTree = "<group>"; };
 		35833E4C230752E4002F986B /* MainFlowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainFlowController.swift; sourceTree = "<group>"; };
 		35833E4F2307530E002F986B /* Scene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Scene.swift; sourceTree = "<group>"; };
@@ -151,6 +165,7 @@
 			children = (
 				350457ED23096CE300F4B8DC /* DesiredTasteViewController.swift */,
 				350457FC230A07DA00F4B8DC /* BaseViewController.swift */,
+				3527AF0D230DF51700ED0E26 /* AIProcessingViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -167,6 +182,7 @@
 			isa = PBXGroup;
 			children = (
 				350457FA2309AEB500F4B8DC /* UINavigationController+BaseNavigationController.swift */,
+				3527AF13230DFFCA00ED0E26 /* UIView+fadeTransition.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -176,6 +192,7 @@
 			children = (
 				350457FF230A0C8F00F4B8DC /* BaseSceneView.swift */,
 				35045801230A0E3300F4B8DC /* DesiredTasteSceneView.swift */,
+				3527AF0F230DF54700ED0E26 /* AIProcessingSceneView.swift */,
 			);
 			path = SceneView;
 			sourceTree = "<group>";
@@ -241,11 +258,11 @@
 		35076C4E230468F6006BBDDF /* AIropressTests */ = {
 			isa = PBXGroup;
 			children = (
-				35072E51230B4AD400689F75 /* ViewTests */,
-				350457EF23096CFB00F4B8DC /* ViewControllerTests */,
-				35EC73F52308270800964665 /* ModelTests */,
-				35E0E5E223076A5C004A86FD /* ViewModelTests */,
 				3560123B23071ACA003AF91D /* FlowControllerTests */,
+				350457EF23096CFB00F4B8DC /* ViewControllerTests */,
+				35E0E5E223076A5C004A86FD /* ViewModelTests */,
+				35EC73F52308270800964665 /* ModelTests */,
+				35072E51230B4AD400689F75 /* ViewTests */,
 				35076C51230468F6006BBDDF /* Info.plist */,
 				35EC73F823082D7100964665 /* XCTestCase+setUp.swift */,
 			);
@@ -286,6 +303,7 @@
 			children = (
 				35E0E5E323076B14004A86FD /* DesiredTasteVMTests.swift */,
 				35EC73FA23084E7D00964665 /* BrewVariableBundleCellVMTests.swift */,
+				3527AF08230DCC4C00ED0E26 /* AIProcessingVMTests.swift */,
 			);
 			path = ViewModelTests;
 			sourceTree = "<group>";
@@ -306,6 +324,7 @@
 				35EC74022308BEBC00964665 /* BaseViewModel.swift */,
 				35EC74052308BEE300964665 /* DesiredTasteVM.swift */,
 				35EC74082308BF1400964665 /* BrewVariableBundleCellVM.swift */,
+				3527AF0A230DF4C200ED0E26 /* AIProcessingVM.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -507,10 +526,13 @@
 			files = (
 				350457F32309A3C900F4B8DC /* MainViewControllerProvider.swift in Sources */,
 				35833E502307530E002F986B /* Scene.swift in Sources */,
+				3527AF14230DFFCA00ED0E26 /* UIView+fadeTransition.swift in Sources */,
 				35124275230C5CA600C692DD /* BrewVariableSlider.swift in Sources */,
+				3527AF0B230DF4C200ED0E26 /* AIProcessingVM.swift in Sources */,
 				35EC74092308BF1400964665 /* BrewVariableBundleCellVM.swift in Sources */,
 				350457EE23096CE300F4B8DC /* DesiredTasteViewController.swift in Sources */,
 				350457FB2309AEB500F4B8DC /* UINavigationController+BaseNavigationController.swift in Sources */,
+				3527AF0E230DF51700ED0E26 /* AIProcessingViewController.swift in Sources */,
 				35833E4D230752E4002F986B /* MainFlowController.swift in Sources */,
 				35EC74062308BEE300964665 /* DesiredTasteVM.swift in Sources */,
 				35EC73FF2308B73200964665 /* BrewVariable.swift in Sources */,
@@ -525,6 +547,7 @@
 				35833E522307534F002F986B /* FlowControl.swift in Sources */,
 				35072E4A230B475A00689F75 /* BaseTableCell.swift in Sources */,
 				35045800230A0C8F00F4B8DC /* BaseSceneView.swift in Sources */,
+				3527AF10230DF54700ED0E26 /* AIProcessingSceneView.swift in Sources */,
 				35076C3B230468F5006BBDDF /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -539,9 +562,12 @@
 				3560123E23071AEA003AF91D /* MainFlowControllerTests.swift in Sources */,
 				35072E47230B43A200689F75 /* DiscreteSlider.swift in Sources */,
 				35EC73F923082D7100964665 /* XCTestCase+setUp.swift in Sources */,
+				3527AF15230E018900ED0E26 /* UIView+fadeTransition.swift in Sources */,
+				3527AF12230DFDD300ED0E26 /* AIProcessingSceneView.swift in Sources */,
 				35EC74042308BEBF00964665 /* BaseViewModel.swift in Sources */,
 				35072E42230B0BFA00689F75 /* BaseViewController.swift in Sources */,
 				35072E53230B4B5E00689F75 /* BrewVariableBundleCellTests.swift in Sources */,
+				3527AF11230DFDCF00ED0E26 /* AIProcessingViewController.swift in Sources */,
 				35072E43230B0C0200689F75 /* BaseSceneView.swift in Sources */,
 				35072E50230B48D700689F75 /* BaseViewControllerTests.swift in Sources */,
 				35072E4E230B47D500689F75 /* BrewVariableBundleCell.swift in Sources */,
@@ -553,8 +579,10 @@
 				35072E40230B0BD900689F75 /* AppOptions.swift in Sources */,
 				35833E58230753E5002F986B /* Scene.swift in Sources */,
 				35EC73FB23084E7D00964665 /* BrewVariableBundleCellVMTests.swift in Sources */,
+				3527AF09230DCC4C00ED0E26 /* AIProcessingVMTests.swift in Sources */,
 				35124276230C8EF400C692DD /* BrewVariableSlider.swift in Sources */,
 				35833E5C230753EE002F986B /* FlowControl.swift in Sources */,
+				3527AF0C230DF4D500ED0E26 /* AIProcessingVM.swift in Sources */,
 				35EC74002308B75300964665 /* BrewVariable.swift in Sources */,
 				35833E59230753E7002F986B /* BrewParameters.swift in Sources */,
 				35EC740A2308BF5F00964665 /* BrewVariableBundleCellVM.swift in Sources */,
