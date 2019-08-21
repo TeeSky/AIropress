@@ -43,6 +43,7 @@
 		3527AF12230DFDD300ED0E26 /* AIProcessingSceneView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3527AF0F230DF54700ED0E26 /* AIProcessingSceneView.swift */; };
 		3527AF14230DFFCA00ED0E26 /* UIView+fadeTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3527AF13230DFFCA00ED0E26 /* UIView+fadeTransition.swift */; };
 		3527AF15230E018900ED0E26 /* UIView+fadeTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3527AF13230DFFCA00ED0E26 /* UIView+fadeTransition.swift */; };
+		3527AF17230E0F4C00ED0E26 /* ViewRecipeVMTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3527AF16230E0F4C00ED0E26 /* ViewRecipeVMTests.swift */; };
 		3560123E23071AEA003AF91D /* MainFlowControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3560123C23071AEA003AF91D /* MainFlowControllerTests.swift */; };
 		35833E4D230752E4002F986B /* MainFlowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35833E4C230752E4002F986B /* MainFlowController.swift */; };
 		35833E502307530E002F986B /* Scene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35833E4F2307530E002F986B /* Scene.swift */; };
@@ -108,6 +109,7 @@
 		3527AF0D230DF51700ED0E26 /* AIProcessingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AIProcessingViewController.swift; sourceTree = "<group>"; };
 		3527AF0F230DF54700ED0E26 /* AIProcessingSceneView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AIProcessingSceneView.swift; sourceTree = "<group>"; };
 		3527AF13230DFFCA00ED0E26 /* UIView+fadeTransition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+fadeTransition.swift"; sourceTree = "<group>"; };
+		3527AF16230E0F4C00ED0E26 /* ViewRecipeVMTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewRecipeVMTests.swift; sourceTree = "<group>"; };
 		3560123C23071AEA003AF91D /* MainFlowControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainFlowControllerTests.swift; sourceTree = "<group>"; };
 		35833E4C230752E4002F986B /* MainFlowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainFlowController.swift; sourceTree = "<group>"; };
 		35833E4F2307530E002F986B /* Scene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Scene.swift; sourceTree = "<group>"; };
@@ -304,6 +306,7 @@
 				35E0E5E323076B14004A86FD /* DesiredTasteVMTests.swift */,
 				35EC73FA23084E7D00964665 /* BrewVariableBundleCellVMTests.swift */,
 				3527AF08230DCC4C00ED0E26 /* AIProcessingVMTests.swift */,
+				3527AF16230E0F4C00ED0E26 /* ViewRecipeVMTests.swift */,
 			);
 			path = ViewModelTests;
 			sourceTree = "<group>";
@@ -565,6 +568,7 @@
 				3527AF15230E018900ED0E26 /* UIView+fadeTransition.swift in Sources */,
 				3527AF12230DFDD300ED0E26 /* AIProcessingSceneView.swift in Sources */,
 				35EC74042308BEBF00964665 /* BaseViewModel.swift in Sources */,
+				3527AF17230E0F4C00ED0E26 /* ViewRecipeVMTests.swift in Sources */,
 				35072E42230B0BFA00689F75 /* BaseViewController.swift in Sources */,
 				35072E53230B4B5E00689F75 /* BrewVariableBundleCellTests.swift in Sources */,
 				3527AF11230DFDCF00ED0E26 /* AIProcessingViewController.swift in Sources */,
