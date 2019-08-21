@@ -9,7 +9,8 @@
 import Foundation
 
 protocol AIProcessingVMDelegate: class {
-    func onProcessingDone()
+    func setProgressLabel(text: String)
+    func setActivityIndicatorState(animating: Bool)
 }
 
 class AIProcessingVM: BaseViewModel {
@@ -25,8 +26,13 @@ class AIProcessingVM: BaseViewModel {
         startProcessing()
     }
     
+    func onViewDidLoad() {
+        delegate?.setActivityIndicatorState(animating: true)
+        delegate?.setProgressLabel(text: "Processing...")
+    }
+    
     func onSceneDidAppear() {
-        DispatchQueue.main.asyncAfter(deadline: .now() + 2) { // Mock code, replace with processing done check.
+        DispatchQueue.main.asyncAfter(deadline: .now() + 2.5) { // Mock code, replace with processing done check.
             self.onProcessingDone(recipe: BrewRecipe())
         }
     }
@@ -36,9 +42,10 @@ class AIProcessingVM: BaseViewModel {
     }
     
     private func onProcessingDone(recipe: BrewRecipe) {
-        delegate?.onProcessingDone()
+        delegate?.setActivityIndicatorState(animating: false)
+        delegate?.setProgressLabel(text: "Processing done.")
         
-        DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
             self.flowController?.onProcessingDone(recipe: recipe)
         }
     }
