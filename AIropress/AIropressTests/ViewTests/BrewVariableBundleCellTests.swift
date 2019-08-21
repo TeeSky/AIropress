@@ -25,26 +25,26 @@ class BrewVariableBundleCellTests: XCTestCase {
     override func setUp() {
         super.setUp()
         
-        viewModel = MockBrewVariableBundleCellVM(variableBundle: MockBrewVars.tasteBundle)
+        viewModel = MockBrewVariableBundleCellVM(variableBundle: MockBrewVars.tasteBundle, initialValues: MockBrewVars.tasteInitialValues)
         brewVariableBundleCell = BrewVariableBundleCell()
         brewVariableBundleCell.configure(viewModel: viewModel)
     }
     
     func testLabelText() {
-        let expectedLabel = viewModel.variableBundle.label
+        let expectedLabel = viewModel.sliderLabel
         
         XCTAssertEqual(expectedLabel, brewVariableBundleCell.label.text)
     }
     
     func testSliderCount() {
-        let expectedSliderCount = viewModel.variableBundle.variables.count
+        let expectedSliderCount = viewModel.sliderVariables.count
         
         XCTAssertEqual(expectedSliderCount, brewVariableBundleCell.sliders.count)
     }
     
     func testSliderValueOnChange() {
         let variableIndex = 0
-        let brewVariable = viewModel.variableBundle.variables[variableIndex]
+        let brewVariable = viewModel.sliderVariables[variableIndex]
         let value = brewVariable.stepCount - 1
         let expectedSliderValueChange = (brewVariable, value)
         

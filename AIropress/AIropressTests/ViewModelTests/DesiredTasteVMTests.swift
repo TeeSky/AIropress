@@ -61,12 +61,12 @@ class DesiredTasteVMTests: XCTestCase {
         let expectedCell2VMBrewVariableBundle = brewVariableBundles[cell2Path.row]
         
         let cell1VM = desiredTasteVM.cellViewModel(for: cell1Path)
-        XCTAssertEqual(expectedCell1VMBrewVariableBundle,
-                       (cell1VM as? BrewVariableBundleCellVM)?.variableBundle)
+        XCTAssertEqual(expectedCell1VMBrewVariableBundle.variables,
+                       (cell1VM as? BrewVariableBundleCellVM)?.sliderVariables)
         
         let cell2VM = desiredTasteVM.cellViewModel(for: cell2Path)
-        XCTAssertEqual(expectedCell2VMBrewVariableBundle,
-                       (cell2VM as? BrewVariableBundleCellVM)?.variableBundle)
+        XCTAssertEqual(expectedCell2VMBrewVariableBundle.variables,
+                       (cell2VM as? BrewVariableBundleCellVM)?.sliderVariables)
     }
     
     func testHeightForPath() {

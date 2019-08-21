@@ -92,13 +92,13 @@ extension BrewVariableBundleCell: BaseTableCell {
     }
     
     private func setupLabel(viewModel: BrewVariableBundleCellVM) {
-        label.text = viewModel.variableBundle.label
+        label.text = viewModel.sliderLabel
     }
     
     private func setupSliders(viewModel: BrewVariableBundleCellVM) {
         sliders = []
-        for variable in viewModel.variableBundle.variables {
-            let slider = BrewVariableSlider(brewVariable: variable)
+        for variable in viewModel.sliderVariables {
+            let slider = BrewVariableSlider(brewVariable: variable, initialValue: viewModel.initialSliderValue(for: variable))
             slider.delegate = { sliderValue in
                 viewModel.onSliderValueChanged(brewVariable: variable, valueIndex: sliderValue.index)
             }

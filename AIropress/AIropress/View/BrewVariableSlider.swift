@@ -40,12 +40,13 @@ class BrewVariableSlider: UIView {
         return BrewVariableSlider.createStyledLabel()
     }()
     
-    init(brewVariable: BrewVariable, frame: CGRect = CGRect.zero) {
+    init(brewVariable: BrewVariable, initialValue: Float, frame: CGRect = CGRect.zero) {
         self.brewVariable = brewVariable
         super.init(frame: frame)
         addViews()
         
         slider.stepCount = brewVariable.stepCount
+        slider.initialValue = initialValue
         minLabel.text = brewVariable.labelSet.minLabel
         maxLabel.text = brewVariable.labelSet.maxLabel
     }
