@@ -8,28 +8,6 @@
 
 import XCTest
 
-struct MockBrewVars {
-    
-    static let bitternessLabelSet = VariableLabelSet(mainLabel: "Bitterness", minLabel: "Watery", maxLabel: "Bitter")
-    
-    static let bitternessVariable = BrewVariable(id: 1, stepCount: 10, labelSet: bitternessLabelSet)
-    static let bitternessVariableValue = 0.3
-    static let flavourVariable = BrewVariable(id: 2, stepCount: 10, labelSet: VariableLabelSet(mainLabel: "Flavour", minLabel: "Light", maxLabel: "Full"))
-    static let flavourVariableValue = 0.7
-    
-    static let tasteBundle = BrewVariableBundle(label: "Taste",
-                                                        variables: [bitternessVariable, flavourVariable])
-    static let tasteInitialValues = [bitternessVariable: bitternessVariableValue, flavourVariable: flavourVariableValue]
-    
-    static let acidityBundle = BrewVariableBundle(label: "Acidity",
-                                                          variables: [BrewVariable(id: 3, stepCount: 10, labelSet: VariableLabelSet(mainLabel: "Intensity", minLabel: "Minimal", maxLabel: "Intensive"))])
-    
-    static let bundles = [tasteBundle,
-                          acidityBundle]
-    
-    static let brewParameters = BrewParameters(brewVariableBundles: bundles, values: [:])
-}
-
 class BrewParametersTests: XCTestCase {
     
     private var brewVariableBundles: [BrewVariableBundle]!
