@@ -37,10 +37,12 @@ extension RecipeConstant: Equatable {
 }
 
 class RecipeSemiConstant: RecipeConstant {
-    var confidence: Double
+    let confidenceVariable: BrewVariable
+    var confidenceValue: Double
     
-    init(id: Double, label: String, value: Double, valueText: String, confidence: Double) {
-        self.confidence = confidence
+    init(id: Double, label: String, value: Double, valueText: String, confidenceVariable: BrewVariable, initialConfidenceValue: Double) {
+        self.confidenceVariable = confidenceVariable
+        self.confidenceValue = initialConfidenceValue
         
         super.init(id: id, label: label, value: value, valueText: valueText)
     }

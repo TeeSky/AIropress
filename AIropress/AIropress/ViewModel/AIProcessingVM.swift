@@ -36,8 +36,12 @@ class AIProcessingVM: BaseViewModel {
             let constants: [RecipeConstant] = [RecipeConstant(id: 0, label: "Water", value: 85, valueText: "85ml"),
                                                RecipeConstant(id: 1, label: "Brewing time", value: 90, valueText: "1:30"),
                                                RecipeConstant(id: 2, label: "Coffee", value: 13, valueText: "13g")]
-            let semiConstants: [RecipeSemiConstant] = [RecipeSemiConstant(id: 3, label: "Temperature", value: 86, valueText: "86C", confidence: 0.8),
-                                               RecipeSemiConstant(id: 4, label: "Grind size", value: 28, valueText: "coarse", confidence: 0.5)]
+            
+            let confidenceLabelSet = VariableLabelSet(mainLabel: "Confidence", minLabel: "Unconfident", maxLabel: "Confident")
+            let temperatureConfidence = BrewVariable(id: 10, stepCount: 5, labelSet: confidenceLabelSet)
+            let grindSizeConfidence = BrewVariable(id: 11, stepCount: 5, labelSet: confidenceLabelSet)
+            let semiConstants: [RecipeSemiConstant] = [RecipeSemiConstant(id: 3, label: "Temperature", value: 86, valueText: "86C", confidenceVariable: temperatureConfidence, initialConfidenceValue: 0.8),
+                                                       RecipeSemiConstant(id: 4, label: "Grind size", value: 28, valueText: "coarse", confidenceVariable: grindSizeConfidence, initialConfidenceValue: 0.5)]
             
             
             self.onProcessingDone(recipe: BrewRecipe(constants: constants, semiConstants: semiConstants))
