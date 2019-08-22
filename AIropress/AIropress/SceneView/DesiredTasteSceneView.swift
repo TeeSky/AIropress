@@ -44,12 +44,7 @@ class DesiredTasteSceneView: BaseSceneView {
     }()
     
     lazy var calculateButton: UIButton = {
-        let button = UIButton()
-        button.layer.cornerRadius = 5
-        button.backgroundColor = AppOptions.color.button
-        button.setTitleColor(.white, for: .normal)
-        button.setTitle("Calculate", for: .normal)
-        return button
+        return BaseSceneView.createButton(title: "Calculate")
     }()
     
     override func addViews() {
