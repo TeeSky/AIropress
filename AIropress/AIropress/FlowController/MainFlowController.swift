@@ -61,7 +61,7 @@ extension MainFlowController: ViewRecipeSceneFC {
         navigationController.pop()
     }
     
-    func onPrepared(recipe: BrewRecipe) {
+    func onPrepared(recipeValues: [Int: Double]) {
         fatalError("not implemented")
     }
 }

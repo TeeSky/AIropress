@@ -18,5 +18,5 @@ protocol AIProcessingSceneFC: class {
 
 protocol ViewRecipeSceneFC: class {
     func onRecipeReset()
-    func onPrepared(recipe: BrewRecipe)
+    func onPrepared(recipeValues: [Int: Double])
 }
