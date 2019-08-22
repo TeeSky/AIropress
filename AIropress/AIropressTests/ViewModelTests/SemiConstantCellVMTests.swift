@@ -90,4 +90,12 @@ class SemiConstantCellVMTests: XCTestCase {
         
         XCTAssertEqual(expectedConfidenceValue, semiConstantCellVM.confidenceValue)
     }
+    
+    func testBaseTableCellProperties() {
+        let expectedCellIdentifier = "SemiConstantCellVM"
+        let expectedCellHeight = CGFloat(35 + BrewVariableSlider.height)
+        
+        XCTAssertEqual(expectedCellIdentifier, semiConstantCellVM.identifier)
+        XCTAssertEqual(expectedCellHeight, semiConstantCellVM.cellHeight)
+    }
 }
