@@ -175,8 +175,8 @@
 		350457EC23096CC800F4B8DC /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
-				350457ED23096CE300F4B8DC /* DesiredTasteViewController.swift */,
 				350457FC230A07DA00F4B8DC /* BaseViewController.swift */,
+				350457ED23096CE300F4B8DC /* DesiredTasteViewController.swift */,
 				3527AF0D230DF51700ED0E26 /* AIProcessingViewController.swift */,
 			);
 			path = ViewController;
@@ -314,9 +314,9 @@
 			isa = PBXGroup;
 			children = (
 				35E0E5E323076B14004A86FD /* DesiredTasteVMTests.swift */,
-				35EC73FA23084E7D00964665 /* BrewVariableBundleCellVMTests.swift */,
 				3527AF08230DCC4C00ED0E26 /* AIProcessingVMTests.swift */,
 				3527AF16230E0F4C00ED0E26 /* ViewRecipeVMTests.swift */,
+				35EC73FA23084E7D00964665 /* BrewVariableBundleCellVMTests.swift */,
 				352A1F9F230EC51A00D7FE02 /* ConstantCellVMTests.swift */,
 				352A1FA2230EC59100D7FE02 /* SemiConstantCellVMTests.swift */,
 			);
@@ -338,8 +338,8 @@
 			children = (
 				35EC74022308BEBC00964665 /* BaseViewModel.swift */,
 				35EC74052308BEE300964665 /* DesiredTasteVM.swift */,
-				35EC74082308BF1400964665 /* BrewVariableBundleCellVM.swift */,
 				3527AF0A230DF4C200ED0E26 /* AIProcessingVM.swift */,
+				35EC74082308BF1400964665 /* BrewVariableBundleCellVM.swift */,
 				352A1FA4230EF97300D7FE02 /* SemiConstantCellVM.swift */,
 				352A1FA7230EF99100D7FE02 /* ConstantCellVM.swift */,
 			);
