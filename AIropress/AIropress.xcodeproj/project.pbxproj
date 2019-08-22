@@ -44,6 +44,7 @@
 		3527AF14230DFFCA00ED0E26 /* UIView+fadeTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3527AF13230DFFCA00ED0E26 /* UIView+fadeTransition.swift */; };
 		3527AF15230E018900ED0E26 /* UIView+fadeTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3527AF13230DFFCA00ED0E26 /* UIView+fadeTransition.swift */; };
 		3527AF17230E0F4C00ED0E26 /* ViewRecipeVMTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3527AF16230E0F4C00ED0E26 /* ViewRecipeVMTests.swift */; };
+		352A1FA0230EC51A00D7FE02 /* ConstantCellVMTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 352A1F9F230EC51A00D7FE02 /* ConstantCellVMTests.swift */; };
 		352A1FA3230EC59100D7FE02 /* SemiConstantCellVMTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 352A1FA2230EC59100D7FE02 /* SemiConstantCellVMTests.swift */; };
 		3560123E23071AEA003AF91D /* MainFlowControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3560123C23071AEA003AF91D /* MainFlowControllerTests.swift */; };
 		35833E4D230752E4002F986B /* MainFlowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35833E4C230752E4002F986B /* MainFlowController.swift */; };
@@ -111,6 +112,7 @@
 		3527AF0F230DF54700ED0E26 /* AIProcessingSceneView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AIProcessingSceneView.swift; sourceTree = "<group>"; };
 		3527AF13230DFFCA00ED0E26 /* UIView+fadeTransition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+fadeTransition.swift"; sourceTree = "<group>"; };
 		3527AF16230E0F4C00ED0E26 /* ViewRecipeVMTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewRecipeVMTests.swift; sourceTree = "<group>"; };
+		352A1F9F230EC51A00D7FE02 /* ConstantCellVMTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConstantCellVMTests.swift; sourceTree = "<group>"; };
 		352A1FA2230EC59100D7FE02 /* SemiConstantCellVMTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SemiConstantCellVMTests.swift; sourceTree = "<group>"; };
 		3560123C23071AEA003AF91D /* MainFlowControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainFlowControllerTests.swift; sourceTree = "<group>"; };
 		35833E4C230752E4002F986B /* MainFlowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainFlowController.swift; sourceTree = "<group>"; };
@@ -309,6 +311,7 @@
 				35EC73FA23084E7D00964665 /* BrewVariableBundleCellVMTests.swift */,
 				3527AF08230DCC4C00ED0E26 /* AIProcessingVMTests.swift */,
 				3527AF16230E0F4C00ED0E26 /* ViewRecipeVMTests.swift */,
+				352A1F9F230EC51A00D7FE02 /* ConstantCellVMTests.swift */,
 				352A1FA2230EC59100D7FE02 /* SemiConstantCellVMTests.swift */,
 			);
 			path = ViewModelTests;
@@ -578,6 +581,7 @@
 				35072E43230B0C0200689F75 /* BaseSceneView.swift in Sources */,
 				35072E50230B48D700689F75 /* BaseViewControllerTests.swift in Sources */,
 				35072E4E230B47D500689F75 /* BrewVariableBundleCell.swift in Sources */,
+				352A1FA0230EC51A00D7FE02 /* ConstantCellVMTests.swift in Sources */,
 				350457F82309ACB400F4B8DC /* MainViewControllerProvider.swift in Sources */,
 				35072E3D230AFBFB00689F75 /* DiscreteSliderTests.swift in Sources */,
 				35833E5A230753E9002F986B /* BrewRecipe.swift in Sources */,
