@@ -41,7 +41,6 @@ private class MockAIProcessingVMDelegate: AIProcessingVMDelegate {
 class AIProcessingVMTests: XCTestCase {
     
     private var brewParameters: BrewParameters!
-    private var flowController: MockAIProcessingSceneFC!
     private var delegate: MockAIProcessingVMDelegate!
     
     private var aiProcessingVM: AIProcessingVM!
@@ -50,11 +49,9 @@ class AIProcessingVMTests: XCTestCase {
         super.setUp()
         
         brewParameters = MockBrewVars.brewParameters
-        flowController = MockAIProcessingSceneFC()
         delegate = MockAIProcessingVMDelegate()
         
         aiProcessingVM = AIProcessingVM(brewParameters: brewParameters)
-        aiProcessingVM.flowController = flowController
         aiProcessingVM.delegate = delegate
     }
     
@@ -75,6 +72,8 @@ class AIProcessingVMTests: XCTestCase {
     }
     
     func testOnSceneDidAppear() {
+        let flowController = MockAIProcessingSceneFC()
+        aiProcessingVM.flowController = flowController
         let expectation = XCTestExpectation(description: "Process the BrewParameters into BrewRecipe and call FC.")
         flowController.expectation = expectation
         let expectedLabelTextAfter = "Processing done."
