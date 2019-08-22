@@ -21,11 +21,15 @@ class SemiConstantCellVM {
     }()
     
     var cellLabel: String {
-        return semiConstant.label
+        return recipeConstant.label
     }
     
     var cellValueText: String {
-        return semiConstant.valueText
+        return recipeConstant.valueText
+    }
+    
+    var recipeConstant: RecipeConstant {
+        return semiConstant.constant
     }
     
     var confidenceVariable: BrewVariable {
@@ -33,17 +37,18 @@ class SemiConstantCellVM {
     }
     
     var confidenceValue: Double {
-        return semiConstant.confidenceValue
+        return changedConfidenceValue ?? semiConstant.confidenceValue
     }
     
     private let semiConstant: RecipeSemiConstant
+    private var changedConfidenceValue: Double?
     
     init(semiConstant: RecipeSemiConstant) {
         self.semiConstant = semiConstant
     }
     
     func onSliderValueChanged(to value: Float) {
-        semiConstant.confidenceValue = Double(value)
+        changedConfidenceValue = Double(value)
     }
 }
 
@@ -73,8 +78,8 @@ class SemiConstantCellVMTests: XCTestCase {
     }
     
     func testInit() {
-        let expectedLabel = recipeSemiConstant.label
-        let expectedValueText = recipeSemiConstant.valueText
+        let expectedLabel = recipeSemiConstant.constant.label
+        let expectedValueText = recipeSemiConstant.constant.valueText
         let expectedConfidenceVariable = recipeSemiConstant.confidenceVariable
         
         XCTAssertEqual(expectedLabel, semiConstantCellVM.cellLabel)

@@ -35,11 +35,8 @@ struct MockBrewVars {
                                        RecipeConstant(id: 1, label: "Brewing time", value: 90, valueText: "1:30"),
                                        RecipeConstant(id: 2, label: "Coffee", value: 13, valueText: "13g")]
     
-    static let confidenceLabelSet = VariableLabelSet(mainLabel: "Confidence", minLabel: "Unconfident", maxLabel: "Confident")
-    static let temperatureConfidence = BrewVariable(id: 10, stepCount: 5, labelSet: confidenceLabelSet)
-    static let grindSizeConfidence = BrewVariable(id: 11, stepCount: 5, labelSet: confidenceLabelSet)
-    static let semiConstants: [RecipeSemiConstant] = [RecipeSemiConstant(id: 3, label: "Temperature", value: 86, valueText: "86C", confidenceVariable: temperatureConfidence, initialConfidenceValue: 0.8),
-                                               RecipeSemiConstant(id: 4, label: "Grind size", value: 28, valueText: "coarse", confidenceVariable: grindSizeConfidence, initialConfidenceValue: 0.5)]
+    static let semiConstants: [RecipeSemiConstant] = [RecipeSemiConstant(id: 3, label: "Temperature", value: 86, valueText: "86C", confidenceVariableId: 10, initialConfidenceValue: 0.8),
+                                               RecipeSemiConstant(id: 4, label: "Grind size", value: 28, valueText: "coarse", confidenceVariableId: 11, initialConfidenceValue: 0.5)]
     
     static let recipe: BrewRecipe = BrewRecipe(constants: constants, semiConstants: semiConstants)
 }

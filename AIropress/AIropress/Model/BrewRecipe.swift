@@ -8,19 +8,23 @@
 
 import Foundation
 
+protocol BrewRecipeProvider {
+    func createRecipe(recipeValues: [Int: Double]) -> BrewRecipe
+}
+
 struct BrewRecipe: Equatable {
     let constants: [RecipeConstant]
     let semiConstants: [RecipeSemiConstant]
 }
 
-class RecipeConstant {
-    let id: Double
+struct RecipeConstant {
+    let id: Int
     let label: String
     
     let value: Double
     let valueText: String
     
-    init(id: Double, label: String, value: Double, valueText: String) {
+    init(id: Int, label: String, value: Double, valueText: String) {
         self.id = id
         self.label = label
         self.value = value
@@ -36,14 +40,27 @@ extension RecipeConstant: Equatable {
     
 }
 
-class RecipeSemiConstant: RecipeConstant {
+struct RecipeSemiConstant {
+    static let confidenceVariableStepCount = 5
+    static let confidenceVariableLabelSet = VariableLabelSet(mainLabel: "Confidence", minLabel: "Unconfident", maxLabel: "Confident")
+    
+    let constant: RecipeConstant
     let confidenceVariable: BrewVariable
     var confidenceValue: Double
     
-    init(id: Double, label: String, value: Double, valueText: String, confidenceVariable: BrewVariable, initialConfidenceValue: Double) {
-        self.confidenceVariable = confidenceVariable
-        self.confidenceValue = initialConfidenceValue
+    init(id: Int, label: String, value: Double, valueText: String, confidenceVariableId: BrewVariable.Id, initialConfidenceValue: Double) {
+        self.constant = RecipeConstant(id: id, label: label, value: value, valueText: valueText)
         
-        super.init(id: id, label: label, value: value, valueText: valueText)
+        self.confidenceVariable = BrewVariable(id: confidenceVariableId,
+                                               stepCount: RecipeSemiConstant.confidenceVariableStepCount,
+                                               labelSet: RecipeSemiConstant.confidenceVariableLabelSet)
+        self.confidenceValue = initialConfidenceValue
+    }
+}
+
+extension RecipeSemiConstant: Equatable {
+    
+    static func == (lhs: RecipeSemiConstant, rhs: RecipeSemiConstant) -> Bool {
+        return lhs.constant.id == rhs.constant.id
     }
 }
