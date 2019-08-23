@@ -55,3 +55,26 @@ class ViewRecipeVM {
     }
     
 }
+
+extension ViewRecipeVM: BaseTableVM {
+    
+    func numberOfSections() -> Int {
+        return 1
+    }
+    
+    func numberOfRows(section: Int) -> Int {
+        guard section == 0 else { fatalError("Unexpected section") }
+        
+        return cellVMs.count
+    }
+    
+    func cellViewModel(for path: IndexPath) -> BaseTableCellVM {
+        guard path.section == 0 else { fatalError("Unexpected section") }
+        return cellVMs[path.row]
+    }
+    
+    func cellHeight(for path: IndexPath) -> CGFloat {
+        return cellViewModel(for: path).cellHeight
+    }
+    
+}
