@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 
 class ViewRecipeViewController: BaseViewController<ViewRecipeSceneView> {
     
@@ -19,5 +20,28 @@ class ViewRecipeViewController: BaseViewController<ViewRecipeSceneView> {
         
         sceneView.resetButton.addTarget(viewModel, action: #selector(viewModel.onResetClicked), for: .touchUpInside)
         sceneView.prepareButton.addTarget(viewModel, action: #selector(viewModel.onPrepareClicked), for: .touchUpInside)
+    }
+}
+
+extension ViewRecipeViewController: UITableViewDataSource {
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return viewModel.numberOfSections()
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return viewModel.numberOfRows(section: section)
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cellVM = viewModel.cellViewModel(for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: cellVM.identifier, for: indexPath)
+        
+        guard let baseTableCell = cell as? ConfigurableTableCell else {
+            fatalError("All table view cell classes must implement ConfigurableTableCell.")
+        }
+        baseTableCell.configure(viewModel: cellVM)
+        
+        return cell
     }
 }
