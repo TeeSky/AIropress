@@ -55,13 +55,17 @@
 		352A1FB0230F546000D7FE02 /* ViewRecipeSceneView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 352A1FAF230F546000D7FE02 /* ViewRecipeSceneView.swift */; };
 		352A1FB1230F54D800D7FE02 /* ViewRecipeSceneView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 352A1FAF230F546000D7FE02 /* ViewRecipeSceneView.swift */; };
 		352A1FB2230F54DB00D7FE02 /* ViewRecipeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 352A1FAD230F544F00D7FE02 /* ViewRecipeViewController.swift */; };
+		352A1FB4230F59BC00D7FE02 /* RecipeConstantCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 352A1FB3230F59BC00D7FE02 /* RecipeConstantCell.swift */; };
 		352A1FB6230F5AB300D7FE02 /* BaseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 352A1FB5230F5AB300D7FE02 /* BaseTableViewCell.swift */; };
 		352A1FB9230F5C4300D7FE02 /* BaseCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 352A1FB8230F5C4300D7FE02 /* BaseCellView.swift */; };
 		352A1FBC230F5D3700D7FE02 /* BrewVariableBundleCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 352A1FBB230F5D3700D7FE02 /* BrewVariableBundleCellView.swift */; };
+		352A1FBE230F68C900D7FE02 /* RecipeSemiConstantCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 352A1FBD230F68C900D7FE02 /* RecipeSemiConstantCell.swift */; };
 		352A1FBF230F6CCA00D7FE02 /* BrewVariableBundleCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 352A1FBB230F5D3700D7FE02 /* BrewVariableBundleCellView.swift */; };
 		352A1FC0230F6CCD00D7FE02 /* BaseCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 352A1FB8230F5C4300D7FE02 /* BaseCellView.swift */; };
 		352A1FC1230F6CD000D7FE02 /* BaseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 352A1FB5230F5AB300D7FE02 /* BaseTableViewCell.swift */; };
 		352A1FC2230F6CD300D7FE02 /* BrewVariableBundleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35072E4C230B47D500689F75 /* BrewVariableBundleCell.swift */; };
+		352A1FC3230F6CD600D7FE02 /* RecipeConstantCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 352A1FB3230F59BC00D7FE02 /* RecipeConstantCell.swift */; };
+		352A1FC4230F6CD900D7FE02 /* RecipeSemiConstantCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 352A1FBD230F68C900D7FE02 /* RecipeSemiConstantCell.swift */; };
 		3560123E23071AEA003AF91D /* MainFlowControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3560123C23071AEA003AF91D /* MainFlowControllerTests.swift */; };
 		35833E4D230752E4002F986B /* MainFlowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35833E4C230752E4002F986B /* MainFlowController.swift */; };
 		35833E502307530E002F986B /* Scene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35833E4F2307530E002F986B /* Scene.swift */; };
@@ -135,9 +139,11 @@
 		352A1FAA230F53D200D7FE02 /* ViewRecipeVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewRecipeVM.swift; sourceTree = "<group>"; };
 		352A1FAD230F544F00D7FE02 /* ViewRecipeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewRecipeViewController.swift; sourceTree = "<group>"; };
 		352A1FAF230F546000D7FE02 /* ViewRecipeSceneView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewRecipeSceneView.swift; sourceTree = "<group>"; };
+		352A1FB3230F59BC00D7FE02 /* RecipeConstantCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeConstantCell.swift; sourceTree = "<group>"; };
 		352A1FB5230F5AB300D7FE02 /* BaseTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTableViewCell.swift; sourceTree = "<group>"; };
 		352A1FB8230F5C4300D7FE02 /* BaseCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCellView.swift; sourceTree = "<group>"; };
 		352A1FBB230F5D3700D7FE02 /* BrewVariableBundleCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrewVariableBundleCellView.swift; sourceTree = "<group>"; };
+		352A1FBD230F68C900D7FE02 /* RecipeSemiConstantCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeSemiConstantCell.swift; sourceTree = "<group>"; };
 		3560123C23071AEA003AF91D /* MainFlowControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainFlowControllerTests.swift; sourceTree = "<group>"; };
 		35833E4C230752E4002F986B /* MainFlowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainFlowController.swift; sourceTree = "<group>"; };
 		35833E4F2307530E002F986B /* Scene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Scene.swift; sourceTree = "<group>"; };
@@ -306,6 +312,8 @@
 			children = (
 				352A1FB5230F5AB300D7FE02 /* BaseTableViewCell.swift */,
 				35072E4C230B47D500689F75 /* BrewVariableBundleCell.swift */,
+				352A1FB3230F59BC00D7FE02 /* RecipeConstantCell.swift */,
+				352A1FBD230F68C900D7FE02 /* RecipeSemiConstantCell.swift */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -604,7 +612,9 @@
 				350457F52309A47300F4B8DC /* AppOptions.swift in Sources */,
 				35EC74032308BEBC00964665 /* BaseViewModel.swift in Sources */,
 				35072E3F230B002000689F75 /* DiscreteSlider.swift in Sources */,
+				352A1FB4230F59BC00D7FE02 /* RecipeConstantCell.swift in Sources */,
 				35833E542307537C002F986B /* BrewParameters.swift in Sources */,
+				352A1FBE230F68C900D7FE02 /* RecipeSemiConstantCell.swift in Sources */,
 				35072E4D230B47D500689F75 /* BrewVariableBundleCell.swift in Sources */,
 				350457FD230A07DA00F4B8DC /* BaseViewController.swift in Sources */,
 				35045802230A0E3300F4B8DC /* DesiredTasteSceneView.swift in Sources */,
@@ -627,6 +637,7 @@
 				3560123E23071AEA003AF91D /* MainFlowControllerTests.swift in Sources */,
 				35072E47230B43A200689F75 /* DiscreteSlider.swift in Sources */,
 				35EC73F923082D7100964665 /* XCTestCase+setUp.swift in Sources */,
+				352A1FC3230F6CD600D7FE02 /* RecipeConstantCell.swift in Sources */,
 				3527AF15230E018900ED0E26 /* UIView+fadeTransition.swift in Sources */,
 				3527AF12230DFDD300ED0E26 /* AIProcessingSceneView.swift in Sources */,
 				352A1FC1230F6CD000D7FE02 /* BaseTableViewCell.swift in Sources */,
@@ -635,6 +646,7 @@
 				352A1FAC230F53F300D7FE02 /* ViewRecipeVM.swift in Sources */,
 				35072E42230B0BFA00689F75 /* BaseViewController.swift in Sources */,
 				35072E53230B4B5E00689F75 /* BrewVariableBundleCellTests.swift in Sources */,
+				352A1FC4230F6CD900D7FE02 /* RecipeSemiConstantCell.swift in Sources */,
 				3527AF11230DFDCF00ED0E26 /* AIProcessingViewController.swift in Sources */,
 				35072E43230B0C0200689F75 /* BaseSceneView.swift in Sources */,
 				35072E50230B48D700689F75 /* BaseViewControllerTests.swift in Sources */,
