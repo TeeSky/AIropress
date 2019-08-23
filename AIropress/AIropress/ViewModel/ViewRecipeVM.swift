@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 
 class ViewRecipeVM {
     
@@ -23,10 +24,17 @@ class ViewRecipeVM {
         setupCellVMs(brewRecipe: brewRecipe)
     }
     
+    func configure(tableView: UITableView) {
+        tableView.register(RecipeConstantCell.self, forCellReuseIdentifier: ConstantCellVM.cellIdentifier)
+        tableView.register(RecipeSemiConstantCell.self, forCellReuseIdentifier: SemiConstantCellVM.cellIdentifier)
+    }
+    
+    @objc
     func onResetClicked() {
         flowController?.onRecipeReset()
     }
     
+    @objc
     func onPrepareClicked() {
         var recipeValues = brewRecipeConstants.reduce(into: [Int: Double]()) { $0[$1.id] = $1.value }
         
