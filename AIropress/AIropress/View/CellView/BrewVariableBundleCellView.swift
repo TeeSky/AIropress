@@ -38,8 +38,7 @@ class BrewVariableBundleCellView: BaseCellView {
     }
     
     override func setContraints() {
-        let contentInset: CGFloat = 10
-        contentContainer.edgesToSuperview(insets: TinyEdgeInsets(top: contentInset, left: contentInset, bottom: contentInset, right: contentInset))
+        contentContainer.edgesToSuperview(insets: TinyEdgeInsets(top: 10))
         
         slidersContainer.leftToSuperview()
         slidersContainer.rightToSuperview()

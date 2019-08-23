@@ -27,7 +27,6 @@ class DesiredTasteSceneView: BaseSceneView {
         
         container.addSubview(label)
         label.centerYToSuperview()
-        label.leftToSuperview(offset: 15)
         
         return container
     }()
@@ -56,7 +55,7 @@ class DesiredTasteSceneView: BaseSceneView {
     }
     
     override func setContraints() {
-        safeAreaContainer.edgesToSuperview(usingSafeArea: true)
+        safeAreaContainer.edgesToSuperview(insets: TinyEdgeInsets(horizontal: 15), usingSafeArea: true)
         
         sceneLabelContainer.height(120)
         bottomButtonContainer.height(65)
@@ -66,6 +65,6 @@ class DesiredTasteSceneView: BaseSceneView {
         safeAreaContainer.stack([sceneLabelContainer, tableView, bottomButtonContainer], axis: .vertical, spacing: 5)
         
         calculateButton.centerY(to: bottomButtonContainer)
-        calculateButton.right(to: bottomButtonContainer, offset: -15)
+        calculateButton.right(to: bottomButtonContainer)
     }
 }

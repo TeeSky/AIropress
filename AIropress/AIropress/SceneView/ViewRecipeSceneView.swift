@@ -8,6 +8,7 @@
 
 import Foundation
 import UIKit
+import TinyConstraints
 
 class ViewRecipeSceneView: BaseSceneView {
     
@@ -26,7 +27,6 @@ class ViewRecipeSceneView: BaseSceneView {
         
         container.addSubview(label)
         label.centerYToSuperview()
-        label.leftToSuperview(offset: 15)
         
         return container
     }()
@@ -34,7 +34,7 @@ class ViewRecipeSceneView: BaseSceneView {
     lazy var tableView: UITableView = {
         let tableView = UITableView()
         tableView.allowsSelection = false
-        //        tableView.separatorStyle = .none
+        tableView.separatorStyle = .none
         return tableView
     }()
     
@@ -60,7 +60,7 @@ class ViewRecipeSceneView: BaseSceneView {
     }
     
     override func setContraints() {
-        safeAreaContainer.edgesToSuperview(usingSafeArea: true)
+        safeAreaContainer.edgesToSuperview(insets: TinyEdgeInsets(horizontal: 15), usingSafeArea: true)
         
         sceneLabelContainer.height(120)
         bottomButtonContainer.height(65)
@@ -72,7 +72,7 @@ class ViewRecipeSceneView: BaseSceneView {
         
         resetButton.centerY(to: bottomButtonContainer)
         prepareButton.centerY(to: bottomButtonContainer)
-        resetButton.left(to: bottomButtonContainer, offset: 15)
-        prepareButton.right(to: bottomButtonContainer, offset: -15)
+        resetButton.left(to: bottomButtonContainer)
+        prepareButton.right(to: bottomButtonContainer)
     }
 }
