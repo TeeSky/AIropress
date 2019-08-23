@@ -8,7 +8,6 @@
 
 import Foundation
 import UIKit
-import TinyConstraints
 
 class BrewVariableBundleCell: BaseTableViewCell<BrewVariableBundleCellView> {
     
@@ -22,7 +21,7 @@ extension BrewVariableBundleCell: ConfigurableTableCell {
         setupLabel(viewModel: viewModel)
         setupSliders(viewModel: viewModel)
         
-        didSetConstraints = false // TODO fix on-scroll broken slider cell layout
+        didSetConstraints = false
         self.updateConstraints()
     }
     
