@@ -12,4 +12,12 @@ class ViewRecipeViewController: BaseViewController<ViewRecipeSceneView> {
     
     var viewModel: ViewRecipeVM!
     
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        viewModel.configure(tableView: sceneView.tableView)
+        
+        sceneView.resetButton.addTarget(viewModel, action: #selector(viewModel.onResetClicked), for: .touchUpInside)
+        sceneView.prepareButton.addTarget(viewModel, action: #selector(viewModel.onPrepareClicked), for: .touchUpInside)
+    }
 }
