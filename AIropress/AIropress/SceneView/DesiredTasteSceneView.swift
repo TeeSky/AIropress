@@ -35,7 +35,7 @@ class DesiredTasteSceneView: BaseSceneView {
     lazy var tableView: UITableView = {
         let tableView = UITableView()
         tableView.allowsSelection = false
-//        tableView.separatorStyle = .none
+        tableView.separatorStyle = .none
         return tableView
     }()
     
