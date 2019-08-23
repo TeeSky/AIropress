@@ -41,9 +41,6 @@ extension RecipeConstant: Equatable {
 }
 
 struct RecipeSemiConstant {
-    static let confidenceVariableStepCount = 5
-    static let confidenceVariableLabelSet = VariableLabelSet(mainLabel: "Confidence", minLabel: "Unconfident", maxLabel: "Confident")
-    
     let constant: RecipeConstant
     let confidenceVariable: BrewVariable
     var confidenceValue: Double
@@ -51,9 +48,7 @@ struct RecipeSemiConstant {
     init(id: Int, label: String, value: Double, valueText: String, confidenceVariableId: BrewVariable.Id, initialConfidenceValue: Double) {
         self.constant = RecipeConstant(id: id, label: label, value: value, valueText: valueText)
         
-        self.confidenceVariable = BrewVariable(id: confidenceVariableId,
-                                               stepCount: RecipeSemiConstant.confidenceVariableStepCount,
-                                               labelSet: RecipeSemiConstant.confidenceVariableLabelSet)
+        self.confidenceVariable = BrewVariable.createConfidenceVariable(id: confidenceVariableId)
         self.confidenceValue = initialConfidenceValue
     }
 }
