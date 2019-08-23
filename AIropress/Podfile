@@ -1,0 +1,17 @@
+platform :ios, '12.4'
+
+target 'AIropress' do
+  # Comment the next line if you don't want to use dynamic frameworks
+  use_frameworks!
+
+  # Pods for AIropress
+  pod "TinyConstraints"
+
+  target 'AIropressTests' do
+    inherit! :search_paths
+
+    # Pods for testing
+    pod "TinyConstraints"
+  end
+
+end

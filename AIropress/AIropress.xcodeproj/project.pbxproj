@@ -3,16 +3,101 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		350457EE23096CE300F4B8DC /* DesiredTasteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 350457ED23096CE300F4B8DC /* DesiredTasteViewController.swift */; };
+		350457F32309A3C900F4B8DC /* MainViewControllerProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 350457F22309A3C900F4B8DC /* MainViewControllerProvider.swift */; };
+		350457F52309A47300F4B8DC /* AppOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 350457F42309A47300F4B8DC /* AppOptions.swift */; };
+		350457F82309ACB400F4B8DC /* MainViewControllerProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 350457F22309A3C900F4B8DC /* MainViewControllerProvider.swift */; };
+		350457FB2309AEB500F4B8DC /* UINavigationController+BaseNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 350457FA2309AEB500F4B8DC /* UINavigationController+BaseNavigationController.swift */; };
+		350457FD230A07DA00F4B8DC /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 350457FC230A07DA00F4B8DC /* BaseViewController.swift */; };
+		35045800230A0C8F00F4B8DC /* BaseSceneView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 350457FF230A0C8F00F4B8DC /* BaseSceneView.swift */; };
+		35045802230A0E3300F4B8DC /* DesiredTasteSceneView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35045801230A0E3300F4B8DC /* DesiredTasteSceneView.swift */; };
+		35072E3D230AFBFB00689F75 /* DiscreteSliderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35072E3C230AFBFB00689F75 /* DiscreteSliderTests.swift */; };
+		35072E3F230B002000689F75 /* DiscreteSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35072E3E230B002000689F75 /* DiscreteSlider.swift */; };
+		35072E40230B0BD900689F75 /* AppOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 350457F42309A47300F4B8DC /* AppOptions.swift */; };
+		35072E41230B0BEA00689F75 /* DesiredTasteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 350457ED23096CE300F4B8DC /* DesiredTasteViewController.swift */; };
+		35072E42230B0BFA00689F75 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 350457FC230A07DA00F4B8DC /* BaseViewController.swift */; };
+		35072E43230B0C0200689F75 /* BaseSceneView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 350457FF230A0C8F00F4B8DC /* BaseSceneView.swift */; };
+		35072E44230B0C1400689F75 /* DesiredTasteSceneView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35045801230A0E3300F4B8DC /* DesiredTasteSceneView.swift */; };
+		35072E47230B43A200689F75 /* DiscreteSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35072E3E230B002000689F75 /* DiscreteSlider.swift */; };
+		35072E4A230B475A00689F75 /* ConfigurableTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35072E49230B475A00689F75 /* ConfigurableTableCell.swift */; };
+		35072E4B230B475A00689F75 /* ConfigurableTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35072E49230B475A00689F75 /* ConfigurableTableCell.swift */; };
+		35072E4D230B47D500689F75 /* BrewVariableBundleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35072E4C230B47D500689F75 /* BrewVariableBundleCell.swift */; };
+		35072E50230B48D700689F75 /* BaseViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35072E4F230B48D700689F75 /* BaseViewControllerTests.swift */; };
+		35072E53230B4B5E00689F75 /* BrewVariableBundleCellTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35072E52230B4B5E00689F75 /* BrewVariableBundleCellTests.swift */; };
 		35076C3B230468F5006BBDDF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35076C3A230468F5006BBDDF /* AppDelegate.swift */; };
-		35076C3D230468F5006BBDDF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35076C3C230468F5006BBDDF /* ViewController.swift */; };
-		35076C40230468F5006BBDDF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 35076C3E230468F5006BBDDF /* Main.storyboard */; };
 		35076C42230468F6006BBDDF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 35076C41230468F6006BBDDF /* Assets.xcassets */; };
 		35076C45230468F6006BBDDF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 35076C43230468F6006BBDDF /* LaunchScreen.storyboard */; };
-		35076C50230468F6006BBDDF /* AIropressTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35076C4F230468F6006BBDDF /* AIropressTests.swift */; };
+		35124275230C5CA600C692DD /* BrewVariableSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35124274230C5CA600C692DD /* BrewVariableSlider.swift */; };
+		35124276230C8EF400C692DD /* BrewVariableSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35124274230C5CA600C692DD /* BrewVariableSlider.swift */; };
+		3527AF09230DCC4C00ED0E26 /* AIProcessingVMTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3527AF08230DCC4C00ED0E26 /* AIProcessingVMTests.swift */; };
+		3527AF0B230DF4C200ED0E26 /* AIProcessingVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3527AF0A230DF4C200ED0E26 /* AIProcessingVM.swift */; };
+		3527AF0C230DF4D500ED0E26 /* AIProcessingVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3527AF0A230DF4C200ED0E26 /* AIProcessingVM.swift */; };
+		3527AF0E230DF51700ED0E26 /* AIProcessingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3527AF0D230DF51700ED0E26 /* AIProcessingViewController.swift */; };
+		3527AF10230DF54700ED0E26 /* AIProcessingSceneView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3527AF0F230DF54700ED0E26 /* AIProcessingSceneView.swift */; };
+		3527AF11230DFDCF00ED0E26 /* AIProcessingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3527AF0D230DF51700ED0E26 /* AIProcessingViewController.swift */; };
+		3527AF12230DFDD300ED0E26 /* AIProcessingSceneView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3527AF0F230DF54700ED0E26 /* AIProcessingSceneView.swift */; };
+		3527AF14230DFFCA00ED0E26 /* UIView+fadeTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3527AF13230DFFCA00ED0E26 /* UIView+fadeTransition.swift */; };
+		3527AF15230E018900ED0E26 /* UIView+fadeTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3527AF13230DFFCA00ED0E26 /* UIView+fadeTransition.swift */; };
+		3527AF17230E0F4C00ED0E26 /* ViewRecipeVMTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3527AF16230E0F4C00ED0E26 /* ViewRecipeVMTests.swift */; };
+		352A1FA0230EC51A00D7FE02 /* ConstantCellVMTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 352A1F9F230EC51A00D7FE02 /* ConstantCellVMTests.swift */; };
+		352A1FA3230EC59100D7FE02 /* SemiConstantCellVMTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 352A1FA2230EC59100D7FE02 /* SemiConstantCellVMTests.swift */; };
+		352A1FA5230EF97300D7FE02 /* SemiConstantCellVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 352A1FA4230EF97300D7FE02 /* SemiConstantCellVM.swift */; };
+		352A1FA6230EF97600D7FE02 /* SemiConstantCellVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 352A1FA4230EF97300D7FE02 /* SemiConstantCellVM.swift */; };
+		352A1FA8230EF99100D7FE02 /* ConstantCellVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 352A1FA7230EF99100D7FE02 /* ConstantCellVM.swift */; };
+		352A1FA9230EF99F00D7FE02 /* ConstantCellVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 352A1FA7230EF99100D7FE02 /* ConstantCellVM.swift */; };
+		352A1FAB230F53D200D7FE02 /* ViewRecipeVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 352A1FAA230F53D200D7FE02 /* ViewRecipeVM.swift */; };
+		352A1FAC230F53F300D7FE02 /* ViewRecipeVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 352A1FAA230F53D200D7FE02 /* ViewRecipeVM.swift */; };
+		352A1FAE230F544F00D7FE02 /* ViewRecipeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 352A1FAD230F544F00D7FE02 /* ViewRecipeViewController.swift */; };
+		352A1FB0230F546000D7FE02 /* ViewRecipeSceneView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 352A1FAF230F546000D7FE02 /* ViewRecipeSceneView.swift */; };
+		352A1FB1230F54D800D7FE02 /* ViewRecipeSceneView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 352A1FAF230F546000D7FE02 /* ViewRecipeSceneView.swift */; };
+		352A1FB2230F54DB00D7FE02 /* ViewRecipeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 352A1FAD230F544F00D7FE02 /* ViewRecipeViewController.swift */; };
+		352A1FB4230F59BC00D7FE02 /* RecipeConstantCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 352A1FB3230F59BC00D7FE02 /* RecipeConstantCell.swift */; };
+		352A1FB6230F5AB300D7FE02 /* BaseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 352A1FB5230F5AB300D7FE02 /* BaseTableViewCell.swift */; };
+		352A1FB9230F5C4300D7FE02 /* BaseCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 352A1FB8230F5C4300D7FE02 /* BaseCellView.swift */; };
+		352A1FBC230F5D3700D7FE02 /* BrewVariableBundleCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 352A1FBB230F5D3700D7FE02 /* BrewVariableBundleCellView.swift */; };
+		352A1FBE230F68C900D7FE02 /* RecipeSemiConstantCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 352A1FBD230F68C900D7FE02 /* RecipeSemiConstantCell.swift */; };
+		352A1FBF230F6CCA00D7FE02 /* BrewVariableBundleCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 352A1FBB230F5D3700D7FE02 /* BrewVariableBundleCellView.swift */; };
+		352A1FC0230F6CCD00D7FE02 /* BaseCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 352A1FB8230F5C4300D7FE02 /* BaseCellView.swift */; };
+		352A1FC1230F6CD000D7FE02 /* BaseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 352A1FB5230F5AB300D7FE02 /* BaseTableViewCell.swift */; };
+		352A1FC2230F6CD300D7FE02 /* BrewVariableBundleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35072E4C230B47D500689F75 /* BrewVariableBundleCell.swift */; };
+		352A1FC3230F6CD600D7FE02 /* RecipeConstantCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 352A1FB3230F59BC00D7FE02 /* RecipeConstantCell.swift */; };
+		352A1FC4230F6CD900D7FE02 /* RecipeSemiConstantCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 352A1FBD230F68C900D7FE02 /* RecipeSemiConstantCell.swift */; };
+		3532AA9823105C4700C1F373 /* RecipeConstantCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3532AA9723105C4700C1F373 /* RecipeConstantCellView.swift */; };
+		3532AA9A23105E0500C1F373 /* TinyEdgeInset+convienceInit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3532AA9923105E0500C1F373 /* TinyEdgeInset+convienceInit.swift */; };
+		3532AA9B2310658300C1F373 /* RecipeConstantCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3532AA9723105C4700C1F373 /* RecipeConstantCellView.swift */; };
+		3532AA9C2310658B00C1F373 /* TinyEdgeInset+convienceInit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3532AA9923105E0500C1F373 /* TinyEdgeInset+convienceInit.swift */; };
+		3532AA9E23106AA800C1F373 /* RecipeSemiConstantCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3532AA9D23106AA700C1F373 /* RecipeSemiConstantCellView.swift */; };
+		3532AA9F2310726000C1F373 /* RecipeSemiConstantCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3532AA9D23106AA700C1F373 /* RecipeSemiConstantCellView.swift */; };
+		3560123E23071AEA003AF91D /* MainFlowControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3560123C23071AEA003AF91D /* MainFlowControllerTests.swift */; };
+		35833E4D230752E4002F986B /* MainFlowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35833E4C230752E4002F986B /* MainFlowController.swift */; };
+		35833E502307530E002F986B /* Scene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35833E4F2307530E002F986B /* Scene.swift */; };
+		35833E522307534F002F986B /* FlowControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35833E512307534F002F986B /* FlowControl.swift */; };
+		35833E542307537C002F986B /* BrewParameters.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35833E532307537C002F986B /* BrewParameters.swift */; };
+		35833E5623075398002F986B /* BrewRecipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35833E5523075398002F986B /* BrewRecipe.swift */; };
+		35833E58230753E5002F986B /* Scene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35833E4F2307530E002F986B /* Scene.swift */; };
+		35833E59230753E7002F986B /* BrewParameters.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35833E532307537C002F986B /* BrewParameters.swift */; };
+		35833E5A230753E9002F986B /* BrewRecipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35833E5523075398002F986B /* BrewRecipe.swift */; };
+		35833E5B230753EC002F986B /* MainFlowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35833E4C230752E4002F986B /* MainFlowController.swift */; };
+		35833E5C230753EE002F986B /* FlowControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35833E512307534F002F986B /* FlowControl.swift */; };
+		35E0E5E423076B14004A86FD /* DesiredTasteVMTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35E0E5E323076B14004A86FD /* DesiredTasteVMTests.swift */; };
+		35EC73F72308273500964665 /* BrewParametersTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35EC73F62308273500964665 /* BrewParametersTests.swift */; };
+		35EC73F923082D7100964665 /* XCTestCase+setUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35EC73F823082D7100964665 /* XCTestCase+setUp.swift */; };
+		35EC73FB23084E7D00964665 /* BrewVariableBundleCellVMTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35EC73FA23084E7D00964665 /* BrewVariableBundleCellVMTests.swift */; };
+		35EC73FD2308541400964665 /* BrewVariableTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35EC73FC2308541400964665 /* BrewVariableTests.swift */; };
+		35EC73FF2308B73200964665 /* BrewVariable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35EC73FE2308B73200964665 /* BrewVariable.swift */; };
+		35EC74002308B75300964665 /* BrewVariable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35EC73FE2308B73200964665 /* BrewVariable.swift */; };
+		35EC74032308BEBC00964665 /* BaseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35EC74022308BEBC00964665 /* BaseViewModel.swift */; };
+		35EC74042308BEBF00964665 /* BaseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35EC74022308BEBC00964665 /* BaseViewModel.swift */; };
+		35EC74062308BEE300964665 /* DesiredTasteVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35EC74052308BEE300964665 /* DesiredTasteVM.swift */; };
+		35EC74072308BEFF00964665 /* DesiredTasteVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35EC74052308BEE300964665 /* DesiredTasteVM.swift */; };
+		35EC74092308BF1400964665 /* BrewVariableBundleCellVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35EC74082308BF1400964665 /* BrewVariableBundleCellVM.swift */; };
+		35EC740A2308BF5F00964665 /* BrewVariableBundleCellVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35EC74082308BF1400964665 /* BrewVariableBundleCellVM.swift */; };
+		73CEEAB2EF96AA6276E48A9F /* Pods_AIropressTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4DA8033607392551CCA2F0A5 /* Pods_AIropressTests.framework */; };
+		85AF326F656DC5FB03F26AAF /* Pods_AIropress.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C5DE7E97D5832D15F91D83EE /* Pods_AIropress.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -26,16 +111,69 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		350457ED23096CE300F4B8DC /* DesiredTasteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesiredTasteViewController.swift; sourceTree = "<group>"; };
+		350457F22309A3C900F4B8DC /* MainViewControllerProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewControllerProvider.swift; sourceTree = "<group>"; };
+		350457F42309A47300F4B8DC /* AppOptions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppOptions.swift; sourceTree = "<group>"; };
+		350457FA2309AEB500F4B8DC /* UINavigationController+BaseNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UINavigationController+BaseNavigationController.swift"; sourceTree = "<group>"; };
+		350457FC230A07DA00F4B8DC /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		350457FF230A0C8F00F4B8DC /* BaseSceneView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseSceneView.swift; sourceTree = "<group>"; };
+		35045801230A0E3300F4B8DC /* DesiredTasteSceneView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesiredTasteSceneView.swift; sourceTree = "<group>"; };
+		35072E3C230AFBFB00689F75 /* DiscreteSliderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscreteSliderTests.swift; sourceTree = "<group>"; };
+		35072E3E230B002000689F75 /* DiscreteSlider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscreteSlider.swift; sourceTree = "<group>"; };
+		35072E49230B475A00689F75 /* ConfigurableTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigurableTableCell.swift; sourceTree = "<group>"; };
+		35072E4C230B47D500689F75 /* BrewVariableBundleCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrewVariableBundleCell.swift; sourceTree = "<group>"; };
+		35072E4F230B48D700689F75 /* BaseViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewControllerTests.swift; sourceTree = "<group>"; };
+		35072E52230B4B5E00689F75 /* BrewVariableBundleCellTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrewVariableBundleCellTests.swift; sourceTree = "<group>"; };
 		35076C37230468F5006BBDDF /* AIropress.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AIropress.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		35076C3A230468F5006BBDDF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		35076C3C230468F5006BBDDF /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		35076C3F230468F5006BBDDF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		35076C41230468F6006BBDDF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		35076C44230468F6006BBDDF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		35076C46230468F6006BBDDF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		35076C4B230468F6006BBDDF /* AIropressTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AIropressTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		35076C4F230468F6006BBDDF /* AIropressTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AIropressTests.swift; sourceTree = "<group>"; };
 		35076C51230468F6006BBDDF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		35124274230C5CA600C692DD /* BrewVariableSlider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrewVariableSlider.swift; sourceTree = "<group>"; };
+		3527AF08230DCC4C00ED0E26 /* AIProcessingVMTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AIProcessingVMTests.swift; sourceTree = "<group>"; };
+		3527AF0A230DF4C200ED0E26 /* AIProcessingVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AIProcessingVM.swift; sourceTree = "<group>"; };
+		3527AF0D230DF51700ED0E26 /* AIProcessingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AIProcessingViewController.swift; sourceTree = "<group>"; };
+		3527AF0F230DF54700ED0E26 /* AIProcessingSceneView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AIProcessingSceneView.swift; sourceTree = "<group>"; };
+		3527AF13230DFFCA00ED0E26 /* UIView+fadeTransition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+fadeTransition.swift"; sourceTree = "<group>"; };
+		3527AF16230E0F4C00ED0E26 /* ViewRecipeVMTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewRecipeVMTests.swift; sourceTree = "<group>"; };
+		352A1F9F230EC51A00D7FE02 /* ConstantCellVMTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConstantCellVMTests.swift; sourceTree = "<group>"; };
+		352A1FA2230EC59100D7FE02 /* SemiConstantCellVMTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SemiConstantCellVMTests.swift; sourceTree = "<group>"; };
+		352A1FA4230EF97300D7FE02 /* SemiConstantCellVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SemiConstantCellVM.swift; sourceTree = "<group>"; };
+		352A1FA7230EF99100D7FE02 /* ConstantCellVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConstantCellVM.swift; sourceTree = "<group>"; };
+		352A1FAA230F53D200D7FE02 /* ViewRecipeVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewRecipeVM.swift; sourceTree = "<group>"; };
+		352A1FAD230F544F00D7FE02 /* ViewRecipeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewRecipeViewController.swift; sourceTree = "<group>"; };
+		352A1FAF230F546000D7FE02 /* ViewRecipeSceneView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewRecipeSceneView.swift; sourceTree = "<group>"; };
+		352A1FB3230F59BC00D7FE02 /* RecipeConstantCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeConstantCell.swift; sourceTree = "<group>"; };
+		352A1FB5230F5AB300D7FE02 /* BaseTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTableViewCell.swift; sourceTree = "<group>"; };
+		352A1FB8230F5C4300D7FE02 /* BaseCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCellView.swift; sourceTree = "<group>"; };
+		352A1FBB230F5D3700D7FE02 /* BrewVariableBundleCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrewVariableBundleCellView.swift; sourceTree = "<group>"; };
+		352A1FBD230F68C900D7FE02 /* RecipeSemiConstantCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeSemiConstantCell.swift; sourceTree = "<group>"; };
+		3532AA9723105C4700C1F373 /* RecipeConstantCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeConstantCellView.swift; sourceTree = "<group>"; };
+		3532AA9923105E0500C1F373 /* TinyEdgeInset+convienceInit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TinyEdgeInset+convienceInit.swift"; sourceTree = "<group>"; };
+		3532AA9D23106AA700C1F373 /* RecipeSemiConstantCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeSemiConstantCellView.swift; sourceTree = "<group>"; };
+		3560123C23071AEA003AF91D /* MainFlowControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainFlowControllerTests.swift; sourceTree = "<group>"; };
+		35833E4C230752E4002F986B /* MainFlowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainFlowController.swift; sourceTree = "<group>"; };
+		35833E4F2307530E002F986B /* Scene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Scene.swift; sourceTree = "<group>"; };
+		35833E512307534F002F986B /* FlowControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlowControl.swift; sourceTree = "<group>"; };
+		35833E532307537C002F986B /* BrewParameters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrewParameters.swift; sourceTree = "<group>"; };
+		35833E5523075398002F986B /* BrewRecipe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrewRecipe.swift; sourceTree = "<group>"; };
+		35E0E5E323076B14004A86FD /* DesiredTasteVMTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesiredTasteVMTests.swift; sourceTree = "<group>"; };
+		35EC73F62308273500964665 /* BrewParametersTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrewParametersTests.swift; sourceTree = "<group>"; };
+		35EC73F823082D7100964665 /* XCTestCase+setUp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "XCTestCase+setUp.swift"; sourceTree = "<group>"; };
+		35EC73FA23084E7D00964665 /* BrewVariableBundleCellVMTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrewVariableBundleCellVMTests.swift; sourceTree = "<group>"; };
+		35EC73FC2308541400964665 /* BrewVariableTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrewVariableTests.swift; sourceTree = "<group>"; };
+		35EC73FE2308B73200964665 /* BrewVariable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrewVariable.swift; sourceTree = "<group>"; };
+		35EC74022308BEBC00964665 /* BaseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewModel.swift; sourceTree = "<group>"; };
+		35EC74052308BEE300964665 /* DesiredTasteVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesiredTasteVM.swift; sourceTree = "<group>"; };
+		35EC74082308BF1400964665 /* BrewVariableBundleCellVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrewVariableBundleCellVM.swift; sourceTree = "<group>"; };
+		4DA8033607392551CCA2F0A5 /* Pods_AIropressTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AIropressTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		73DCB98EDA12910FCCC07D77 /* Pods-AIropressTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AIropressTests.release.xcconfig"; path = "Target Support Files/Pods-AIropressTests/Pods-AIropressTests.release.xcconfig"; sourceTree = "<group>"; };
+		82F617CABEF1402A5A3CB0AE /* Pods-AIropress.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AIropress.release.xcconfig"; path = "Target Support Files/Pods-AIropress/Pods-AIropress.release.xcconfig"; sourceTree = "<group>"; };
+		C5DE7E97D5832D15F91D83EE /* Pods_AIropress.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AIropress.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		DB3017CA310FD2AA0059EE18 /* Pods-AIropress.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AIropress.debug.xcconfig"; path = "Target Support Files/Pods-AIropress/Pods-AIropress.debug.xcconfig"; sourceTree = "<group>"; };
+		DD14950032619E994894DF06 /* Pods-AIropressTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AIropressTests.debug.xcconfig"; path = "Target Support Files/Pods-AIropressTests/Pods-AIropressTests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -43,6 +181,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				85AF326F656DC5FB03F26AAF /* Pods_AIropress.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -50,18 +189,90 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				73CEEAB2EF96AA6276E48A9F /* Pods_AIropressTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		27006A37A2764EFB88ACA205 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C5DE7E97D5832D15F91D83EE /* Pods_AIropress.framework */,
+				4DA8033607392551CCA2F0A5 /* Pods_AIropressTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		350457EC23096CC800F4B8DC /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				350457FC230A07DA00F4B8DC /* BaseViewController.swift */,
+				350457ED23096CE300F4B8DC /* DesiredTasteViewController.swift */,
+				3527AF0D230DF51700ED0E26 /* AIProcessingViewController.swift */,
+				352A1FAD230F544F00D7FE02 /* ViewRecipeViewController.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		350457EF23096CFB00F4B8DC /* ViewControllerTests */ = {
+			isa = PBXGroup;
+			children = (
+				35072E4F230B48D700689F75 /* BaseViewControllerTests.swift */,
+			);
+			path = ViewControllerTests;
+			sourceTree = "<group>";
+		};
+		350457F92309AE8A00F4B8DC /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				350457FA2309AEB500F4B8DC /* UINavigationController+BaseNavigationController.swift */,
+				3527AF13230DFFCA00ED0E26 /* UIView+fadeTransition.swift */,
+				3532AA9923105E0500C1F373 /* TinyEdgeInset+convienceInit.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		350457FE230A0C7F00F4B8DC /* SceneView */ = {
+			isa = PBXGroup;
+			children = (
+				350457FF230A0C8F00F4B8DC /* BaseSceneView.swift */,
+				35045801230A0E3300F4B8DC /* DesiredTasteSceneView.swift */,
+				3527AF0F230DF54700ED0E26 /* AIProcessingSceneView.swift */,
+				352A1FAF230F546000D7FE02 /* ViewRecipeSceneView.swift */,
+			);
+			path = SceneView;
+			sourceTree = "<group>";
+		};
+		35072E48230B464A00689F75 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				352A1FBA230F5D1B00D7FE02 /* CellView */,
+				352A1FB7230F5B0E00D7FE02 /* Cell */,
+				35072E3E230B002000689F75 /* DiscreteSlider.swift */,
+				35072E49230B475A00689F75 /* ConfigurableTableCell.swift */,
+				35124274230C5CA600C692DD /* BrewVariableSlider.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		35072E51230B4AD400689F75 /* ViewTests */ = {
+			isa = PBXGroup;
+			children = (
+				35072E52230B4B5E00689F75 /* BrewVariableBundleCellTests.swift */,
+			);
+			path = ViewTests;
+			sourceTree = "<group>";
+		};
 		35076C2E230468F5006BBDDF = {
 			isa = PBXGroup;
 			children = (
 				35076C39230468F5006BBDDF /* AIropress */,
 				35076C4E230468F6006BBDDF /* AIropressTests */,
 				35076C38230468F5006BBDDF /* Products */,
+				394AF8840DC61A7D7E63C5C9 /* Pods */,
+				27006A37A2764EFB88ACA205 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -77,9 +288,14 @@
 		35076C39230468F5006BBDDF /* AIropress */ = {
 			isa = PBXGroup;
 			children = (
+				35833E4B230752CD002F986B /* FlowController */,
+				350457EC23096CC800F4B8DC /* ViewController */,
+				35EC74012308BE9800964665 /* ViewModel */,
+				350457FE230A0C7F00F4B8DC /* SceneView */,
+				35833E4E23075302002F986B /* Model */,
+				35072E48230B464A00689F75 /* View */,
+				350457F92309AE8A00F4B8DC /* Extension */,
 				35076C3A230468F5006BBDDF /* AppDelegate.swift */,
-				35076C3C230468F5006BBDDF /* ViewController.swift */,
-				35076C3E230468F5006BBDDF /* Main.storyboard */,
 				35076C41230468F6006BBDDF /* Assets.xcassets */,
 				35076C43230468F6006BBDDF /* LaunchScreen.storyboard */,
 				35076C46230468F6006BBDDF /* Info.plist */,
@@ -90,10 +306,115 @@
 		35076C4E230468F6006BBDDF /* AIropressTests */ = {
 			isa = PBXGroup;
 			children = (
-				35076C4F230468F6006BBDDF /* AIropressTests.swift */,
+				3560123B23071ACA003AF91D /* FlowControllerTests */,
+				350457EF23096CFB00F4B8DC /* ViewControllerTests */,
+				35E0E5E223076A5C004A86FD /* ViewModelTests */,
+				35EC73F52308270800964665 /* ModelTests */,
+				35072E51230B4AD400689F75 /* ViewTests */,
 				35076C51230468F6006BBDDF /* Info.plist */,
+				35EC73F823082D7100964665 /* XCTestCase+setUp.swift */,
 			);
 			path = AIropressTests;
+			sourceTree = "<group>";
+		};
+		352A1FB7230F5B0E00D7FE02 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				352A1FB5230F5AB300D7FE02 /* BaseTableViewCell.swift */,
+				35072E4C230B47D500689F75 /* BrewVariableBundleCell.swift */,
+				352A1FB3230F59BC00D7FE02 /* RecipeConstantCell.swift */,
+				352A1FBD230F68C900D7FE02 /* RecipeSemiConstantCell.swift */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		352A1FBA230F5D1B00D7FE02 /* CellView */ = {
+			isa = PBXGroup;
+			children = (
+				352A1FB8230F5C4300D7FE02 /* BaseCellView.swift */,
+				352A1FBB230F5D3700D7FE02 /* BrewVariableBundleCellView.swift */,
+				3532AA9723105C4700C1F373 /* RecipeConstantCellView.swift */,
+				3532AA9D23106AA700C1F373 /* RecipeSemiConstantCellView.swift */,
+			);
+			path = CellView;
+			sourceTree = "<group>";
+		};
+		3560123B23071ACA003AF91D /* FlowControllerTests */ = {
+			isa = PBXGroup;
+			children = (
+				3560123C23071AEA003AF91D /* MainFlowControllerTests.swift */,
+			);
+			path = FlowControllerTests;
+			sourceTree = "<group>";
+		};
+		35833E4B230752CD002F986B /* FlowController */ = {
+			isa = PBXGroup;
+			children = (
+				350457F22309A3C900F4B8DC /* MainViewControllerProvider.swift */,
+				35833E4C230752E4002F986B /* MainFlowController.swift */,
+				35833E512307534F002F986B /* FlowControl.swift */,
+			);
+			path = FlowController;
+			sourceTree = "<group>";
+		};
+		35833E4E23075302002F986B /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				35833E4F2307530E002F986B /* Scene.swift */,
+				35833E532307537C002F986B /* BrewParameters.swift */,
+				35833E5523075398002F986B /* BrewRecipe.swift */,
+				35EC73FE2308B73200964665 /* BrewVariable.swift */,
+				350457F42309A47300F4B8DC /* AppOptions.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		35E0E5E223076A5C004A86FD /* ViewModelTests */ = {
+			isa = PBXGroup;
+			children = (
+				35E0E5E323076B14004A86FD /* DesiredTasteVMTests.swift */,
+				3527AF08230DCC4C00ED0E26 /* AIProcessingVMTests.swift */,
+				3527AF16230E0F4C00ED0E26 /* ViewRecipeVMTests.swift */,
+				35EC73FA23084E7D00964665 /* BrewVariableBundleCellVMTests.swift */,
+				352A1F9F230EC51A00D7FE02 /* ConstantCellVMTests.swift */,
+				352A1FA2230EC59100D7FE02 /* SemiConstantCellVMTests.swift */,
+			);
+			path = ViewModelTests;
+			sourceTree = "<group>";
+		};
+		35EC73F52308270800964665 /* ModelTests */ = {
+			isa = PBXGroup;
+			children = (
+				35EC73F62308273500964665 /* BrewParametersTests.swift */,
+				35EC73FC2308541400964665 /* BrewVariableTests.swift */,
+				35072E3C230AFBFB00689F75 /* DiscreteSliderTests.swift */,
+			);
+			path = ModelTests;
+			sourceTree = "<group>";
+		};
+		35EC74012308BE9800964665 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				35EC74022308BEBC00964665 /* BaseViewModel.swift */,
+				35EC74052308BEE300964665 /* DesiredTasteVM.swift */,
+				3527AF0A230DF4C200ED0E26 /* AIProcessingVM.swift */,
+				35EC74082308BF1400964665 /* BrewVariableBundleCellVM.swift */,
+				352A1FA4230EF97300D7FE02 /* SemiConstantCellVM.swift */,
+				352A1FA7230EF99100D7FE02 /* ConstantCellVM.swift */,
+				352A1FAA230F53D200D7FE02 /* ViewRecipeVM.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		394AF8840DC61A7D7E63C5C9 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				DB3017CA310FD2AA0059EE18 /* Pods-AIropress.debug.xcconfig */,
+				82F617CABEF1402A5A3CB0AE /* Pods-AIropress.release.xcconfig */,
+				DD14950032619E994894DF06 /* Pods-AIropressTests.debug.xcconfig */,
+				73DCB98EDA12910FCCC07D77 /* Pods-AIropressTests.release.xcconfig */,
+			);
+			path = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -103,9 +424,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 35076C54230468F6006BBDDF /* Build configuration list for PBXNativeTarget "AIropress" */;
 			buildPhases = (
+				EF8CEA5F341D9C3F5F3CE224 /* [CP] Check Pods Manifest.lock */,
 				35076C33230468F5006BBDDF /* Sources */,
 				35076C34230468F5006BBDDF /* Frameworks */,
 				35076C35230468F5006BBDDF /* Resources */,
+				F9BF71EEFB0AD7B7BE9C9490 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -120,9 +443,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 35076C57230468F6006BBDDF /* Build configuration list for PBXNativeTarget "AIropressTests" */;
 			buildPhases = (
+				C44D96A515FF866BAA48B6D6 /* [CP] Check Pods Manifest.lock */,
 				35076C47230468F6006BBDDF /* Sources */,
 				35076C48230468F6006BBDDF /* Frameworks */,
 				35076C49230468F6006BBDDF /* Resources */,
+				AFAF644CABFBF9D301313641 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -178,7 +503,6 @@
 			files = (
 				35076C45230468F6006BBDDF /* LaunchScreen.storyboard in Resources */,
 				35076C42230468F6006BBDDF /* Assets.xcassets in Resources */,
-				35076C40230468F5006BBDDF /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -191,12 +515,129 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		AFAF644CABFBF9D301313641 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-AIropressTests/Pods-AIropressTests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-AIropressTests/Pods-AIropressTests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-AIropressTests/Pods-AIropressTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C44D96A515FF866BAA48B6D6 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-AIropressTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		EF8CEA5F341D9C3F5F3CE224 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-AIropress-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F9BF71EEFB0AD7B7BE9C9490 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-AIropress/Pods-AIropress-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-AIropress/Pods-AIropress-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-AIropress/Pods-AIropress-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		35076C33230468F5006BBDDF /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				35076C3D230468F5006BBDDF /* ViewController.swift in Sources */,
+				352A1FBC230F5D3700D7FE02 /* BrewVariableBundleCellView.swift in Sources */,
+				350457F32309A3C900F4B8DC /* MainViewControllerProvider.swift in Sources */,
+				35833E502307530E002F986B /* Scene.swift in Sources */,
+				3532AA9A23105E0500C1F373 /* TinyEdgeInset+convienceInit.swift in Sources */,
+				352A1FAE230F544F00D7FE02 /* ViewRecipeViewController.swift in Sources */,
+				352A1FA5230EF97300D7FE02 /* SemiConstantCellVM.swift in Sources */,
+				3527AF14230DFFCA00ED0E26 /* UIView+fadeTransition.swift in Sources */,
+				35124275230C5CA600C692DD /* BrewVariableSlider.swift in Sources */,
+				3527AF0B230DF4C200ED0E26 /* AIProcessingVM.swift in Sources */,
+				35EC74092308BF1400964665 /* BrewVariableBundleCellVM.swift in Sources */,
+				350457EE23096CE300F4B8DC /* DesiredTasteViewController.swift in Sources */,
+				350457FB2309AEB500F4B8DC /* UINavigationController+BaseNavigationController.swift in Sources */,
+				3527AF0E230DF51700ED0E26 /* AIProcessingViewController.swift in Sources */,
+				35833E4D230752E4002F986B /* MainFlowController.swift in Sources */,
+				352A1FAB230F53D200D7FE02 /* ViewRecipeVM.swift in Sources */,
+				35EC74062308BEE300964665 /* DesiredTasteVM.swift in Sources */,
+				352A1FB9230F5C4300D7FE02 /* BaseCellView.swift in Sources */,
+				352A1FB0230F546000D7FE02 /* ViewRecipeSceneView.swift in Sources */,
+				35EC73FF2308B73200964665 /* BrewVariable.swift in Sources */,
+				352A1FB6230F5AB300D7FE02 /* BaseTableViewCell.swift in Sources */,
+				35833E5623075398002F986B /* BrewRecipe.swift in Sources */,
+				350457F52309A47300F4B8DC /* AppOptions.swift in Sources */,
+				35EC74032308BEBC00964665 /* BaseViewModel.swift in Sources */,
+				35072E3F230B002000689F75 /* DiscreteSlider.swift in Sources */,
+				352A1FB4230F59BC00D7FE02 /* RecipeConstantCell.swift in Sources */,
+				35833E542307537C002F986B /* BrewParameters.swift in Sources */,
+				352A1FBE230F68C900D7FE02 /* RecipeSemiConstantCell.swift in Sources */,
+				35072E4D230B47D500689F75 /* BrewVariableBundleCell.swift in Sources */,
+				350457FD230A07DA00F4B8DC /* BaseViewController.swift in Sources */,
+				3532AA9823105C4700C1F373 /* RecipeConstantCellView.swift in Sources */,
+				3532AA9E23106AA800C1F373 /* RecipeSemiConstantCellView.swift in Sources */,
+				35045802230A0E3300F4B8DC /* DesiredTasteSceneView.swift in Sources */,
+				35833E522307534F002F986B /* FlowControl.swift in Sources */,
+				35072E4A230B475A00689F75 /* ConfigurableTableCell.swift in Sources */,
+				35045800230A0C8F00F4B8DC /* BaseSceneView.swift in Sources */,
+				3527AF10230DF54700ED0E26 /* AIProcessingSceneView.swift in Sources */,
+				352A1FA8230EF99100D7FE02 /* ConstantCellVM.swift in Sources */,
 				35076C3B230468F5006BBDDF /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -205,7 +646,55 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				35076C50230468F6006BBDDF /* AIropressTests.swift in Sources */,
+				35072E41230B0BEA00689F75 /* DesiredTasteViewController.swift in Sources */,
+				35072E4B230B475A00689F75 /* ConfigurableTableCell.swift in Sources */,
+				35833E5B230753EC002F986B /* MainFlowController.swift in Sources */,
+				3560123E23071AEA003AF91D /* MainFlowControllerTests.swift in Sources */,
+				35072E47230B43A200689F75 /* DiscreteSlider.swift in Sources */,
+				35EC73F923082D7100964665 /* XCTestCase+setUp.swift in Sources */,
+				352A1FC3230F6CD600D7FE02 /* RecipeConstantCell.swift in Sources */,
+				3532AA9B2310658300C1F373 /* RecipeConstantCellView.swift in Sources */,
+				3527AF15230E018900ED0E26 /* UIView+fadeTransition.swift in Sources */,
+				3527AF12230DFDD300ED0E26 /* AIProcessingSceneView.swift in Sources */,
+				352A1FC1230F6CD000D7FE02 /* BaseTableViewCell.swift in Sources */,
+				35EC74042308BEBF00964665 /* BaseViewModel.swift in Sources */,
+				3527AF17230E0F4C00ED0E26 /* ViewRecipeVMTests.swift in Sources */,
+				352A1FAC230F53F300D7FE02 /* ViewRecipeVM.swift in Sources */,
+				35072E42230B0BFA00689F75 /* BaseViewController.swift in Sources */,
+				35072E53230B4B5E00689F75 /* BrewVariableBundleCellTests.swift in Sources */,
+				352A1FC4230F6CD900D7FE02 /* RecipeSemiConstantCell.swift in Sources */,
+				3527AF11230DFDCF00ED0E26 /* AIProcessingViewController.swift in Sources */,
+				35072E43230B0C0200689F75 /* BaseSceneView.swift in Sources */,
+				35072E50230B48D700689F75 /* BaseViewControllerTests.swift in Sources */,
+				352A1FA6230EF97600D7FE02 /* SemiConstantCellVM.swift in Sources */,
+				352A1FC0230F6CCD00D7FE02 /* BaseCellView.swift in Sources */,
+				352A1FA0230EC51A00D7FE02 /* ConstantCellVMTests.swift in Sources */,
+				350457F82309ACB400F4B8DC /* MainViewControllerProvider.swift in Sources */,
+				35072E3D230AFBFB00689F75 /* DiscreteSliderTests.swift in Sources */,
+				35833E5A230753E9002F986B /* BrewRecipe.swift in Sources */,
+				35072E44230B0C1400689F75 /* DesiredTasteSceneView.swift in Sources */,
+				352A1FA9230EF99F00D7FE02 /* ConstantCellVM.swift in Sources */,
+				352A1FB1230F54D800D7FE02 /* ViewRecipeSceneView.swift in Sources */,
+				35E0E5E423076B14004A86FD /* DesiredTasteVMTests.swift in Sources */,
+				35072E40230B0BD900689F75 /* AppOptions.swift in Sources */,
+				35833E58230753E5002F986B /* Scene.swift in Sources */,
+				35EC73FB23084E7D00964665 /* BrewVariableBundleCellVMTests.swift in Sources */,
+				3527AF09230DCC4C00ED0E26 /* AIProcessingVMTests.swift in Sources */,
+				35124276230C8EF400C692DD /* BrewVariableSlider.swift in Sources */,
+				3532AA9C2310658B00C1F373 /* TinyEdgeInset+convienceInit.swift in Sources */,
+				35833E5C230753EE002F986B /* FlowControl.swift in Sources */,
+				3527AF0C230DF4D500ED0E26 /* AIProcessingVM.swift in Sources */,
+				35EC74002308B75300964665 /* BrewVariable.swift in Sources */,
+				352A1FA3230EC59100D7FE02 /* SemiConstantCellVMTests.swift in Sources */,
+				35833E59230753E7002F986B /* BrewParameters.swift in Sources */,
+				35EC740A2308BF5F00964665 /* BrewVariableBundleCellVM.swift in Sources */,
+				352A1FBF230F6CCA00D7FE02 /* BrewVariableBundleCellView.swift in Sources */,
+				35EC73F72308273500964665 /* BrewParametersTests.swift in Sources */,
+				352A1FB2230F54DB00D7FE02 /* ViewRecipeViewController.swift in Sources */,
+				35EC74072308BEFF00964665 /* DesiredTasteVM.swift in Sources */,
+				35EC73FD2308541400964665 /* BrewVariableTests.swift in Sources */,
+				352A1FC2230F6CD300D7FE02 /* BrewVariableBundleCell.swift in Sources */,
+				3532AA9F2310726000C1F373 /* RecipeSemiConstantCellView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -220,14 +709,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		35076C3E230468F5006BBDDF /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				35076C3F230468F5006BBDDF /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		35076C43230468F6006BBDDF /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -357,6 +838,7 @@
 		};
 		35076C55230468F6006BBDDF /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = DB3017CA310FD2AA0059EE18 /* Pods-AIropress.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -375,6 +857,7 @@
 		};
 		35076C56230468F6006BBDDF /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 82F617CABEF1402A5A3CB0AE /* Pods-AIropress.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -393,8 +876,8 @@
 		};
 		35076C58230468F6006BBDDF /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = DD14950032619E994894DF06 /* Pods-AIropressTests.debug.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = B4UQ3LXCE4;
 				INFOPLIST_FILE = AIropressTests/Info.plist;
@@ -412,8 +895,8 @@
 		};
 		35076C59230468F6006BBDDF /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 73DCB98EDA12910FCCC07D77 /* Pods-AIropressTests.release.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = B4UQ3LXCE4;
 				INFOPLIST_FILE = AIropressTests/Info.plist;
