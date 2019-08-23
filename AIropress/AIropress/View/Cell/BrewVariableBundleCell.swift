@@ -32,7 +32,8 @@ extension BrewVariableBundleCell: ConfigurableTableCell {
     private func setupSliders(viewModel: BrewVariableBundleCellVM) {
         cellView.sliders = []
         for variable in viewModel.sliderVariables {
-            let slider = BrewVariableSlider(brewVariable: variable, initialValue: viewModel.initialSliderValue(for: variable))
+            let slider = BrewVariableSlider()
+            slider.configure(brewVariable: variable, initialValue: viewModel.initialSliderValue(for: variable))
             slider.delegate = { sliderValue in
                 viewModel.onSliderValueChanged(brewVariable: variable, valueIndex: sliderValue.index)
             }

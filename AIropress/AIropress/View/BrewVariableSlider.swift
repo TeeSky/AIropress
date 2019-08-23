@@ -20,18 +20,6 @@ class BrewVariableSlider: UIView {
         }
     }
     
-    let brewVariable: BrewVariable
-    private var didUpdateConstraints = false
-    
-    lazy var slider: DiscreteSlider = {
-        let slider = DiscreteSlider()
-        return slider
-    }()
-    
-    private lazy var bottomLabelsContainer: UIView = {
-        return UIView()
-    }()
-    
     lazy var minLabel: UILabel = {
         return BrewVariableSlider.createStyledLabel()
     }()
@@ -40,19 +28,32 @@ class BrewVariableSlider: UIView {
         return BrewVariableSlider.createStyledLabel()
     }()
     
-    init(brewVariable: BrewVariable, initialValue: Float, frame: CGRect = CGRect.zero) {
-        self.brewVariable = brewVariable
+    private lazy var slider: DiscreteSlider = {
+        let slider = DiscreteSlider()
+        return slider
+    }()
+    
+    private lazy var bottomLabelsContainer: UIView = {
+        return UIView()
+    }()
+    
+    private var didUpdateConstraints = false
+    
+    override init(frame: CGRect = CGRect.zero) {
         super.init(frame: frame)
         addViews()
-        
-        slider.stepCount = brewVariable.stepCount
-        slider.initialValue = initialValue
-        minLabel.text = brewVariable.labelSet.minLabel
-        maxLabel.text = brewVariable.labelSet.maxLabel
     }
     
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+    
+    func configure(brewVariable: BrewVariable, initialValue: Float) {
+        slider.stepCount = brewVariable.stepCount
+        minLabel.text = brewVariable.labelSet.minLabel
+        maxLabel.text = brewVariable.labelSet.maxLabel
+        
+        slider.initialValue = initialValue
     }
     
     override func updateConstraints() {
@@ -70,7 +71,7 @@ class BrewVariableSlider: UIView {
         super.updateConstraints()
     }
     
-    func addViews() {
+    private func addViews() {
         addSubview(slider)
         bottomLabelsContainer.addSubview(minLabel)
         bottomLabelsContainer.addSubview(maxLabel)
