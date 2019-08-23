@@ -39,8 +39,8 @@ extension DesiredTasteViewController: UITableViewDataSource {
         let cellVM = viewModel.cellViewModel(for: indexPath)
         let cell = tableView.dequeueReusableCell(withIdentifier: cellVM.identifier, for: indexPath)
         
-        guard let baseTableCell = cell as? BaseTableCell else {
-            fatalError("All table view cell classes must implement BaseTableCell.")
+        guard let baseTableCell = cell as? ConfigurableTableCell else {
+            fatalError("All table view cell classes must implement ConfigurableTableCell.")
         }
         baseTableCell.configure(viewModel: cellVM)
         

@@ -1,5 +1,5 @@
 //
-//  BaseTableCell.swift
+//  ConfigurableTableCell.swift
 //  AIropress
 //
 //  Created by Tomas Skypala on 19/08/2019.
@@ -8,6 +8,6 @@
 
 import Foundation
 
-protocol BaseTableCell {
+protocol ConfigurableTableCell {
     func configure(viewModel: BaseTableCellVM)
 }
