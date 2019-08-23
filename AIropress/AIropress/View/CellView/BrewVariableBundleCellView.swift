@@ -13,11 +13,13 @@ import TinyConstraints
 class BrewVariableBundleCellView: BaseCellView {
     
     private lazy var contentContainer: UIView = {
-        return UIView()
+        let container = UIView()
+        return container
     }()
     
     lazy var label: UILabel = {
         let label = UILabel()
+        label.textAlignment = .center
         label.font = UIFont.systemFont(ofSize: 25, weight: .regular)
         return label
     }()
@@ -31,15 +33,16 @@ class BrewVariableBundleCellView: BaseCellView {
     
     override func addViews() {
         addSubview(contentContainer)
-        addSubview(label)
-        addSubview(slidersContainer)
+        contentContainer.addSubview(label)
+        contentContainer.addSubview(slidersContainer)
     }
     
     override func setContraints() {
-        contentContainer.edgesToSuperview(insets: TinyEdgeInsets(top: 5, left: 5, bottom: 5, right: 5))
+        let contentInset: CGFloat = 10
+        contentContainer.edgesToSuperview(insets: TinyEdgeInsets(top: contentInset, left: contentInset, bottom: contentInset, right: contentInset))
         
-        slidersContainer.leftToSuperview(offset: 5)
-        slidersContainer.rightToSuperview(offset: -5)
+        slidersContainer.leftToSuperview()
+        slidersContainer.rightToSuperview()
         slidersContainer.stack(sliders, axis: .vertical)
         
         label.centerXToSuperview()
