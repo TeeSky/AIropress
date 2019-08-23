@@ -28,23 +28,24 @@ class BrewVariableBundleCellVM {
     }
     
     private let variableBundle: BrewVariableBundle
-    private let initialValues: [BrewVariable: Double]
+    private var currentValues: [BrewVariable: Double]
     
     weak var valueDelegate: VariableBundleCellValueDelegate?
     
     init(variableBundle: BrewVariableBundle, initialValues: [BrewVariable: Double]) {
         self.variableBundle = variableBundle
-        self.initialValues = initialValues
+        self.currentValues = initialValues
     }
     
     func onSliderValueChanged(brewVariable: BrewVariable, valueIndex: Int) {
         let normalizedValue = normalize(sliderValueIndex: valueIndex, of: brewVariable)
         
+        currentValues[brewVariable] = normalizedValue
         valueDelegate?.onValueChanged(brewVariable: brewVariable, value: normalizedValue)
     }
     
     func initialSliderValue(for variable: BrewVariable) -> Float {
-        guard let value = initialValues[variable] else { fatalError("Brew variable initial values must be set.") }
+        guard let value = currentValues[variable] else { fatalError("Brew variable initial values must be set.") }
         return Float(value)
     }
     
@@ -60,7 +61,7 @@ extension BrewVariableBundleCellVM: BaseTableCellVM {
     }
     
     var cellHeight: CGFloat {
-        let labelHeight = 55
+        let labelHeight = 70
         let slidersHeight = variableBundle.variables.count * BrewVariableSlider.height
         return CGFloat(labelHeight + slidersHeight)
     }

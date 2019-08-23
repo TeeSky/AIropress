@@ -23,4 +23,13 @@ class BaseSceneView: UIView {
     
     func setContraints() {
     }
+    
+    static func createButton(title: String, color: UIColor = AppOptions.color.button) -> UIButton {
+        let button = UIButton()
+        button.layer.cornerRadius = 5
+        button.backgroundColor = color
+        button.setTitleColor(.white, for: .normal)
+        button.setTitle(title, for: .normal)
+        return button
+    }
 }

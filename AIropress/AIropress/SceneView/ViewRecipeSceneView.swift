@@ -1,8 +1,8 @@
 //
-//  DesiredTasteSceneView.swift
+//  ViewRecipeSceneView.swift
 //  AIropress
 //
-//  Created by Tomas Skypala on 19/08/2019.
+//  Created by Tomas Skypala on 23/08/2019.
 //  Copyright © 2019 Tomas Skypala. All rights reserved.
 //
 
@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 import TinyConstraints
 
-class DesiredTasteSceneView: BaseSceneView {
+class ViewRecipeSceneView: BaseSceneView {
     
     lazy var safeAreaContainer: UIView = {
         return UIView()
@@ -20,7 +20,7 @@ class DesiredTasteSceneView: BaseSceneView {
         let container = UIView()
         
         let label = UILabel()
-        label.text = "Desired"
+        label.text = "Recipe"
         label.textColor = .black
         label.textAlignment = .left
         label.font = UIFont.systemFont(ofSize: 35, weight: .heavy)
@@ -42,8 +42,12 @@ class DesiredTasteSceneView: BaseSceneView {
         return UIView()
     }()
     
-    lazy var calculateButton: UIButton = {
-        return BaseSceneView.createButton(title: "Calculate")
+    lazy var resetButton: UIButton = {
+        return BaseSceneView.createButton(title: "Reset", color: AppOptions.color.buttonNegative)
+    }()
+    
+    lazy var prepareButton: UIButton = {
+        return BaseSceneView.createButton(title: "Prepare")
     }()
     
     override func addViews() {
@@ -51,7 +55,8 @@ class DesiredTasteSceneView: BaseSceneView {
         addSubview(sceneLabelContainer)
         addSubview(tableView)
         addSubview(bottomButtonContainer)
-        addSubview(calculateButton)
+        addSubview(resetButton)
+        addSubview(prepareButton)
     }
     
     override func setContraints() {
@@ -60,11 +65,14 @@ class DesiredTasteSceneView: BaseSceneView {
         sceneLabelContainer.height(120)
         bottomButtonContainer.height(65)
         
-        calculateButton.width(150)
+        resetButton.width(150)
+        prepareButton.width(150)
         
         safeAreaContainer.stack([sceneLabelContainer, tableView, bottomButtonContainer], axis: .vertical, spacing: 5)
         
-        calculateButton.centerY(to: bottomButtonContainer)
-        calculateButton.right(to: bottomButtonContainer)
+        resetButton.centerY(to: bottomButtonContainer)
+        prepareButton.centerY(to: bottomButtonContainer)
+        resetButton.left(to: bottomButtonContainer)
+        prepareButton.right(to: bottomButtonContainer)
     }
 }

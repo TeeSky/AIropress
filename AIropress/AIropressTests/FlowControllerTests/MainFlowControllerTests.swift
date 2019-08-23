@@ -119,7 +119,7 @@ class MainFlowControllerTests: XCTestCase {
     
     func testAIProcessingSceneFlowOnDone() {
         let expectedViewControllerOnStack = viewControllerProvider.viewRecipeSceneVC
-        let recipe = BrewRecipe()
+        let recipe = MockBrewVars.recipe
         
         mainFlowController.startFlow()
         mainFlowController.onParametersSet(brewParameters: MockBrewVars.brewParameters)
@@ -139,7 +139,7 @@ class MainFlowControllerTests: XCTestCase {
         
         mainFlowController.startFlow()
         mainFlowController.onParametersSet(brewParameters: MockBrewVars.brewParameters)
-        mainFlowController.onProcessingDone(recipe: BrewRecipe())
+        mainFlowController.onProcessingDone(recipe: MockBrewVars.recipe)
         navigationController.resetPushPop()
         
         mainFlowController.onRecipeReset()

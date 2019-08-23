@@ -1,17 +1,17 @@
 //
-//  DesiredTasteViewController.swift
+//  ViewRecipeViewController.swift
 //  AIropress
 //
-//  Created by Tomas Skypala on 18/08/2019.
+//  Created by Tomas Skypala on 23/08/2019.
 //  Copyright © 2019 Tomas Skypala. All rights reserved.
 //
 
 import Foundation
 import UIKit
 
-class DesiredTasteViewController: BaseViewController<DesiredTasteSceneView> {
+class ViewRecipeViewController: BaseViewController<ViewRecipeSceneView> {
     
-    var viewModel: DesiredTasteVM!
+    var viewModel: ViewRecipeVM!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,11 +21,12 @@ class DesiredTasteViewController: BaseViewController<DesiredTasteSceneView> {
         sceneView.tableView.dataSource = self
         sceneView.tableView.delegate = self
         
-        sceneView.calculateButton.addTarget(viewModel, action: #selector(viewModel.onCalculateClicked), for: .touchUpInside)
+        sceneView.resetButton.addTarget(viewModel, action: #selector(viewModel.onResetClicked), for: .touchUpInside)
+        sceneView.prepareButton.addTarget(viewModel, action: #selector(viewModel.onPrepareClicked), for: .touchUpInside)
     }
 }
 
-extension DesiredTasteViewController: UITableViewDataSource {
+extension ViewRecipeViewController: UITableViewDataSource {
     
     func numberOfSections(in tableView: UITableView) -> Int {
         return viewModel.numberOfSections()
@@ -48,7 +49,7 @@ extension DesiredTasteViewController: UITableViewDataSource {
     }
 }
 
-extension DesiredTasteViewController: UITableViewDelegate {
+extension ViewRecipeViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return viewModel.cellHeight(for: indexPath)

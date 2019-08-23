@@ -16,9 +16,16 @@ struct BrewVariableBundle: Equatable {
 struct BrewVariable: Equatable {
     typealias Id = Int
     
+    static let confidenceVariableStepCount = 5
+    static let confidenceVariableLabelSet = VariableLabelSet(mainLabel: "Confidence", minLabel: "Unconfident", maxLabel: "Confident")
+    
     let id: Id
     let stepCount: Int
     let labelSet: VariableLabelSet
+    
+    static func createConfidenceVariable(id: BrewVariable.Id) -> BrewVariable {
+        return BrewVariable(id: id, stepCount: confidenceVariableStepCount, labelSet: confidenceVariableLabelSet)
+    }
 }
 
 extension BrewVariable: Hashable {
