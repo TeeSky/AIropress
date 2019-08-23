@@ -19,10 +19,8 @@ class BaseTableViewCell<CV: BaseCellView>: UITableViewCell {
         cellView = CV()
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         
-        self.translatesAutoresizingMaskIntoConstraints = false
         cellView.addViews()
         self.contentView.addSubview(cellView)
-        self.contentView.width(50)
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -31,6 +29,7 @@ class BaseTableViewCell<CV: BaseCellView>: UITableViewCell {
     
     override func updateConstraints() {
         if !didSetConstraints {
+            cellView.edgesToSuperview()
             cellView.setContraints()
             didSetConstraints = true
         }

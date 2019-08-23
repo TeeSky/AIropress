@@ -23,7 +23,7 @@ extension BrewVariableBundleCell: ConfigurableTableCell {
         setupSliders(viewModel: viewModel)
         
         didSetConstraints = false // TODO fix on-scroll broken slider cell layout
-        needsUpdateConstraints()
+        self.updateConstraints()
     }
     
     private func setupLabel(viewModel: BrewVariableBundleCellVM) {
