@@ -18,6 +18,9 @@ class ViewRecipeViewController: BaseViewController<ViewRecipeSceneView> {
         
         viewModel.configure(tableView: sceneView.tableView)
         
+        sceneView.tableView.dataSource = self
+        sceneView.tableView.delegate = self
+        
         sceneView.resetButton.addTarget(viewModel, action: #selector(viewModel.onResetClicked), for: .touchUpInside)
         sceneView.prepareButton.addTarget(viewModel, action: #selector(viewModel.onPrepareClicked), for: .touchUpInside)
     }
@@ -43,5 +46,12 @@ extension ViewRecipeViewController: UITableViewDataSource {
         baseTableCell.configure(viewModel: cellVM)
         
         return cell
+    }
+}
+
+extension ViewRecipeViewController: UITableViewDelegate {
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return viewModel.cellHeight(for: indexPath)
     }
 }
