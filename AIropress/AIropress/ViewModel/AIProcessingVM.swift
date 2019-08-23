@@ -34,7 +34,7 @@ class AIProcessingVM: BaseViewModel {
     func onSceneDidAppear() {
         DispatchQueue.main.asyncAfter(deadline: .now() + 2.5) { // Mock code, replace with processing done check.
             let constants: [RecipeConstant] = [RecipeConstant(id: 0, label: "Water", value: 85, valueText: "85ml"),
-                                               RecipeConstant(id: 1, label: "Brewing time", value: 90, valueText: "1:30"),
+                                               RecipeConstant(id: 1, label: "Brewing time", value: 90, valueText: "1:30s"),
                                                RecipeConstant(id: 2, label: "Coffee", value: 13, valueText: "13g")]
             
             let semiConstants: [RecipeSemiConstant] = [RecipeSemiConstant(id: 3, label: "Temperature", value: 86, valueText: "86C", confidenceVariableId: 10, initialConfidenceValue: 0.8),
