@@ -28,6 +28,10 @@ class BrewVariableSlider: UIView {
         return BrewVariableSlider.createStyledLabel()
     }()
     
+    private lazy var sliderContainer: UIView = {
+        return UIView()
+    }()
+    
     private lazy var slider: DiscreteSlider = {
         let slider = DiscreteSlider()
         return slider
@@ -59,8 +63,12 @@ class BrewVariableSlider: UIView {
     override func updateConstraints() {
         if !didUpdateConstraints {
             self.height(CGFloat(BrewVariableSlider.height))
+
+            sliderContainer.leftToSuperview()
+            sliderContainer.rightToSuperview()
+            slider.edgesToSuperview(insets: TinyEdgeInsets(horizontal: 10))
             
-            self.stack([slider, bottomLabelsContainer], axis: .vertical, spacing: 5)
+            self.stack([sliderContainer, bottomLabelsContainer], axis: .vertical, spacing: 5)
             
             minLabel.leftToSuperview()
             maxLabel.rightToSuperview()
@@ -72,7 +80,8 @@ class BrewVariableSlider: UIView {
     }
     
     private func addViews() {
-        addSubview(slider)
+        addSubview(sliderContainer)
+        sliderContainer.addSubview(slider)
         bottomLabelsContainer.addSubview(minLabel)
         bottomLabelsContainer.addSubview(maxLabel)
         addSubview(bottomLabelsContainer)
