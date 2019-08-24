@@ -22,7 +22,15 @@ class ViewRecipeViewController: BaseViewController<ViewRecipeSceneView> {
         sceneView.tableView.delegate = self
         
         sceneView.resetButton.addTarget(viewModel, action: #selector(viewModel.onResetClicked), for: .touchUpInside)
-        sceneView.prepareButton.addTarget(viewModel, action: #selector(viewModel.onPrepareClicked), for: .touchUpInside)
+//        sceneView.resetButton.addTarget(viewModel, action: #selector(viewModel.onPrepareClicked), for: .touchUpInside)
+        sceneView.prepareButton.addTarget(self, action: #selector(onPrepareClicked), for: .touchUpInside)
+    }
+    
+    @objc
+    func onPrepareClicked() {
+        let alert = UIAlertController(title: "Alert", message: "Sorry, this functionality is not yet implemented.", preferredStyle: UIAlertController.Style.alert)
+        alert.addAction(UIAlertAction(title: "Ok", style: UIAlertAction.Style.default, handler: nil))
+        self.present(alert, animated: true, completion: nil)
     }
 }
 
