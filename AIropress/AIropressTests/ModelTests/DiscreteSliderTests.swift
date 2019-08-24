@@ -47,7 +47,7 @@ class DiscreteSliderTests: XCTestCase {
     }
     
     func testSetInitialValue() {
-        let stepCount = 10
+        let stepCount = 11 // 10 + zero
         let initialValue: Float = 0.5
         let expectedSliderValue: Float = 5
         

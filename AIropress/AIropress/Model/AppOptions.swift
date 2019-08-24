@@ -19,7 +19,7 @@ struct AppOptions {
 
 struct AppBrewVariableBundles {
     
-    static let defaultStepCount = 10
+    static let defaultStepCount = 11 // 10 + zero
     
     let bundles: [BrewVariableBundle]
     

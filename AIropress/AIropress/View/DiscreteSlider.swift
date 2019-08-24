@@ -35,7 +35,7 @@ class DiscreteSlider: UISlider {
     
     var initialValue: Float! {
         didSet {
-            value = initialValue * Float(stepCount)
+            value = initialValue * Float(stepCount - 1)
         }
     }
     
