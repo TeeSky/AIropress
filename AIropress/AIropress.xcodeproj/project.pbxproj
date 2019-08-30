@@ -43,6 +43,8 @@
 		351A66B823194C4000D1061B /* PrepStep.swift in Sources */ = {isa = PBXBuildFile; fileRef = 351A66B623194C2900D1061B /* PrepStep.swift */; };
 		351A66BA23194C4C00D1061B /* PrepStepCellVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 351A66B923194C4C00D1061B /* PrepStepCellVM.swift */; };
 		351A66BB23194C6C00D1061B /* PrepStepCellVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 351A66B923194C4C00D1061B /* PrepStepCellVM.swift */; };
+		351A66C22319CA3800D1061B /* LabeledSceneView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 351A66BE2319600300D1061B /* LabeledSceneView.swift */; };
+		351A66C32319CA3800D1061B /* LabeledSceneView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 351A66BE2319600300D1061B /* LabeledSceneView.swift */; };
 		3527AF09230DCC4C00ED0E26 /* AIProcessingVMTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3527AF08230DCC4C00ED0E26 /* AIProcessingVMTests.swift */; };
 		3527AF0B230DF4C200ED0E26 /* AIProcessingVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3527AF0A230DF4C200ED0E26 /* AIProcessingVM.swift */; };
 		3527AF0C230DF4D500ED0E26 /* AIProcessingVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3527AF0A230DF4C200ED0E26 /* AIProcessingVM.swift */; };
@@ -148,6 +150,7 @@
 		351A66B323194BFE00D1061B /* PrepParams.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrepParams.swift; sourceTree = "<group>"; };
 		351A66B623194C2900D1061B /* PrepStep.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrepStep.swift; sourceTree = "<group>"; };
 		351A66B923194C4C00D1061B /* PrepStepCellVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrepStepCellVM.swift; sourceTree = "<group>"; };
+		351A66BE2319600300D1061B /* LabeledSceneView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabeledSceneView.swift; sourceTree = "<group>"; };
 		3527AF08230DCC4C00ED0E26 /* AIProcessingVMTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AIProcessingVMTests.swift; sourceTree = "<group>"; };
 		3527AF0A230DF4C200ED0E26 /* AIProcessingVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AIProcessingVM.swift; sourceTree = "<group>"; };
 		3527AF0D230DF51700ED0E26 /* AIProcessingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AIProcessingViewController.swift; sourceTree = "<group>"; };
@@ -254,6 +257,7 @@
 			isa = PBXGroup;
 			children = (
 				350457FF230A0C8F00F4B8DC /* BaseSceneView.swift */,
+				351A66BE2319600300D1061B /* LabeledSceneView.swift */,
 				35045801230A0E3300F4B8DC /* DesiredTasteSceneView.swift */,
 				3527AF0F230DF54700ED0E26 /* AIProcessingSceneView.swift */,
 				352A1FAF230F546000D7FE02 /* ViewRecipeSceneView.swift */,
@@ -650,6 +654,7 @@
 				35EC74032308BEBC00964665 /* BaseViewModel.swift in Sources */,
 				35072E3F230B002000689F75 /* DiscreteSlider.swift in Sources */,
 				352A1FB4230F59BC00D7FE02 /* RecipeConstantCell.swift in Sources */,
+				351A66C22319CA3800D1061B /* LabeledSceneView.swift in Sources */,
 				35833E542307537C002F986B /* BrewParameters.swift in Sources */,
 				352A1FBE230F68C900D7FE02 /* RecipeSemiConstantCell.swift in Sources */,
 				35072E4D230B47D500689F75 /* BrewVariableBundleCell.swift in Sources */,
@@ -707,6 +712,7 @@
 				35072E40230B0BD900689F75 /* AppOptions.swift in Sources */,
 				35833E58230753E5002F986B /* Scene.swift in Sources */,
 				351A66B823194C4000D1061B /* PrepStep.swift in Sources */,
+				351A66C32319CA3800D1061B /* LabeledSceneView.swift in Sources */,
 				35EC73FB23084E7D00964665 /* BrewVariableBundleCellVMTests.swift in Sources */,
 				3527AF09230DCC4C00ED0E26 /* AIProcessingVMTests.swift in Sources */,
 				351A66BB23194C6C00D1061B /* PrepStepCellVM.swift in Sources */,
