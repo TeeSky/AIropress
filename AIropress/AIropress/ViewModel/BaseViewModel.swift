@@ -18,8 +18,29 @@ protocol BaseTableCellVM {
 }
 
 protocol BaseTableVM: BaseViewModel {
-    func numberOfSections() -> Int
-    func numberOfRows(section: Int) -> Int
-    func cellViewModel(for path: IndexPath) -> BaseTableCellVM
-    func cellHeight(for path: IndexPath) -> CGFloat
+    var cellViewModels: [BaseTableCellVM] { get }
+}
+
+extension BaseTableVM {
+    
+    func numberOfSections() -> Int {
+        return 1
+    }
+    
+    func numberOfRows(section: Int) -> Int {
+        guard section == 0 else { fatalError("Unexpected section") }
+        
+        return cellViewModels.count
+    }
+    
+    func cellViewModel(for path: IndexPath) -> BaseTableCellVM {
+        guard path.section == 0 else { fatalError("Unexpected section") }
+        
+        return cellViewModels[path.row]
+    }
+    
+    func cellHeight(for path: IndexPath) -> CGFloat {
+        return cellViewModel(for: path).cellHeight
+    }
+    
 }
