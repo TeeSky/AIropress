@@ -8,33 +8,6 @@
 
 import XCTest
 
-struct PrepParams {
-    let prepSteps: [PrepStep]
-}
-
-class BrewPrepVM {
-    
-    let cellVMs: [PrepStepCellVM]
-    
-    weak var flowController: BrewPrepSceneFC?
-    
-    init(prepParams: PrepParams) {
-        cellVMs = prepParams.prepSteps.enumerated().map { PrepStepCellVM(cellIndex: $0, prepStep: $1)}
-    }
-    
-    func onBrewClicked() {
-        flowController?.onBrewInitiated()
-    }
-}
-
-extension BrewPrepVM: BaseTableVM {
-    
-    var cellViewModels: [BaseTableCellVM] {
-        return cellVMs
-    }
-    
-}
-
 class MockBrewPrepSceneFC: BrewPrepSceneFC {
     
     var brewInitiated: Bool?
