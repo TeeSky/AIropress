@@ -26,7 +26,7 @@ class BrewPrepVMTests: XCTestCase {
     override func setUp() {
         super.setUp()
         
-        prepParams = PrepParams(prepSteps: [.preheatWater("86C"), .rinseFilter, .rinseAeropress, .prepareKettle])
+        prepParams = PrepParams(waterTemp: 86.0, coffeeAmount: 15, aeropressOrientation: .normal)
         brewPrepVM = BrewPrepVM(prepParams: prepParams)
     }
     

@@ -13,9 +13,11 @@ private class MockViewControllerProvider: ViewControllerProvider {
     let desiredTasteSceneVC = UIViewController()
     let aiProcessingSceneVC = UIViewController()
     let viewRecipeSceneVC = UIViewController()
+    let brewPrepSceneVC = UIViewController()
     
     var receivedBrewParameters: BrewParameters? = nil
     var receivedBrewRecipe: BrewRecipe? = nil
+    var receivedPrepParams: PrepParams? = nil
     
     func getViewController(_ flowController: MainFlowController, for scene: Scene) -> UIViewController {
         switch (scene) {
@@ -27,6 +29,9 @@ private class MockViewControllerProvider: ViewControllerProvider {
         case .viewRecipe(let recipe):
             receivedBrewRecipe = recipe
             return viewRecipeSceneVC
+        case .brewPrep(let params):
+            receivedPrepParams = params
+            return brewPrepSceneVC
         }
     }
 }
@@ -43,7 +48,7 @@ private class MockNavigationController: BaseNavigationController {
         stack.append(viewController)
     }
     
-    func pop() {
+    func pop(animated: Bool) {
         didPop = true
         _ = stack.popLast()
     }
@@ -149,6 +154,23 @@ class MainFlowControllerTests: XCTestCase {
         XCTAssertTrue(navigationController.stack.count == 1)
         XCTAssertEqual(expectedViewControllerOnStack, navigationController.stack[0])
     }
+    
+    func testViewRecipeSceneFlowOnPrepared() {
+        let expectedViewControllerOnStack = viewControllerProvider.brewPrepSceneVC
+        
+        mainFlowController.startFlow()
+        mainFlowController.onParametersSet(brewParameters: MockBrewVars.brewParameters)
+        mainFlowController.onProcessingDone(recipe: MockBrewVars.recipe)
+        navigationController.resetPushPop()
+        
+        mainFlowController.onPrepared(recipeValues: MockBrewVars.recipeValues)
+        
+        XCTAssertTrue(navigationController.didPop)
+        XCTAssertTrue(navigationController.didPush)
+        XCTAssertTrue(navigationController.stack.count == 2)
+        XCTAssertEqual(expectedViewControllerOnStack, navigationController.stack[1])
+    }
+    
     
     // TODO implement all flow control tests (when all scene fcs are done)
 }
