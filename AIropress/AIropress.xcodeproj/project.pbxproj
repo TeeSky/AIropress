@@ -17,6 +17,7 @@
 		350457FD230A07DA00F4B8DC /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 350457FC230A07DA00F4B8DC /* BaseViewController.swift */; };
 		35045800230A0C8F00F4B8DC /* BaseSceneView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 350457FF230A0C8F00F4B8DC /* BaseSceneView.swift */; };
 		35045802230A0E3300F4B8DC /* DesiredTasteSceneView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35045801230A0E3300F4B8DC /* DesiredTasteSceneView.swift */; };
+		3506807C231A9B8000604CE5 /* Double+toString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3506807B231A9B8000604CE5 /* Double+toString.swift */; };
 		35072E3D230AFBFB00689F75 /* DiscreteSliderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35072E3C230AFBFB00689F75 /* DiscreteSliderTests.swift */; };
 		35072E3F230B002000689F75 /* DiscreteSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35072E3E230B002000689F75 /* DiscreteSlider.swift */; };
 		35072E40230B0BD900689F75 /* AppOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 350457F42309A47300F4B8DC /* AppOptions.swift */; };
@@ -85,6 +86,7 @@
 		3532AA9E23106AA800C1F373 /* RecipeSemiConstantCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3532AA9D23106AA700C1F373 /* RecipeSemiConstantCellView.swift */; };
 		3532AA9F2310726000C1F373 /* RecipeSemiConstantCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3532AA9D23106AA700C1F373 /* RecipeSemiConstantCellView.swift */; };
 		3560123E23071AEA003AF91D /* MainFlowControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3560123C23071AEA003AF91D /* MainFlowControllerTests.swift */; };
+		3569D32E231F135B00427450 /* Double+toString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3506807B231A9B8000604CE5 /* Double+toString.swift */; };
 		3569D330231F1B2600427450 /* PrepParamsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3569D32F231F1B2600427450 /* PrepParamsTests.swift */; };
 		35833E4D230752E4002F986B /* MainFlowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35833E4C230752E4002F986B /* MainFlowController.swift */; };
 		35833E502307530E002F986B /* Scene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35833E4F2307530E002F986B /* Scene.swift */; };
@@ -133,6 +135,7 @@
 		350457FC230A07DA00F4B8DC /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		350457FF230A0C8F00F4B8DC /* BaseSceneView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseSceneView.swift; sourceTree = "<group>"; };
 		35045801230A0E3300F4B8DC /* DesiredTasteSceneView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesiredTasteSceneView.swift; sourceTree = "<group>"; };
+		3506807B231A9B8000604CE5 /* Double+toString.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Double+toString.swift"; sourceTree = "<group>"; };
 		35072E3C230AFBFB00689F75 /* DiscreteSliderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscreteSliderTests.swift; sourceTree = "<group>"; };
 		35072E3E230B002000689F75 /* DiscreteSlider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscreteSlider.swift; sourceTree = "<group>"; };
 		35072E49230B475A00689F75 /* ConfigurableTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigurableTableCell.swift; sourceTree = "<group>"; };
@@ -251,6 +254,7 @@
 				350457FA2309AEB500F4B8DC /* UINavigationController+BaseNavigationController.swift */,
 				3527AF13230DFFCA00ED0E26 /* UIView+fadeTransition.swift */,
 				3532AA9923105E0500C1F373 /* TinyEdgeInset+convienceInit.swift */,
+				3506807B231A9B8000604CE5 /* Double+toString.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -663,6 +667,7 @@
 				35072E4D230B47D500689F75 /* BrewVariableBundleCell.swift in Sources */,
 				350457FD230A07DA00F4B8DC /* BaseViewController.swift in Sources */,
 				351A66BA23194C4C00D1061B /* PrepStepCellVM.swift in Sources */,
+				3506807C231A9B8000604CE5 /* Double+toString.swift in Sources */,
 				3532AA9823105C4700C1F373 /* RecipeConstantCellView.swift in Sources */,
 				3532AA9E23106AA800C1F373 /* RecipeSemiConstantCellView.swift in Sources */,
 				35045802230A0E3300F4B8DC /* DesiredTasteSceneView.swift in Sources */,
@@ -737,6 +742,7 @@
 				35EC73FD2308541400964665 /* BrewVariableTests.swift in Sources */,
 				352A1FC2230F6CD300D7FE02 /* BrewVariableBundleCell.swift in Sources */,
 				3532AA9F2310726000C1F373 /* RecipeSemiConstantCellView.swift in Sources */,
+				3569D32E231F135B00427450 /* Double+toString.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
