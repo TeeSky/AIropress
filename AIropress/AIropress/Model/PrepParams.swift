@@ -10,4 +10,30 @@ import Foundation
 
 struct PrepParams {
     let prepSteps: [PrepStep]
+    
+    static func create(values: [Int: Double]) -> PrepParams? {
+        return self.create(recipeValues: RecipeValueId.createRecipeValueMap(from: values))
+    }
+    
+    static func create(recipeValues: [RecipeValueId: Double]) -> PrepParams? {
+        guard let tempValue = recipeValues[.temperature],
+            let coffeeAmount = recipeValues[.coffeeAmount],
+            let orientationValue = recipeValues[.aeropressOrientation],
+            let aeropressOrientation = AeropressBrewOrientation.fromDouble(value: orientationValue) else {
+                return nil
+        }
+        
+        return PrepParams(waterTemp: tempValue, coffeeAmount: coffeeAmount, aeropressOrientation: aeropressOrientation)
+    }
+    
+    init(waterTemp: Double, coffeeAmount: Double, aeropressOrientation: AeropressBrewOrientation) {
+        prepSteps = [.preheatWater(waterTemp.toTempString()),
+        .rinseFilter,
+        .rinseAeropress,
+        .orientate(aeropressOrientation),
+        .placeOnScale,
+        .weighOutCoffee(coffeeAmount.toWeightString()),
+        .prepareKettle]
+    }
+    
 }
