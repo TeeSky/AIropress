@@ -9,25 +9,26 @@
 import XCTest
 
 class PrepParamsTests: XCTestCase {
-
-    override func setUp() {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+    
+    func testCreateNonNil() {
+        let valuesMap = [RecipeValueId.temperature.rawValue: 90,
+                         RecipeValueId.coffeeAmount.rawValue: 18,
+                         RecipeValueId.aeropressOrientation.rawValue: AeropressBrewOrientation.inverted.value(),
+                         48: 54.5]
+        
+        let prepParams = PrepParams.create(values: valuesMap)
+        
+        XCTAssertNotNil(prepParams)
     }
-
-    override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
+    
+    func testCreateNilWithInsufficientValues() {
+        let valuesMap = [256: 1.0,
+                         RecipeValueId.temperature.rawValue: 92,
+                         RecipeValueId.aeropressOrientation.rawValue: AeropressBrewOrientation.normal.value(),
+                         91: 58.1]
+        
+        let prepParams = PrepParams.create(values: valuesMap)
+        
+        XCTAssertNil(prepParams)
     }
-
-    func testExample() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-    }
-
-    func testPerformanceExample() {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
-        }
-    }
-
 }
