@@ -11,6 +11,37 @@ import Foundation
 enum AeropressBrewOrientation: String {
     case normal = "Screw on the filter holder and place the Aeropress on the cup."
     case inverted = "Insert plunger, turn the Aeropress upside-down."
+    
+    private static let valueMap: [AeropressBrewOrientation: Double] = [.normal: 0.0,
+                                                                       .inverted : 0.1]
+    
+    static func fromDouble(value: Double) -> AeropressBrewOrientation? {
+        var desiredOrientation: AeropressBrewOrientation?
+        for (orientation, orientationValue) in valueMap where orientationValue == value {
+            guard desiredOrientation == nil else { fatalError("Single orientation must have exactly one entry in valueMap")}
+            
+            desiredOrientation = orientation
+        }
+        return desiredOrientation
+    }
+    
+    func value() -> Double {
+        guard let value = AeropressBrewOrientation.valueMap[self] else {
+            fatalError("valueMap must contain value for every orientation.")
+        }
+        
+        return value
+    }
+    
+    func valueText() -> String {
+        switch self {
+        case .normal:
+            return "normal"
+        case .inverted:
+            return "inverted"
+        }
+    }
+    
 }
 
 enum PrepStep {
@@ -19,7 +50,7 @@ enum PrepStep {
     case rinseAeropress
     case orientate(AeropressBrewOrientation)
     case placeOnScale
-    case weighXCoffee(String)
+    case weighOutCoffee(String)
     case prepareKettle
     
     func text() -> String {
@@ -35,7 +66,7 @@ enum PrepStep {
             text = orientation.rawValue
         case .placeOnScale:
             text = "Place the Aeropress on scale, tare."
-        case .weighXCoffee(let weightString):
+        case .weighOutCoffee(let weightString):
             text = "Put exactly \(weightString) of coffee into the Aeropress."
         case .prepareKettle:
             text = "Tare the scale again and prepare your brewing kettle with the hot water."
