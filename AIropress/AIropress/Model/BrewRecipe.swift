@@ -15,6 +15,42 @@ protocol BrewRecipeProvider {
 struct BrewRecipe: Equatable {
     let constants: [RecipeConstant]
     let semiConstants: [RecipeSemiConstant]
+    
+    init() { // Mock init, remove and instantiate using real calculated values
+        let constants: [RecipeConstant] = [RecipeConstant(id: 3, label: "Water", value: 85, valueText: "85ml"),
+                                           RecipeConstant(id: 5, label: "Brewing time", value: 90, valueText: "1:30s"),
+                                           RecipeConstant(id: RecipeValueId.coffeeAmount.rawValue, label: "Coffee", value: 13, valueText: "13g"),
+                                           RecipeConstant(id: RecipeValueId.aeropressOrientation.rawValue, label: "Aer. orientation",
+                                                          value: AeropressBrewOrientation.inverted.value(), valueText: AeropressBrewOrientation.inverted.valueText())]
+        
+        let semiConstants: [RecipeSemiConstant] = [RecipeSemiConstant(id: RecipeValueId.temperature.rawValue, label: "Temperature", value: 86, valueText: "86C", confidenceVariableId: 10, initialConfidenceValue: 0.8),
+                                                   RecipeSemiConstant(id: 4, label: "Grind size", value: 28, valueText: "coarse", confidenceVariableId: 11, initialConfidenceValue: 0.5)]
+        
+        
+        self.init(constants: constants, semiConstants: semiConstants)
+    }
+    
+    init(constants: [RecipeConstant], semiConstants: [RecipeSemiConstant]) {
+        self.constants = constants
+        self.semiConstants = semiConstants
+    }
+}
+
+enum RecipeValueId: Int {
+    case aeropressOrientation = 0
+    case temperature = 1
+    case coffeeAmount = 2
+    
+    static func createRecipeValueMap(from valueMap: [Int: Double]) -> [RecipeValueId: Double] {
+        var recipeValueMap: [RecipeValueId: Double] = [:]
+        
+        for (id, value) in valueMap {
+            if let recipeValueId = RecipeValueId.init(rawValue: id) {
+                recipeValueMap[recipeValueId] = value
+            }
+        }
+        return recipeValueMap
+    }
 }
 
 struct RecipeConstant {
