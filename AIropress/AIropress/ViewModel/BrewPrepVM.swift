@@ -18,6 +18,8 @@ class BrewPrepVM {
         cellVMs = prepParams.prepSteps.enumerated().map { PrepStepCellVM(cellIndex: $0, prepStep: $1)}
     }
     
+    
+    @objc
     func onBrewClicked() {
         flowController?.onBrewInitiated()
     }
