@@ -16,6 +16,7 @@ class BrewPrepSceneView: LabeledSceneView {
         let tableView = UITableView()
         tableView.allowsSelection = false
         tableView.separatorStyle = .none
+        
         return tableView
     }()
     
@@ -35,11 +36,11 @@ class BrewPrepSceneView: LabeledSceneView {
     }()
     
     lazy var resetButton: UIButton = {
-        return BaseSceneView.createButton(title: "Reset", color: AppOptions.color.buttonNegative)
+        return BaseSceneView.createResetButton()
     }()
     
-    lazy var prepareButton: UIButton = {
-        return BaseSceneView.createButton(title: "Prepare")
+    lazy var brewButton: UIButton = {
+        return BaseSceneView.createButton(title: "Brew")
     }()
     
     override func getSceneLabelText() -> String {
@@ -51,20 +52,19 @@ class BrewPrepSceneView: LabeledSceneView {
         
         addSubview(tableView)
         addSubview(resetButton)
-        addSubview(prepareButton)
+        addSubview(brewButton)
     }
     
     override func setContraints() {
         super.setContraints()
         
-        resetButton.width(150)
-        prepareButton.width(150)
+        whatToDoLabelContainer.height(100)
         
         contentContainer.stack([whatToDoLabelContainer, tableView], spacing: 5)
         
         resetButton.centerY(to: bottomButtonContainer)
-        prepareButton.centerY(to: bottomButtonContainer)
+        brewButton.centerY(to: bottomButtonContainer)
         resetButton.left(to: bottomButtonContainer)
-        prepareButton.right(to: bottomButtonContainer)
+        brewButton.right(to: bottomButtonContainer)
     }
 }
