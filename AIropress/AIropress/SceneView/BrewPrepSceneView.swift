@@ -30,7 +30,7 @@ class BrewPrepSceneView: LabeledSceneView {
         label.font = UIFont.systemFont(ofSize: 25, weight: .regular)
         
         container.addSubview(label)
-        label.centerYToSuperview()
+        label.topToSuperview()
         
         return container
     }()
@@ -59,7 +59,7 @@ class BrewPrepSceneView: LabeledSceneView {
     override func setContraints() {
         super.setContraints()
         
-        whatToDoLabelContainer.height(60)
+        whatToDoLabelContainer.height(55)
         
         whatToDoLabelContainer.edges(to: contentContainer, excluding: LayoutEdge.init(arrayLiteral: [.bottom]))
         

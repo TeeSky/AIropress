@@ -16,6 +16,7 @@ class PrepStepCellView: BaseCellView {
         let textView = UITextView()
         textView.font = UIFont.systemFont(ofSize: 18, weight: .regular)
         textView.textAlignment = .left
+        textView.isScrollEnabled = false
         
         return textView
     }()
@@ -34,6 +35,7 @@ class PrepStepCellView: BaseCellView {
     override func setContraints() {
         contentContainer.edgesToSuperview()
         
+        textView.sizeToFit()
         textView.edgesToSuperview()
     }
 }
