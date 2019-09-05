@@ -50,6 +50,7 @@ class BrewPrepSceneView: LabeledSceneView {
     override func addViews() {
         super.addViews()
         
+        addSubview(whatToDoLabelContainer)
         addSubview(tableView)
         addSubview(resetButton)
         addSubview(brewButton)
@@ -58,11 +59,12 @@ class BrewPrepSceneView: LabeledSceneView {
     override func setContraints() {
         super.setContraints()
         
-        whatToDoLabelContainer.height(100)
+        whatToDoLabelContainer.height(60)
         
-        tableView.edges(to: contentContainer, excluding: LayoutEdge.init(arrayLiteral: [.top, .bottom]), insets: TinyEdgeInsets(horizontal: 10))
+        whatToDoLabelContainer.edges(to: contentContainer, excluding: LayoutEdge.init(arrayLiteral: [.bottom]))
         
-        contentContainer.stack([whatToDoLabelContainer, tableView], spacing: 5)
+        tableView.topToBottom(of: whatToDoLabelContainer)
+        tableView.edges(to: contentContainer, excluding: LayoutEdge.init(arrayLiteral: [.top]), insets: TinyEdgeInsets(horizontal: 15, vertical: 0))
         
         resetButton.centerY(to: bottomButtonContainer)
         brewButton.centerY(to: bottomButtonContainer)
