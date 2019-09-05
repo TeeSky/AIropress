@@ -16,7 +16,7 @@ extension UINavigationController: BaseNavigationController {
     }
     
     func pop(animated: Bool) {
-        _ = self.popViewController(animated: true)
+        _ = self.popViewController(animated: animated)
     }
     
 }
