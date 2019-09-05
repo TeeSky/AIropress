@@ -20,3 +20,8 @@ protocol ViewRecipeSceneFC: class {
     func onRecipeReset()
     func onPrepared(recipeValues: [Int: Double])
 }
+
+protocol BrewPrepSceneFC: class {
+    func onRecipeReset()
+    func onBrewInitiated()
+}

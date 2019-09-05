@@ -11,7 +11,7 @@ import UIKit
 
 protocol BaseNavigationController {
     func push(viewController: UIViewController)
-    func pop()
+    func pop(animated: Bool)
 }
 
 protocol ViewControllerProvider {
@@ -36,6 +36,10 @@ class MainFlowController {
         let nextViewController = viewControllerProvider.getViewController(self, for: scene)
         navigationController.push(viewController: nextViewController)
     }
+    
+    func onRecipeReset() {
+        navigationController.pop(animated: true)
+    }
 }
 
 extension MainFlowController: DesiredTasteSceneFC {
@@ -49,7 +53,7 @@ extension MainFlowController: DesiredTasteSceneFC {
 extension MainFlowController: AIProcessingSceneFC {
     
     func onProcessingDone(recipe: BrewRecipe) {
-        navigationController.pop()
+        navigationController.pop(animated: false)
         
         switchTo(scene: .viewRecipe(recipe: recipe))
     }
@@ -57,11 +61,21 @@ extension MainFlowController: AIProcessingSceneFC {
 
 extension MainFlowController: ViewRecipeSceneFC {
     
-    func onRecipeReset() {
-        navigationController.pop()
-    }
-    
     func onPrepared(recipeValues: [Int: Double]) {
-        fatalError("not implemented")
+        navigationController.pop(animated: false)
+        
+        guard let prepParams = PrepParams.create(values: recipeValues) else {
+            fatalError("Insuficient recipeValues received.")
+        }
+        switchTo(scene: .brewPrep(params: prepParams))
     }
+
+}
+
+extension MainFlowController: BrewPrepSceneFC {
+    
+    func onBrewInitiated() {
+        fatalError("Not implemented.")
+    }
+
 }
