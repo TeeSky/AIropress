@@ -60,6 +60,8 @@ class BrewPrepSceneView: LabeledSceneView {
         
         whatToDoLabelContainer.height(100)
         
+        tableView.edges(to: contentContainer, excluding: LayoutEdge.init(arrayLiteral: [.top, .bottom]), insets: TinyEdgeInsets(horizontal: 10))
+        
         contentContainer.stack([whatToDoLabelContainer, tableView], spacing: 5)
         
         resetButton.centerY(to: bottomButtonContainer)
