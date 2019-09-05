@@ -16,6 +16,8 @@ class BrewPrepViewController: BaseViewController<BrewPrepSceneView> {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        viewModel.configure(tableView: sceneView.tableView)
+        
         sceneView.tableView.dataSource = self
         sceneView.tableView.delegate = self
         

@@ -16,7 +16,7 @@ class PrepStepCellVM {
     }()
     
     static let cellHeight: CGFloat = {
-        return 50
+        return 55
     }()
     
     let cellText: String

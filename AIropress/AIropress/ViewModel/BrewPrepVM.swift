@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 
 class BrewPrepVM {
     
@@ -18,6 +19,9 @@ class BrewPrepVM {
         cellVMs = prepParams.prepSteps.enumerated().map { PrepStepCellVM(cellIndex: $0, prepStep: $1)}
     }
     
+    func configure(tableView: UITableView) {
+        tableView.register(PrepStepCell.self, forCellReuseIdentifier: PrepStepCellVM.cellIdentifier)
+    }
     
     @objc
     func onBrewClicked() {
