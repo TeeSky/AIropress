@@ -27,6 +27,11 @@ class BrewPrepVM {
     func onBrewClicked() {
         flowController?.onBrewInitiated()
     }
+    
+    @objc
+    func onResetClicked() {
+        flowController?.onRecipeReset()
+    }
 }
 
 extension BrewPrepVM: BaseTableVM {

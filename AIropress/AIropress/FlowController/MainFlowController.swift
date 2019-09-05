@@ -36,6 +36,10 @@ class MainFlowController {
         let nextViewController = viewControllerProvider.getViewController(self, for: scene)
         navigationController.push(viewController: nextViewController)
     }
+    
+    func onRecipeReset() {
+        navigationController.pop(animated: true)
+    }
 }
 
 extension MainFlowController: DesiredTasteSceneFC {
@@ -57,10 +61,6 @@ extension MainFlowController: AIProcessingSceneFC {
 
 extension MainFlowController: ViewRecipeSceneFC {
     
-    func onRecipeReset() {
-        navigationController.pop(animated: true)
-    }
-    
     func onPrepared(recipeValues: [Int: Double]) {
         navigationController.pop(animated: false)
         
@@ -75,7 +75,7 @@ extension MainFlowController: ViewRecipeSceneFC {
 extension MainFlowController: BrewPrepSceneFC {
     
     func onBrewInitiated() {
-        
+        fatalError("Not implemented.")
     }
 
 }

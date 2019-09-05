@@ -171,6 +171,22 @@ class MainFlowControllerTests: XCTestCase {
         XCTAssertEqual(expectedViewControllerOnStack, navigationController.stack[1])
     }
     
+    func testBrewPrepSceneFlowOnRecipeReset() {
+        let expectedViewControllerOnStack = viewControllerProvider.desiredTasteSceneVC
+        
+        mainFlowController.startFlow()
+        mainFlowController.onParametersSet(brewParameters: MockBrewVars.brewParameters)
+        mainFlowController.onProcessingDone(recipe: MockBrewVars.recipe)
+        mainFlowController.onPrepared(recipeValues: MockBrewVars.recipeValues)
+        navigationController.resetPushPop()
+        
+        mainFlowController.onRecipeReset()
+        
+        XCTAssertTrue(navigationController.didPop)
+        XCTAssertFalse(navigationController.didPush)
+        XCTAssertTrue(navigationController.stack.count == 1)
+        XCTAssertEqual(expectedViewControllerOnStack, navigationController.stack[0])
+    }
     
     // TODO implement all flow control tests (when all scene fcs are done)
 }

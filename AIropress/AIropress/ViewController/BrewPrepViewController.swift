@@ -22,6 +22,7 @@ class BrewPrepViewController: BaseViewController<BrewPrepSceneView> {
         sceneView.tableView.delegate = self
         
         sceneView.brewButton.addTarget(viewModel, action: #selector(viewModel.onBrewClicked), for: .touchUpInside)
+        sceneView.resetButton.addTarget(viewModel, action: #selector(viewModel.onResetClicked), for: .touchUpInside)
     }
 }
 

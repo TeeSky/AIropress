@@ -22,5 +22,6 @@ protocol ViewRecipeSceneFC: class {
 }
 
 protocol BrewPrepSceneFC: class {
+    func onRecipeReset()
     func onBrewInitiated()
 }
