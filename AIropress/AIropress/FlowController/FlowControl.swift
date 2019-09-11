@@ -25,3 +25,8 @@ protocol BrewPrepSceneFC: class {
     func onRecipeReset()
     func onBrewInitiated()
 }
+
+protocol BrewingSceneFC: class {
+    func onRecipeReset()
+    func onBrewFinished()
+}
