@@ -8,24 +8,86 @@
 
 import XCTest
 
+struct PhaseTextSet {
+    let labelText: String
+    let timerText: String
+}
+
+protocol BrewingVMDelegate: class {
+    func setTimerTexts(mainTimerText: String, currentPhaseTimerText: String)
+    func setNextPhaseTexts(textSets: [PhaseTextSet])
+}
+
 class BrewingVM: BaseViewModel {
     
-    let brewPhases: [BrewPhase]
-    let timerProvider: Timer.Type
+    private(set) var currentTotalTicks: Int
+    private(set) var currentBrewPhaseIndex: Int
+    private(set) var currentBrewPhaseTimer: BrewPhaseTimer?
     
+    lazy var totalBrewTime: Double = {
+        return brewPhases.map({ $0.duration }).reduce(0, +)
+    }()
+    
+    var nextPhaseTexts: [PhaseTextSet] {
+        let startIndex = currentBrewPhaseIndex
+        let endIndex = startIndex + 2
+        
+        let nextBrewPhases = Array(brewPhases[currentBrewPhaseIndex...endIndex])
+        return nextBrewPhases.map { PhaseTextSet(labelText: $0.label, timerText: $0.duration.asStopwatchString())}
+    }
+    
+    let brewPhases: [BrewPhase]
+    let brewTimerType: BrewPhaseTimer.Type
+    
+    weak var delegate: BrewingVMDelegate?
     weak var flowController: BrewingSceneFC?
     
-    init(brewPhases: [BrewPhase], timerProvider: Timer.Type) {
+    init(brewPhases: [BrewPhase], timerType: BrewPhaseTimer.Type = BrewPhaseTimer.self) {
+        self.currentTotalTicks = 0
+        self.currentBrewPhaseIndex = 0
         self.brewPhases = brewPhases
-        self.timerProvider = timerProvider
+        self.brewTimerType = timerType
     }
     
     func onResetClicked() {
         flowController?.onRecipeReset()
     }
+    
+    func onSceneDidAppear() {
+        delegate?.setNextPhaseTexts(textSets: nextPhaseTexts)
+        
+        startPhaseTimer()
+    }
+    
+    private func onPhaseTick(remainingSeconds: Double) {
+        currentTotalTicks += 1
+        
+        let totalRemainingSeconds = (totalBrewTime - Double(currentTotalTicks)).rounded(.towardZero)
+        let mainTimerText = totalRemainingSeconds.asStopwatchString()
+        
+        let phaseTimerText = remainingSeconds.asStopwatchString()
+        
+        delegate?.setTimerTexts(mainTimerText: mainTimerText, currentPhaseTimerText: phaseTimerText)
+    }
+    
+    private func onPhaseEnd() {
+        currentBrewPhaseIndex += 1
+        guard currentBrewPhaseIndex < brewPhases.count else {
+            flowController?.onBrewFinished()
+            return
+        }
+        
+        startPhaseTimer()
+    }
+    
+    private func startPhaseTimer() {
+        currentTotalTicks = 0
+        currentBrewPhaseTimer = brewTimerType.init(brewPhase: brewPhases[currentBrewPhaseIndex],
+                                               tickDelegate: onPhaseTick, phaseEndDelegate: onPhaseEnd)
+    }
 }
 
-class MockBrewingSceneFC: BrewingSceneFC {
+private class MockBrewingSceneFC: BrewingSceneFC {
     
     var recipeReset: Bool?
     var brewFinished: Bool?
@@ -40,23 +102,28 @@ class MockBrewingSceneFC: BrewingSceneFC {
     
 }
 
-class MockTimer: Timer {
+private class MockBrewingVMDelegate: BrewingVMDelegate {
     
-    var block: ((Timer) -> Void)!
+    var mainTimerText: String?
+    var currentPhaseTimerText: String?
     
-    static var currentTimer: Timer?
+    var nextPhaseTextSets: [PhaseTextSet]?
     
-    override func fire() {
-        block(self)
+    func setTimerTexts(mainTimerText: String, currentPhaseTimerText: String) {
+        self.mainTimerText = mainTimerText
+        self.currentPhaseTimerText = currentPhaseTimerText
     }
     
-    override open class func scheduledTimer(withTimeInterval interval: TimeInterval, repeats: Bool, block: @escaping (Timer) -> Void) -> Timer {
-        let timer = MockTimer()
-        
-        timer.block = block
-        MockTimer.currentTimer = timer
-        
-        return timer
+    func setNextPhaseTexts(textSets: [PhaseTextSet]) {
+        nextPhaseTextSets = textSets
+    }
+    
+}
+
+private class MockBrewPhaseTimer: BrewPhaseTimer {
+    
+    required init(brewPhase: BrewPhase, tickDelegate: @escaping TickDelegate, phaseEndDelegate: @escaping PhaseEndDelegate, autostartTimers: Bool = true, timerProvider: Timer.Type = Timer.self) {
+        super.init(brewPhase: brewPhase, tickDelegate: tickDelegate, phaseEndDelegate: phaseEndDelegate, autostartTimers: false)
     }
 }
 
@@ -71,7 +138,7 @@ class BrewingVMTests: XCTestCase {
         
         brewPhases = AeroPressBrewingPlan(waterAmount: 50, coffeeAmount: 13, bloomDuration: 20, brewDuration: 35).orderedPhases
 
-        brewingVM = BrewingVM(brewPhases: brewPhases, timerProvider: MockTimer.self)
+        brewingVM = BrewingVM(brewPhases: brewPhases, timerType: MockBrewPhaseTimer.self)
     }
     
     func testInitBrewPhases() {
@@ -85,6 +152,17 @@ class BrewingVMTests: XCTestCase {
         }
     }
     
+    func testTotalBrewTime() {
+        var expectedTotalTime = 0.0
+        for brewPhase in brewPhases {
+            expectedTotalTime += brewPhase.duration
+        }
+        
+        XCTAssertEqual(expectedTotalTime, brewingVM.totalBrewTime)
+    }
+    
+    // test nextPhaseTexts
+    
     func testOnResetClicked() {
         let flowController = MockBrewingSceneFC()
         let expectedResetClicked = true
@@ -94,4 +172,42 @@ class BrewingVMTests: XCTestCase {
         
         XCTAssertEqual(expectedResetClicked, flowController.recipeReset)
     }
+    
+    func testOnSceneDidAppearPhase() {
+        let expectedInitialPhaseIndex = 0
+        let expectedInitialBrewPhase = brewPhases[expectedInitialPhaseIndex]
+        let expectedInitialPhaseDuration = expectedInitialBrewPhase.duration
+        let expectedInitialTicks = 0
+        
+        brewingVM.onSceneDidAppear()
+        
+        XCTAssertEqual(expectedInitialTicks, brewingVM.currentTotalTicks)
+        XCTAssertEqual(expectedInitialPhaseIndex, brewingVM.currentBrewPhaseIndex)
+        XCTAssertEqual(expectedInitialPhaseDuration, brewingVM.currentBrewPhaseTimer?.phaseDuration)
+        
+        // test delegate phase texts
+    }
+    
+    func testOnPhaseTick() {
+        let expectedTicks = 2
+        let tickValue = 3.0
+        let expectedCurrentPhaseTimerText = "00:03"
+        
+        XCTAssertEqual(100, brewingVM.totalBrewTime) // Pre-test state check
+        let expectedMainTimerText = "01:38" // 100 - 2 seconds
+        
+        let mockVMDelegate = MockBrewingVMDelegate()
+        brewingVM.delegate = mockVMDelegate
+        
+        brewingVM.onSceneDidAppear()
+        for _ in 1...expectedTicks {
+            brewingVM.currentBrewPhaseTimer!.tickDelegate(tickValue)
+        }
+        
+        XCTAssertEqual(expectedTicks, brewingVM.currentTotalTicks)
+        XCTAssertEqual(expectedCurrentPhaseTimerText, mockVMDelegate.currentPhaseTimerText)
+        XCTAssertEqual(expectedMainTimerText, mockVMDelegate.mainTimerText)
+    }
+    
+    // test onPhaseEnd
 }
