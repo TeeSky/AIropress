@@ -40,8 +40,8 @@ class ViewRecipeSceneView: LabeledSceneView {
         addSubview(prepareButton)
     }
     
-    override func setContraints() {
-        super.setContraints()
+    override func setConstraints() {
+        super.setConstraints()
         
         tableView.edges(to: contentContainer)
         

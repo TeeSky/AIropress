@@ -35,8 +35,8 @@ class DesiredTasteSceneView: LabeledSceneView {
         addSubview(calculateButton)
     }
     
-    override func setContraints() {
-        super.setContraints()
+    override func setConstraints() {
+        super.setConstraints()
         
         tableView.edges(to: contentContainer)
         

@@ -41,7 +41,7 @@ class AIProcessingSceneView: BaseSceneView {
         activityIndicatorContainer.addSubview(activityIndicator)
     }
     
-    override func setContraints() {
+    override func setConstraints() {
         safeAreaContainer.edgesToSuperview(usingSafeArea: true)
         
         progressLabel.centerInSuperview()
