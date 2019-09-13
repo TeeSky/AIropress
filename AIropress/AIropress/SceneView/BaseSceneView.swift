@@ -15,21 +15,27 @@ class BaseSceneView: UIView {
         self.backgroundColor = .white
         
         self.addViews()
-        self.setContraints()
+        self.setConstraints()
     }
     
     func addViews() {
     }
     
-    func setContraints() {
+    func setConstraints() {
     }
     
-    static func createButton(title: String, color: UIColor = AppOptions.color.button) -> UIButton {
+    static func createResetButton() -> UIButton {
+        let button = BaseSceneView.createButton(title: "Reset", color: AppOptions.color.buttonNegative, width: 90.0)
+        return button
+    }
+    
+    static func createButton(title: String, color: UIColor = AppOptions.color.button, width: CGFloat = 150.0) -> UIButton {
         let button = UIButton()
         button.layer.cornerRadius = 5
         button.backgroundColor = color
         button.setTitleColor(.white, for: .normal)
         button.setTitle(title, for: .normal)
+        button.width(width)
         return button
     }
 }

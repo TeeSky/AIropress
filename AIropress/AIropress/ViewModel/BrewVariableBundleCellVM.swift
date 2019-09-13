@@ -61,7 +61,7 @@ extension BrewVariableBundleCellVM: BaseTableCellVM {
     }
     
     var cellHeight: CGFloat {
-        let labelHeight = 70
+        let labelHeight = 55
         let slidersHeight = variableBundle.variables.count * BrewVariableSlider.height
         return CGFloat(labelHeight + slidersHeight)
     }

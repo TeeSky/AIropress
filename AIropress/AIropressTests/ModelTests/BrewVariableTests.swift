@@ -31,14 +31,21 @@ struct MockBrewVars {
     static let brewParameters = BrewParameters(brewVariableBundles: bundles, values: [:])
     
     
-    static let constants: [RecipeConstant] = [RecipeConstant(id: 0, label: "Water", value: 85, valueText: "85ml"),
-                                       RecipeConstant(id: 1, label: "Brewing time", value: 90, valueText: "1:30"),
-                                       RecipeConstant(id: 2, label: "Coffee", value: 13, valueText: "13g")]
+    static let constants: [RecipeConstant] = [RecipeConstant(id: 6, label: "Water", value: 85, valueText: "85ml"),
+                                       RecipeConstant(id: 5, label: "Brewing time", value: 90, valueText: "1:30"),
+                                       RecipeConstant(id: RecipeValueId.coffeeAmount.rawValue, label: "Coffee", value: 13, valueText: "13g")]
     
-    static let semiConstants: [RecipeSemiConstant] = [RecipeSemiConstant(id: 3, label: "Temperature", value: 86, valueText: "86C", confidenceVariableId: 10, initialConfidenceValue: 0.8),
+    static let semiConstants: [RecipeSemiConstant] = [RecipeSemiConstant(id: RecipeValueId.temperature.rawValue, label: "Temperature", value: 86, valueText: "86C", confidenceVariableId: 10, initialConfidenceValue: 0.8),
                                                RecipeSemiConstant(id: 4, label: "Grind size", value: 28, valueText: "coarse", confidenceVariableId: 11, initialConfidenceValue: 0.5)]
     
     static let recipe: BrewRecipe = BrewRecipe(constants: constants, semiConstants: semiConstants)
+    
+    static let recipeValues: [Int: Double] = [RecipeValueId.aeropressOrientation.rawValue: AeropressBrewOrientation.inverted.value(),
+                                              RecipeValueId.coffeeAmount.rawValue: 13.0,
+                                              RecipeValueId.temperature.rawValue: 85.0,
+                                              RecipeValueId.waterAmount.rawValue: 90.0,
+                                              RecipeValueId.bloomDuration.rawValue: 20.0,
+                                              RecipeValueId.brewDuration.rawValue: 35.0]
 }
 
 class BrewVariableTests: XCTestCase {

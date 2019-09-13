@@ -30,7 +30,7 @@ class BaseTableViewCell<CV: BaseCellView>: UITableViewCell {
     override func updateConstraints() {
         if !didSetConstraints {
             cellView.edgesToSuperview()
-            cellView.setContraints()
+            cellView.setConstraints()
             didSetConstraints = true
         }
         

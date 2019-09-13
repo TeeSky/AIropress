@@ -14,13 +14,13 @@ class RecipeConstantCellView: BaseCellView {
     
     lazy var constantLabel: UILabel = {
         let label = UILabel()
-        label.font = UIFont.systemFont(ofSize: 18, weight: .regular)
+        label.font = UIFont.systemFont(ofSize: AppOptions.fontSize.normal, weight: .regular)
         return label
     }()
     
     lazy var constantValue: UILabel = {
         let label = UILabel()
-        label.font = UIFont.systemFont(ofSize: 18, weight: .bold)
+        label.font = UIFont.systemFont(ofSize: AppOptions.fontSize.normal, weight: .bold)
         return label
     }()
     
@@ -36,7 +36,7 @@ class RecipeConstantCellView: BaseCellView {
         contentContainer.addSubview(constantValue)
     }
     
-    override func setContraints() {
+    override func setConstraints() {
         contentContainer.edgesToSuperview(insets: TinyEdgeInsets(top: 5))
         
         constantLabel.leftToSuperview()

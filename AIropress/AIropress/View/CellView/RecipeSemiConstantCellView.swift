@@ -7,6 +7,8 @@
 //
 
 import Foundation
+import UIKit
+import TinyConstraints
 
 class RecipeSemiConstantCellView: BaseCellView {
     
@@ -17,16 +19,23 @@ class RecipeSemiConstantCellView: BaseCellView {
     lazy var confidenceSlider: BrewVariableSlider = {
         return BrewVariableSlider()
     }()
+    
+    private lazy var contentContainer: UIView = {
+        return UIView()
+    }()
 
     override func addViews() {
+        addSubview(contentContainer)
+        
         constantView.addViews()
-        addSubview(constantView)
-        addSubview(confidenceSlider)
+        contentContainer.addSubview(constantView)
+        contentContainer.addSubview(confidenceSlider)
     }
     
-    override func setContraints() {
-        constantView.setContraints()
+    override func setConstraints() {
+        contentContainer.edgesToSuperview(insets: TinyEdgeInsets(top: 15))
+        constantView.setConstraints()
         
-        self.stack([constantView, confidenceSlider], spacing: 10)
+        contentContainer.stack([constantView, confidenceSlider], spacing: 10)
     }
 }

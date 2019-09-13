@@ -46,15 +46,20 @@ extension AIProcessingViewController: AIProcessingVMDelegate {
         } else {
             shouldHide = true
         }
+        
+        setActivityIndicatorHiddenAnimated(hidden: shouldHide)
+    }
+    
+    private func setActivityIndicatorHiddenAnimated(hidden: Bool) {
         UIView.animate(withDuration: 1, delay: 0, options: .curveEaseInOut, animations: { [weak self] in
-            self?.sceneView.activityIndicator.alpha = shouldHide ? 0.0 : 1.0
+            self?.sceneView.activityIndicator.alpha = hidden ? 0.0 : 1.0
         }) { [weak self] (isCompleted) in
             guard let self = self else { return }
             
             let indicator = self.sceneView.activityIndicator
-            indicator.isHidden = shouldHide
+            indicator.isHidden = hidden
             
-            if shouldHide {
+            if hidden {
                 indicator.stopAnimating()
             }
         }
