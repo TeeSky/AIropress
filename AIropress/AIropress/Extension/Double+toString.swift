@@ -10,6 +10,13 @@ import Foundation
 
 extension Double {
     
+    func asStopwatchString() -> String {
+        let minutes = Int(self.truncatingRemainder(dividingBy: 3600) / 60)
+        let seconds = Int(self.truncatingRemainder(dividingBy: 60))
+        
+        return String(format: "%02i:%02i", minutes, seconds)
+    }
+    
      // TODO internationalize
     
     /// Converts temperature in Celsius degrees to String

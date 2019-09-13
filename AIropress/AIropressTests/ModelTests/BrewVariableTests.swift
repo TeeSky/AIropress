@@ -42,7 +42,10 @@ struct MockBrewVars {
     
     static let recipeValues: [Int: Double] = [RecipeValueId.aeropressOrientation.rawValue: AeropressBrewOrientation.inverted.value(),
                                               RecipeValueId.coffeeAmount.rawValue: 13.0,
-                                              RecipeValueId.temperature.rawValue: 85.0]
+                                              RecipeValueId.temperature.rawValue: 85.0,
+                                              RecipeValueId.waterAmount.rawValue: 90.0,
+                                              RecipeValueId.bloomDuration.rawValue: 20.0,
+                                              RecipeValueId.brewDuration.rawValue: 35.0]
 }
 
 class BrewVariableTests: XCTestCase {
