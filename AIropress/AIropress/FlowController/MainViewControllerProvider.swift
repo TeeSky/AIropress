@@ -45,6 +45,12 @@ struct MainViewControllerProvider: ViewControllerProvider {
             let brewingViewController = BrewingViewController()
             brewingViewController.viewModel = brewingVM
             controller = brewingViewController
+        case .allDone:
+            let allDoneVM = AllDoneVM()
+            allDoneVM.flowController = flowController
+            let allDoneViewController = AllDoneViewController()
+            allDoneViewController.viewModel = allDoneVM
+            controller = allDoneViewController
 //        default:
 //            fatalError("not implemented")
         }

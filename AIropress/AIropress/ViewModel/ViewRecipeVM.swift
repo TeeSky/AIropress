@@ -31,7 +31,7 @@ class ViewRecipeVM {
     
     @objc
     func onResetClicked() {
-        flowController?.onRecipeReset()
+        flowController?.onViewRecipeReset()
     }
     
     @objc

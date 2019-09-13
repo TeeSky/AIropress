@@ -30,7 +30,7 @@ class BrewPrepVM {
     
     @objc
     func onResetClicked() {
-        flowController?.onRecipeReset()
+        flowController?.onBrewPrepReset()
     }
 }
 

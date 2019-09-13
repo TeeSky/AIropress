@@ -48,6 +48,13 @@
 		3512F340232C19B700368485 /* BrewingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3512F33E232C19B700368485 /* BrewingViewController.swift */; };
 		3512F342232C223300368485 /* UICollection+safeSubscript.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3512F341232C223300368485 /* UICollection+safeSubscript.swift */; };
 		3512F343232C223300368485 /* UICollection+safeSubscript.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3512F341232C223300368485 /* UICollection+safeSubscript.swift */; };
+		3512F345232C40C700368485 /* AllDoneVMTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3512F344232C40C700368485 /* AllDoneVMTests.swift */; };
+		3512F347232C429F00368485 /* AllDoneVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3512F346232C429F00368485 /* AllDoneVM.swift */; };
+		3512F348232C42B100368485 /* AllDoneVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3512F346232C429F00368485 /* AllDoneVM.swift */; };
+		3512F34A232C435600368485 /* AllDoneSceneView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3512F349232C435600368485 /* AllDoneSceneView.swift */; };
+		3512F34C232C448300368485 /* AllDoneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3512F34B232C448300368485 /* AllDoneViewController.swift */; };
+		3512F34D232C45D400368485 /* AllDoneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3512F34B232C448300368485 /* AllDoneViewController.swift */; };
+		3512F34E232C45D800368485 /* AllDoneSceneView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3512F349232C435600368485 /* AllDoneSceneView.swift */; };
 		351A66B123194BDE00D1061B /* BrewPrepVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 351A66B023194BDE00D1061B /* BrewPrepVM.swift */; };
 		351A66B223194BEC00D1061B /* BrewPrepVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 351A66B023194BDE00D1061B /* BrewPrepVM.swift */; };
 		351A66B423194BFE00D1061B /* PrepParams.swift in Sources */ = {isa = PBXBuildFile; fileRef = 351A66B323194BFE00D1061B /* PrepParams.swift */; };
@@ -180,6 +187,10 @@
 		3512F33B232BC9DA00368485 /* BrewingSceneView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrewingSceneView.swift; sourceTree = "<group>"; };
 		3512F33E232C19B700368485 /* BrewingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrewingViewController.swift; sourceTree = "<group>"; };
 		3512F341232C223300368485 /* UICollection+safeSubscript.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollection+safeSubscript.swift"; sourceTree = "<group>"; };
+		3512F344232C40C700368485 /* AllDoneVMTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllDoneVMTests.swift; sourceTree = "<group>"; };
+		3512F346232C429F00368485 /* AllDoneVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllDoneVM.swift; sourceTree = "<group>"; };
+		3512F349232C435600368485 /* AllDoneSceneView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllDoneSceneView.swift; sourceTree = "<group>"; };
+		3512F34B232C448300368485 /* AllDoneViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllDoneViewController.swift; sourceTree = "<group>"; };
 		351A66B023194BDE00D1061B /* BrewPrepVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrewPrepVM.swift; sourceTree = "<group>"; };
 		351A66B323194BFE00D1061B /* PrepParams.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrepParams.swift; sourceTree = "<group>"; };
 		351A66B623194C2900D1061B /* PrepStep.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrepStep.swift; sourceTree = "<group>"; };
@@ -275,6 +286,7 @@
 				352A1FAD230F544F00D7FE02 /* ViewRecipeViewController.swift */,
 				351A66C42319CBE800D1061B /* BrewPrepViewController.swift */,
 				3512F33E232C19B700368485 /* BrewingViewController.swift */,
+				3512F34B232C448300368485 /* AllDoneViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -309,6 +321,7 @@
 				352A1FAF230F546000D7FE02 /* ViewRecipeSceneView.swift */,
 				351A66BC23195F3800D1061B /* BrewPrepSceneView.swift */,
 				3512F33B232BC9DA00368485 /* BrewingSceneView.swift */,
+				3512F349232C435600368485 /* AllDoneSceneView.swift */,
 			);
 			path = SceneView;
 			sourceTree = "<group>";
@@ -456,6 +469,7 @@
 				350118E32315F01200A4EE79 /* PrepStepCellVMTests.swift */,
 				350118E52315F10D00A4EE79 /* BrewPrepVMTests.swift */,
 				35FF73F62328EE08008646DA /* BrewingVMTests.swift */,
+				3512F344232C40C700368485 /* AllDoneVMTests.swift */,
 			);
 			path = ViewModelTests;
 			sourceTree = "<group>";
@@ -485,6 +499,7 @@
 				351A66B023194BDE00D1061B /* BrewPrepVM.swift */,
 				351A66B923194C4C00D1061B /* PrepStepCellVM.swift */,
 				3512F332232BC8DC00368485 /* BrewingVM.swift */,
+				3512F346232C429F00368485 /* AllDoneVM.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -712,7 +727,9 @@
 				35EC73FF2308B73200964665 /* BrewVariable.swift in Sources */,
 				3569D332231F2F2000427450 /* PrepStepCell.swift in Sources */,
 				352A1FB6230F5AB300D7FE02 /* BaseTableViewCell.swift in Sources */,
+				3512F347232C429F00368485 /* AllDoneVM.swift in Sources */,
 				35833E5623075398002F986B /* BrewRecipe.swift in Sources */,
+				3512F34A232C435600368485 /* AllDoneSceneView.swift in Sources */,
 				350457F52309A47300F4B8DC /* AppOptions.swift in Sources */,
 				35EC74032308BEBC00964665 /* BaseViewModel.swift in Sources */,
 				35072E3F230B002000689F75 /* DiscreteSlider.swift in Sources */,
@@ -724,6 +741,7 @@
 				35072E4D230B47D500689F75 /* BrewVariableBundleCell.swift in Sources */,
 				350457FD230A07DA00F4B8DC /* BaseViewController.swift in Sources */,
 				351A66BA23194C4C00D1061B /* PrepStepCellVM.swift in Sources */,
+				3512F34C232C448300368485 /* AllDoneViewController.swift in Sources */,
 				3506807C231A9B8000604CE5 /* Double+toString.swift in Sources */,
 				3532AA9823105C4700C1F373 /* RecipeConstantCellView.swift in Sources */,
 				3532AA9E23106AA800C1F373 /* RecipeSemiConstantCellView.swift in Sources */,
@@ -746,11 +764,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3512F34D232C45D400368485 /* AllDoneViewController.swift in Sources */,
 				35072E41230B0BEA00689F75 /* DesiredTasteViewController.swift in Sources */,
 				35072E4B230B475A00689F75 /* ConfigurableTableCell.swift in Sources */,
 				35833E5B230753EC002F986B /* MainFlowController.swift in Sources */,
 				351A66C62319CF2200D1061B /* BrewPrepViewController.swift in Sources */,
 				3560123E23071AEA003AF91D /* MainFlowControllerTests.swift in Sources */,
+				3512F34E232C45D800368485 /* AllDoneSceneView.swift in Sources */,
 				35072E47230B43A200689F75 /* DiscreteSlider.swift in Sources */,
 				350118E62315F10D00A4EE79 /* BrewPrepVMTests.swift in Sources */,
 				353DAA042321290300853A6A /* PrepStepCellView.swift in Sources */,
@@ -759,6 +779,7 @@
 				3532AA9B2310658300C1F373 /* RecipeConstantCellView.swift in Sources */,
 				3527AF15230E018900ED0E26 /* UIView+fadeTransition.swift in Sources */,
 				3527AF12230DFDD300ED0E26 /* AIProcessingSceneView.swift in Sources */,
+				3512F348232C42B100368485 /* AllDoneVM.swift in Sources */,
 				352A1FC1230F6CD000D7FE02 /* BaseTableViewCell.swift in Sources */,
 				35EC74042308BEBF00964665 /* BaseViewModel.swift in Sources */,
 				3527AF17230E0F4C00ED0E26 /* ViewRecipeVMTests.swift in Sources */,
@@ -798,6 +819,7 @@
 				3532AA9C2310658B00C1F373 /* TinyEdgeInset+convienceInit.swift in Sources */,
 				35833E5C230753EE002F986B /* FlowControl.swift in Sources */,
 				3527AF0C230DF4D500ED0E26 /* AIProcessingVM.swift in Sources */,
+				3512F345232C40C700368485 /* AllDoneVMTests.swift in Sources */,
 				3512F343232C223300368485 /* UICollection+safeSubscript.swift in Sources */,
 				35EC74002308B75300964665 /* BrewVariable.swift in Sources */,
 				352A1FA3230EC59100D7FE02 /* SemiConstantCellVMTests.swift in Sources */,

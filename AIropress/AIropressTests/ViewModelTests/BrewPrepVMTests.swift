@@ -10,11 +10,12 @@ import XCTest
 
 class MockBrewPrepSceneFC: BrewPrepSceneFC {
     
-    var brewInitiated: Bool?
-    var recipeReset: Bool?
     
-    func onRecipeReset() {
-        recipeReset = true
+    var brewInitiated: Bool?
+    var brewPrepReset: Bool?
+    
+    func onBrewPrepReset() {
+        brewPrepReset = true
     }
     
     func onBrewInitiated() {
@@ -70,6 +71,6 @@ class BrewPrepVMTests: XCTestCase {
         
         brewPrepVM.onResetClicked()
         
-        XCTAssertEqual(expectedRecipeReset, flowController.recipeReset)
+        XCTAssertEqual(expectedRecipeReset, flowController.brewPrepReset)
     }
 }
