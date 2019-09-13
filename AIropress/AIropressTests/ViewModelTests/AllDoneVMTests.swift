@@ -8,15 +8,6 @@
 
 import XCTest
 
-class AllDoneVM: BaseViewModel {
-    
-    weak var flowController: AllDoneSceneFC?
-    
-    func onMakeAnotherClicked() {
-        flowController?.onMakeAnother()
-    }
-}
-
 class MockAllDoneSceneFC: AllDoneSceneFC {
     
     var calledMakeAnother: Bool?
