@@ -57,8 +57,8 @@ class BrewPrepSceneView: LabeledSceneView {
         addSubview(brewButton)
     }
     
-    override func setContraints() {
-        super.setContraints()
+    override func setConstraints() {
+        super.setConstraints()
         
         whatToDoLabelContainer.height(55)
         

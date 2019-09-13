@@ -58,7 +58,7 @@ class BrewingSceneView: BaseSceneView {
         phaseLabelsContainer.addSubview(next2TimerLabel)
     }
     
-    override func setContraints() {
+    override func setConstraints() {
         safeAreaContainer.edgesToSuperview(insets: TinyEdgeInsets(horizontal: 5), usingSafeArea: true)
         
         mainTimerLabel.height(200)

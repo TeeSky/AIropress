@@ -50,7 +50,7 @@ class LabeledSceneView: BaseSceneView {
         addSubview(bottomButtonContainer)
     }
     
-    override func setContraints() {
+    override func setConstraints() {
         safeAreaContainer.edgesToSuperview(insets: TinyEdgeInsets(horizontal: 15), usingSafeArea: true)
         
         sceneLabelContainer.height(120)

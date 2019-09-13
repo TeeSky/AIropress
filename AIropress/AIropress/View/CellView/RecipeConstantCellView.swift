@@ -36,7 +36,7 @@ class RecipeConstantCellView: BaseCellView {
         contentContainer.addSubview(constantValue)
     }
     
-    override func setContraints() {
+    override func setConstraints() {
         contentContainer.edgesToSuperview(insets: TinyEdgeInsets(top: 5))
         
         constantLabel.leftToSuperview()

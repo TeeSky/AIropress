@@ -32,7 +32,7 @@ class PrepStepCellView: BaseCellView {
         contentContainer.addSubview(textView)
     }
     
-    override func setContraints() {
+    override func setConstraints() {
         contentContainer.edgesToSuperview()
         
         textView.sizeToFit()

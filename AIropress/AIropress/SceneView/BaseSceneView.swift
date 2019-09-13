@@ -15,13 +15,13 @@ class BaseSceneView: UIView {
         self.backgroundColor = .white
         
         self.addViews()
-        self.setContraints()
+        self.setConstraints()
     }
     
     func addViews() {
     }
     
-    func setContraints() {
+    func setConstraints() {
     }
     
     static func createResetButton() -> UIButton {
