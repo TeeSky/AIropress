@@ -20,7 +20,7 @@ class BrewVariableBundleCellView: BaseCellView {
     lazy var label: UILabel = {
         let label = UILabel()
         label.textAlignment = .center
-        label.font = UIFont.systemFont(ofSize: 25, weight: .regular)
+        label.font = UIFont.systemFont(ofSize: AppOptions.fontSize.large, weight: .regular)
         return label
     }()
     

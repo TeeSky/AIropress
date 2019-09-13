@@ -23,7 +23,7 @@ class LabeledSceneView: BaseSceneView {
         label.text = getSceneLabelText()
         label.textColor = .black
         label.textAlignment = .left
-        label.font = UIFont.systemFont(ofSize: 35, weight: .heavy)
+        label.font = UIFont.systemFont(ofSize: AppOptions.fontSize.xlarge, weight: .heavy)
         
         container.addSubview(label)
         label.centerYToSuperview()
