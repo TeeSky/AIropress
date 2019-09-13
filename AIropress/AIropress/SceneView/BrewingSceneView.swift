@@ -19,7 +19,7 @@ class BrewingSceneView: BaseSceneView {
     
     lazy var mainTimerLabel: UILabel = {
         let label = UILabel()
-        label.font = UIFont.systemFont(ofSize: 45, weight: .medium)
+        label.font = UIFont.systemFont(ofSize: 47, weight: .medium)
         label.textAlignment = .center
         label.textColor = .black
         return label
@@ -46,12 +46,16 @@ class BrewingSceneView: BaseSceneView {
         phaseLabel.setScale(scale: .smallest)
         return phaseLabel
     }()
-
+    
+    lazy var stopButton: UIButton = {
+        return BaseSceneView.createButton(title: "Stop", color: AppOptions.color.buttonNegative, width: 90)
+    }()
     
     override func addViews() {
         addSubview(safeAreaContainer)
         addSubview(mainTimerLabel)
         addSubview(phaseLabelsContainer)
+        addSubview(stopButton)
         
         phaseLabelsContainer.addSubview(currentPhaseTimerLabel)
         phaseLabelsContainer.addSubview(next1TimerLabel)
@@ -59,14 +63,16 @@ class BrewingSceneView: BaseSceneView {
     }
     
     override func setConstraints() {
-        safeAreaContainer.edgesToSuperview(insets: TinyEdgeInsets(horizontal: 5), usingSafeArea: true)
+        safeAreaContainer.edgesToSuperview(insets: TinyEdgeInsets(size: 15), usingSafeArea: true)
         
-        mainTimerLabel.height(200)
+        mainTimerLabel.height(180)
         mainTimerLabel.edges(to: safeAreaContainer, excluding: .bottom)
         
         phaseLabelsContainer.stack([currentPhaseTimerLabel, next1TimerLabel, next2TimerLabel], axis: .vertical, spacing: 10)
-        phaseLabelsContainer.edges(to: safeAreaContainer, excluding: .init(arrayLiteral: [.top, .bottom]), insets: .init(horizontal: 15))
+        phaseLabelsContainer.edges(to: safeAreaContainer, excluding: .init(arrayLiteral: [.top, .bottom]), insets: .init(horizontal: 5))
         phaseLabelsContainer.centerYToSuperview()
+        
+        stopButton.edges(to: safeAreaContainer, excluding: .init(arrayLiteral: [.top, .right]))
     }
     
 }
@@ -129,6 +135,8 @@ class PhaseLabelView: UIView {
     }
     
     func configure(with textSet: PhaseTextSet?) {
+        textLabel.fadeTransition(0.5)
+        timerLabel.fadeTransition(0.5)
         if let textSet = textSet {
             textLabel.text = textSet.labelText
             timerLabel.text = textSet.timerText

@@ -19,6 +19,7 @@ class BrewingVM: BaseViewModel {
     private(set) var currentTotalTicks: Int
     private(set) var currentBrewPhaseIndex: Int
     private(set) var currentBrewPhaseTimer: BrewPhaseTimer?
+    private(set) var brewFinished: Bool
     
     lazy var totalBrewTime: Double = {
         return brewPhases.map({ $0.duration }).reduce(0, +)
@@ -41,12 +42,17 @@ class BrewingVM: BaseViewModel {
     init(brewPhases: [BrewPhase], startPhaseIndex: Int = 0, timerType: BrewPhaseTimer.Type = BrewPhaseTimer.self) {
         self.completedPhasesDuration = 0
         self.currentTotalTicks = 0
+        self.brewFinished = false
         self.currentBrewPhaseIndex = startPhaseIndex
         self.brewPhases = brewPhases
         self.brewTimerType = timerType
     }
     
+    @objc
     func onStopClicked() {
+        guard !brewFinished else { return }
+        
+        currentBrewPhaseTimer?.invalidate()
         flowController?.onBrewStopped()
     }
     
@@ -69,7 +75,7 @@ class BrewingVM: BaseViewModel {
         completedPhasesDuration += brewPhases[currentBrewPhaseIndex].duration
         currentBrewPhaseIndex += 1
         guard currentBrewPhaseIndex < brewPhases.count else {
-            flowController?.onBrewFinished()
+            onBrewFinished()
             return
         }
         
@@ -83,5 +89,15 @@ class BrewingVM: BaseViewModel {
         currentTotalTicks = 0
         currentBrewPhaseTimer = brewTimerType.init(brewPhase: brewPhases[currentBrewPhaseIndex],
                                                    tickDelegate: onPhaseTick, phaseEndDelegate: onPhaseEnd)
+    }
+    
+    private func onBrewFinished() {
+        brewFinished = true
+        delegate?.setTimerTexts(mainTimerText: 0.asStopwatchString(), currentPhaseTimerText: nil)
+        delegate?.setPhaseTexts(textSets: [])
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+            self.flowController?.onBrewFinished()
+        }
     }
 }

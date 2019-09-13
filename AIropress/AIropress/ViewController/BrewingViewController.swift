@@ -16,6 +16,8 @@ class BrewingViewController: BaseViewController<BrewingSceneView> {
         super.viewDidLoad()
         
         viewModel.delegate = self
+        
+        sceneView.stopButton.addTarget(viewModel, action: #selector(viewModel.onStopClicked), for: .touchUpInside)
     }
     
     override func viewDidAppear(_ animated: Bool) {

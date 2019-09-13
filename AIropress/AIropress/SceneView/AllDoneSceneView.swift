@@ -42,6 +42,6 @@ class AllDoneSceneView: BaseSceneView {
         allDoneLabelContainer.centerInSuperview()
         
         makeAnotherButton.centerXToSuperview()
-        makeAnotherButton.bottomToSuperview(offset: -15)
+        makeAnotherButton.bottomToSuperview(offset: -15, usingSafeArea: true)
     }
 }

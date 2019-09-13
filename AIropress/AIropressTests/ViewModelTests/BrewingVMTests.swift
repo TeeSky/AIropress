@@ -11,14 +11,14 @@ import XCTest
 private class MockBrewingSceneFC: BrewingSceneFC {
     
     var brewStopped: Bool?
-    var brewFinished: Bool?
+    var brewFinishedExpectation: XCTestExpectation?
     
     func onBrewStopped() {
         brewStopped = true
     }
     
     func onBrewFinished() {
-        brewFinished = true
+        brewFinishedExpectation?.fulfill()
     }
     
 }
@@ -167,7 +167,7 @@ class BrewingVMTests: XCTestCase {
     func testOnBrewFinished() {
         let expectedInitialPhaseIndex = brewPhases.count - 1
         let expectedPhaseEndIndex = expectedInitialPhaseIndex + 1
-        let expectedNextPhaseTexts: [PhaseTextSet]? = nil
+        let expectedNextPhaseTexts: [PhaseTextSet]? = []
         let expectedBrewFinished = true
         
         let brewingVM = BrewingVM(brewPhases: brewPhases, startPhaseIndex: expectedInitialPhaseIndex)
@@ -175,13 +175,17 @@ class BrewingVMTests: XCTestCase {
         let delegate = MockBrewingVMDelegate()
         brewingVM.delegate = delegate
         let flowController = MockBrewingSceneFC()
+        let brewFinishedExpectation = XCTestExpectation(description: "Call onBrewFinished with delay.")
+        flowController.brewFinishedExpectation = brewFinishedExpectation
         brewingVM.flowController = flowController
         
         brewingVM.currentBrewPhaseTimer?.phaseEndDelegate()
         
         XCTAssertEqual(expectedPhaseEndIndex, brewingVM.currentBrewPhaseIndex)
+        XCTAssertEqual(expectedBrewFinished, brewingVM.brewFinished)
         XCTAssertEqual(expectedNextPhaseTexts, delegate.nextPhaseTextSets)
-        XCTAssertEqual(expectedBrewFinished, flowController.brewFinished)
+        
+        wait(for: [brewFinishedExpectation], timeout: 2.0)
     }
     
     private static func createPhaseTexts(brewPhases: [BrewPhase], startIndex: Int) -> [PhaseTextSet] {
