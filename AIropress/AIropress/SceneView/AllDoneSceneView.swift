@@ -12,46 +12,36 @@ import TinyConstraints
 
 class AllDoneSceneView: BaseSceneView {
     
-    lazy var safeAreaContainer: UIView = {
-        return UIView()
-    }()
-    
     lazy var allDoneLabelContainer: UIView = {
         let container = UIView()
         
         let label = UILabel()
         label.text = "All done"
         label.textColor = .black
-        label.textAlignment = .left
-        label.font = UIFont.systemFont(ofSize: AppOptions.fontSize.xlarge, weight: .heavy)
+        label.textAlignment = .center
+        label.font = UIFont.systemFont(ofSize: AppOptions.fontSize.xlarge, weight: .medium)
         
         container.addSubview(label)
-        label.centerYToSuperview()
+        label.centerXToSuperview()
         
         return container
     }()
     
     lazy var makeAnotherButton: UIButton = {
-        let button = UIButton()
-        button.titleLabel?.text = "Make Another"
-        return button
+        return BaseSceneView.createButton(title: "Make Another", color: AppOptions.color.buttonPositive)
     }()
     
     override func addViews() {
-        addSubview(safeAreaContainer)
         addSubview(allDoneLabelContainer)
         addSubview(makeAnotherButton)
     }
     
     override func setConstraints() {
-        safeAreaContainer.edgesToSuperview(insets: TinyEdgeInsets(horizontal: 15), usingSafeArea: true)
-        
         allDoneLabelContainer.height(120)
-        makeAnotherButton.height(65)
         
         allDoneLabelContainer.centerInSuperview()
         
         makeAnotherButton.centerXToSuperview()
-        makeAnotherButton.bottom(to: safeAreaContainer)
+        makeAnotherButton.bottomToSuperview(offset: -15)
     }
 }

@@ -42,6 +42,7 @@ struct AppBrewVariableBundles {
 struct AppColor {
     
     let button =  UIColor(red: 62/255, green: 39/255, blue: 35/255, alpha: 1)
+    let buttonPositive =  UIColor(red: 76/255, green: 175/255, blue: 80/255, alpha: 1)
     let buttonNegative =  UIColor(red: 211/255, green: 47/255, blue: 47/255, alpha: 1)
     
     fileprivate init() {
