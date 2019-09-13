@@ -12,6 +12,7 @@ class AllDoneVM: BaseViewModel {
     
     weak var flowController: AllDoneSceneFC?
     
+    @objc
     func onMakeAnotherClicked() {
         flowController?.onMakeAnother()
     }
