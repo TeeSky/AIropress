@@ -46,6 +46,8 @@
 		3512F33D232BC9DA00368485 /* BrewingSceneView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3512F33B232BC9DA00368485 /* BrewingSceneView.swift */; };
 		3512F33F232C19B700368485 /* BrewingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3512F33E232C19B700368485 /* BrewingViewController.swift */; };
 		3512F340232C19B700368485 /* BrewingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3512F33E232C19B700368485 /* BrewingViewController.swift */; };
+		3512F342232C223300368485 /* UICollection+safeSubscript.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3512F341232C223300368485 /* UICollection+safeSubscript.swift */; };
+		3512F343232C223300368485 /* UICollection+safeSubscript.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3512F341232C223300368485 /* UICollection+safeSubscript.swift */; };
 		351A66B123194BDE00D1061B /* BrewPrepVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 351A66B023194BDE00D1061B /* BrewPrepVM.swift */; };
 		351A66B223194BEC00D1061B /* BrewPrepVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 351A66B023194BDE00D1061B /* BrewPrepVM.swift */; };
 		351A66B423194BFE00D1061B /* PrepParams.swift in Sources */ = {isa = PBXBuildFile; fileRef = 351A66B323194BFE00D1061B /* PrepParams.swift */; };
@@ -177,6 +179,7 @@
 		3512F338232BC93300368485 /* BrewPhaseTimer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrewPhaseTimer.swift; sourceTree = "<group>"; };
 		3512F33B232BC9DA00368485 /* BrewingSceneView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrewingSceneView.swift; sourceTree = "<group>"; };
 		3512F33E232C19B700368485 /* BrewingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrewingViewController.swift; sourceTree = "<group>"; };
+		3512F341232C223300368485 /* UICollection+safeSubscript.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollection+safeSubscript.swift"; sourceTree = "<group>"; };
 		351A66B023194BDE00D1061B /* BrewPrepVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrewPrepVM.swift; sourceTree = "<group>"; };
 		351A66B323194BFE00D1061B /* PrepParams.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrepParams.swift; sourceTree = "<group>"; };
 		351A66B623194C2900D1061B /* PrepStep.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrepStep.swift; sourceTree = "<group>"; };
@@ -291,6 +294,7 @@
 				3527AF13230DFFCA00ED0E26 /* UIView+fadeTransition.swift */,
 				3532AA9923105E0500C1F373 /* TinyEdgeInset+convienceInit.swift */,
 				3506807B231A9B8000604CE5 /* Double+toString.swift */,
+				3512F341232C223300368485 /* UICollection+safeSubscript.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -727,6 +731,7 @@
 				35833E522307534F002F986B /* FlowControl.swift in Sources */,
 				3512F33C232BC9DA00368485 /* BrewingSceneView.swift in Sources */,
 				35072E4A230B475A00689F75 /* ConfigurableTableCell.swift in Sources */,
+				3512F342232C223300368485 /* UICollection+safeSubscript.swift in Sources */,
 				35045800230A0C8F00F4B8DC /* BaseSceneView.swift in Sources */,
 				3527AF10230DF54700ED0E26 /* AIProcessingSceneView.swift in Sources */,
 				351A66BD23195F3800D1061B /* BrewPrepSceneView.swift in Sources */,
@@ -793,6 +798,7 @@
 				3532AA9C2310658B00C1F373 /* TinyEdgeInset+convienceInit.swift in Sources */,
 				35833E5C230753EE002F986B /* FlowControl.swift in Sources */,
 				3527AF0C230DF4D500ED0E26 /* AIProcessingVM.swift in Sources */,
+				3512F343232C223300368485 /* UICollection+safeSubscript.swift in Sources */,
 				35EC74002308B75300964665 /* BrewVariable.swift in Sources */,
 				352A1FA3230EC59100D7FE02 /* SemiConstantCellVMTests.swift in Sources */,
 				3512F334232BC8DC00368485 /* BrewingVM.swift in Sources */,

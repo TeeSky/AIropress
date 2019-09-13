@@ -34,11 +34,9 @@ extension BrewingViewController: BrewingVMDelegate {
     }
     
     func setPhaseTexts(textSets: [PhaseTextSet]) {
-        guard textSets.count == 3 else { fatalError("textSets must contain exactly 3 PhaseTextSets.") }
-        
-        sceneView.currentPhaseTimerLabel.configure(with: textSets[0])
-        sceneView.next1TimerLabel.configure(with: textSets[1])
-        sceneView.next2TimerLabel.configure(with: textSets[2])
+        sceneView.currentPhaseTimerLabel.configure(with: textSets[safe: 0])
+        sceneView.next1TimerLabel.configure(with: textSets[safe: 1])
+        sceneView.next2TimerLabel.configure(with: textSets[safe: 2])
     }
     
 }
