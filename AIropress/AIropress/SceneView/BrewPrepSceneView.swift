@@ -45,7 +45,7 @@ class BrewPrepSceneView: LabeledSceneView {
     }()
     
     override func getSceneLabelText() -> String {
-        return "Get ready to brew"
+        return "Prepare for brew"
     }
     
     override func addViews() {
@@ -65,7 +65,7 @@ class BrewPrepSceneView: LabeledSceneView {
         whatToDoLabelContainer.edges(to: contentContainer, excluding: LayoutEdge.init(arrayLiteral: [.bottom]))
         
         tableView.topToBottom(of: whatToDoLabelContainer)
-        tableView.edges(to: contentContainer, excluding: LayoutEdge.init(arrayLiteral: [.top]), insets: TinyEdgeInsets(horizontal: 15, vertical: 0))
+        tableView.edges(to: contentContainer, excluding: LayoutEdge.init(arrayLiteral: [.top]))
         
         resetButton.centerY(to: bottomButtonContainer)
         brewButton.centerY(to: bottomButtonContainer)
