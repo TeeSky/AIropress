@@ -30,3 +30,7 @@ protocol BrewingSceneFC: class {
     func onRecipeReset()
     func onBrewFinished()
 }
+
+protocol AllDoneSceneFC: class {
+    func onMakeAnother()
+}
