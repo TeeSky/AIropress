@@ -213,5 +213,58 @@ class MainFlowControllerTests: XCTestCase {
         XCTAssertEqual(expectedViewControllerOnStack, navigationController.stack[2])
     }
     
-    // TODO implement all flow control tests (when all scene fcs are done)
+    func testBrewingSceneFlowOnBrewStopped() {
+        let expectedViewControllerOnStack = viewControllerProvider.viewRecipeSceneVC
+        
+        mainFlowController.startFlow()
+        mainFlowController.onParametersSet(brewParameters: MockBrewVars.brewParameters)
+        mainFlowController.onProcessingDone(recipe: MockBrewVars.recipe)
+        mainFlowController.onPrepared(recipeValues: MockBrewVars.recipeValues)
+        mainFlowController.onBrewInitiated()
+        navigationController.resetPushPop()
+        
+        mainFlowController.onBrewStopped()
+        
+        XCTAssertTrue(navigationController.didPop)
+        XCTAssertFalse(navigationController.didPush)
+        XCTAssertTrue(navigationController.stack.count == 2)
+        XCTAssertEqual(expectedViewControllerOnStack, navigationController.stack[1])
+    }
+    
+    func testBrewingSceneFlowOnBrewFinished() {
+        let expectedViewControllerOnStack = viewControllerProvider.allDoneSceneVC
+        
+        mainFlowController.startFlow()
+        mainFlowController.onParametersSet(brewParameters: MockBrewVars.brewParameters)
+        mainFlowController.onProcessingDone(recipe: MockBrewVars.recipe)
+        mainFlowController.onPrepared(recipeValues: MockBrewVars.recipeValues)
+        mainFlowController.onBrewInitiated()
+        navigationController.resetPushPop()
+        
+        mainFlowController.onBrewFinished()
+        
+        XCTAssertTrue(navigationController.didPop)
+        XCTAssertTrue(navigationController.didPush)
+        XCTAssertTrue(navigationController.stack.count == 2)
+        XCTAssertEqual(expectedViewControllerOnStack, navigationController.stack[1])
+    }
+    
+    func testAllDoneSceneFlowOnMakeAnother() {
+        let expectedViewControllerOnStack = viewControllerProvider.desiredTasteSceneVC
+        
+        mainFlowController.startFlow()
+        mainFlowController.onParametersSet(brewParameters: MockBrewVars.brewParameters)
+        mainFlowController.onProcessingDone(recipe: MockBrewVars.recipe)
+        mainFlowController.onPrepared(recipeValues: MockBrewVars.recipeValues)
+        mainFlowController.onBrewInitiated()
+        mainFlowController.onBrewFinished()
+        navigationController.resetPushPop()
+        
+        mainFlowController.onMakeAnother()
+        
+        XCTAssertTrue(navigationController.didPop)
+        XCTAssertFalse(navigationController.didPush)
+        XCTAssertTrue(navigationController.stack.count == 1)
+        XCTAssertEqual(expectedViewControllerOnStack, navigationController.stack[0])
+    }
 }
