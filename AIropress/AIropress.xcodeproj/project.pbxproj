@@ -53,6 +53,8 @@
 		3512F348232C42B100368485 /* AllDoneVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3512F346232C429F00368485 /* AllDoneVM.swift */; };
 		3512F34A232C435600368485 /* AllDoneSceneView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3512F349232C435600368485 /* AllDoneSceneView.swift */; };
 		3512F34C232C448300368485 /* AllDoneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3512F34B232C448300368485 /* AllDoneViewController.swift */; };
+		3512F34D232C45D400368485 /* AllDoneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3512F34B232C448300368485 /* AllDoneViewController.swift */; };
+		3512F34E232C45D800368485 /* AllDoneSceneView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3512F349232C435600368485 /* AllDoneSceneView.swift */; };
 		351A66B123194BDE00D1061B /* BrewPrepVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 351A66B023194BDE00D1061B /* BrewPrepVM.swift */; };
 		351A66B223194BEC00D1061B /* BrewPrepVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 351A66B023194BDE00D1061B /* BrewPrepVM.swift */; };
 		351A66B423194BFE00D1061B /* PrepParams.swift in Sources */ = {isa = PBXBuildFile; fileRef = 351A66B323194BFE00D1061B /* PrepParams.swift */; };
@@ -762,11 +764,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3512F34D232C45D400368485 /* AllDoneViewController.swift in Sources */,
 				35072E41230B0BEA00689F75 /* DesiredTasteViewController.swift in Sources */,
 				35072E4B230B475A00689F75 /* ConfigurableTableCell.swift in Sources */,
 				35833E5B230753EC002F986B /* MainFlowController.swift in Sources */,
 				351A66C62319CF2200D1061B /* BrewPrepViewController.swift in Sources */,
 				3560123E23071AEA003AF91D /* MainFlowControllerTests.swift in Sources */,
+				3512F34E232C45D800368485 /* AllDoneSceneView.swift in Sources */,
 				35072E47230B43A200689F75 /* DiscreteSlider.swift in Sources */,
 				350118E62315F10D00A4EE79 /* BrewPrepVMTests.swift in Sources */,
 				353DAA042321290300853A6A /* PrepStepCellView.swift in Sources */,
