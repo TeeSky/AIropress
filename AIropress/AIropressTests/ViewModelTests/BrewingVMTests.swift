@@ -8,14 +8,14 @@
 
 import XCTest
 
-struct PhaseTextSet {
+struct PhaseTextSet: Equatable {
     let labelText: String
     let timerText: String
 }
 
 protocol BrewingVMDelegate: class {
     func setTimerTexts(mainTimerText: String, currentPhaseTimerText: String)
-    func setNextPhaseTexts(textSets: [PhaseTextSet])
+    func setPhaseTexts(textSets: [PhaseTextSet])
 }
 
 class BrewingVM: BaseViewModel {
@@ -30,9 +30,9 @@ class BrewingVM: BaseViewModel {
     
     var nextPhaseTexts: [PhaseTextSet] {
         let startIndex = currentBrewPhaseIndex
-        let endIndex = startIndex + 2
+        let endIndex = min(startIndex + 2, brewPhases.count - 1)
         
-        let nextBrewPhases = Array(brewPhases[currentBrewPhaseIndex...endIndex])
+        let nextBrewPhases = Array(brewPhases[startIndex...endIndex])
         return nextBrewPhases.map { PhaseTextSet(labelText: $0.label, timerText: $0.duration.asStopwatchString())}
     }
     
@@ -42,9 +42,9 @@ class BrewingVM: BaseViewModel {
     weak var delegate: BrewingVMDelegate?
     weak var flowController: BrewingSceneFC?
     
-    init(brewPhases: [BrewPhase], timerType: BrewPhaseTimer.Type = BrewPhaseTimer.self) {
+    init(brewPhases: [BrewPhase], startPhaseIndex: Int = 0, timerType: BrewPhaseTimer.Type = BrewPhaseTimer.self) {
         self.currentTotalTicks = 0
-        self.currentBrewPhaseIndex = 0
+        self.currentBrewPhaseIndex = startPhaseIndex
         self.brewPhases = brewPhases
         self.brewTimerType = timerType
     }
@@ -54,9 +54,7 @@ class BrewingVM: BaseViewModel {
     }
     
     func onSceneDidAppear() {
-        delegate?.setNextPhaseTexts(textSets: nextPhaseTexts)
-        
-        startPhaseTimer()
+        initiateBrewPhase()
     }
     
     private func onPhaseTick(remainingSeconds: Double) {
@@ -77,10 +75,12 @@ class BrewingVM: BaseViewModel {
             return
         }
         
-        startPhaseTimer()
+        initiateBrewPhase()
     }
     
-    private func startPhaseTimer() {
+    private func initiateBrewPhase() {
+        delegate?.setPhaseTexts(textSets: nextPhaseTexts)
+        
         currentTotalTicks = 0
         currentBrewPhaseTimer = brewTimerType.init(brewPhase: brewPhases[currentBrewPhaseIndex],
                                                tickDelegate: onPhaseTick, phaseEndDelegate: onPhaseEnd)
@@ -114,7 +114,7 @@ private class MockBrewingVMDelegate: BrewingVMDelegate {
         self.currentPhaseTimerText = currentPhaseTimerText
     }
     
-    func setNextPhaseTexts(textSets: [PhaseTextSet]) {
+    func setPhaseTexts(textSets: [PhaseTextSet]) {
         nextPhaseTextSets = textSets
     }
     
@@ -161,7 +161,15 @@ class BrewingVMTests: XCTestCase {
         XCTAssertEqual(expectedTotalTime, brewingVM.totalBrewTime)
     }
     
-    // test nextPhaseTexts
+    func testNextPhaseTexts() {
+        for startIndex in 0...brewPhases.count - 1 {
+            let expectedNextPhaseTexts = BrewingVMTests.createPhaseTexts(brewPhases: brewPhases, startIndex: startIndex)
+            
+            let brewingVM = BrewingVM(brewPhases: brewPhases, startPhaseIndex: startIndex)
+            
+            XCTAssertEqual(expectedNextPhaseTexts, brewingVM.nextPhaseTexts)
+        }
+    }
     
     func testOnResetClicked() {
         let flowController = MockBrewingSceneFC()
@@ -179,13 +187,17 @@ class BrewingVMTests: XCTestCase {
         let expectedInitialPhaseDuration = expectedInitialBrewPhase.duration
         let expectedInitialTicks = 0
         
+        let expectedNextPhaseTexts = BrewingVMTests.createPhaseTexts(brewPhases: brewPhases, startIndex: expectedInitialPhaseIndex)
+        let mockVMDelegate = MockBrewingVMDelegate()
+        brewingVM.delegate = mockVMDelegate
+        
         brewingVM.onSceneDidAppear()
         
         XCTAssertEqual(expectedInitialTicks, brewingVM.currentTotalTicks)
         XCTAssertEqual(expectedInitialPhaseIndex, brewingVM.currentBrewPhaseIndex)
         XCTAssertEqual(expectedInitialPhaseDuration, brewingVM.currentBrewPhaseTimer?.phaseDuration)
         
-        // test delegate phase texts
+        XCTAssertEqual(expectedNextPhaseTexts, mockVMDelegate.nextPhaseTextSets)
     }
     
     func testOnPhaseTick() {
@@ -209,5 +221,45 @@ class BrewingVMTests: XCTestCase {
         XCTAssertEqual(expectedMainTimerText, mockVMDelegate.mainTimerText)
     }
     
-    // test onPhaseEnd
+    func testOnPhaseEnd() {
+        let expectedInitialPhaseIndex = 0
+        let expectedPhaseEndIndex = expectedInitialPhaseIndex + 1
+        let expectedNextPhaseTexts = BrewingVMTests.createPhaseTexts(brewPhases: brewPhases, startIndex: expectedPhaseEndIndex)
+        
+        brewingVM.onSceneDidAppear()
+        let delegate = MockBrewingVMDelegate()
+        brewingVM.delegate = delegate
+        
+        brewingVM.currentBrewPhaseTimer?.phaseEndDelegate()
+        
+        XCTAssertEqual(expectedPhaseEndIndex, brewingVM.currentBrewPhaseIndex)
+        XCTAssertEqual(expectedNextPhaseTexts, delegate.nextPhaseTextSets)
+    }
+    
+    func testOnBrewFinished() {
+        let expectedInitialPhaseIndex = brewPhases.count - 1
+        let expectedPhaseEndIndex = expectedInitialPhaseIndex + 1
+        let expectedNextPhaseTexts: [PhaseTextSet]? = nil
+        let expectedBrewFinished = true
+        
+        let brewingVM = BrewingVM(brewPhases: brewPhases, startPhaseIndex: expectedInitialPhaseIndex)
+        brewingVM.onSceneDidAppear()
+        let delegate = MockBrewingVMDelegate()
+        brewingVM.delegate = delegate
+        let flowController = MockBrewingSceneFC()
+        brewingVM.flowController = flowController
+        
+        brewingVM.currentBrewPhaseTimer?.phaseEndDelegate()
+        
+        XCTAssertEqual(expectedPhaseEndIndex, brewingVM.currentBrewPhaseIndex)
+        XCTAssertEqual(expectedNextPhaseTexts, delegate.nextPhaseTextSets)
+        XCTAssertEqual(expectedBrewFinished, flowController.brewFinished)
+    }
+    
+    private static func createPhaseTexts(brewPhases: [BrewPhase], startIndex: Int) -> [PhaseTextSet] {
+        let endIndex = min(startIndex + 2, brewPhases.count - 1)
+        
+        let nextBrewPhases = Array(brewPhases[startIndex...endIndex])
+        return nextBrewPhases.map { PhaseTextSet(labelText: $0.label, timerText: $0.duration.asStopwatchString())}
+    }
 }
