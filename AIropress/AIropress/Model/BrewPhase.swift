@@ -51,11 +51,11 @@ struct AeroPressBrewingPlan: BrewingPlan {
         let bloomWaterAmount = coffeeAmount * AeroPressBrewingPlan.bloomCoffeeAmountMultiplier
         
         orderedPhases = [
-            BrewPhase(duration: pourDuration, label: "Wet the coffee grounds with \(bloomWaterAmount) ml of water."),
-            BrewPhase(duration: bloomDuration, label: "Wait, let the coffee bloom."),
-            BrewPhase(duration: pourDuration, label: "Pour the rest (\(waterAmount - bloomWaterAmount) ml) of water."),
+            BrewPhase(duration: pourDuration, label: "Wet the coffee grounds with \(Int(bloomWaterAmount)) ml of water."),
+            BrewPhase(duration: bloomDuration, label: "Wait, the coffee is blooming."),
+            BrewPhase(duration: pourDuration, label: "Pour the rest of the water reaching total of \(Int(waterAmount)) ml."),
             BrewPhase(duration: stirDuration, label: "Carefully and slowly stir 3-4 times."),
-            BrewPhase(duration: brewDuration, label: "Wait, let the coffee brew."),
+            BrewPhase(duration: brewDuration, label: "Wait, the coffee is brewing."),
             BrewPhase(duration: plungeDuration, label: "Plunge until you hear hissing sound."),
         ]
     }
