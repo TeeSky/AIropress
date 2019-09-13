@@ -13,7 +13,7 @@ private class MockViewRecipeSceneFC: ViewRecipeSceneFC {
     var recipeReset: Bool?
     var recipeValues: [Int : Double]?
     
-    func onRecipeReset() {
+    func onViewRecipeReset() {
         recipeReset = true
     }
     

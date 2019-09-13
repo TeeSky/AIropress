@@ -15,6 +15,7 @@ private class MockViewControllerProvider: ViewControllerProvider {
     let viewRecipeSceneVC = UIViewController()
     let brewPrepSceneVC = UIViewController()
     let brewingSceneVC = UIViewController()
+    let allDoneSceneVC = UIViewController()
     
     var receivedBrewParameters: BrewParameters? = nil
     var receivedBrewRecipe: BrewRecipe? = nil
@@ -37,6 +38,8 @@ private class MockViewControllerProvider: ViewControllerProvider {
         case .brewing(let brewPhases):
             receivedBrewPhases = brewPhases
             return brewingSceneVC
+        case .allDone:
+            return allDoneSceneVC
         }
     }
 }
@@ -152,7 +155,7 @@ class MainFlowControllerTests: XCTestCase {
         mainFlowController.onProcessingDone(recipe: MockBrewVars.recipe)
         navigationController.resetPushPop()
         
-        mainFlowController.onRecipeReset()
+        mainFlowController.onViewRecipeReset()
         
         XCTAssertTrue(navigationController.didPop)
         XCTAssertFalse(navigationController.didPush)
@@ -170,10 +173,10 @@ class MainFlowControllerTests: XCTestCase {
         
         mainFlowController.onPrepared(recipeValues: MockBrewVars.recipeValues)
         
-        XCTAssertTrue(navigationController.didPop)
         XCTAssertTrue(navigationController.didPush)
-        XCTAssertTrue(navigationController.stack.count == 2)
-        XCTAssertEqual(expectedViewControllerOnStack, navigationController.stack[1])
+        XCTAssertFalse(navigationController.didPop)
+        XCTAssertTrue(navigationController.stack.count == 3)
+        XCTAssertEqual(expectedViewControllerOnStack, navigationController.stack[2])
     }
     
     func testBrewPrepSceneFlowOnRecipeReset() {
@@ -185,7 +188,7 @@ class MainFlowControllerTests: XCTestCase {
         mainFlowController.onPrepared(recipeValues: MockBrewVars.recipeValues)
         navigationController.resetPushPop()
         
-        mainFlowController.onRecipeReset()
+        mainFlowController.onBrewPrepReset()
         
         XCTAssertTrue(navigationController.didPop)
         XCTAssertFalse(navigationController.didPush)
@@ -204,8 +207,8 @@ class MainFlowControllerTests: XCTestCase {
         
         mainFlowController.onBrewInitiated()
         
+        XCTAssertTrue(navigationController.didPop)
         XCTAssertTrue(navigationController.didPush)
-        XCTAssertFalse(navigationController.didPop)
         XCTAssertTrue(navigationController.stack.count == 3)
         XCTAssertEqual(expectedViewControllerOnStack, navigationController.stack[2])
     }

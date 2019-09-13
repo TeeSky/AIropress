@@ -38,10 +38,6 @@ class MainFlowController {
         let nextViewController = viewControllerProvider.getViewController(self, for: scene)
         navigationController.push(viewController: nextViewController)
     }
-    
-    func onRecipeReset() {
-        navigationController.pop(animated: true)
-    }
 }
 
 extension MainFlowController: DesiredTasteSceneFC {
@@ -63,6 +59,10 @@ extension MainFlowController: AIProcessingSceneFC {
 
 extension MainFlowController: ViewRecipeSceneFC {
     
+    func onViewRecipeReset() {
+        navigationController.pop(animated: true)
+    }
+    
     func onPrepared(recipeValues: [Int: Double]) {
         self.recipeValues = recipeValues
         guard let prepParams = PrepParams.create(values: recipeValues) else {
@@ -74,6 +74,11 @@ extension MainFlowController: ViewRecipeSceneFC {
 }
 
 extension MainFlowController: BrewPrepSceneFC {
+    
+    func onBrewPrepReset() {
+        navigationController.pop(animated: false)
+        navigationController.pop(animated: true)
+    }
     
     func onBrewInitiated() {
         navigationController.pop(animated: false)
@@ -87,6 +92,10 @@ extension MainFlowController: BrewPrepSceneFC {
 }
 
 extension MainFlowController: BrewingSceneFC {
+    
+    func onBrewStopped() {
+        navigationController.pop(animated: true)
+    }
     
     func onBrewFinished() {
         navigationController.pop(animated: false)

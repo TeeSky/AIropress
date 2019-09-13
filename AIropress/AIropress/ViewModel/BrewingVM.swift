@@ -46,8 +46,8 @@ class BrewingVM: BaseViewModel {
         self.brewTimerType = timerType
     }
     
-    func onResetClicked() {
-        flowController?.onRecipeReset()
+    func onStopClicked() {
+        flowController?.onBrewStopped()
     }
     
     func onSceneDidAppear() {

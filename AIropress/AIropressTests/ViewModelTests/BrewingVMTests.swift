@@ -10,11 +10,11 @@ import XCTest
 
 private class MockBrewingSceneFC: BrewingSceneFC {
     
-    var recipeReset: Bool?
+    var brewStopped: Bool?
     var brewFinished: Bool?
     
-    func onRecipeReset() {
-        recipeReset = true
+    func onBrewStopped() {
+        brewStopped = true
     }
     
     func onBrewFinished() {
@@ -92,14 +92,14 @@ class BrewingVMTests: XCTestCase {
         }
     }
     
-    func testOnResetClicked() {
+    func testOnStopClicked() {
         let flowController = MockBrewingSceneFC()
-        let expectedResetClicked = true
+        let expectedBrewStopped = true
         
         brewingVM.flowController = flowController
-        brewingVM.onResetClicked()
+        brewingVM.onStopClicked()
         
-        XCTAssertEqual(expectedResetClicked, flowController.recipeReset)
+        XCTAssertEqual(expectedBrewStopped, flowController.brewStopped)
     }
     
     func testOnSceneDidAppearPhase() {
