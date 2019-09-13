@@ -14,7 +14,7 @@ class PrepStepCellView: BaseCellView {
     
     lazy var textView: UITextView = {
         let textView = UITextView()
-        textView.font = UIFont.systemFont(ofSize: 18, weight: .regular)
+        textView.font = UIFont.systemFont(ofSize: AppOptions.fontSize.small, weight: .regular)
         textView.textAlignment = .left
         textView.isScrollEnabled = false
         

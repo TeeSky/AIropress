@@ -16,6 +16,7 @@ class BrewPrepSceneView: LabeledSceneView {
         let tableView = UITableView()
         tableView.allowsSelection = false
         tableView.separatorStyle = .none
+        tableView.showsVerticalScrollIndicator = false
         
         return tableView
     }()
@@ -27,7 +28,7 @@ class BrewPrepSceneView: LabeledSceneView {
         label.text = "What to do:"
         label.textColor = .black
         label.textAlignment = .left
-        label.font = UIFont.systemFont(ofSize: 25, weight: .regular)
+        label.font = UIFont.systemFont(ofSize: AppOptions.fontSize.large, weight: .regular)
         
         container.addSubview(label)
         label.topToSuperview()

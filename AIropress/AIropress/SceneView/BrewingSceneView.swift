@@ -64,7 +64,7 @@ class BrewingSceneView: BaseSceneView {
         mainTimerLabel.height(200)
         mainTimerLabel.edges(to: safeAreaContainer, excluding: .bottom)
         
-        phaseLabelsContainer.stack([currentPhaseTimerLabel, next1TimerLabel, next2TimerLabel], axis: .vertical, spacing: 5)
+        phaseLabelsContainer.stack([currentPhaseTimerLabel, next1TimerLabel, next2TimerLabel], axis: .vertical, spacing: 10)
         phaseLabelsContainer.edges(to: safeAreaContainer, excluding: .init(arrayLiteral: [.top, .bottom]), insets: .init(horizontal: 15))
         phaseLabelsContainer.centerYToSuperview()
     }
@@ -111,8 +111,7 @@ class PhaseLabelView: UIView {
     private func setConstraints() {
         timerLabel.width(75)
         
-        textLabel.leftToSuperview()
-        textLabel.rightToSuperview()
+        textLabel.edgesToSuperview(excluding: .bottom)
         
         timerLabel.bottomToSuperview()
         timerLabel.rightToSuperview()
@@ -147,7 +146,7 @@ class PhaseLabelView: UIView {
         func height() -> CGFloat {
             switch self {
             case .normal:
-                return 200
+                return 110
             case .small:
                 return 50
             case .smallest:
@@ -158,11 +157,11 @@ class PhaseLabelView: UIView {
         func fontSizes() -> (text: CGFloat, timer: CGFloat) {
             switch self {
             case .normal:
-                return (27, 20)
+                return (AppOptions.fontSize.large, AppOptions.fontSize.normal)
             case .small:
-                return (20, 15)
+                return (AppOptions.fontSize.normal, AppOptions.fontSize.small)
             case .smallest:
-                return (16, 12)
+                return (AppOptions.fontSize.small, AppOptions.fontSize.tiny)
             }
         }
         

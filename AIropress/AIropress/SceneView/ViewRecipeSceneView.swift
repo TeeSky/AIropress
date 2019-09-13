@@ -16,6 +16,7 @@ class ViewRecipeSceneView: LabeledSceneView {
         let tableView = UITableView()
         tableView.allowsSelection = false
         tableView.separatorStyle = .none
+        tableView.showsVerticalScrollIndicator = false
         return tableView
     }()
     
