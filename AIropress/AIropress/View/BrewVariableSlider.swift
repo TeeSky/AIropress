@@ -12,7 +12,7 @@ import UIKit
 
 class BrewVariableSlider: UIView {
     
-    static let height = 75
+    static let height = 70
     
     var delegate: DiscreteSlider.Delegate? {
         didSet {
