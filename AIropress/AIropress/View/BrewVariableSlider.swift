@@ -12,7 +12,7 @@ import UIKit
 
 class BrewVariableSlider: UIView {
     
-    static let height = 75
+    static let height = 70
     
     var delegate: DiscreteSlider.Delegate? {
         didSet {
@@ -89,7 +89,7 @@ class BrewVariableSlider: UIView {
     
     private static func createStyledLabel() -> UILabel {
         let label = UILabel()
-        label.font = UIFont.systemFont(ofSize: 18, weight: .light)
+        label.font = UIFont.systemFont(ofSize: AppOptions.fontSize.small, weight: .light)
         return label
     }
 }

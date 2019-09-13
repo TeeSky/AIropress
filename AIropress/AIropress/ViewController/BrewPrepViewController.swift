@@ -1,17 +1,17 @@
 //
-//  ViewRecipeViewController.swift
+//  BrewPrepViewController.swift
 //  AIropress
 //
-//  Created by Tomas Skypala on 23/08/2019.
+//  Created by Tomas Skypala on 30/08/2019.
 //  Copyright © 2019 Tomas Skypala. All rights reserved.
 //
 
 import Foundation
 import UIKit
 
-class ViewRecipeViewController: BaseViewController<ViewRecipeSceneView> {
+class BrewPrepViewController: BaseViewController<BrewPrepSceneView> {
     
-    var viewModel: ViewRecipeVM!
+    var viewModel: BrewPrepVM!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,12 +21,12 @@ class ViewRecipeViewController: BaseViewController<ViewRecipeSceneView> {
         sceneView.tableView.dataSource = self
         sceneView.tableView.delegate = self
         
+        sceneView.brewButton.addTarget(viewModel, action: #selector(viewModel.onBrewClicked), for: .touchUpInside)
         sceneView.resetButton.addTarget(viewModel, action: #selector(viewModel.onResetClicked), for: .touchUpInside)
-        sceneView.prepareButton.addTarget(viewModel, action: #selector(viewModel.onPrepareClicked), for: .touchUpInside)
     }
 }
 
-extension ViewRecipeViewController: UITableViewDataSource {
+extension BrewPrepViewController: UITableViewDataSource {
     
     func numberOfSections(in tableView: UITableView) -> Int {
         return viewModel.numberOfSections()
@@ -49,7 +49,7 @@ extension ViewRecipeViewController: UITableViewDataSource {
     }
 }
 
-extension ViewRecipeViewController: UITableViewDelegate {
+extension BrewPrepViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return viewModel.cellHeight(for: indexPath)

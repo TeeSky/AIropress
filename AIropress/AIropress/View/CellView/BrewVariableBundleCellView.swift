@@ -19,8 +19,7 @@ class BrewVariableBundleCellView: BaseCellView {
     
     lazy var label: UILabel = {
         let label = UILabel()
-        label.textAlignment = .center
-        label.font = UIFont.systemFont(ofSize: 25, weight: .regular)
+        label.font = UIFont.systemFont(ofSize: AppOptions.fontSize.large, weight: .bold)
         return label
     }()
     
@@ -37,14 +36,13 @@ class BrewVariableBundleCellView: BaseCellView {
         contentContainer.addSubview(slidersContainer)
     }
     
-    override func setContraints() {
-        contentContainer.edgesToSuperview(insets: TinyEdgeInsets(top: 10))
+    override func setConstraints() {
+        contentContainer.edgesToSuperview(insets: TinyEdgeInsets(top: 5))
         
         slidersContainer.leftToSuperview()
         slidersContainer.rightToSuperview()
         slidersContainer.stack(sliders, axis: .vertical)
         
-        label.centerXToSuperview()
         label.top(to: contentContainer)
         
         slidersContainer.bottom(to: contentContainer)

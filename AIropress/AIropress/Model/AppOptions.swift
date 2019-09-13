@@ -13,6 +13,7 @@ struct AppOptions {
     
     static let brewVariableBundles = AppBrewVariableBundles().bundles
     static let color = AppColor()
+    static let fontSize = AppFontSize()
     
     private init() {}
 }
@@ -41,7 +42,20 @@ struct AppBrewVariableBundles {
 struct AppColor {
     
     let button =  UIColor(red: 62/255, green: 39/255, blue: 35/255, alpha: 1)
+    let buttonPositive =  UIColor(red: 76/255, green: 175/255, blue: 80/255, alpha: 1)
     let buttonNegative =  UIColor(red: 211/255, green: 47/255, blue: 47/255, alpha: 1)
+    
+    fileprivate init() {
+    }
+}
+
+struct AppFontSize {
+    
+    let xlarge: CGFloat = 35
+    let large: CGFloat = 25
+    let normal: CGFloat = 20
+    let small: CGFloat = 17
+    let tiny: CGFloat = 12
     
     fileprivate init() {
     }

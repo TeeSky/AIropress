@@ -33,6 +33,24 @@ struct MainViewControllerProvider: ViewControllerProvider {
             let viewRecipeViewController = ViewRecipeViewController()
             viewRecipeViewController.viewModel = viewRecipeVM
             controller = viewRecipeViewController
+        case .brewPrep(let prepParams):
+            let brewPrepVM = BrewPrepVM(prepParams: prepParams)
+            brewPrepVM.flowController = flowController
+            let brewPrepViewController = BrewPrepViewController()
+            brewPrepViewController.viewModel = brewPrepVM
+            controller = brewPrepViewController
+        case .brewing(let brewPhases):
+            let brewingVM = BrewingVM(brewPhases: brewPhases)
+            brewingVM.flowController = flowController
+            let brewingViewController = BrewingViewController()
+            brewingViewController.viewModel = brewingVM
+            controller = brewingViewController
+        case .allDone:
+            let allDoneVM = AllDoneVM()
+            allDoneVM.flowController = flowController
+            let allDoneViewController = AllDoneViewController()
+            allDoneViewController.viewModel = allDoneVM
+            controller = allDoneViewController
 //        default:
 //            fatalError("not implemented")
         }

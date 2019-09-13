@@ -19,7 +19,7 @@ class AIProcessingSceneView: BaseSceneView {
     
     lazy var progressLabel: UILabel = {
         let label = UILabel()
-        label.font = UIFont.systemFont(ofSize: 30, weight: .medium)
+        label.font = UIFont.systemFont(ofSize: AppOptions.fontSize.xlarge, weight: .medium)
         label.textColor = .black
         return label
     }()
@@ -41,7 +41,7 @@ class AIProcessingSceneView: BaseSceneView {
         activityIndicatorContainer.addSubview(activityIndicator)
     }
     
-    override func setContraints() {
+    override func setConstraints() {
         safeAreaContainer.edgesToSuperview(usingSafeArea: true)
         
         progressLabel.centerInSuperview()

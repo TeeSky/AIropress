@@ -32,9 +32,9 @@ class RecipeSemiConstantCellView: BaseCellView {
         contentContainer.addSubview(confidenceSlider)
     }
     
-    override func setContraints() {
+    override func setConstraints() {
         contentContainer.edgesToSuperview(insets: TinyEdgeInsets(top: 15))
-        constantView.setContraints()
+        constantView.setConstraints()
         
         contentContainer.stack([constantView, confidenceSlider], spacing: 10)
     }

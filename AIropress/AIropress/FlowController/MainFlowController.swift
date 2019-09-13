@@ -11,7 +11,7 @@ import UIKit
 
 protocol BaseNavigationController {
     func push(viewController: UIViewController)
-    func pop()
+    func pop(animated: Bool)
 }
 
 protocol ViewControllerProvider {
@@ -22,6 +22,8 @@ class MainFlowController {
     
     let navigationController: BaseNavigationController
     let viewControllerProvider: ViewControllerProvider
+    
+    var recipeValues: [Int: Double]?
     
     init(navigationController: BaseNavigationController, viewControllerProvider: ViewControllerProvider) {
         self.navigationController = navigationController
@@ -49,7 +51,7 @@ extension MainFlowController: DesiredTasteSceneFC {
 extension MainFlowController: AIProcessingSceneFC {
     
     func onProcessingDone(recipe: BrewRecipe) {
-        navigationController.pop()
+        navigationController.pop(animated: false)
         
         switchTo(scene: .viewRecipe(recipe: recipe))
     }
@@ -57,11 +59,57 @@ extension MainFlowController: AIProcessingSceneFC {
 
 extension MainFlowController: ViewRecipeSceneFC {
     
-    func onRecipeReset() {
-        navigationController.pop()
+    func onViewRecipeReset() {
+        navigationController.pop(animated: true)
     }
     
     func onPrepared(recipeValues: [Int: Double]) {
-        fatalError("not implemented")
+        self.recipeValues = recipeValues
+        guard let prepParams = PrepParams.create(values: recipeValues) else {
+            fatalError("Insuficient recipeValues obtained.")
+        }
+        switchTo(scene: .brewPrep(params: prepParams))
     }
+
+}
+
+extension MainFlowController: BrewPrepSceneFC {
+    
+    func onBrewPrepReset() {
+        navigationController.pop(animated: false)
+        navigationController.pop(animated: true)
+    }
+    
+    func onBrewInitiated() {
+        navigationController.pop(animated: false)
+        guard let brewingPlan = AeroPressBrewingPlan.create(values: recipeValues ?? [:]) else {
+            fatalError("Nil or insuficient recipeValues obtained.")
+        }
+        
+        switchTo(scene: .brewing(brewPhases: brewingPlan.orderedPhases))
+    }
+
+}
+
+extension MainFlowController: BrewingSceneFC {
+    
+    func onBrewStopped() {
+        navigationController.pop(animated: true)
+    }
+    
+    func onBrewFinished() {
+        navigationController.pop(animated: false)
+        navigationController.pop(animated: false)
+        
+        switchTo(scene: .allDone)
+    }
+    
+}
+
+extension MainFlowController: AllDoneSceneFC {
+    
+    func onMakeAnother() {
+        navigationController.pop(animated: true)
+    }
+    
 }

@@ -17,6 +17,20 @@ protocol AIProcessingSceneFC: class {
 }
 
 protocol ViewRecipeSceneFC: class {
-    func onRecipeReset()
+    func onViewRecipeReset()
     func onPrepared(recipeValues: [Int: Double])
+}
+
+protocol BrewPrepSceneFC: class {
+    func onBrewPrepReset()
+    func onBrewInitiated()
+}
+
+protocol BrewingSceneFC: class {
+    func onBrewStopped()
+    func onBrewFinished()
+}
+
+protocol AllDoneSceneFC: class {
+    func onMakeAnother()
 }

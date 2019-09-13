@@ -10,59 +10,35 @@ import Foundation
 import UIKit
 import TinyConstraints
 
-class DesiredTasteSceneView: BaseSceneView {
-    
-    lazy var safeAreaContainer: UIView = {
-        return UIView()
-    }()
-    
-    lazy var sceneLabelContainer: UIView = {
-        let container = UIView()
-        
-        let label = UILabel()
-        label.text = "Desired"
-        label.textColor = .black
-        label.textAlignment = .left
-        label.font = UIFont.systemFont(ofSize: 35, weight: .heavy)
-        
-        container.addSubview(label)
-        label.centerYToSuperview()
-        
-        return container
-    }()
+class DesiredTasteSceneView: LabeledSceneView {
     
     lazy var tableView: UITableView = {
         let tableView = UITableView()
         tableView.allowsSelection = false
         tableView.separatorStyle = .none
+        tableView.showsVerticalScrollIndicator = false
         return tableView
-    }()
-    
-    private lazy var bottomButtonContainer: UIView = {
-        return UIView()
     }()
     
     lazy var calculateButton: UIButton = {
         return BaseSceneView.createButton(title: "Calculate")
     }()
     
+    override func getSceneLabelText() -> String {
+        return "Desired"
+    }
+    
     override func addViews() {
-        addSubview(safeAreaContainer)
-        addSubview(sceneLabelContainer)
+        super.addViews()
+        
         addSubview(tableView)
-        addSubview(bottomButtonContainer)
         addSubview(calculateButton)
     }
     
-    override func setContraints() {
-        safeAreaContainer.edgesToSuperview(insets: TinyEdgeInsets(horizontal: 15), usingSafeArea: true)
+    override func setConstraints() {
+        super.setConstraints()
         
-        sceneLabelContainer.height(120)
-        bottomButtonContainer.height(65)
-        
-        calculateButton.width(150)
-        
-        safeAreaContainer.stack([sceneLabelContainer, tableView, bottomButtonContainer], axis: .vertical, spacing: 5)
+        tableView.edges(to: contentContainer)
         
         calculateButton.centerY(to: bottomButtonContainer)
         calculateButton.right(to: bottomButtonContainer)

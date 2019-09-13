@@ -12,4 +12,7 @@ enum Scene {
     case desiredTaste
     case aiProcessing(brewParameters: BrewParameters)
     case viewRecipe(recipe: BrewRecipe)
+    case brewPrep(params: PrepParams)
+    case brewing(brewPhases: [BrewPhase])
+    case allDone
 }

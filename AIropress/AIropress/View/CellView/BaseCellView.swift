@@ -14,7 +14,7 @@ class BaseCellView: UIView {
     func addViews() {
     }
     
-    func setContraints() {
+    func setConstraints() {
     }
     
     func prepareForReuse() {
