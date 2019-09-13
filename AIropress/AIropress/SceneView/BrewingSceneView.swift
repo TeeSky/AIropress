@@ -19,10 +19,14 @@ class BrewingSceneView: BaseSceneView {
     
     lazy var mainTimerLabel: UILabel = {
         let label = UILabel()
-        label.font = UIFont.systemFont(ofSize: 30, weight: .medium)
+        label.font = UIFont.systemFont(ofSize: 45, weight: .medium)
         label.textAlignment = .center
         label.textColor = .black
         return label
+    }()
+    
+    private lazy var phaseLabelsContainer: UIView = {
+        return UIView()
     }()
     
     lazy var currentPhaseTimerLabel: PhaseLabelView = {
@@ -47,17 +51,22 @@ class BrewingSceneView: BaseSceneView {
     override func addViews() {
         addSubview(safeAreaContainer)
         addSubview(mainTimerLabel)
-        addSubview(currentPhaseTimerLabel)
-        addSubview(next1TimerLabel)
-        addSubview(next2TimerLabel)
+        addSubview(phaseLabelsContainer)
+        
+        phaseLabelsContainer.addSubview(currentPhaseTimerLabel)
+        phaseLabelsContainer.addSubview(next1TimerLabel)
+        phaseLabelsContainer.addSubview(next2TimerLabel)
     }
     
     override func setContraints() {
-        safeAreaContainer.edgesToSuperview(usingSafeArea: true)
+        safeAreaContainer.edgesToSuperview(insets: TinyEdgeInsets(horizontal: 5), usingSafeArea: true)
         
-        mainTimerLabel.height(150)
+        mainTimerLabel.height(200)
+        mainTimerLabel.edges(to: safeAreaContainer, excluding: .bottom)
         
-        safeAreaContainer.stack([mainTimerLabel, currentPhaseTimerLabel, next1TimerLabel, next2TimerLabel], axis: .vertical, spacing: 5)
+        phaseLabelsContainer.stack([currentPhaseTimerLabel, next1TimerLabel, next2TimerLabel], axis: .vertical, spacing: 5)
+        phaseLabelsContainer.edges(to: safeAreaContainer, excluding: .init(arrayLiteral: [.top, .bottom]), insets: .init(horizontal: 15))
+        phaseLabelsContainer.centerYToSuperview()
     }
     
 }
@@ -85,11 +94,13 @@ class PhaseLabelView: UIView {
     
     private func addViews() {
         textLabel = UILabel()
+        textLabel.numberOfLines = 0
         textLabel.textAlignment = .left
         textLabel.textColor = .black
+        textLabel.lineBreakMode = .byTruncatingTail
         
         timerLabel = UILabel()
-        timerLabel.width(50)
+        timerLabel.alpha = 0.6
         timerLabel.textAlignment = .right
         timerLabel.textColor = .black
         
@@ -98,13 +109,15 @@ class PhaseLabelView: UIView {
     }
     
     private func setConstraints() {
-        textLabel.bottomToSuperview()
+        timerLabel.width(75)
+        
         textLabel.leftToSuperview()
+        textLabel.rightToSuperview()
         
         timerLabel.bottomToSuperview()
         timerLabel.rightToSuperview()
         
-        textLabel.rightToLeft(of: timerLabel, offset: 15, relation: .equalOrGreater)
+//        textLabel.rightToLeft(of: timerLabel, offset: -15, relation: .equalOrLess, priority: .required)
     }
     
     func setScale(scale: Scale) {
@@ -112,11 +125,18 @@ class PhaseLabelView: UIView {
         timerLabel.font = UIFont.systemFont(ofSize: scale.fontSizes().timer)
         
         self.alpha = scale.alpha()
+        self.height(scale.height())
+        textLabel.bottomToSuperview(offset: -scale.fontSizes().timer)
     }
     
-    func configure(with textSet: PhaseTextSet) {
-        textLabel.text = textSet.labelText
-        timerLabel.text = textSet.timerText
+    func configure(with textSet: PhaseTextSet?) {
+        if let textSet = textSet {
+            textLabel.text = textSet.labelText
+            timerLabel.text = textSet.timerText
+        } else {
+            textLabel.text = ""
+            timerLabel.text = ""
+        }
     }
     
     enum Scale {
@@ -124,14 +144,25 @@ class PhaseLabelView: UIView {
         case small
         case smallest
         
+        func height() -> CGFloat {
+            switch self {
+            case .normal:
+                return 200
+            case .small:
+                return 50
+            case .smallest:
+                return 40
+            }
+        }
+        
         func fontSizes() -> (text: CGFloat, timer: CGFloat) {
             switch self {
             case .normal:
-                return (25, 22)
+                return (27, 20)
             case .small:
-                return (20, 17)
+                return (20, 15)
             case .smallest:
-                return (18, 15)
+                return (16, 12)
             }
         }
         
