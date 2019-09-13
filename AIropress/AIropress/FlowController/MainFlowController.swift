@@ -23,6 +23,8 @@ class MainFlowController {
     let navigationController: BaseNavigationController
     let viewControllerProvider: ViewControllerProvider
     
+    var recipeValues: [Int: Double]?
+    
     init(navigationController: BaseNavigationController, viewControllerProvider: ViewControllerProvider) {
         self.navigationController = navigationController
         self.viewControllerProvider = viewControllerProvider
@@ -63,9 +65,9 @@ extension MainFlowController: ViewRecipeSceneFC {
     
     func onPrepared(recipeValues: [Int: Double]) {
         navigationController.pop(animated: false)
-        
+        self.recipeValues = recipeValues
         guard let prepParams = PrepParams.create(values: recipeValues) else {
-            fatalError("Insuficient recipeValues received.")
+            fatalError("Insuficient recipeValues obtained.")
         }
         switchTo(scene: .brewPrep(params: prepParams))
     }
@@ -75,7 +77,19 @@ extension MainFlowController: ViewRecipeSceneFC {
 extension MainFlowController: BrewPrepSceneFC {
     
     func onBrewInitiated() {
-        fatalError("Not implemented.")
+        guard let brewingPlan = AeroPressBrewingPlan.create(values: recipeValues ?? [:]) else {
+            fatalError("Nil or insuficient recipeValues obtained.")
+        }
+        
+        switchTo(scene: .brewing(brewPhases: brewingPlan.orderedPhases))
     }
 
+}
+
+extension MainFlowController: BrewingSceneFC {
+    
+    func onBrewFinished() {
+        fatalError("Not implemented.")
+    }
+    
 }

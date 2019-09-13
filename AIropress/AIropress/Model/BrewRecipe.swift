@@ -18,7 +18,8 @@ struct BrewRecipe: Equatable {
     
     init() { // Mock init, remove and instantiate using real calculated values
         let constants: [RecipeConstant] = [RecipeConstant(id: RecipeValueId.waterAmount.rawValue, label: "Water", value: 85, valueText: "85ml"),
-                                           RecipeConstant(id: RecipeValueId.brewDuration.rawValue, label: "Brewing time", value: 90, valueText: "1:30s"),
+                                           RecipeConstant(id: RecipeValueId.brewDuration.rawValue, label: "Brewing time", value: 30, valueText: "1:35s"), // TODO fix time addition
+                                           RecipeConstant(id: RecipeValueId.bloomDuration.rawValue, label: "Bloom time", value: 20, valueText: "0:20s"),
                                            RecipeConstant(id: RecipeValueId.coffeeAmount.rawValue, label: "Coffee", value: 13, valueText: "13g"),
                                            RecipeConstant(id: RecipeValueId.aeropressOrientation.rawValue, label: "Aer. orientation",
                                                           value: AeropressBrewOrientation.inverted.value(), valueText: AeropressBrewOrientation.inverted.valueText())]

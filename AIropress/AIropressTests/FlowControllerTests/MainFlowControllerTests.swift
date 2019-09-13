@@ -14,10 +14,12 @@ private class MockViewControllerProvider: ViewControllerProvider {
     let aiProcessingSceneVC = UIViewController()
     let viewRecipeSceneVC = UIViewController()
     let brewPrepSceneVC = UIViewController()
+    let brewingSceneVC = UIViewController()
     
     var receivedBrewParameters: BrewParameters? = nil
     var receivedBrewRecipe: BrewRecipe? = nil
     var receivedPrepParams: PrepParams? = nil
+    var receivedBrewPhases: [BrewPhase]? = nil
     
     func getViewController(_ flowController: MainFlowController, for scene: Scene) -> UIViewController {
         switch (scene) {
@@ -32,6 +34,9 @@ private class MockViewControllerProvider: ViewControllerProvider {
         case .brewPrep(let params):
             receivedPrepParams = params
             return brewPrepSceneVC
+        case .brewing(let brewPhases):
+            receivedBrewPhases = brewPhases
+            return brewingSceneVC
         }
     }
 }
@@ -186,6 +191,23 @@ class MainFlowControllerTests: XCTestCase {
         XCTAssertFalse(navigationController.didPush)
         XCTAssertTrue(navigationController.stack.count == 1)
         XCTAssertEqual(expectedViewControllerOnStack, navigationController.stack[0])
+    }
+    
+    func testBrewPrepSceneFlowOnBrewInitiated() {
+        let expectedViewControllerOnStack = viewControllerProvider.brewingSceneVC
+        
+        mainFlowController.startFlow()
+        mainFlowController.onParametersSet(brewParameters: MockBrewVars.brewParameters)
+        mainFlowController.onProcessingDone(recipe: MockBrewVars.recipe)
+        mainFlowController.onPrepared(recipeValues: MockBrewVars.recipeValues)
+        navigationController.resetPushPop()
+        
+        mainFlowController.onBrewInitiated()
+        
+        XCTAssertTrue(navigationController.didPush)
+        XCTAssertFalse(navigationController.didPop)
+        XCTAssertTrue(navigationController.stack.count == 3)
+        XCTAssertEqual(expectedViewControllerOnStack, navigationController.stack[2])
     }
     
     // TODO implement all flow control tests (when all scene fcs are done)
