@@ -9,12 +9,13 @@
 import Foundation
 
 protocol BrewingVMDelegate: class {
-    func setTimerTexts(mainTimerText: String, currentPhaseTimerText: String)
+    func setTimerTexts(mainTimerText: String, currentPhaseTimerText: String?)
     func setPhaseTexts(textSets: [PhaseTextSet])
 }
 
 class BrewingVM: BaseViewModel {
     
+    private(set) var completedPhasesDuration: Double
     private(set) var currentTotalTicks: Int
     private(set) var currentBrewPhaseIndex: Int
     private(set) var currentBrewPhaseTimer: BrewPhaseTimer?
@@ -38,6 +39,7 @@ class BrewingVM: BaseViewModel {
     weak var flowController: BrewingSceneFC?
     
     init(brewPhases: [BrewPhase], startPhaseIndex: Int = 0, timerType: BrewPhaseTimer.Type = BrewPhaseTimer.self) {
+        self.completedPhasesDuration = 0
         self.currentTotalTicks = 0
         self.currentBrewPhaseIndex = startPhaseIndex
         self.brewPhases = brewPhases
@@ -55,7 +57,7 @@ class BrewingVM: BaseViewModel {
     private func onPhaseTick(remainingSeconds: Double) {
         currentTotalTicks += 1
         
-        let totalRemainingSeconds = (totalBrewTime - Double(currentTotalTicks)).rounded(.towardZero)
+        let totalRemainingSeconds = (totalBrewTime - Double(currentTotalTicks) - completedPhasesDuration).rounded(.towardZero)
         let mainTimerText = totalRemainingSeconds.asStopwatchString()
         
         let phaseTimerText = remainingSeconds.asStopwatchString()
@@ -64,6 +66,7 @@ class BrewingVM: BaseViewModel {
     }
     
     private func onPhaseEnd() {
+        completedPhasesDuration += brewPhases[currentBrewPhaseIndex].duration
         currentBrewPhaseIndex += 1
         guard currentBrewPhaseIndex < brewPhases.count else {
             flowController?.onBrewFinished()
@@ -74,6 +77,7 @@ class BrewingVM: BaseViewModel {
     }
     
     private func initiateBrewPhase() {
+        delegate?.setTimerTexts(mainTimerText: (totalBrewTime - completedPhasesDuration).asStopwatchString(), currentPhaseTimerText: nil)
         delegate?.setPhaseTexts(textSets: nextPhaseTexts)
         
         currentTotalTicks = 0

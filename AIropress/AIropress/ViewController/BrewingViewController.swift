@@ -28,9 +28,11 @@ class BrewingViewController: BaseViewController<BrewingSceneView> {
 extension BrewingViewController: BrewingVMDelegate {
     
     
-    func setTimerTexts(mainTimerText: String, currentPhaseTimerText: String) {
+    func setTimerTexts(mainTimerText: String, currentPhaseTimerText: String?) {
         sceneView.mainTimerLabel.text = mainTimerText
-        sceneView.currentPhaseTimerLabel.timerLabel.text = currentPhaseTimerText
+        if let currentPhaseTimerText = currentPhaseTimerText {
+            sceneView.currentPhaseTimerLabel.timerLabel.text = currentPhaseTimerText
+        }
     }
     
     func setPhaseTexts(textSets: [PhaseTextSet]) {

@@ -30,7 +30,7 @@ private class MockBrewingVMDelegate: BrewingVMDelegate {
     
     var nextPhaseTextSets: [PhaseTextSet]?
     
-    func setTimerTexts(mainTimerText: String, currentPhaseTimerText: String) {
+    func setTimerTexts(mainTimerText: String, currentPhaseTimerText: String?) {
         self.mainTimerText = mainTimerText
         self.currentPhaseTimerText = currentPhaseTimerText
     }
@@ -104,9 +104,12 @@ class BrewingVMTests: XCTestCase {
     
     func testOnSceneDidAppearPhase() {
         let expectedInitialPhaseIndex = 0
+        let expectedCompletedPhasesDuration = 0.0
         let expectedInitialBrewPhase = brewPhases[expectedInitialPhaseIndex]
         let expectedInitialPhaseDuration = expectedInitialBrewPhase.duration
         let expectedInitialTicks = 0
+        XCTAssertEqual(100, brewingVM.totalBrewTime) // Pre-test state check
+        let expectedMainTimerText = "01:40" // 100 seconds
         
         let expectedNextPhaseTexts = BrewingVMTests.createPhaseTexts(brewPhases: brewPhases, startIndex: expectedInitialPhaseIndex)
         let mockVMDelegate = MockBrewingVMDelegate()
@@ -117,7 +120,9 @@ class BrewingVMTests: XCTestCase {
         XCTAssertEqual(expectedInitialTicks, brewingVM.currentTotalTicks)
         XCTAssertEqual(expectedInitialPhaseIndex, brewingVM.currentBrewPhaseIndex)
         XCTAssertEqual(expectedInitialPhaseDuration, brewingVM.currentBrewPhaseTimer?.phaseDuration)
+        XCTAssertEqual(expectedCompletedPhasesDuration, brewingVM.completedPhasesDuration)
         
+        XCTAssertEqual(expectedMainTimerText, mockVMDelegate.mainTimerText)
         XCTAssertEqual(expectedNextPhaseTexts, mockVMDelegate.nextPhaseTextSets)
     }
     
@@ -145,6 +150,7 @@ class BrewingVMTests: XCTestCase {
     func testOnPhaseEnd() {
         let expectedInitialPhaseIndex = 0
         let expectedPhaseEndIndex = expectedInitialPhaseIndex + 1
+        let expectedCompletedPhasesDuration = brewPhases[expectedInitialPhaseIndex].duration
         let expectedNextPhaseTexts = BrewingVMTests.createPhaseTexts(brewPhases: brewPhases, startIndex: expectedPhaseEndIndex)
         
         brewingVM.onSceneDidAppear()
@@ -155,6 +161,7 @@ class BrewingVMTests: XCTestCase {
         
         XCTAssertEqual(expectedPhaseEndIndex, brewingVM.currentBrewPhaseIndex)
         XCTAssertEqual(expectedNextPhaseTexts, delegate.nextPhaseTextSets)
+        XCTAssertEqual(expectedCompletedPhasesDuration, brewingVM.completedPhasesDuration)
     }
     
     func testOnBrewFinished() {
