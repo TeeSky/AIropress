@@ -9,8 +9,15 @@
 import Foundation
 import UIKit
 
+/**
+ **BaseViewController** extends standard **UIViewController** with conveniently initiated
+ view provided as typed **BaseSceneView** subclass.
+ */
 class BaseViewController<SV: BaseSceneView>: UIViewController {
     
+    /**
+     ViewController's base UIView.
+     */
     var sceneView: SV {
         return view as! SV
     }
