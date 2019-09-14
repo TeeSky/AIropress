@@ -82,8 +82,5 @@ class BaseTableVMTests: XCTestCase {
             XCTAssertEqual(expectedCellHeight, cellHeight)
         }
     }
-//
-//    func cellHeight(for path: IndexPath) -> CGFloat {
-//        return cellViewModel(for: path).cellHeight
-//    }
+    
 }
