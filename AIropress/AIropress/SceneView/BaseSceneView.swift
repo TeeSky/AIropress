@@ -45,12 +45,14 @@ class BaseSceneView: UIView {
     }
     
     /**
-     Creates default styled reset **UIButton**.
+     Creates default styled negative **UIButton**, that is colored red and with smaller width 90.
+     
+     - Parameter title: Text to be set as titleLabel.text of the **UIButton**.
      
      - Returns: Commonly styled reset **UIButton**.
      */
-    static func createResetButton() -> UIButton {
-        let button = BaseSceneView.createButton(title: "Reset", color: AppOptions.color.buttonNegative, width: 90.0)
+    static func createNegativeButton(title: String = "Reset") -> UIButton {
+        let button = BaseSceneView.createButton(title: title, color: AppOptions.color.buttonNegative, width: 90.0)
         return button
     }
     

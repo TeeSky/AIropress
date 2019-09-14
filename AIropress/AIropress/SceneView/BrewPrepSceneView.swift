@@ -37,7 +37,7 @@ class BrewPrepSceneView: LabeledSceneView {
     }()
     
     lazy var resetButton: UIButton = {
-        return BaseSceneView.createResetButton()
+        return BaseSceneView.createNegativeButton()
     }()
     
     lazy var brewButton: UIButton = {

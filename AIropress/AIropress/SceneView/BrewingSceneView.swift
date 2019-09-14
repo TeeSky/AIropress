@@ -48,7 +48,7 @@ class BrewingSceneView: BaseSceneView {
     }()
     
     lazy var stopButton: UIButton = {
-        return BaseSceneView.createButton(title: "Stop", color: AppOptions.color.buttonNegative, width: 90)
+        return BaseSceneView.createNegativeButton(title: "Stop")
     }()
     
     override func addViews() {

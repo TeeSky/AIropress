@@ -21,7 +21,7 @@ class ViewRecipeSceneView: LabeledSceneView {
     }()
     
     lazy var resetButton: UIButton = {
-        return BaseSceneView.createButton(title: "Reset", color: AppOptions.color.buttonNegative, width: 90)
+        return BaseSceneView.createNegativeButton()
     }()
     
     lazy var prepareButton: UIButton = {
