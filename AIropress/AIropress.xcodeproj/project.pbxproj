@@ -17,6 +17,7 @@
 		350457FD230A07DA00F4B8DC /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 350457FC230A07DA00F4B8DC /* BaseViewController.swift */; };
 		35045800230A0C8F00F4B8DC /* BaseSceneView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 350457FF230A0C8F00F4B8DC /* BaseSceneView.swift */; };
 		35045802230A0E3300F4B8DC /* DesiredTasteSceneView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35045801230A0E3300F4B8DC /* DesiredTasteSceneView.swift */; };
+		35047F99232D7420004413C2 /* BaseTableVMTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35047F98232D7420004413C2 /* BaseTableVMTests.swift */; };
 		3506807C231A9B8000604CE5 /* Double+toString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3506807B231A9B8000604CE5 /* Double+toString.swift */; };
 		35072E3D230AFBFB00689F75 /* DiscreteSliderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35072E3C230AFBFB00689F75 /* DiscreteSliderTests.swift */; };
 		35072E3F230B002000689F75 /* DiscreteSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35072E3E230B002000689F75 /* DiscreteSlider.swift */; };
@@ -166,6 +167,7 @@
 		350457FC230A07DA00F4B8DC /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		350457FF230A0C8F00F4B8DC /* BaseSceneView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseSceneView.swift; sourceTree = "<group>"; };
 		35045801230A0E3300F4B8DC /* DesiredTasteSceneView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesiredTasteSceneView.swift; sourceTree = "<group>"; };
+		35047F98232D7420004413C2 /* BaseTableVMTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTableVMTests.swift; sourceTree = "<group>"; };
 		3506807B231A9B8000604CE5 /* Double+toString.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Double+toString.swift"; sourceTree = "<group>"; };
 		35072E3C230AFBFB00689F75 /* DiscreteSliderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscreteSliderTests.swift; sourceTree = "<group>"; };
 		35072E3E230B002000689F75 /* DiscreteSlider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscreteSlider.swift; sourceTree = "<group>"; };
@@ -460,6 +462,7 @@
 		35E0E5E223076A5C004A86FD /* ViewModelTests */ = {
 			isa = PBXGroup;
 			children = (
+				35047F98232D7420004413C2 /* BaseTableVMTests.swift */,
 				35E0E5E323076B14004A86FD /* DesiredTasteVMTests.swift */,
 				3527AF08230DCC4C00ED0E26 /* AIProcessingVMTests.swift */,
 				3527AF16230E0F4C00ED0E26 /* ViewRecipeVMTests.swift */,
@@ -834,6 +837,7 @@
 				35EC73F72308273500964665 /* BrewParametersTests.swift in Sources */,
 				352A1FB2230F54DB00D7FE02 /* ViewRecipeViewController.swift in Sources */,
 				3569D330231F1B2600427450 /* PrepParamsTests.swift in Sources */,
+				35047F99232D7420004413C2 /* BaseTableVMTests.swift in Sources */,
 				35EC74072308BEFF00964665 /* DesiredTasteVM.swift in Sources */,
 				35EC73FD2308541400964665 /* BrewVariableTests.swift in Sources */,
 				352A1FC2230F6CD300D7FE02 /* BrewVariableBundleCell.swift in Sources */,
