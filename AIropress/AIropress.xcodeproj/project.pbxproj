@@ -103,7 +103,7 @@
 		352A1FC2230F6CD300D7FE02 /* BrewVariableBundleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35072E4C230B47D500689F75 /* BrewVariableBundleCell.swift */; };
 		352A1FC3230F6CD600D7FE02 /* RecipeConstantCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 352A1FB3230F59BC00D7FE02 /* RecipeConstantCell.swift */; };
 		352A1FC4230F6CD900D7FE02 /* RecipeSemiConstantCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 352A1FBD230F68C900D7FE02 /* RecipeSemiConstantCell.swift */; };
-		352B6DB323285139004C43B8 /* BrewPhase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 352B6DB223285139004C43B8 /* BrewPhase.swift */; };
+		352B6DB323285139004C43B8 /* BrewingPlan.swift in Sources */ = {isa = PBXBuildFile; fileRef = 352B6DB223285139004C43B8 /* BrewingPlan.swift */; };
 		3532AA9823105C4700C1F373 /* RecipeConstantCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3532AA9723105C4700C1F373 /* RecipeConstantCellView.swift */; };
 		3532AA9A23105E0500C1F373 /* TinyEdgeInset+convienceInit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3532AA9923105E0500C1F373 /* TinyEdgeInset+convienceInit.swift */; };
 		3532AA9B2310658300C1F373 /* RecipeConstantCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3532AA9723105C4700C1F373 /* RecipeConstantCellView.swift */; };
@@ -112,6 +112,10 @@
 		3532AA9F2310726000C1F373 /* RecipeSemiConstantCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3532AA9D23106AA700C1F373 /* RecipeSemiConstantCellView.swift */; };
 		353DAA042321290300853A6A /* PrepStepCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3569D334231F300F00427450 /* PrepStepCellView.swift */; };
 		3543D5BD23294A0500E5E45D /* BrewPhaseTimerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3543D5BC23294A0500E5E45D /* BrewPhaseTimerTests.swift */; };
+		3546370323316A1C006C8DA6 /* RecipeConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3546370223316A1C006C8DA6 /* RecipeConstant.swift */; };
+		3546370423316A31006C8DA6 /* RecipeConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3546370223316A1C006C8DA6 /* RecipeConstant.swift */; };
+		3546370823316AD0006C8DA6 /* AeroPressFilterPlan.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3546370723316AD0006C8DA6 /* AeroPressFilterPlan.swift */; };
+		3546370923316AE6006C8DA6 /* AeroPressFilterPlan.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3546370723316AD0006C8DA6 /* AeroPressFilterPlan.swift */; };
 		3560123E23071AEA003AF91D /* MainFlowControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3560123C23071AEA003AF91D /* MainFlowControllerTests.swift */; };
 		3569D32E231F135B00427450 /* Double+toString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3506807B231A9B8000604CE5 /* Double+toString.swift */; };
 		3569D330231F1B2600427450 /* PrepParamsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3569D32F231F1B2600427450 /* PrepParamsTests.swift */; };
@@ -142,7 +146,7 @@
 		35EC74092308BF1400964665 /* BrewVariableBundleCellVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35EC74082308BF1400964665 /* BrewVariableBundleCellVM.swift */; };
 		35EC740A2308BF5F00964665 /* BrewVariableBundleCellVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35EC74082308BF1400964665 /* BrewVariableBundleCellVM.swift */; };
 		35FF73F72328EE08008646DA /* BrewingVMTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35FF73F62328EE08008646DA /* BrewingVMTests.swift */; };
-		35FF73F82328EFD8008646DA /* BrewPhase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 352B6DB223285139004C43B8 /* BrewPhase.swift */; };
+		35FF73F82328EFD8008646DA /* BrewingPlan.swift in Sources */ = {isa = PBXBuildFile; fileRef = 352B6DB223285139004C43B8 /* BrewingPlan.swift */; };
 		73CEEAB2EF96AA6276E48A9F /* Pods_AIropressTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4DA8033607392551CCA2F0A5 /* Pods_AIropressTests.framework */; };
 		85AF326F656DC5FB03F26AAF /* Pods_AIropress.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C5DE7E97D5832D15F91D83EE /* Pods_AIropress.framework */; };
 /* End PBXBuildFile section */
@@ -218,11 +222,13 @@
 		352A1FB8230F5C4300D7FE02 /* BaseCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCellView.swift; sourceTree = "<group>"; };
 		352A1FBB230F5D3700D7FE02 /* BrewVariableBundleCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrewVariableBundleCellView.swift; sourceTree = "<group>"; };
 		352A1FBD230F68C900D7FE02 /* RecipeSemiConstantCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeSemiConstantCell.swift; sourceTree = "<group>"; };
-		352B6DB223285139004C43B8 /* BrewPhase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrewPhase.swift; sourceTree = "<group>"; };
+		352B6DB223285139004C43B8 /* BrewingPlan.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrewingPlan.swift; sourceTree = "<group>"; };
 		3532AA9723105C4700C1F373 /* RecipeConstantCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeConstantCellView.swift; sourceTree = "<group>"; };
 		3532AA9923105E0500C1F373 /* TinyEdgeInset+convienceInit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TinyEdgeInset+convienceInit.swift"; sourceTree = "<group>"; };
 		3532AA9D23106AA700C1F373 /* RecipeSemiConstantCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeSemiConstantCellView.swift; sourceTree = "<group>"; };
 		3543D5BC23294A0500E5E45D /* BrewPhaseTimerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrewPhaseTimerTests.swift; sourceTree = "<group>"; };
+		3546370223316A1C006C8DA6 /* RecipeConstant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeConstant.swift; sourceTree = "<group>"; };
+		3546370723316AD0006C8DA6 /* AeroPressFilterPlan.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AeroPressFilterPlan.swift; sourceTree = "<group>"; };
 		3560123C23071AEA003AF91D /* MainFlowControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainFlowControllerTests.swift; sourceTree = "<group>"; };
 		3569D32F231F1B2600427450 /* PrepParamsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrepParamsTests.swift; sourceTree = "<group>"; };
 		3569D331231F2F2000427450 /* PrepStepCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrepStepCell.swift; sourceTree = "<group>"; };
@@ -424,6 +430,30 @@
 			path = CellView;
 			sourceTree = "<group>";
 		};
+		3546370523316A60006C8DA6 /* Recipe */ = {
+			isa = PBXGroup;
+			children = (
+				35EC73FE2308B73200964665 /* BrewVariable.swift */,
+				35833E532307537C002F986B /* BrewParameters.swift */,
+				35833E5523075398002F986B /* BrewRecipe.swift */,
+				3546370223316A1C006C8DA6 /* RecipeConstant.swift */,
+			);
+			path = Recipe;
+			sourceTree = "<group>";
+		};
+		3546370623316A90006C8DA6 /* Brew */ = {
+			isa = PBXGroup;
+			children = (
+				351A66B623194C2900D1061B /* PrepStep.swift */,
+				351A66B323194BFE00D1061B /* PrepParams.swift */,
+				352B6DB223285139004C43B8 /* BrewingPlan.swift */,
+				3546370723316AD0006C8DA6 /* AeroPressFilterPlan.swift */,
+				3512F335232BC90D00368485 /* PhaseTextSet.swift */,
+				3512F338232BC93300368485 /* BrewPhaseTimer.swift */,
+			);
+			path = Brew;
+			sourceTree = "<group>";
+		};
 		3560123B23071ACA003AF91D /* FlowControllerTests */ = {
 			isa = PBXGroup;
 			children = (
@@ -445,16 +475,10 @@
 		35833E4E23075302002F986B /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				35833E4F2307530E002F986B /* Scene.swift */,
-				35833E532307537C002F986B /* BrewParameters.swift */,
-				35833E5523075398002F986B /* BrewRecipe.swift */,
-				35EC73FE2308B73200964665 /* BrewVariable.swift */,
+				3546370623316A90006C8DA6 /* Brew */,
+				3546370523316A60006C8DA6 /* Recipe */,
 				350457F42309A47300F4B8DC /* AppOptions.swift */,
-				351A66B623194C2900D1061B /* PrepStep.swift */,
-				351A66B323194BFE00D1061B /* PrepParams.swift */,
-				352B6DB223285139004C43B8 /* BrewPhase.swift */,
-				3512F335232BC90D00368485 /* PhaseTextSet.swift */,
-				3512F338232BC93300368485 /* BrewPhaseTimer.swift */,
+				35833E4F2307530E002F986B /* Scene.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -702,6 +726,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3546370323316A1C006C8DA6 /* RecipeConstant.swift in Sources */,
 				352A1FBC230F5D3700D7FE02 /* BrewVariableBundleCellView.swift in Sources */,
 				3512F339232BC93300368485 /* BrewPhaseTimer.swift in Sources */,
 				351A66B723194C2900D1061B /* PrepStep.swift in Sources */,
@@ -742,6 +767,7 @@
 				352A1FBE230F68C900D7FE02 /* RecipeSemiConstantCell.swift in Sources */,
 				3512F333232BC8DC00368485 /* BrewingVM.swift in Sources */,
 				35072E4D230B47D500689F75 /* BrewVariableBundleCell.swift in Sources */,
+				3546370823316AD0006C8DA6 /* AeroPressFilterPlan.swift in Sources */,
 				350457FD230A07DA00F4B8DC /* BaseViewController.swift in Sources */,
 				351A66BA23194C4C00D1061B /* PrepStepCellVM.swift in Sources */,
 				3512F34C232C448300368485 /* AllDoneViewController.swift in Sources */,
@@ -759,7 +785,7 @@
 				352A1FA8230EF99100D7FE02 /* ConstantCellVM.swift in Sources */,
 				35076C3B230468F5006BBDDF /* AppDelegate.swift in Sources */,
 				351A66B123194BDE00D1061B /* BrewPrepVM.swift in Sources */,
-				352B6DB323285139004C43B8 /* BrewPhase.swift in Sources */,
+				352B6DB323285139004C43B8 /* BrewingPlan.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -802,6 +828,7 @@
 				350457F82309ACB400F4B8DC /* MainViewControllerProvider.swift in Sources */,
 				351A66B223194BEC00D1061B /* BrewPrepVM.swift in Sources */,
 				35072E3D230AFBFB00689F75 /* DiscreteSliderTests.swift in Sources */,
+				3546370923316AE6006C8DA6 /* AeroPressFilterPlan.swift in Sources */,
 				35833E5A230753E9002F986B /* BrewRecipe.swift in Sources */,
 				35072E44230B0C1400689F75 /* DesiredTasteSceneView.swift in Sources */,
 				352A1FA9230EF99F00D7FE02 /* ConstantCellVM.swift in Sources */,
@@ -809,6 +836,7 @@
 				35E0E5E423076B14004A86FD /* DesiredTasteVMTests.swift in Sources */,
 				35072E40230B0BD900689F75 /* AppOptions.swift in Sources */,
 				35833E58230753E5002F986B /* Scene.swift in Sources */,
+				3546370423316A31006C8DA6 /* RecipeConstant.swift in Sources */,
 				351A66B823194C4000D1061B /* PrepStep.swift in Sources */,
 				3543D5BD23294A0500E5E45D /* BrewPhaseTimerTests.swift in Sources */,
 				351A66C32319CA3800D1061B /* LabeledSceneView.swift in Sources */,
@@ -817,7 +845,7 @@
 				3527AF09230DCC4C00ED0E26 /* AIProcessingVMTests.swift in Sources */,
 				351A66BB23194C6C00D1061B /* PrepStepCellVM.swift in Sources */,
 				35124276230C8EF400C692DD /* BrewVariableSlider.swift in Sources */,
-				35FF73F82328EFD8008646DA /* BrewPhase.swift in Sources */,
+				35FF73F82328EFD8008646DA /* BrewingPlan.swift in Sources */,
 				351A66B523194C0C00D1061B /* PrepParams.swift in Sources */,
 				3532AA9C2310658B00C1F373 /* TinyEdgeInset+convienceInit.swift in Sources */,
 				35833E5C230753EE002F986B /* FlowControl.swift in Sources */,

@@ -82,7 +82,7 @@ extension MainFlowController: BrewPrepSceneFC {
     
     func onBrewInitiated() {
         navigationController.pop(animated: false)
-        guard let brewingPlan = AeroPressBrewingPlan.create(values: recipeValues ?? [:]) else {
+        guard let brewingPlan = AeroPressFilterPlan.create(values: recipeValues ?? [:]) else {
             fatalError("Nil or insuficient recipeValues obtained.")
         }
         
