@@ -57,7 +57,7 @@ class BrewingVMTests: XCTestCase {
     override func setUp() {
         super.setUp()
         
-        brewPhases = AeroPressBrewingPlan(waterAmount: 50, coffeeAmount: 13, bloomDuration: 20, brewDuration: 35).orderedPhases
+        brewPhases = AeroPressFilterPlan(waterAmount: 50, coffeeAmount: 13, bloomDuration: 20, brewDuration: 35).orderedPhases
 
         brewingVM = BrewingVM(brewPhases: brewPhases, timerType: MockBrewPhaseTimer.self)
     }

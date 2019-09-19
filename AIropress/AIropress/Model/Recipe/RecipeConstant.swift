@@ -10,16 +10,19 @@ import Foundation
 
 struct RecipeConstant {
     let id: Int
-    let label: String
-    
     let value: Double
-    let valueText: String
     
-    init(id: Int, label: String, value: Double, valueText: String) {
+    let stringifier: ValueStringifier?
+    
+    init(id: Int, value: Double) {
         self.id = id
-        self.label = label
         self.value = value
-        self.valueText = valueText
+        
+        guard let recipeValue = RecipeValue(rawValue: id) else {
+            self.stringifier = nil
+            return
+        }
+        self.stringifier = recipeValue.stringifier()
     }
 }
 
@@ -36,8 +39,8 @@ struct RecipeSemiConstant {
     let confidenceVariable: BrewVariable
     var confidenceValue: Double
     
-    init(id: Int, label: String, value: Double, valueText: String, confidenceVariableId: BrewVariable.Id, initialConfidenceValue: Double) {
-        self.constant = RecipeConstant(id: id, label: label, value: value, valueText: valueText)
+    init(id: Int, value: Double, confidenceVariableId: BrewVariable.Id, initialConfidenceValue: Double) {
+        self.constant = RecipeConstant(id: id, value: value)
         
         self.confidenceVariable = BrewVariable.createConfidenceVariable(id: confidenceVariableId)
         self.confidenceValue = initialConfidenceValue

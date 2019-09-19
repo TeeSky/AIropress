@@ -19,10 +19,10 @@ struct AeroPressFilterPlan: BrewingPlan {
     let orderedPhases: [BrewPhase]
     
     static func create(values: [Int: Double]) -> AeroPressFilterPlan? {
-        return self.create(recipeValues: RecipeValueId.createRecipeValueMap(from: values))
+        return self.create(recipeValues: RecipeValue.createRecipeValueMap(from: values))
     }
     
-    static func create(recipeValues: [RecipeValueId: Double]) -> AeroPressFilterPlan? {
+    static func create(recipeValues: [RecipeValue: Double]) -> AeroPressFilterPlan? {
         guard let waterAmount = recipeValues[.waterAmount],
             let coffeeAmount = recipeValues[.coffeeAmount],
             let bloomDuration = recipeValues[.bloomDuration],

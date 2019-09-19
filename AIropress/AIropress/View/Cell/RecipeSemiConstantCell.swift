@@ -26,7 +26,7 @@ extension RecipeSemiConstantCell: ConfigurableTableCell {
     }
     
     private func setupConstantView(viewModel: SemiConstantCellVM) {
-        cellView.constantView.constantLabel.text = viewModel.cellLabel
+        cellView.constantView.constantLabel.text = viewModel.cellLabelText
         cellView.constantView.constantValue.text = viewModel.cellValueText
     }
     

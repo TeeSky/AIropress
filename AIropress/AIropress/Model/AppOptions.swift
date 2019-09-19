@@ -15,6 +15,8 @@ struct AppOptions {
     static let color = AppColor()
     static let fontSize = AppFontSize()
     
+    static let nonAvailableText = "n/a"
+    
     private init() {}
 }
 

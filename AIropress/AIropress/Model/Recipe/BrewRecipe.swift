@@ -8,43 +8,20 @@
 
 import Foundation
 
-enum RecipeValueId: Int {
-    case aeropressOrientation = 100
-    case temperature = 101
-    case grindSize = 102
-    case coffeeAmount = 103
-    case waterAmount = 104
-    
-    case bloomDuration = 200
-    case brewDuration = 201
-    
-    
-    static func createRecipeValueMap(from valueMap: [Int: Double]) -> [RecipeValueId: Double] {
-        var recipeValueMap: [RecipeValueId: Double] = [:]
-        
-        for (id, value) in valueMap {
-            if let recipeValueId = RecipeValueId.init(rawValue: id) {
-                recipeValueMap[recipeValueId] = value
-            }
-        }
-        return recipeValueMap
-    }
-}
-
 struct BrewRecipe: Equatable {
     let constants: [RecipeConstant]
     let semiConstants: [RecipeSemiConstant]
     
     init() { // Mock init, remove and instantiate using real calculated values
-        let constants: [RecipeConstant] = [RecipeConstant(id: RecipeValueId.waterAmount.rawValue, label: "Water", value: 85, valueText: "85ml"),
-                                           RecipeConstant(id: RecipeValueId.brewDuration.rawValue, label: "Brewing time", value: 30, valueText: "1:35s"), // TODO fix time addition
-                                           RecipeConstant(id: RecipeValueId.bloomDuration.rawValue, label: "Bloom time", value: 20, valueText: "0:20s"),
-                                           RecipeConstant(id: RecipeValueId.coffeeAmount.rawValue, label: "Coffee", value: 13, valueText: "13g"),
-                                           RecipeConstant(id: RecipeValueId.aeropressOrientation.rawValue, label: "Aer. orientation",
-                                                          value: AeropressBrewOrientation.inverted.value(), valueText: AeropressBrewOrientation.inverted.valueText())]
+        let constants: [RecipeConstant] = [RecipeConstant(id: RecipeValue.waterAmount.rawValue, value: 85),
+                                           RecipeConstant(id: RecipeValue.totalBrewDuration.rawValue, value: 95),
+                                           RecipeConstant(id: RecipeValue.brewDuration.rawValue, value: 30),
+                                           RecipeConstant(id: RecipeValue.bloomDuration.rawValue, value: 20),
+                                           RecipeConstant(id: RecipeValue.coffeeAmount.rawValue, value: 13),
+                                           RecipeConstant(id: RecipeValue.aeropressOrientation.rawValue, value: AeropressBrewOrientation.inverted.value())]
         
-        let semiConstants: [RecipeSemiConstant] = [RecipeSemiConstant(id: RecipeValueId.temperature.rawValue, label: "Temperature", value: 86, valueText: "86C", confidenceVariableId: 10, initialConfidenceValue: 0.8),
-                                                   RecipeSemiConstant(id: 4, label: "Grind size", value: 28, valueText: "coarse", confidenceVariableId: 11, initialConfidenceValue: 0.5)]
+        let semiConstants: [RecipeSemiConstant] = [RecipeSemiConstant(id: RecipeValue.temperature.rawValue, value: 86, confidenceVariableId: 10, initialConfidenceValue: 0.8),
+                                                   RecipeSemiConstant(id: RecipeValue.grindSize.rawValue, value: 28, confidenceVariableId: 11, initialConfidenceValue: 0.5)]
         
         
         self.init(constants: constants, semiConstants: semiConstants)

@@ -116,6 +116,10 @@
 		3546370423316A31006C8DA6 /* RecipeConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3546370223316A1C006C8DA6 /* RecipeConstant.swift */; };
 		3546370823316AD0006C8DA6 /* AeroPressFilterPlan.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3546370723316AD0006C8DA6 /* AeroPressFilterPlan.swift */; };
 		3546370923316AE6006C8DA6 /* AeroPressFilterPlan.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3546370723316AD0006C8DA6 /* AeroPressFilterPlan.swift */; };
+		3549D8C823339C8100267796 /* RecipeValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3549D8C723339C8100267796 /* RecipeValue.swift */; };
+		3549D8CA2333D27A00267796 /* Dictionary+merge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3549D8C92333D27A00267796 /* Dictionary+merge.swift */; };
+		3549D8CB2333D39100267796 /* RecipeValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3549D8C723339C8100267796 /* RecipeValue.swift */; };
+		3549D8CC2333D39400267796 /* Dictionary+merge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3549D8C92333D27A00267796 /* Dictionary+merge.swift */; };
 		3560123E23071AEA003AF91D /* MainFlowControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3560123C23071AEA003AF91D /* MainFlowControllerTests.swift */; };
 		3569D32E231F135B00427450 /* Double+toString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3506807B231A9B8000604CE5 /* Double+toString.swift */; };
 		3569D330231F1B2600427450 /* PrepParamsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3569D32F231F1B2600427450 /* PrepParamsTests.swift */; };
@@ -229,6 +233,8 @@
 		3543D5BC23294A0500E5E45D /* BrewPhaseTimerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrewPhaseTimerTests.swift; sourceTree = "<group>"; };
 		3546370223316A1C006C8DA6 /* RecipeConstant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeConstant.swift; sourceTree = "<group>"; };
 		3546370723316AD0006C8DA6 /* AeroPressFilterPlan.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AeroPressFilterPlan.swift; sourceTree = "<group>"; };
+		3549D8C723339C8100267796 /* RecipeValue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeValue.swift; sourceTree = "<group>"; };
+		3549D8C92333D27A00267796 /* Dictionary+merge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Dictionary+merge.swift"; sourceTree = "<group>"; };
 		3560123C23071AEA003AF91D /* MainFlowControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainFlowControllerTests.swift; sourceTree = "<group>"; };
 		3569D32F231F1B2600427450 /* PrepParamsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrepParamsTests.swift; sourceTree = "<group>"; };
 		3569D331231F2F2000427450 /* PrepStepCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrepStepCell.swift; sourceTree = "<group>"; };
@@ -315,6 +321,7 @@
 				3532AA9923105E0500C1F373 /* TinyEdgeInset+convienceInit.swift */,
 				3506807B231A9B8000604CE5 /* Double+toString.swift */,
 				3512F341232C223300368485 /* UICollection+safeSubscript.swift */,
+				3549D8C92333D27A00267796 /* Dictionary+merge.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -435,6 +442,7 @@
 			children = (
 				35EC73FE2308B73200964665 /* BrewVariable.swift */,
 				35833E532307537C002F986B /* BrewParameters.swift */,
+				3549D8C723339C8100267796 /* RecipeValue.swift */,
 				35833E5523075398002F986B /* BrewRecipe.swift */,
 				3546370223316A1C006C8DA6 /* RecipeConstant.swift */,
 			);
@@ -475,8 +483,8 @@
 		35833E4E23075302002F986B /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				3546370623316A90006C8DA6 /* Brew */,
 				3546370523316A60006C8DA6 /* Recipe */,
+				3546370623316A90006C8DA6 /* Brew */,
 				350457F42309A47300F4B8DC /* AppOptions.swift */,
 				35833E4F2307530E002F986B /* Scene.swift */,
 			);
@@ -745,6 +753,7 @@
 				350457EE23096CE300F4B8DC /* DesiredTasteViewController.swift in Sources */,
 				350457FB2309AEB500F4B8DC /* UINavigationController+BaseNavigationController.swift in Sources */,
 				3569D335231F300F00427450 /* PrepStepCellView.swift in Sources */,
+				3549D8C823339C8100267796 /* RecipeValue.swift in Sources */,
 				3527AF0E230DF51700ED0E26 /* AIProcessingViewController.swift in Sources */,
 				35833E4D230752E4002F986B /* MainFlowController.swift in Sources */,
 				352A1FAB230F53D200D7FE02 /* ViewRecipeVM.swift in Sources */,
@@ -771,6 +780,7 @@
 				350457FD230A07DA00F4B8DC /* BaseViewController.swift in Sources */,
 				351A66BA23194C4C00D1061B /* PrepStepCellVM.swift in Sources */,
 				3512F34C232C448300368485 /* AllDoneViewController.swift in Sources */,
+				3549D8CA2333D27A00267796 /* Dictionary+merge.swift in Sources */,
 				3506807C231A9B8000604CE5 /* Double+toString.swift in Sources */,
 				3532AA9823105C4700C1F373 /* RecipeConstantCellView.swift in Sources */,
 				3532AA9E23106AA800C1F373 /* RecipeSemiConstantCellView.swift in Sources */,
@@ -808,6 +818,7 @@
 				3532AA9B2310658300C1F373 /* RecipeConstantCellView.swift in Sources */,
 				3527AF15230E018900ED0E26 /* UIView+fadeTransition.swift in Sources */,
 				3527AF12230DFDD300ED0E26 /* AIProcessingSceneView.swift in Sources */,
+				3549D8CB2333D39100267796 /* RecipeValue.swift in Sources */,
 				3512F348232C42B100368485 /* AllDoneVM.swift in Sources */,
 				352A1FC1230F6CD000D7FE02 /* BaseTableViewCell.swift in Sources */,
 				35EC74042308BEBF00964665 /* BaseViewModel.swift in Sources */,
@@ -858,6 +869,7 @@
 				3512F340232C19B700368485 /* BrewingViewController.swift in Sources */,
 				3569D333231F2FC800427450 /* PrepStepCell.swift in Sources */,
 				35833E59230753E7002F986B /* BrewParameters.swift in Sources */,
+				3549D8CC2333D39400267796 /* Dictionary+merge.swift in Sources */,
 				350118E42315F01200A4EE79 /* PrepStepCellVMTests.swift in Sources */,
 				35EC740A2308BF5F00964665 /* BrewVariableBundleCellVM.swift in Sources */,
 				352A1FBF230F6CCA00D7FE02 /* BrewVariableBundleCellView.swift in Sources */,

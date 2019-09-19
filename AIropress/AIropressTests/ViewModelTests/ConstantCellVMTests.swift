@@ -22,10 +22,10 @@ class ConstantCellVMTests: XCTestCase {
     }
     
     func testInit() {
-        let expectedLabel = recipeConstant.label
-        let expectedValueText = recipeConstant.valueText
+        let expectedLabel = recipeConstant.stringifier?.labelText()
+        let expectedValueText = recipeConstant.stringifier?.toString(value: recipeConstant.value)
         
-        XCTAssertEqual(expectedLabel, constantCellVM.cellLabel)
+        XCTAssertEqual(expectedLabel, constantCellVM.cellLabelText)
         XCTAssertEqual(expectedValueText, constantCellVM.cellValueText)
     }
     
