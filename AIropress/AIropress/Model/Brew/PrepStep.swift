@@ -11,28 +11,30 @@ import Foundation
 enum AeropressBrewOrientation: String {
     case normal = "Screw on the filter holder and place the Aeropress on the cup."
     case inverted = "Insert plunger, turn the Aeropress upside-down."
-    
+
     private static let valueMap: [AeropressBrewOrientation: Double] = [.normal: 1,
-                                                                       .inverted : 2]
-    
+                                                                       .inverted: 2]
+
     static func fromDouble(value: Double) -> AeropressBrewOrientation? {
         var desiredOrientation: AeropressBrewOrientation?
         for (orientation, orientationValue) in valueMap where orientationValue == value {
-            guard desiredOrientation == nil else { fatalError("Single orientation must have exactly one entry in valueMap")}
-            
+            guard desiredOrientation == nil else {
+                fatalError("Single orientation must have exactly one entry in valueMap")
+            }
+
             desiredOrientation = orientation
         }
         return desiredOrientation
     }
-    
+
     func value() -> Double {
         guard let value = AeropressBrewOrientation.valueMap[self] else {
             fatalError("valueMap must contain value for every orientation.")
         }
-        
+
         return value
     }
-    
+
     func valueText() -> String {
         switch self {
         case .normal:
@@ -41,7 +43,7 @@ enum AeropressBrewOrientation: String {
             return "inverted"
         }
     }
-    
+
 }
 
 enum PrepStep {
@@ -52,7 +54,7 @@ enum PrepStep {
     case placeOnScale
     case weighOutCoffee(String)
     case prepareKettle
-    
+
     func text() -> String {
         let text: String
         switch self {

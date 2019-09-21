@@ -10,13 +10,13 @@ import Foundation
 import UIKit
 
 class BaseCellView: UIView {
-    
+
     func addViews() {
     }
-    
+
     func setConstraints() {
     }
-    
+
     func prepareForReuse() {
     }
 }

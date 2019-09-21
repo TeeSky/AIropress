@@ -11,31 +11,31 @@ import UIKit
 import TinyConstraints
 
 class RecipeSemiConstantCellView: BaseCellView {
-    
+
     lazy var constantView: RecipeConstantCellView = {
         return RecipeConstantCellView()
     }()
-    
+
     lazy var confidenceSlider: BrewVariableSlider = {
         return BrewVariableSlider()
     }()
-    
+
     private lazy var contentContainer: UIView = {
         return UIView()
     }()
 
     override func addViews() {
         addSubview(contentContainer)
-        
+
         constantView.addViews()
         contentContainer.addSubview(constantView)
         contentContainer.addSubview(confidenceSlider)
     }
-    
+
     override func setConstraints() {
         contentContainer.edgesToSuperview(insets: TinyEdgeInsets(top: 15))
         constantView.setConstraints()
-        
+
         contentContainer.stack([constantView, confidenceSlider], spacing: 10)
     }
 }

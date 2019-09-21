@@ -14,18 +14,19 @@ import UIKit
  view provided as typed **BaseSceneView** subclass.
  */
 class BaseViewController<SV: BaseSceneView>: UIViewController {
-    
+
     /**
      ViewController's base UIView.
      */
     var sceneView: SV {
+        // swiftlint:disable:next force_cast
         return view as! SV
     }
-    
+
     override func loadView() {
         view = SV()
     }
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         sceneView.render()

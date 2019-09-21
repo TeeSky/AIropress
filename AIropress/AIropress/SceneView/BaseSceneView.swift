@@ -15,7 +15,7 @@ import UIKit
  Provided are also static factory fuctions for unified common UI element creation.
  */
 class BaseSceneView: UIView {
-    
+
     /**
      Sets default white background and sets up view by calling addViews and setConstraints.
      
@@ -23,11 +23,11 @@ class BaseSceneView: UIView {
      */
     func render() {
         self.backgroundColor = .white
-        
+
         self.addViews()
         self.setConstraints()
     }
-    
+
     /**
      Adds all **UIView** elements into base view.
      
@@ -35,7 +35,7 @@ class BaseSceneView: UIView {
      */
     func addViews() {
     }
-    
+
     /**
      Sets up all UI constraints of view.
      
@@ -43,7 +43,7 @@ class BaseSceneView: UIView {
      */
     func setConstraints() {
     }
-    
+
     /**
      Creates default styled negative **UIButton**, that is colored red and with smaller width 90.
      
@@ -55,7 +55,7 @@ class BaseSceneView: UIView {
         let button = BaseSceneView.createButton(title: title, color: AppOptions.color.buttonNegative, width: 90.0)
         return button
     }
-    
+
     /**
      Creates default styled **UIButton** using provided attributes.
      
@@ -65,7 +65,8 @@ class BaseSceneView: UIView {
      
      - Returns: Commonly styled **UIButton**.
      */
-    static func createButton(title: String, color: UIColor = AppOptions.color.button, width: CGFloat = 150.0) -> UIButton {
+    static func createButton(title: String, color: UIColor = AppOptions.color.button,
+                             width: CGFloat = 150.0) -> UIButton {
         let button = UIButton()
         button.layer.cornerRadius = 5
         button.backgroundColor = color
