@@ -52,7 +52,8 @@ class BrewVariableBundleCellTests: XCTestCase {
         let sliderValue = SliderValue(index: value,
                                       raw: Float(value) / Float(brewVariable.stepCount),
                                       text: "test")
-        brewVariableBundleCell.cellView.sliders[variableIndex].delegate!(sliderValue)
+        let delegate = brewVariableBundleCell.cellView.sliders[variableIndex].delegate
+        delegate!.onValueChanged(variable: brewVariable, to: sliderValue)
 
         XCTAssertEqual(expectedSliderValueChange.0, viewModel.valueChange!.0)
         XCTAssertEqual(expectedSliderValueChange.1, viewModel.valueChange!.1)

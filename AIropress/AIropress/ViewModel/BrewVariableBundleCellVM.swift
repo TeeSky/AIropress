@@ -54,6 +54,14 @@ class BrewVariableBundleCellVM {
     }
 }
 
+extension BrewVariableBundleCellVM: BrewVariableSliderDelegate {
+
+    func onValueChanged(variable: BrewVariable, to value: SliderValue) {
+        onSliderValueChanged(brewVariable: variable, valueIndex: value.index)
+    }
+
+}
+
 extension BrewVariableBundleCellVM: BaseTableCellVM {
 
     var identifier: String {

@@ -34,9 +34,7 @@ extension BrewVariableBundleCell: ConfigurableTableCell {
         for variable in viewModel.sliderVariables {
             let slider = BrewVariableSlider()
             slider.configure(brewVariable: variable, initialValue: viewModel.initialSliderValue(for: variable))
-            slider.delegate = { sliderValue in
-                viewModel.onSliderValueChanged(brewVariable: variable, valueIndex: sliderValue.index)
-            }
+            slider.delegate = viewModel
 
             cellView.sliders.append(slider)
             cellView.slidersContainer.addSubview(slider)

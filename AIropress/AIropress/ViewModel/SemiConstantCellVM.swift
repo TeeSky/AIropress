@@ -56,6 +56,13 @@ class SemiConstantCellVM: ConstantCellVM {
     }
 }
 
+extension SemiConstantCellVM: BrewVariableSliderDelegate {
+
+    func onValueChanged(variable: BrewVariable, to value: SliderValue) {
+        onSliderValueChanged(to: value.raw)
+    }
+}
+
 extension SemiConstantCellVM {
 
     override var identifier: String {

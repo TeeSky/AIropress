@@ -10,15 +10,17 @@ import Foundation
 import TinyConstraints
 import UIKit
 
-class BrewVariableSlider: UIView {
+protocol BrewVariableSliderDelegate: class {
+    func onValueChanged(variable: BrewVariable, to value: SliderValue)
+}
+
+class BrewVariableSlider: UIView, DiscreteSliderDelegate {
 
     static let height = 70
 
-    var delegate: DiscreteSlider.Delegate? {
-        didSet {
-            slider.delegate = delegate
-        }
-    }
+    weak var delegate: BrewVariableSliderDelegate?
+
+    var variable: BrewVariable?
 
     lazy var minLabel: UILabel = {
         return BrewVariableSlider.createStyledLabel()
@@ -53,6 +55,7 @@ class BrewVariableSlider: UIView {
     }
 
     func configure(brewVariable: BrewVariable, initialValue: Float) {
+        variable = brewVariable
         slider.stepCount = brewVariable.stepCount
         minLabel.text = brewVariable.labelSet.minLabel
         maxLabel.text = brewVariable.labelSet.maxLabel
@@ -91,5 +94,12 @@ class BrewVariableSlider: UIView {
         let label = UILabel()
         label.font = UIFont.systemFont(ofSize: AppOptions.fontSize.small, weight: .light)
         return label
+    }
+
+    func onValueChanged(to value: SliderValue) {
+        guard let variable = variable else {
+            fatalError("Property variable must be set beforehand (by calling configure fuction).")
+        }
+        delegate?.onValueChanged(variable: variable, to: value)
     }
 }

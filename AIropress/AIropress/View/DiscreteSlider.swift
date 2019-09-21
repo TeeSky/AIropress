@@ -16,10 +16,13 @@ struct SliderValue {
     let text: String
 }
 
-class DiscreteSlider: UISlider {
-    typealias Delegate = ((SliderValue) -> Void)
+protocol DiscreteSliderDelegate: class {
+    func onValueChanged(to value: SliderValue)
+}
 
-    var delegate: Delegate?
+class DiscreteSlider: UISlider {
+
+    weak var delegate: DiscreteSliderDelegate?
 
     var stepCount: Int {
         set {
@@ -69,7 +72,7 @@ class DiscreteSlider: UISlider {
         let sliderValue = SliderValue(index: valueIndex,
                                       raw: self.value / maximumValue,
                                       text: values[valueIndex])
-        delegate?(sliderValue)
+        delegate?.onValueChanged(to: sliderValue)
 
         super.sendAction(action, to: target, for: event)
     }

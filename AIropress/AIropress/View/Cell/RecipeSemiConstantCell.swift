@@ -35,8 +35,6 @@ extension RecipeSemiConstantCell: ConfigurableTableCell {
     private func setupConfidenceSlider(viewModel: SemiConstantCellVM) {
         cellView.confidenceSlider.configure(brewVariable: viewModel.confidenceVariable,
                                             initialValue: Float(viewModel.confidenceValue))
-        cellView.confidenceSlider.delegate = { sliderValue in
-            viewModel.onSliderValueChanged(to: sliderValue.raw)
-        }
+        cellView.confidenceSlider.delegate = viewModel
     }
 }
