@@ -13,7 +13,7 @@ protocol BrewingVMDelegate: class {
     func setPhaseTexts(textSets: [PhaseTextSet])
 }
 
-class BrewingVM: BaseViewModel {
+class BrewingVM: BaseViewModel, BrewPhaseTimerDelegate {
 
     private(set) var completedPhasesDuration: Double
     private(set) var currentTotalTicks: Int
@@ -60,7 +60,7 @@ class BrewingVM: BaseViewModel {
         initiateBrewPhase()
     }
 
-    private func onPhaseTick(remainingSeconds: Double) {
+    internal func onPhaseTick(remainingSeconds: Double) {
         currentTotalTicks += 1
 
         let totalRemainingSeconds = (totalBrewTime - Double(currentTotalTicks) -
@@ -72,7 +72,7 @@ class BrewingVM: BaseViewModel {
         delegate?.setTimerTexts(mainTimerText: mainTimerText, currentPhaseTimerText: phaseTimerText)
     }
 
-    private func onPhaseEnd() {
+    internal func onPhaseEnd() {
         completedPhasesDuration += brewPhases[currentBrewPhaseIndex].duration
         currentBrewPhaseIndex += 1
         guard currentBrewPhaseIndex < brewPhases.count else {
@@ -90,7 +90,7 @@ class BrewingVM: BaseViewModel {
 
         currentTotalTicks = 0
         currentBrewPhaseTimer = brewTimerType.init(brewPhase: brewPhases[currentBrewPhaseIndex],
-                                                   tickDelegate: onPhaseTick, phaseEndDelegate: onPhaseEnd)
+                                                   delegate: self)
     }
 
     private func onBrewFinished() {

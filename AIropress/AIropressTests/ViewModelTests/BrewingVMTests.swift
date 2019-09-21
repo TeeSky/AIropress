@@ -43,11 +43,9 @@ private class MockBrewingVMDelegate: BrewingVMDelegate {
 
 private class MockBrewPhaseTimer: BrewPhaseTimer {
 
-    required init(brewPhase: BrewPhase, tickDelegate: @escaping TickDelegate,
-                  phaseEndDelegate: @escaping PhaseEndDelegate, autostartTimers: Bool = true,
+    required init(brewPhase: BrewPhase, delegate: BrewPhaseTimerDelegate, autostartTimers: Bool = true,
                   timerProvider: Timer.Type = Timer.self) {
-        super.init(brewPhase: brewPhase, tickDelegate: tickDelegate,
-                   phaseEndDelegate: phaseEndDelegate, autostartTimers: false)
+        super.init(brewPhase: brewPhase, delegate: delegate, autostartTimers: false)
     }
 }
 
@@ -146,7 +144,7 @@ class BrewingVMTests: XCTestCase {
 
         brewingVM.onSceneDidAppear()
         for _ in 1...expectedTicks {
-            brewingVM.currentBrewPhaseTimer!.tickDelegate(tickValue)
+            brewingVM.currentBrewPhaseTimer!.delegate!.onPhaseTick(remainingSeconds: tickValue)
         }
 
         XCTAssertEqual(expectedTicks, brewingVM.currentTotalTicks)
@@ -165,7 +163,7 @@ class BrewingVMTests: XCTestCase {
         let delegate = MockBrewingVMDelegate()
         brewingVM.delegate = delegate
 
-        brewingVM.currentBrewPhaseTimer?.phaseEndDelegate()
+        brewingVM.currentBrewPhaseTimer!.delegate!.onPhaseEnd()
 
         XCTAssertEqual(expectedPhaseEndIndex, brewingVM.currentBrewPhaseIndex)
         XCTAssertEqual(expectedNextPhaseTexts, delegate.nextPhaseTextSets)
@@ -187,7 +185,7 @@ class BrewingVMTests: XCTestCase {
         flowController.brewFinishedExpectation = brewFinishedExpectation
         brewingVM.flowController = flowController
 
-        brewingVM.currentBrewPhaseTimer?.phaseEndDelegate()
+        brewingVM.currentBrewPhaseTimer!.delegate!.onPhaseEnd()
 
         XCTAssertEqual(expectedPhaseEndIndex, brewingVM.currentBrewPhaseIndex)
         XCTAssertEqual(expectedBrewFinished, brewingVM.brewFinished)

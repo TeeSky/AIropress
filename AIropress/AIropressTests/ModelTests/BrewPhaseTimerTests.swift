@@ -40,13 +40,13 @@ class MockTimer: Timer {
     }
 }
 
-class MockTimerDelegate {
+class MockTimerDelegate: BrewPhaseTimerDelegate {
 
     var onTickValue: Double?
     var phaseEnded: Bool?
 
-    func onTick(value: Double) {
-        onTickValue = value
+    func onPhaseTick(remainingSeconds: Double) {
+        onTickValue = remainingSeconds
     }
 
     func onPhaseEnd() {
@@ -69,8 +69,7 @@ class BrewPhaseTimerTests: XCTestCase {
         timerDelegate = MockTimerDelegate()
 
         brewPhaseTimer = BrewPhaseTimer(brewPhase: brewPhase,
-                                        tickDelegate: timerDelegate.onTick,
-                                        phaseEndDelegate: timerDelegate.onPhaseEnd,
+                                        delegate: timerDelegate,
                                         timerProvider: MockTimer.self)
     }
 
