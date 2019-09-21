@@ -19,12 +19,12 @@ protocol BaseViewModel {
  Base **UITableViewCell** view model type.
  */
 protocol BaseTableCellVM {
-    
+
     /**
      Cell's reuse identifier.
      */
     var identifier: String { get }
-    
+
     /**
      Cell's height within the **UITableView**.
      */
@@ -39,7 +39,7 @@ protocol BaseTableVM: BaseViewModel {
 }
 
 extension BaseTableVM {
-    
+
     /**
      Returns total number of sections.
      
@@ -51,7 +51,7 @@ extension BaseTableVM {
     func numberOfSections() -> Int {
         return 1
     }
-    
+
     /**
      Returns total number of rows within specified section.
      
@@ -64,10 +64,10 @@ extension BaseTableVM {
      */
     func numberOfRows(section: Int) -> Int {
         guard section == 0 else { fatalError("Unexpected section") }
-        
+
         return cellViewModels.count
     }
-    
+
     /**
      Retrieves view model for specified **IndexPath**.
      
@@ -81,11 +81,10 @@ extension BaseTableVM {
      */
     func cellViewModel(for path: IndexPath) -> BaseTableCellVM {
         guard path.section == 0 else { fatalError("Unexpected section") }
-        
+
         return cellViewModels[path.row]
     }
-    
-    
+
     /**
      Returns view height for cell at specified **IndexPath**.
      
@@ -100,5 +99,5 @@ extension BaseTableVM {
     func cellHeight(for path: IndexPath) -> CGFloat {
         return cellViewModel(for: path).cellHeight
     }
-    
+
 }

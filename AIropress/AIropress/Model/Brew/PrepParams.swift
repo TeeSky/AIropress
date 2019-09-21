@@ -10,11 +10,11 @@ import Foundation
 
 struct PrepParams {
     let prepSteps: [PrepStep]
-    
+
     static func create(values: [Int: Double]) -> PrepParams? {
         return self.create(recipeValues: RecipeValue.createRecipeValueMap(from: values))
     }
-    
+
     static func create(recipeValues: [RecipeValue: Double]) -> PrepParams? {
         guard let tempValue = recipeValues[.temperature],
             let coffeeAmount = recipeValues[.coffeeAmount],
@@ -22,10 +22,10 @@ struct PrepParams {
             let aeropressOrientation = AeropressBrewOrientation.fromDouble(value: orientationValue) else {
                 return nil
         }
-        
+
         return PrepParams(waterTemp: tempValue, coffeeAmount: coffeeAmount, aeropressOrientation: aeropressOrientation)
     }
-    
+
     init(waterTemp: Double, coffeeAmount: Double, aeropressOrientation: AeropressBrewOrientation) {
         prepSteps = [.preheatWater(waterTemp.toTempString()),
         .rinseFilter,
@@ -35,5 +35,5 @@ struct PrepParams {
         .weighOutCoffee(coffeeAmount.toWeightString()),
         .prepareKettle]
     }
-    
+
 }

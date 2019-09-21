@@ -27,8 +27,8 @@ import UIKit
 
 /// Usage: insert view.fadeTransition right before changing content
 extension UIView {
-    
-    func fadeTransition(_ duration:CFTimeInterval) {
+
+    func fadeTransition(_ duration: CFTimeInterval) {
         let animation = CATransition()
         animation.timingFunction = CAMediaTimingFunction(name:
             CAMediaTimingFunctionName.easeInEaseOut)

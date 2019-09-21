@@ -11,19 +11,19 @@ import UIKit
 import TinyConstraints
 
 class RecipeConstantCellView: BaseCellView {
-    
+
     lazy var constantLabel: UILabel = {
         let label = UILabel()
         label.font = UIFont.systemFont(ofSize: AppOptions.fontSize.normal, weight: .regular)
         return label
     }()
-    
+
     lazy var constantValue: UILabel = {
         let label = UILabel()
         label.font = UIFont.systemFont(ofSize: AppOptions.fontSize.normal, weight: .bold)
         return label
     }()
-    
+
     private lazy var contentContainer: UIView = {
         let container = UIView()
         return container
@@ -31,17 +31,17 @@ class RecipeConstantCellView: BaseCellView {
 
     override func addViews() {
         addSubview(contentContainer)
-        
+
         contentContainer.addSubview(constantLabel)
         contentContainer.addSubview(constantValue)
     }
-    
+
     override func setConstraints() {
         contentContainer.edgesToSuperview(insets: TinyEdgeInsets(top: 5))
-        
+
         constantLabel.leftToSuperview()
         constantLabel.centerYToSuperview()
-        
+
         constantValue.rightToSuperview()
         constantValue.centerYToSuperview()
     }

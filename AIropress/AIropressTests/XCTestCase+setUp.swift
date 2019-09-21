@@ -12,7 +12,7 @@ extension XCTestCase {
 
     override open func setUp() {
         super.setUp()
-        
+
         continueAfterFailure = false
     }
 
