@@ -1,23 +1,14 @@
 //
-//  BrewPhase.swift
+//  AeroPressFilterPlan.swift
 //  AIropress
 //
-//  Created by Tomas Skypala on 10/09/2019.
+//  Created by Tomas Skypala on 17/09/2019.
 //  Copyright © 2019 Tomas Skypala. All rights reserved.
 //
 
 import Foundation
 
-struct BrewPhase: Equatable {
-    let duration: Double
-    let label: String
-}
-
-protocol BrewingPlan {
-    var orderedPhases: [BrewPhase] { get }
-}
-
-struct AeroPressBrewingPlan: BrewingPlan {
+struct AeroPressFilterPlan: BrewingPlan {
     
     static let pourDuration = 10.0
     static let stirDuration = 10.0
@@ -27,11 +18,11 @@ struct AeroPressBrewingPlan: BrewingPlan {
     
     let orderedPhases: [BrewPhase]
     
-    static func create(values: [Int: Double]) -> AeroPressBrewingPlan? {
-        return self.create(recipeValues: RecipeValueId.createRecipeValueMap(from: values))
+    static func create(values: [Int: Double]) -> AeroPressFilterPlan? {
+        return self.create(recipeValues: RecipeValue.createRecipeValueMap(from: values))
     }
     
-    static func create(recipeValues: [RecipeValueId: Double]) -> AeroPressBrewingPlan? {
+    static func create(recipeValues: [RecipeValue: Double]) -> AeroPressFilterPlan? {
         guard let waterAmount = recipeValues[.waterAmount],
             let coffeeAmount = recipeValues[.coffeeAmount],
             let bloomDuration = recipeValues[.bloomDuration],
@@ -39,16 +30,16 @@ struct AeroPressBrewingPlan: BrewingPlan {
                 return nil
         }
         
-        return AeroPressBrewingPlan(waterAmount: waterAmount, coffeeAmount: coffeeAmount,
-                                    bloomDuration: bloomDuration, brewDuration: brewDuration)
+        return AeroPressFilterPlan(waterAmount: waterAmount, coffeeAmount: coffeeAmount,
+                                   bloomDuration: bloomDuration, brewDuration: brewDuration)
     }
     
     init(waterAmount: Double, coffeeAmount: Double, bloomDuration: Double, brewDuration: Double) {
-        let pourDuration = AeroPressBrewingPlan.pourDuration
-        let stirDuration = AeroPressBrewingPlan.stirDuration
-        let plungeDuration = AeroPressBrewingPlan.plungeDuration
+        let pourDuration = AeroPressFilterPlan.pourDuration
+        let stirDuration = AeroPressFilterPlan.stirDuration
+        let plungeDuration = AeroPressFilterPlan.plungeDuration
         
-        let bloomWaterAmount = coffeeAmount * AeroPressBrewingPlan.bloomCoffeeAmountMultiplier
+        let bloomWaterAmount = coffeeAmount * AeroPressFilterPlan.bloomCoffeeAmountMultiplier
         
         orderedPhases = [
             BrewPhase(duration: pourDuration, label: "Wet the coffee grounds with \(Int(bloomWaterAmount)) ml of water."),

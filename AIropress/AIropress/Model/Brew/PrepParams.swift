@@ -12,10 +12,10 @@ struct PrepParams {
     let prepSteps: [PrepStep]
     
     static func create(values: [Int: Double]) -> PrepParams? {
-        return self.create(recipeValues: RecipeValueId.createRecipeValueMap(from: values))
+        return self.create(recipeValues: RecipeValue.createRecipeValueMap(from: values))
     }
     
-    static func create(recipeValues: [RecipeValueId: Double]) -> PrepParams? {
+    static func create(recipeValues: [RecipeValue: Double]) -> PrepParams? {
         guard let tempValue = recipeValues[.temperature],
             let coffeeAmount = recipeValues[.coffeeAmount],
             let orientationValue = recipeValues[.aeropressOrientation],

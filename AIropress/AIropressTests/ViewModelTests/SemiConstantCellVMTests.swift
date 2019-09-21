@@ -22,11 +22,11 @@ class SemiConstantCellVMTests: XCTestCase {
     }
     
     func testInit() {
-        let expectedLabel = recipeSemiConstant.constant.label
-        let expectedValueText = recipeSemiConstant.constant.valueText
+        let expectedLabel = recipeSemiConstant.constant.stringifier?.labelText()
+        let expectedValueText = recipeSemiConstant.constant.stringifier?.toString(value: recipeSemiConstant.constant.value)
         let expectedConfidenceVariable = recipeSemiConstant.confidenceVariable
         
-        XCTAssertEqual(expectedLabel, semiConstantCellVM.cellLabel)
+        XCTAssertEqual(expectedLabel, semiConstantCellVM.cellLabelText)
         XCTAssertEqual(expectedValueText, semiConstantCellVM.cellValueText)
         XCTAssertEqual(expectedConfidenceVariable, semiConstantCellVM.confidenceVariable)
     }

@@ -12,8 +12,8 @@ enum AeropressBrewOrientation: String {
     case normal = "Screw on the filter holder and place the Aeropress on the cup."
     case inverted = "Insert plunger, turn the Aeropress upside-down."
     
-    private static let valueMap: [AeropressBrewOrientation: Double] = [.normal: 0.0,
-                                                                       .inverted : 0.1]
+    private static let valueMap: [AeropressBrewOrientation: Double] = [.normal: 1,
+                                                                       .inverted : 2]
     
     static func fromDouble(value: Double) -> AeropressBrewOrientation? {
         var desiredOrientation: AeropressBrewOrientation?

@@ -14,12 +14,11 @@ class ViewRecipeVM {
     weak var flowController: ViewRecipeSceneFC?
     
     private(set) var cellVMs: [BaseTableCellVM]
-    
-    let brewRecipeConstants: [RecipeConstant]
+    private(set) var hiddenValues: [Int: Double]
     
     init(brewRecipe: BrewRecipe) {
-        self.brewRecipeConstants = brewRecipe.constants
         self.cellVMs = []
+        self.hiddenValues = [:]
         
         setupCellVMs(brewRecipe: brewRecipe)
     }
@@ -36,24 +35,40 @@ class ViewRecipeVM {
     
     @objc
     func onPrepareClicked() {
-        var recipeValues = brewRecipeConstants.reduce(into: [Int: Double]()) { $0[$1.id] = $1.value }
-        
-        //        for vm in cellVMs where let semiConstantCellVM = vm as? SemiConstantCellVM {
-        for vm in cellVMs {
-            guard let semiConstantCellVM = vm as? SemiConstantCellVM else { continue }
-            
-            recipeValues[semiConstantCellVM.recipeConstant.id] = semiConstantCellVM.recipeConstant.value
-            recipeValues[semiConstantCellVM.confidenceVariable.id] = semiConstantCellVM.confidenceValue
+        var recipeValues = cellVMs.reduce(into: [Int: Double]()) { dict, vm in
+            switch vm {
+            case let vm as SemiConstantCellVM:
+                dict[vm.constantId] = vm.constantValue
+                dict[vm.confidenceVariable.id] = vm.confidenceValue
+            case let vm as ConstantCellVM:
+                dict[vm.constantId] = vm.constantValue
+            default:
+                fatalError("Unexpected cellVM type.")
+            }
         }
+        recipeValues.merge(dict: hiddenValues)
         
         flowController?.onPrepared(recipeValues: recipeValues)
     }
     
     private func setupCellVMs(brewRecipe: BrewRecipe) {
-        cellVMs.append(contentsOf: brewRecipe.constants.map { ConstantCellVM(constant: $0) })
-        cellVMs.append(contentsOf: brewRecipe.semiConstants.map { SemiConstantCellVM(semiConstant: $0) })
+        cellVMs.append(contentsOf: brewRecipe.constants.compactMap { constant in
+            guard let vm = ConstantCellVM(constant: constant) else {
+                hiddenValues[constant.id] = constant.value
+                return nil
+            }
+            return vm
+        })
+        
+        cellVMs.append(contentsOf: brewRecipe.semiConstants.compactMap { semiConstant in
+            guard let vm = SemiConstantCellVM(semiConstant: semiConstant) else {
+                hiddenValues[semiConstant.constant.id] = semiConstant.constant.value
+                hiddenValues[semiConstant.confidenceVariable.id] = semiConstant.confidenceValue
+                return nil
+            }
+            return vm
+        })
     }
-    
 }
 
 extension ViewRecipeVM: BaseTableVM {

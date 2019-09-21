@@ -36,8 +36,31 @@ class ViewRecipeVMTests: XCTestCase {
         viewRecipeVM = ViewRecipeVM(brewRecipe: recipe)
     }
     
-    func testInit() {
-        XCTAssertEqual(recipe.constants, viewRecipeVM.brewRecipeConstants)
+    func testHiddenValuesConstants() {
+        for constant in recipe.constants where constant.stringifier == nil {
+            let expectedHiddenValueId = constant.id
+            let expectedHiddenValue = constant.value
+            
+            let actualValue = viewRecipeVM.hiddenValues[expectedHiddenValueId]
+            
+            XCTAssertEqual(expectedHiddenValue, actualValue)
+        }
+    }
+    
+    func testHiddenValuesSemiConstants() {
+        for semiConstant in recipe.semiConstants where semiConstant.constant.stringifier == nil {
+            let expectedHiddenValueId = semiConstant.constant.id
+            let expectedHiddenValue = semiConstant.constant.value
+            
+            let expectedHiddenConfidenceValueId = semiConstant.constant.id
+            let expectedHiddenConfidenceValue = semiConstant.constant.value
+            
+            let actualValue = viewRecipeVM.hiddenValues[expectedHiddenValueId]
+            let actualConfidenceValue = viewRecipeVM.hiddenValues[expectedHiddenConfidenceValueId]
+            
+            XCTAssertEqual(expectedHiddenValue, actualValue)
+            XCTAssertEqual(expectedHiddenConfidenceValue, actualConfidenceValue)
+        }
     }
     
     func testNumberOfSections() {
@@ -45,33 +68,41 @@ class ViewRecipeVMTests: XCTestCase {
     }
     
     func testNumberOfRows() {
-        let expectedNumberOfRows = recipe.constants.count + recipe.semiConstants.count
+        let numberOfConstantRows = recipe.constants.filter { $0.stringifier != nil }.count
+        let numberOfSemiConstantRows = recipe.semiConstants.filter { $0.constant.stringifier != nil }.count
+        
+        let expectedNumberOfRows = numberOfConstantRows + numberOfSemiConstantRows
         
         XCTAssertEqual(expectedNumberOfRows, viewRecipeVM.numberOfRows(section: 0))
     }
 
     func testCellViewModelForPathConstantCellVMs() {
-        for (index, recipeConstant) in recipe.constants.enumerated() {
+        let expectedShownConstants = recipe.constants.filter { $0.stringifier != nil }
+        
+        for (index, recipeConstant) in expectedShownConstants.enumerated() {
             let viewModel = viewRecipeVM.cellViewModel(for: IndexPath(row: index, section: 0))
-            let expectedLabel = recipeConstant.label
-            let expectedValueText = recipeConstant.valueText
+            let expectedLabel = recipeConstant.stringifier?.labelText()
+            let expectedValueText = recipeConstant.stringifier?.toString(value: recipeConstant.value)
             
             XCTAssertNotNil(viewModel as? ConstantCellVM)
-            XCTAssertEqual(expectedLabel, (viewModel as! ConstantCellVM).cellLabel)
+            XCTAssertEqual(expectedLabel, (viewModel as! ConstantCellVM).cellLabelText)
             XCTAssertEqual(expectedValueText, (viewModel as! ConstantCellVM).cellValueText)
         }
     }
     
     func testCellViewModelForPathSemiConstantCellVM() {
-        let indexOffset = recipe.constants.count
-        for (index, recipeSemiConstant) in recipe.semiConstants.enumerated() {
+        let numberOfConstantRows = recipe.constants.filter { $0.stringifier != nil }.count
+        let indexOffset = numberOfConstantRows
+        let expectedShownSemiConstants = recipe.semiConstants.filter { $0.constant.stringifier != nil }
+        
+        for (index, recipeSemiConstant) in expectedShownSemiConstants.enumerated() {
             let viewModel = viewRecipeVM.cellViewModel(for: IndexPath(row: index + indexOffset, section: 0))
-            let expectedLabel = recipeSemiConstant.constant.label
-            let expectedValueText = recipeSemiConstant.constant.valueText
+            let expectedLabel = recipeSemiConstant.constant.stringifier?.labelText()
+            let expectedValueText = recipeSemiConstant.constant.stringifier?.toString(value: recipeSemiConstant.constant.value)
             let expectedConfidenceVariable = recipeSemiConstant.confidenceVariable
             
             XCTAssertNotNil(viewModel as? SemiConstantCellVM)
-            XCTAssertEqual(expectedLabel, (viewModel as! SemiConstantCellVM).cellLabel)
+            XCTAssertEqual(expectedLabel, (viewModel as! SemiConstantCellVM).cellLabelText)
             XCTAssertEqual(expectedValueText, (viewModel as! SemiConstantCellVM).cellValueText)
             XCTAssertEqual(expectedConfidenceVariable, (viewModel as! SemiConstantCellVM).confidenceVariable)
         }

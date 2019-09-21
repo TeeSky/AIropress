@@ -11,9 +11,9 @@ import XCTest
 class PrepParamsTests: XCTestCase {
     
     func testCreateNonNil() {
-        let valuesMap = [RecipeValueId.temperature.rawValue: 90,
-                         RecipeValueId.coffeeAmount.rawValue: 18,
-                         RecipeValueId.aeropressOrientation.rawValue: AeropressBrewOrientation.inverted.value(),
+        let valuesMap = [RecipeValue.temperature.rawValue: 90,
+                         RecipeValue.coffeeAmount.rawValue: 18,
+                         RecipeValue.aeropressOrientation.rawValue: AeropressBrewOrientation.inverted.value(),
                          48: 54.5]
         
         let prepParams = PrepParams.create(values: valuesMap)
@@ -23,8 +23,8 @@ class PrepParamsTests: XCTestCase {
     
     func testCreateNilWithInsufficientValues() {
         let valuesMap = [256: 1.0,
-                         RecipeValueId.temperature.rawValue: 92,
-                         RecipeValueId.aeropressOrientation.rawValue: AeropressBrewOrientation.normal.value(),
+                         RecipeValue.temperature.rawValue: 92,
+                         RecipeValue.aeropressOrientation.rawValue: AeropressBrewOrientation.normal.value(),
                          91: 58.1]
         
         let prepParams = PrepParams.create(values: valuesMap)
