@@ -15,5 +15,4 @@ class BrewRecipeTests: XCTestCase {
 
         XCTAssertNotNil(filterRecipe)
     }
-
 }
