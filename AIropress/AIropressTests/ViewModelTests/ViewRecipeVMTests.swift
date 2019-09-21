@@ -77,7 +77,9 @@ class ViewRecipeVMTests: XCTestCase {
     }
 
     func testCellViewModelForPathConstantCellVMs() {
-        for (index, recipeConstant) in recipe.constants.enumerated() {
+        let expectedShownConstants = recipe.constants.filter { $0.stringifier != nil }
+        
+        for (index, recipeConstant) in expectedShownConstants.enumerated() {
             let viewModel = viewRecipeVM.cellViewModel(for: IndexPath(row: index, section: 0))
             let expectedLabel = recipeConstant.stringifier?.labelText()
             let expectedValueText = recipeConstant.stringifier?.toString(value: recipeConstant.value)
@@ -89,8 +91,11 @@ class ViewRecipeVMTests: XCTestCase {
     }
     
     func testCellViewModelForPathSemiConstantCellVM() {
-        let indexOffset = recipe.constants.count
-        for (index, recipeSemiConstant) in recipe.semiConstants.enumerated() {
+        let numberOfConstantRows = recipe.constants.filter { $0.stringifier != nil }.count
+        let indexOffset = numberOfConstantRows
+        let expectedShownSemiConstants = recipe.semiConstants.filter { $0.constant.stringifier != nil }
+        
+        for (index, recipeSemiConstant) in expectedShownSemiConstants.enumerated() {
             let viewModel = viewRecipeVM.cellViewModel(for: IndexPath(row: index + indexOffset, section: 0))
             let expectedLabel = recipeSemiConstant.constant.stringifier?.labelText()
             let expectedValueText = recipeSemiConstant.constant.stringifier?.toString(value: recipeSemiConstant.constant.value)

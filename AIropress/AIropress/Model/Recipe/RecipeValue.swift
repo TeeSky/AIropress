@@ -19,6 +19,8 @@ enum RecipeValue: Int {
     case brewDuration = 201
     case totalBrewDuration = 202
     
+    case hiddenValuePlaceholder = 299
+    
     static let stringifiers: [RecipeValue: ValueStringifier] =
         [.aeropressOrientation: AeropressOrientationStringifier(),
          .grindSize: ComandanteGrindSizeStringifier(),

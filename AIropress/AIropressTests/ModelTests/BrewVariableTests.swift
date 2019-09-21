@@ -32,10 +32,12 @@ struct MockBrewVars {
     
     
     static let constants: [RecipeConstant] = [RecipeConstant(id: RecipeValue.waterAmount.rawValue, value: 85),
-                                       RecipeConstant(id: RecipeValue.totalBrewDuration.rawValue, value: 90),
-                                       RecipeConstant(id: RecipeValue.coffeeAmount.rawValue, value: 13)]
+                                              RecipeConstant(id: RecipeValue.totalBrewDuration.rawValue, value: 90),
+                                              RecipeConstant(id: RecipeValue.brewDuration.rawValue, value: 30),
+                                              RecipeConstant(id: RecipeValue.coffeeAmount.rawValue, value: 13)]
     
     static let semiConstants: [RecipeSemiConstant] = [RecipeSemiConstant(id: RecipeValue.temperature.rawValue, value: 86, confidenceVariableId: 10, initialConfidenceValue: 0.8),
+                                                      RecipeSemiConstant(id: RecipeValue.hiddenValuePlaceholder.rawValue, value: 30, confidenceVariableId: 13, initialConfidenceValue: 0.6), // Semi constant should not normally be hidden
                                                RecipeSemiConstant(id: RecipeValue.grindSize.rawValue, value: 28, confidenceVariableId: 11, initialConfidenceValue: 0.5)]
     
     static let recipe: BrewRecipe = BrewRecipe(constants: constants, semiConstants: semiConstants)
