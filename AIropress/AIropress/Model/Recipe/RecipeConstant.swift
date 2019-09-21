@@ -8,22 +8,27 @@
 
 import Foundation
 
-struct RecipeConstant {
-    let id: Int
-    let value: Double
+class RecipeConstant: Codable {
     
-    let stringifier: ValueStringifier?
+    var value: Double {
+        return val
+    }
+    
+    let id: Int
+    private let val: Double
+    
+    lazy var stringifier: ValueStringifier? = {
+        guard let recipeValue = RecipeValue(rawValue: id) else {
+            return nil
+        }
+        return recipeValue.stringifier()
+    }()
     
     init(id: Int, value: Double) {
         self.id = id
-        self.value = value
-        
-        guard let recipeValue = RecipeValue(rawValue: id) else {
-            self.stringifier = nil
-            return
-        }
-        self.stringifier = recipeValue.stringifier()
+        self.val = value
     }
+    
 }
 
 extension RecipeConstant: Equatable {
@@ -34,16 +39,34 @@ extension RecipeConstant: Equatable {
     
 }
 
-struct RecipeSemiConstant {
-    let constant: RecipeConstant
-    let confidenceVariable: BrewVariable
-    var confidenceValue: Double
+class RecipeSemiConstant: Codable {
+    
+    var constant: RecipeConstant {
+        return const
+    }
+    
+    var confidenceId: Int {
+        return confId
+    }
+    
+    var confidenceValue: Double {
+        return confVal
+    }
+    
+    lazy var confidenceVariable: BrewVariable = {
+        return BrewVariable.createConfidenceVariable(id: confidenceId)
+    }()
+    
+    private let const: RecipeConstant
+    private let confId: Int
+    
+    private var confVal: Double
     
     init(id: Int, value: Double, confidenceVariableId: BrewVariable.Id, initialConfidenceValue: Double) {
-        self.constant = RecipeConstant(id: id, value: value)
+        self.const = RecipeConstant(id: id, value: value)
         
-        self.confidenceVariable = BrewVariable.createConfidenceVariable(id: confidenceVariableId)
-        self.confidenceValue = initialConfidenceValue
+        self.confId = confidenceVariableId
+        self.confVal = initialConfidenceValue
     }
 }
 

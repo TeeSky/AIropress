@@ -56,6 +56,8 @@
 		3512F34C232C448300368485 /* AllDoneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3512F34B232C448300368485 /* AllDoneViewController.swift */; };
 		3512F34D232C45D400368485 /* AllDoneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3512F34B232C448300368485 /* AllDoneViewController.swift */; };
 		3512F34E232C45D800368485 /* AllDoneSceneView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3512F349232C435600368485 /* AllDoneSceneView.swift */; };
+		35167BA22336CCE8003FCD92 /* BrewRecipeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35167BA12336CCE8003FCD92 /* BrewRecipeTests.swift */; };
+		35167BA42336D30E003FCD92 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 35076C41230468F6006BBDDF /* Assets.xcassets */; };
 		351A66B123194BDE00D1061B /* BrewPrepVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 351A66B023194BDE00D1061B /* BrewPrepVM.swift */; };
 		351A66B223194BEC00D1061B /* BrewPrepVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 351A66B023194BDE00D1061B /* BrewPrepVM.swift */; };
 		351A66B423194BFE00D1061B /* PrepParams.swift in Sources */ = {isa = PBXBuildFile; fileRef = 351A66B323194BFE00D1061B /* PrepParams.swift */; };
@@ -201,6 +203,7 @@
 		3512F346232C429F00368485 /* AllDoneVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllDoneVM.swift; sourceTree = "<group>"; };
 		3512F349232C435600368485 /* AllDoneSceneView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllDoneSceneView.swift; sourceTree = "<group>"; };
 		3512F34B232C448300368485 /* AllDoneViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllDoneViewController.swift; sourceTree = "<group>"; };
+		35167BA12336CCE8003FCD92 /* BrewRecipeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrewRecipeTests.swift; sourceTree = "<group>"; };
 		351A66B023194BDE00D1061B /* BrewPrepVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrewPrepVM.swift; sourceTree = "<group>"; };
 		351A66B323194BFE00D1061B /* PrepParams.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrepParams.swift; sourceTree = "<group>"; };
 		351A66B623194C2900D1061B /* PrepStep.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrepStep.swift; sourceTree = "<group>"; };
@@ -517,6 +520,7 @@
 				35072E3C230AFBFB00689F75 /* DiscreteSliderTests.swift */,
 				3569D32F231F1B2600427450 /* PrepParamsTests.swift */,
 				3543D5BC23294A0500E5E45D /* BrewPhaseTimerTests.swift */,
+				35167BA12336CCE8003FCD92 /* BrewRecipeTests.swift */,
 			);
 			path = ModelTests;
 			sourceTree = "<group>";
@@ -643,6 +647,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				35167BA42336D30E003FCD92 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -823,6 +828,7 @@
 				352A1FC1230F6CD000D7FE02 /* BaseTableViewCell.swift in Sources */,
 				35EC74042308BEBF00964665 /* BaseViewModel.swift in Sources */,
 				3527AF17230E0F4C00ED0E26 /* ViewRecipeVMTests.swift in Sources */,
+				35167BA22336CCE8003FCD92 /* BrewRecipeTests.swift in Sources */,
 				352A1FAC230F53F300D7FE02 /* ViewRecipeVM.swift in Sources */,
 				3512F337232BC90D00368485 /* PhaseTextSet.swift in Sources */,
 				3512F33D232BC9DA00368485 /* BrewingSceneView.swift in Sources */,

@@ -32,8 +32,8 @@ class AIProcessingVM: BaseViewModel {
     }
     
     func onSceneDidAppear() {
-        DispatchQueue.main.asyncAfter(deadline: .now() + 2.5) { // Mock code, replace with processing done check.
-            let recipe = BrewRecipe()
+        DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) { // Mock code, replace with processing done check.
+            let recipe = BrewRecipe.createDefaultFilterRecipe(bundle: Bundle(for: type(of: self)))
             
             self.onProcessingDone(recipe: recipe)
         }

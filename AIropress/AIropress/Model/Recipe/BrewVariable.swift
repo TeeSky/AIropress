@@ -13,7 +13,7 @@ struct BrewVariableBundle: Equatable {
     let variables: [BrewVariable]
 }
 
-struct BrewVariable: Equatable {
+struct BrewVariable: Equatable, Codable {
     typealias Id = Int
     
     static let confidenceVariableStepCount = 5
@@ -35,7 +35,7 @@ extension BrewVariable: Hashable {
     }
 }
 
-struct VariableLabelSet: Equatable {
+struct VariableLabelSet: Equatable, Codable {
     let mainLabel: String
     let minLabel: String
     let maxLabel: String
