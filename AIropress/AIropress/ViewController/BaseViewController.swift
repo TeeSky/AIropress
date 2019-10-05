@@ -19,8 +19,10 @@ class BaseViewController<SV: BaseSceneView>: UIViewController {
      ViewController's base UIView.
      */
     var sceneView: SV {
-        // swiftlint:disable:next force_cast
-        return view as! SV
+        guard let view = view as? SV else {
+            fatalError("Unexpected BaseViewController view type.")
+        }
+        return view
     }
 
     override func loadView() {
