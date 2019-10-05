@@ -17,7 +17,7 @@ extension PrepStepCell: ConfigurableTableCell {
     func configure(viewModel: BaseTableCellVM) {
         guard let prepStepCellVm = viewModel as? PrepStepCellVM else { fatalError("Unexpected view model type.") }
 
-        cellView.textView.text = prepStepCellVm.cellText
+        cellView.label.text = prepStepCellVm.cellText
 
         self.updateConstraints()
     }
