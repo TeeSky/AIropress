@@ -61,7 +61,7 @@ class BrewingVMTests: XCTestCase {
         brewPhases = AeroPressFilterPlan(waterAmount: 50,
                                          coffeeAmount: 13,
                                          bloomDuration: 20,
-                                         brewDuration: 35).orderedPhases
+                                         brewDuration: 55).orderedPhases
 
         brewingVM = BrewingVM(brewPhases: brewPhases, timerType: MockBrewPhaseTimer.self)
     }

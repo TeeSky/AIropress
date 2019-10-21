@@ -18,6 +18,7 @@ enum RecipeValue: Int {
     case bloomDuration = 200
     case brewDuration = 201
     case totalBrewDuration = 202
+    case brewType = 203
 
     case hiddenValuePlaceholder = 299
 
@@ -28,7 +29,8 @@ enum RecipeValue: Int {
          .waterAmount: SimpleUnitStringifier(label: "Water", unit: "ml"),
          .temperature: SimpleUnitStringifier(label: "Temperature", unit: "C"),
          .totalBrewDuration: TimeStringifier(label: "Total brewing time"),
-         .bloomDuration: TimeStringifier(label: "Bloom time")
+         .bloomDuration: TimeStringifier(label: "Bloom time"),
+         .brewType: BrewTypeStringifier()
     ]
 
     func stringifier() -> ValueStringifier? {
@@ -131,4 +133,25 @@ class ComandanteGrindSizeStringifier: ValueStringifier {
             return defaultString
         }
     }
+}
+
+class BrewTypeStringifier: ValueStringifier {
+
+    func labelText() -> String {
+        return "Brew Type"
+    }
+
+    func toString(value: Double) -> String {
+        let defaultString = AppOptions.nonAvailableText
+
+        switch value {
+        case 0:
+            return "filter"
+        case 1:
+            return "espresso"
+        default:
+            return defaultString
+        }
+    }
+
 }

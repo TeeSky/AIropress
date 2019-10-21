@@ -122,6 +122,7 @@
 		3549D8CA2333D27A00267796 /* Dictionary+merge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3549D8C92333D27A00267796 /* Dictionary+merge.swift */; };
 		3549D8CB2333D39100267796 /* RecipeValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3549D8C723339C8100267796 /* RecipeValue.swift */; };
 		3549D8CC2333D39400267796 /* Dictionary+merge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3549D8C92333D27A00267796 /* Dictionary+merge.swift */; };
+		3552D3CE235E5E1200C0FF6F /* UserActivityType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3552D3CD235E5E1200C0FF6F /* UserActivityType.swift */; };
 		3560123E23071AEA003AF91D /* MainFlowControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3560123C23071AEA003AF91D /* MainFlowControllerTests.swift */; };
 		3569D32E231F135B00427450 /* Double+toString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3506807B231A9B8000604CE5 /* Double+toString.swift */; };
 		3569D330231F1B2600427450 /* PrepParamsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3569D32F231F1B2600427450 /* PrepParamsTests.swift */; };
@@ -153,6 +154,8 @@
 		35EC740A2308BF5F00964665 /* BrewVariableBundleCellVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35EC74082308BF1400964665 /* BrewVariableBundleCellVM.swift */; };
 		35FF73F72328EE08008646DA /* BrewingVMTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35FF73F62328EE08008646DA /* BrewingVMTests.swift */; };
 		35FF73F82328EFD8008646DA /* BrewingPlan.swift in Sources */ = {isa = PBXBuildFile; fileRef = 352B6DB223285139004C43B8 /* BrewingPlan.swift */; };
+		4799751A235E6A7100962405 /* PrismoEspressoPlan.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47997519235E6A7100962405 /* PrismoEspressoPlan.swift */; };
+		4799751C235E727200962405 /* PrismoEspressoPlan.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47997519235E6A7100962405 /* PrismoEspressoPlan.swift */; };
 		73CEEAB2EF96AA6276E48A9F /* Pods_AIropressTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4DA8033607392551CCA2F0A5 /* Pods_AIropressTests.framework */; };
 		85AF326F656DC5FB03F26AAF /* Pods_AIropress.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C5DE7E97D5832D15F91D83EE /* Pods_AIropress.framework */; };
 /* End PBXBuildFile section */
@@ -238,6 +241,7 @@
 		3546370723316AD0006C8DA6 /* AeroPressFilterPlan.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AeroPressFilterPlan.swift; sourceTree = "<group>"; };
 		3549D8C723339C8100267796 /* RecipeValue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeValue.swift; sourceTree = "<group>"; };
 		3549D8C92333D27A00267796 /* Dictionary+merge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Dictionary+merge.swift"; sourceTree = "<group>"; };
+		3552D3CD235E5E1200C0FF6F /* UserActivityType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserActivityType.swift; sourceTree = "<group>"; };
 		3560123C23071AEA003AF91D /* MainFlowControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainFlowControllerTests.swift; sourceTree = "<group>"; };
 		3569D32F231F1B2600427450 /* PrepParamsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrepParamsTests.swift; sourceTree = "<group>"; };
 		3569D331231F2F2000427450 /* PrepStepCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrepStepCell.swift; sourceTree = "<group>"; };
@@ -257,6 +261,7 @@
 		35EC74052308BEE300964665 /* DesiredTasteVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesiredTasteVM.swift; sourceTree = "<group>"; };
 		35EC74082308BF1400964665 /* BrewVariableBundleCellVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrewVariableBundleCellVM.swift; sourceTree = "<group>"; };
 		35FF73F62328EE08008646DA /* BrewingVMTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrewingVMTests.swift; sourceTree = "<group>"; };
+		47997519235E6A7100962405 /* PrismoEspressoPlan.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrismoEspressoPlan.swift; sourceTree = "<group>"; };
 		4DA8033607392551CCA2F0A5 /* Pods_AIropressTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AIropressTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		73DCB98EDA12910FCCC07D77 /* Pods-AIropressTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AIropressTests.release.xcconfig"; path = "Target Support Files/Pods-AIropressTests/Pods-AIropressTests.release.xcconfig"; sourceTree = "<group>"; };
 		82F617CABEF1402A5A3CB0AE /* Pods-AIropress.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AIropress.release.xcconfig"; path = "Target Support Files/Pods-AIropress/Pods-AIropress.release.xcconfig"; sourceTree = "<group>"; };
@@ -455,10 +460,9 @@
 		3546370623316A90006C8DA6 /* Brew */ = {
 			isa = PBXGroup;
 			children = (
+				4799751B235E6A7F00962405 /* Plan */,
 				351A66B623194C2900D1061B /* PrepStep.swift */,
 				351A66B323194BFE00D1061B /* PrepParams.swift */,
-				352B6DB223285139004C43B8 /* BrewingPlan.swift */,
-				3546370723316AD0006C8DA6 /* AeroPressFilterPlan.swift */,
 				3512F335232BC90D00368485 /* PhaseTextSet.swift */,
 				3512F338232BC93300368485 /* BrewPhaseTimer.swift */,
 			);
@@ -490,6 +494,7 @@
 				3546370623316A90006C8DA6 /* Brew */,
 				350457F42309A47300F4B8DC /* AppOptions.swift */,
 				35833E4F2307530E002F986B /* Scene.swift */,
+				3552D3CD235E5E1200C0FF6F /* UserActivityType.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -552,6 +557,16 @@
 				73DCB98EDA12910FCCC07D77 /* Pods-AIropressTests.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		4799751B235E6A7F00962405 /* Plan */ = {
+			isa = PBXGroup;
+			children = (
+				352B6DB223285139004C43B8 /* BrewingPlan.swift */,
+				3546370723316AD0006C8DA6 /* AeroPressFilterPlan.swift */,
+				47997519235E6A7100962405 /* PrismoEspressoPlan.swift */,
+			);
+			path = Plan;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -789,6 +804,7 @@
 				352A1FA5230EF97300D7FE02 /* SemiConstantCellVM.swift in Sources */,
 				351A66B423194BFE00D1061B /* PrepParams.swift in Sources */,
 				3527AF14230DFFCA00ED0E26 /* UIView+fadeTransition.swift in Sources */,
+				4799751A235E6A7100962405 /* PrismoEspressoPlan.swift in Sources */,
 				35124275230C5CA600C692DD /* BrewVariableSlider.swift in Sources */,
 				3527AF0B230DF4C200ED0E26 /* AIProcessingVM.swift in Sources */,
 				3512F33F232C19B700368485 /* BrewingViewController.swift in Sources */,
@@ -830,6 +846,7 @@
 				35045802230A0E3300F4B8DC /* DesiredTasteSceneView.swift in Sources */,
 				35833E522307534F002F986B /* FlowControl.swift in Sources */,
 				3512F33C232BC9DA00368485 /* BrewingSceneView.swift in Sources */,
+				3552D3CE235E5E1200C0FF6F /* UserActivityType.swift in Sources */,
 				35072E4A230B475A00689F75 /* ConfigurableTableCell.swift in Sources */,
 				3512F342232C223300368485 /* UICollection+safeSubscript.swift in Sources */,
 				35045800230A0C8F00F4B8DC /* BaseSceneView.swift in Sources */,
@@ -886,6 +903,7 @@
 				3546370923316AE6006C8DA6 /* AeroPressFilterPlan.swift in Sources */,
 				35833E5A230753E9002F986B /* BrewRecipe.swift in Sources */,
 				35072E44230B0C1400689F75 /* DesiredTasteSceneView.swift in Sources */,
+				4799751C235E727200962405 /* PrismoEspressoPlan.swift in Sources */,
 				352A1FA9230EF99F00D7FE02 /* ConstantCellVM.swift in Sources */,
 				352A1FB1230F54D800D7FE02 /* ViewRecipeSceneView.swift in Sources */,
 				35E0E5E423076B14004A86FD /* DesiredTasteVMTests.swift in Sources */,
