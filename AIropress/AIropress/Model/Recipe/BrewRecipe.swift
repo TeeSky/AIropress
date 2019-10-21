@@ -28,4 +28,15 @@ struct BrewRecipe: Equatable, Codable {
         }
         return recipe
     }
+
+    static func createDefaultPrismoEspressoRecipe(bundle: Bundle = Bundle.main) -> BrewRecipe {
+        let decoder = JSONDecoder()
+        let asset = NSDataAsset(name: "DefaultPrismoEspressoRecipe", bundle: bundle)
+
+        guard let recipe = try? decoder.decode(BrewRecipe.self, from: asset!.data) as BrewRecipe else {
+            fatalError("Could not decode the default prismo espresso BrewRecipe. Make sure there is " +
+                "a proper \"DefaultPrismoEspressoRecipe\" data asset available.")
+        }
+        return recipe
+    }
 }

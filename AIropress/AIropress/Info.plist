@@ -49,6 +49,14 @@
 			<key>UIApplicationShortcutItemType</key>
 			<string>xskypala.AIropress.brewDefaultFilter</string>
 		</dict>
+		<dict>
+			<key>UIApplicationShortcutItemTitle</key>
+			<string>Brew Default Prismo Espresso</string>
+			<key>UIApplicationShortcutItemIconType</key>
+			<string>UIApplicationShortcutIconTypeFavorite</string>
+			<key>UIApplicationShortcutItemType</key>
+			<string>xskypala.AIropress.brewDefaultPrismoEspresso</string>
+		</dict>
 	</array>
 </dict>
 </plist>

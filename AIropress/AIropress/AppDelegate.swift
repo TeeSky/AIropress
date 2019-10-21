@@ -61,12 +61,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
     private func launchMode(launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> LaunchMode {
-        guard let shortcutItem = launchOptions?[UIApplication.LaunchOptionsKey.shortcutItem] as? UIApplicationShortcutItem else { return .normal }
+        guard
+            let shortcutItem = launchOptions?[UIApplication.LaunchOptionsKey.shortcutItem] as? UIApplicationShortcutItem
+            else { return .normal }
 
         let launchMode: LaunchMode
         switch shortcutItem.type {
         case UserActivityType.brewDefaultFilter:
             launchMode = .brewShortcut(BrewRecipe.createDefaultFilterRecipe())
+        case UserActivityType.brewDefaultPrismoEspresso:
+            launchMode = .brewShortcut(BrewRecipe.createDefaultPrismoEspressoRecipe())
         default:
             launchMode = .normal
         }

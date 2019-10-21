@@ -99,13 +99,26 @@ extension MainFlowController: BrewPrepSceneFC {
 
     func onBrewInitiated() {
         navigationController.pop(animated: false)
-        guard let brewingPlan = AeroPressFilterPlan.create(values: recipeValues ?? [:]) else {
-            fatalError("Nil or insuficient recipeValues obtained.")
+
+        guard let values = recipeValues else {
+           fatalError("Nil or insuficient recipeValues obtained.")
+       }
+        let recipeValues = RecipeValue.createRecipeValueMap(from: values)
+        let brewTypeValue = recipeValues[.brewType]
+
+        let phases: [BrewPhase]?
+        switch brewTypeValue {
+        case 1:
+            phases = PrismoEspressoPlan.create(recipeValues: recipeValues)?.orderedPhases
+        default:
+            phases = AeroPressFilterPlan.create(recipeValues: recipeValues)?.orderedPhases
         }
 
-        switchTo(scene: .brewing(brewPhases: brewingPlan.orderedPhases))
+        guard let brewPhases = phases else {
+            fatalError("Nil or insuficient recipeValues obtained.")
+        }
+        switchTo(scene: .brewing(brewPhases: brewPhases))
     }
-
 }
 
 extension MainFlowController: BrewingSceneFC {

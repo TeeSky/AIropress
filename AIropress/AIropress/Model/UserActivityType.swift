@@ -10,4 +10,5 @@ import Foundation
 
 struct UserActivityType {
     static let brewDefaultFilter = "xskypala.AIropress.brewDefaultFilter"
+    static let brewDefaultPrismoEspresso = "xskypala.AIropress.brewDefaultPrismoEspresso"
 }

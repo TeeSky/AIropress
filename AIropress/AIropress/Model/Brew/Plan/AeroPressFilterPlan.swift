@@ -12,6 +12,7 @@ struct AeroPressFilterPlan: BrewingPlan {
 
     static let pourDuration = 10.0
     static let stirDuration = 10.0
+    static let capOnDuration = 10.0
     static let plungeDuration = 15.0
 
     static let bloomCoffeeAmountMultiplier = 2.0
@@ -37,9 +38,12 @@ struct AeroPressFilterPlan: BrewingPlan {
     init(waterAmount: Double, coffeeAmount: Double, bloomDuration: Double, brewDuration: Double) {
         let pourDuration = AeroPressFilterPlan.pourDuration
         let stirDuration = AeroPressFilterPlan.stirDuration
+        let capOnDuration = AeroPressFilterPlan.capOnDuration
         let plungeDuration = AeroPressFilterPlan.plungeDuration
 
         let bloomWaterAmount = coffeeAmount * AeroPressFilterPlan.bloomCoffeeAmountMultiplier
+
+        let nettoBrewDuration = brewDuration - pourDuration - stirDuration - capOnDuration
 
         orderedPhases = [
             BrewPhase(duration: pourDuration,
@@ -48,8 +52,9 @@ struct AeroPressFilterPlan: BrewingPlan {
             BrewPhase(duration: pourDuration,
                       label: "Pour the rest of the water reaching total of \(Int(waterAmount)) ml."),
             BrewPhase(duration: stirDuration, label: "Carefully and slowly stir 3-4 times."),
-            BrewPhase(duration: brewDuration, label: "Wait, the coffee is brewing."),
-            BrewPhase(duration: plungeDuration, label: "Plunge until you hear hissing sound.")
+            BrewPhase(duration: nettoBrewDuration, label: "Wait, the coffee is brewing."),
+            BrewPhase(duration: capOnDuration, label: "Screw on the filter and place the Aeropress on the mug."),
+            BrewPhase(duration: plungeDuration, label: "Plunge slowly until you hear hissing sound.")
         ]
     }
 }
