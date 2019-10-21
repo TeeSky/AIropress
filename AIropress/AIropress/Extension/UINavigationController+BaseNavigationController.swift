@@ -10,13 +10,13 @@ import Foundation
 import UIKit
 
 extension UINavigationController: BaseNavigationController {
-    
+
     func push(viewController: UIViewController) {
         self.pushViewController(viewController, animated: true)
     }
-    
+
     func pop(animated: Bool) {
         _ = self.popViewController(animated: animated)
     }
-    
+
 }

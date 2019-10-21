@@ -10,17 +10,17 @@ import Foundation
 import UIKit
 
 class RecipeConstantCell: BaseTableViewCell<RecipeConstantCellView> {
-    
+
 }
 
 extension RecipeConstantCell: ConfigurableTableCell {
-    
+
     func configure(viewModel: BaseTableCellVM) {
         guard let viewModel = viewModel as? ConstantCellVM else { fatalError("Unexpected view model type.") }
-        
-        cellView.constantLabel.text = viewModel.cellLabel
+
+        cellView.constantLabel.text = viewModel.cellLabelText
         cellView.constantValue.text = viewModel.cellValueText
-        
+
         didSetConstraints = false
         self.updateConstraints()
     }

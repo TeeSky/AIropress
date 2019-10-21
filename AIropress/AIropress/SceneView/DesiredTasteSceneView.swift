@@ -11,7 +11,7 @@ import UIKit
 import TinyConstraints
 
 class DesiredTasteSceneView: LabeledSceneView {
-    
+
     lazy var tableView: UITableView = {
         let tableView = UITableView()
         tableView.allowsSelection = false
@@ -19,27 +19,27 @@ class DesiredTasteSceneView: LabeledSceneView {
         tableView.showsVerticalScrollIndicator = false
         return tableView
     }()
-    
+
     lazy var calculateButton: UIButton = {
         return BaseSceneView.createButton(title: "Calculate")
     }()
-    
+
     override func getSceneLabelText() -> String {
         return "Desired"
     }
-    
+
     override func addViews() {
         super.addViews()
-        
+
         addSubview(tableView)
         addSubview(calculateButton)
     }
-    
+
     override func setConstraints() {
         super.setConstraints()
-        
+
         tableView.edges(to: contentContainer)
-        
+
         calculateButton.centerY(to: bottomButtonContainer)
         calculateButton.right(to: bottomButtonContainer)
     }

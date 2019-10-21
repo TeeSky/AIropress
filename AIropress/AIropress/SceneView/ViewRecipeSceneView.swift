@@ -11,7 +11,7 @@ import UIKit
 import TinyConstraints
 
 class ViewRecipeSceneView: LabeledSceneView {
-    
+
     lazy var tableView: UITableView = {
         let tableView = UITableView()
         tableView.allowsSelection = false
@@ -19,32 +19,32 @@ class ViewRecipeSceneView: LabeledSceneView {
         tableView.showsVerticalScrollIndicator = false
         return tableView
     }()
-    
+
     lazy var resetButton: UIButton = {
-        return BaseSceneView.createButton(title: "Reset", color: AppOptions.color.buttonNegative, width: 90)
+        return BaseSceneView.createNegativeButton()
     }()
-    
+
     lazy var prepareButton: UIButton = {
         return BaseSceneView.createButton(title: "Prepare")
     }()
-    
+
     override func getSceneLabelText() -> String {
         return "Recipe"
     }
-    
+
     override func addViews() {
         super.addViews()
-        
+
         addSubview(tableView)
         addSubview(resetButton)
         addSubview(prepareButton)
     }
-    
+
     override func setConstraints() {
         super.setConstraints()
-        
+
         tableView.edges(to: contentContainer)
-        
+
         resetButton.centerY(to: bottomButtonContainer)
         prepareButton.centerY(to: bottomButtonContainer)
         resetButton.left(to: bottomButtonContainer)

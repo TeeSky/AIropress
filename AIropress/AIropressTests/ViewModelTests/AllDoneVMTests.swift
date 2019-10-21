@@ -9,32 +9,32 @@
 import XCTest
 
 class MockAllDoneSceneFC: AllDoneSceneFC {
-    
+
     var calledMakeAnother: Bool?
-    
+
     func onMakeAnother() {
         calledMakeAnother = true
     }
-    
+
 }
 
 class AllDoneVMTests: XCTestCase {
 
     var allDoneVM: AllDoneVM!
-    
+
     override func setUp() {
         super.setUp()
-        
+
         allDoneVM = AllDoneVM()
     }
-    
+
     func testOnMakeAnother() {
         let expectedCalledMakeAnother = true
         let flowController = MockAllDoneSceneFC()
         allDoneVM.flowController = flowController
-        
+
         allDoneVM.onMakeAnotherClicked()
-        
+
         XCTAssertEqual(expectedCalledMakeAnother, flowController.calledMakeAnother)
     }
 

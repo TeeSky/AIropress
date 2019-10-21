@@ -1,0 +1,37 @@
+disabled_rules:
+  - todo
+
+excluded: # paths to ignore during linting. Takes precedence over `included`.
+  - Pods
+
+# RULEZ
+
+type_name:
+  excluded:
+    - Id
+
+identifier_name:
+  excluded:
+    - vm
+    - id
+    - i
+    - _i
+    - is
+    - by
+    - on
+    - in
+    - at
+    - x
+    - y
+
+line_length:
+  warning: 120
+  ignores_comments: true
+
+custom_rules:
+  unremoved_todo_de:
+    name: "Unremoved TODO DE"
+    regex: "(TODO DE)" # matching pattern
+    match_kinds: comment
+    message: "The app might misbehave if following code is not removed."
+    severity: warning

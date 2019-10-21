@@ -9,68 +9,69 @@
 import XCTest
 
 private class MockAIProcessingSceneFC: AIProcessingSceneFC {
-    
+
     var expectation: XCTestExpectation?
-    
+
     func onProcessingDone(recipe: BrewRecipe) {
         expectation?.fulfill()
     }
 }
 
 private class MockAIProcessingVMDelegate: AIProcessingVMDelegate {
-    
+
     var labelText: String?
     var processingDone: Bool?
 
     var activitityIndicatorAnimating: Bool?
-    
+
     func setProgressLabel(text: String) {
         labelText = text
     }
-    
+
     func onProcessingDone() {
         processingDone = true
     }
-    
+
     func setActivityIndicatorState(animating: Bool) {
         activitityIndicatorAnimating = animating
     }
-    
+
 }
 
 class AIProcessingVMTests: XCTestCase {
-    
+
     private var brewParameters: BrewParameters!
+    // swiftlint:disable:next weak_delegate
     private var delegate: MockAIProcessingVMDelegate!
-    
+
     private var aiProcessingVM: AIProcessingVM!
-    
+
     override func setUp() {
         super.setUp()
-        
+
         brewParameters = MockBrewVars.brewParameters
         delegate = MockAIProcessingVMDelegate()
-        
+
         aiProcessingVM = AIProcessingVM(brewParameters: brewParameters)
         aiProcessingVM.delegate = delegate
     }
-    
+
     func testInit() {
         let expectedBrewParameters = brewParameters
-        
+
         XCTAssertEqual(expectedBrewParameters, aiProcessingVM.brewParameters)
     }
-    
+
     func testOnViewDidLoad() {
         let expectedLabelText = "Processing..."
         let expectedIndicatorAnimating = true
-        
+
         aiProcessingVM.onViewDidLoad()
-        
+
         XCTAssertEqual(expectedLabelText, delegate.labelText)
         XCTAssertEqual(expectedIndicatorAnimating, delegate.activitityIndicatorAnimating)
     }
-    
+
     func testOnSceneDidAppear() {
         let flowController = MockAIProcessingSceneFC()
         aiProcessingVM.flowController = flowController
@@ -78,9 +79,9 @@ class AIProcessingVMTests: XCTestCase {
         flowController.expectation = expectation
         let expectedLabelTextAfter = "Processing done."
         let expectedIndicatorAnimating = false
-        
+
         aiProcessingVM.onSceneDidAppear()
-        
+
         wait(for: [expectation], timeout: 7.0)
         XCTAssertEqual(expectedLabelTextAfter, delegate.labelText)
         XCTAssertEqual(expectedIndicatorAnimating, delegate.activitityIndicatorAnimating)
