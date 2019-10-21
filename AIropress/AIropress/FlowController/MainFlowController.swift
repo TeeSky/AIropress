@@ -9,6 +9,11 @@
 import Foundation
 import UIKit
 
+enum LaunchMode {
+    case normal
+    case brewShortcut(BrewRecipe)
+}
+
 protocol BaseNavigationController {
     func push(viewController: UIViewController)
     func pop(animated: Bool)
@@ -30,13 +35,25 @@ class MainFlowController {
         self.viewControllerProvider = viewControllerProvider
     }
 
-    func startFlow() {
-        switchTo(scene: .desiredTaste)
+    func startFlow(launchMode: LaunchMode = .normal) {
+        switch launchMode {
+        case .normal:
+            switchTo(scene: .desiredTaste)
+        case .brewShortcut(let recipe):
+            skipToViewRecipe(recipe)
+        }
     }
 
     func switchTo(scene: Scene) {
         let nextViewController = viewControllerProvider.getViewController(self, for: scene)
         navigationController.push(viewController: nextViewController)
+    }
+
+    private func skipToViewRecipe(_ recipe: BrewRecipe) {
+        let initialViewController = viewControllerProvider.getViewController(self, for: .desiredTaste)
+        navigationController.push(viewController: initialViewController)
+
+        switchTo(scene: .viewRecipe(recipe: recipe))
     }
 }
 

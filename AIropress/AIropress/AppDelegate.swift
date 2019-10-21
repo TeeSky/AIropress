@@ -32,7 +32,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         self.flowController = flowController
 
         window.makeKeyAndVisible()
-        flowController.startFlow()
+
+        flowController.startFlow(launchMode: launchMode(launchOptions: launchOptions))
 
         return true
     }
@@ -57,6 +58,20 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func applicationWillTerminate(_ application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+    }
+
+    private func launchMode(launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> LaunchMode {
+        guard let shortcutItem = launchOptions?[UIApplication.LaunchOptionsKey.shortcutItem] as? UIApplicationShortcutItem else { return .normal }
+
+        let launchMode: LaunchMode
+        switch shortcutItem.type {
+        case UserActivityType.brewDefaultFilter:
+            launchMode = .brewShortcut(BrewRecipe.createDefaultFilterRecipe())
+        default:
+            launchMode = .normal
+        }
+
+        return launchMode
     }
 
 }

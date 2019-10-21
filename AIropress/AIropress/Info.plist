@@ -39,5 +39,16 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
+	<key>UIApplicationShortcutItems</key>
+	<array>
+		<dict>
+			<key>UIApplicationShortcutItemTitle</key>
+			<string>Brew Default Filter</string>
+			<key>UIApplicationShortcutItemIconType</key>
+			<string>UIApplicationShortcutIconTypeLove</string>
+			<key>UIApplicationShortcutItemType</key>
+			<string>xskypala.AIropress.brewDefaultFilter</string>
+		</dict>
+	</array>
 </dict>
 </plist>
