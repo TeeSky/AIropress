@@ -16,22 +16,25 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var flowController: MainFlowController?
 
-    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+    func application(_ application: UIApplication,
+                     didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         let navigationController = UINavigationController()
         navigationController.setNavigationBarHidden(true, animated: false)
         self.navigationController = navigationController
-        
+
         let window = UIWindow(frame: UIScreen.main.bounds)
         window.rootViewController = navigationController
         self.window = window
-        
-        let flowController = MainFlowController(navigationController: navigationController, viewControllerProvider: MainViewControllerProvider())
+
+        let flowController = MainFlowController(navigationController: navigationController,
+                                                viewControllerProvider: MainViewControllerProvider())
         self.flowController = flowController
-        
+
         window.makeKeyAndVisible()
-        flowController.startFlow()
-        
+
+        flowController.startFlow(launchMode: launchMode(launchOptions: launchOptions))
+
         return true
     }
 
@@ -57,6 +60,22 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
 
+    private func launchMode(launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> LaunchMode {
+        guard
+            let shortcutItem = launchOptions?[UIApplication.LaunchOptionsKey.shortcutItem] as? UIApplicationShortcutItem
+            else { return .normal }
+
+        let launchMode: LaunchMode
+        switch shortcutItem.type {
+        case UserActivityType.brewDefaultFilter:
+            launchMode = .brewShortcut(BrewRecipe.createDefaultFilterRecipe())
+        case UserActivityType.brewDefaultPrismoEspresso:
+            launchMode = .brewShortcut(BrewRecipe.createDefaultPrismoEspressoRecipe())
+        default:
+            launchMode = .normal
+        }
+
+        return launchMode
+    }
 
 }
-

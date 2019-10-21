@@ -9,58 +9,68 @@
 import Foundation
 import CoreGraphics
 
-class SemiConstantCellVM {
-    
-    static let cellIdentifier: String = {
+class SemiConstantCellVM: ConstantCellVM {
+
+    override class var cellIdentifier: String {
         return "SemiConstantCellVM"
-    }()
-    
+    }
+
     static let cellHeight: CGFloat = {
         let labelHeight = 35
         let sliderHeight = BrewVariableSlider.height
         return CGFloat(labelHeight + sliderHeight)
     }()
-    
-    var cellLabel: String {
-        return recipeConstant.label
-    }
-    
-    var cellValueText: String {
-        return recipeConstant.valueText
-    }
-    
-    var recipeConstant: RecipeConstant {
-        return semiConstant.constant
-    }
-    
+
     var confidenceVariable: BrewVariable {
-        return semiConstant.confidenceVariable
+        return variable
     }
-    
+
     var confidenceValue: Double {
-        return changedConfidenceValue ?? semiConstant.confidenceValue
+        return changedConfidenceValue ?? initialConfidenceValue
     }
-    
-    private let semiConstant: RecipeSemiConstant
+
+    private let variable: BrewVariable
+
+    private let initialConfidenceValue: Double
+
     private var changedConfidenceValue: Double?
-    
-    init(semiConstant: RecipeSemiConstant) {
-        self.semiConstant = semiConstant
+
+    convenience init?(semiConstant: RecipeSemiConstant) {
+        guard let stringifier = semiConstant.constant.stringifier else { return nil }
+
+        self.init(stringifier: stringifier,
+                  constantId: semiConstant.constant.id, constantValue: semiConstant.constant.value,
+                  confidenceVariable: semiConstant.confidenceVariable, confidenceValue: semiConstant.confidenceValue)
     }
-    
+
+    init(stringifier: ValueStringifier, constantId: Int, constantValue: Double,
+         confidenceVariable: BrewVariable, confidenceValue: Double) {
+        self.variable = confidenceVariable
+        self.initialConfidenceValue = confidenceValue
+
+        super.init(stringifier: stringifier, constantId: constantId, constantValue: constantValue)
+    }
+
     func onSliderValueChanged(to value: Float) {
         changedConfidenceValue = Double(value)
     }
 }
 
-extension SemiConstantCellVM: BaseTableCellVM {
-    
-    var identifier: String {
+extension SemiConstantCellVM: BrewVariableSliderDelegate {
+
+    func onValueChanged(variable: BrewVariable, to value: SliderValue) {
+        onSliderValueChanged(to: value.raw)
+    }
+}
+
+extension SemiConstantCellVM {
+
+    override var identifier: String {
         return SemiConstantCellVM.cellIdentifier
     }
-    
-    var cellHeight: CGFloat {
+
+    override var cellHeight: CGFloat {
         return SemiConstantCellVM.cellHeight
     }
-    
+
 }

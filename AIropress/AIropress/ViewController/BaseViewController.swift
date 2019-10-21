@@ -9,16 +9,26 @@
 import Foundation
 import UIKit
 
+/**
+ **BaseViewController** extends standard **UIViewController** with conveniently initiated
+ view provided as typed **BaseSceneView** subclass.
+ */
 class BaseViewController<SV: BaseSceneView>: UIViewController {
-    
+
+    /**
+     ViewController's base UIView.
+     */
     var sceneView: SV {
-        return view as! SV
+        guard let view = view as? SV else {
+            fatalError("Unexpected BaseViewController view type.")
+        }
+        return view
     }
-    
+
     override func loadView() {
         view = SV()
     }
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         sceneView.render()

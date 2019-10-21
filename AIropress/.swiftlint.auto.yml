@@ -1,0 +1,5 @@
+whitelist_rules:
+  - trailing_whitespace
+  - vertical_whitespace
+  - colon
+  - opening_brace

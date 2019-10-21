@@ -10,8 +10,7 @@ import Foundation
 import UIKit
 
 struct MainViewControllerProvider: ViewControllerProvider {
-    
-    
+
     func getViewController(_ flowController: MainFlowController, for scene: Scene) -> UIViewController {
         let controller: UIViewController
         switch scene {
@@ -56,5 +55,5 @@ struct MainViewControllerProvider: ViewControllerProvider {
         }
         return controller
     }
-    
+
 }
