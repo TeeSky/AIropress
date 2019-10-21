@@ -21,9 +21,10 @@ struct BrewRecipe: Equatable, Codable {
     static func createDefaultFilterRecipe(bundle: Bundle = Bundle.main) -> BrewRecipe {
         let decoder = JSONDecoder()
         let asset = NSDataAsset(name: "DefaultFilterRecipe", bundle: bundle)
-        
+
         guard let recipe = try? decoder.decode(BrewRecipe.self, from: asset!.data) as BrewRecipe else {
-            fatalError("Could not decode the default filer BrewRecipe. Make sure there is a proper \"DefaultFilterRecipe\" data asset available.")
+            fatalError("Could not decode the default filer BrewRecipe. Make sure there is " +
+                "a proper \"DefaultFilterRecipe\" data asset available.")
         }
         return recipe
     }
