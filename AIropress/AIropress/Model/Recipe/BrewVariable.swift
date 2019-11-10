@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct BrewVariableBundle: Equatable {
+struct BrewVariableBundle: Equatable, Codable {
     let label: String
     let variables: [BrewVariable]
 }

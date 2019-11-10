@@ -11,7 +11,7 @@ import UIKit
 
 struct AppOptions {
 
-    static let brewVariableBundles = AppBrewVariableBundles().bundles
+    static let brewVariableBundles = AppBrewVariableBundles.makeFromAssets().bundles
     static let color = AppColor()
     static let fontSize = AppFontSize()
 
@@ -20,35 +20,28 @@ struct AppOptions {
     private init() {}
 }
 
-struct AppBrewVariableBundles {
-
-    static let defaultStepCount = 11 // 10 + zero
+struct AppBrewVariableBundles: Codable {
 
     let bundles: [BrewVariableBundle]
 
-    fileprivate init() {
-        let tasteBundle =
-            BrewVariableBundle(label: "Taste",
-                               variables: [BrewVariable(id: 1,
-                                                        stepCount: AppBrewVariableBundles.defaultStepCount,
-                                                        labelSet: VariableLabelSet(mainLabel: "Bitterness",
-                                                                                   minLabel: "Watery",
-                                                                                   maxLabel: "Bitter")),
-                                           BrewVariable(id: 2,
-                                                        stepCount: AppBrewVariableBundles.defaultStepCount,
-                                                        labelSet: VariableLabelSet(mainLabel: "Flavour",
-                                                                                   minLabel: "Light",
-                                                                                   maxLabel: "Full"))])
-        let acidityBundle =
-            BrewVariableBundle(label: "Acidity",
-                               variables: [BrewVariable(id: 3,
-                                                        stepCount: AppBrewVariableBundles.defaultStepCount,
-                                                        labelSet: VariableLabelSet(mainLabel: "Intensity",
-                                                                                   minLabel: "Minimal",
-                                                                                   maxLabel: "Intensive"))])
+    private init(bundles: [BrewVariableBundle]) {
+        self.bundles = bundles
+    }
 
-        self.bundles = [tasteBundle,
-                        acidityBundle]
+    static func makeFromAssets(bundle: Bundle = Bundle.main) -> AppBrewVariableBundles {
+        let decoder = JSONDecoder()
+        let asset = NSDataAsset(name: "BrewVariableBundles", bundle: bundle)
+
+        guard
+            let variableBundles = try? decoder.decode(
+                AppBrewVariableBundles.self,
+                from: asset!.data
+                ) as AppBrewVariableBundles
+            else {
+                fatalError("Could not decode AppBrewVariableBundles. Make sure there is " +
+                    "a proper \"BrewVariableBundles\" data asset available.")
+        }
+        return variableBundles
     }
 }
 
