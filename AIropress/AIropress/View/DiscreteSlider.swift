@@ -54,6 +54,8 @@ class DiscreteSlider: UISlider {
         }
     }
 
+    private var previousRoundValue: Int?
+
     @objc
     func actionTarget() {
     }
@@ -61,17 +63,20 @@ class DiscreteSlider: UISlider {
     override func sendAction(_ action: Selector, to target: Any?, for event: UIEvent?) {
         guard let values = values else { fatalError("Property values must be set beforehand.") }
 
-        let valueRounded = self.value.rounded()
-        let sliderIsOnRoundValue = self.value.truncatingRemainder(dividingBy: 1) == 0
-        guard sliderIsOnRoundValue else {
-            self.setValue(valueRounded, animated: true)
+        let valueRounded = Int(self.value.rounded())
+        guard valueRounded != previousRoundValue else {
+            self.setValue(Float(valueRounded), animated: false)
+            print("slider return")
             return
         }
+        print("slider send action valid, value: \(valueRounded)")
+        previousRoundValue = valueRounded
 
-        let valueIndex = Int(valueRounded)
-        let sliderValue = SliderValue(index: valueIndex,
+        self.setValue(Float(valueRounded), animated: true)
+
+        let sliderValue = SliderValue(index: valueRounded,
                                       raw: self.value / maximumValue,
-                                      text: values[valueIndex])
+                                      text: values[valueRounded])
         delegate?.onValueChanged(to: sliderValue)
 
         super.sendAction(action, to: target, for: event)
