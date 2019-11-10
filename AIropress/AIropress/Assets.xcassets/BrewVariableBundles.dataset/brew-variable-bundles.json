@@ -1,0 +1,41 @@
+{
+    "bundles": [
+        {
+            "label": "Taste",
+            "variables": [
+                {
+                    "id": 1,
+                    "stepCount": 11,
+                    "labelSet": {
+                        "mainLabel": "Bitterness",
+                        "minLabel": "Watery",
+                        "maxLabel": "Bitter"
+                    }
+                },
+                {
+                    "id": 2,
+                    "stepCount": 11,
+                    "labelSet": {
+                        "mainLabel": "Flavour",
+                        "minLabel": "Light",
+                        "maxLabel": "Full"
+                    }
+                }
+            ]
+        },
+        {
+            "label": "Acidity",
+            "variables": [
+                {
+                    "id": 3,
+                    "stepCount": 11,
+                    "labelSet": {
+                        "mainLabel": "Intensity",
+                        "minLabel": "Minimal",
+                        "maxLabel": "Intensive"
+                    }
+                }
+            ]
+        }
+    ]
+}
