@@ -21,7 +21,6 @@ class BrewingSceneView: BaseSceneView {
         let label = UILabel()
         label.font = UIFont.systemFont(ofSize: 47, weight: .medium)
         label.textAlignment = .center
-        label.textColor = Style.Color.text
         return label
     }()
 
@@ -52,6 +51,8 @@ class BrewingSceneView: BaseSceneView {
     }()
 
     override func addViews() {
+        super.addViews()
+
         addSubview(safeAreaContainer)
         addSubview(mainTimerLabel)
         addSubview(phaseLabelsContainer)
@@ -62,7 +63,15 @@ class BrewingSceneView: BaseSceneView {
         phaseLabelsContainer.addSubview(next2TimerLabel)
     }
 
+    override func setColors() {
+        super.setColors()
+
+        mainTimerLabel.textColor = Style.Color.text
+    }
+
     override func setConstraints() {
+        super.setConstraints()
+
         safeAreaContainer.edgesToSuperview(insets: TinyEdgeInsets(size: 15), usingSafeArea: true)
 
         mainTimerLabel.height(180)
@@ -100,17 +109,22 @@ class PhaseLabelView: UIView {
         self.init(frame: CGRect.zero)
     }
 
+    override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
+        super.traitCollectionDidChange(previousTraitCollection)
+
+        textLabel.textColor = Style.Color.text
+        timerLabel.textColor = Style.Color.text
+    }
+
     private func addViews() {
         textLabel = UILabel()
         textLabel.numberOfLines = 0
         textLabel.textAlignment = .left
-        textLabel.textColor = Style.Color.text
         textLabel.lineBreakMode = .byTruncatingTail
 
         timerLabel = UILabel()
         timerLabel.alpha = 0.6
         timerLabel.textAlignment = .right
-        timerLabel.textColor = Style.Color.text
 
         self.addSubview(textLabel)
         self.addSubview(timerLabel)

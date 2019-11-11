@@ -15,15 +15,13 @@ class BaseTableViewCell<CV: BaseCellView>: UITableViewCell {
 
     var cellView: CV
 
-    open var contentBackgroundColor: UIColor = Style.Color.background
-
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         cellView = CV()
         super.init(style: style, reuseIdentifier: reuseIdentifier)
 
         cellView.addViews()
         self.contentView.addSubview(cellView)
-        self.contentView.backgroundColor = contentBackgroundColor
+        self.contentView.backgroundColor = Style.Color.background
     }
 
     required init?(coder aDecoder: NSCoder) {
@@ -38,6 +36,12 @@ class BaseTableViewCell<CV: BaseCellView>: UITableViewCell {
         }
 
         super.updateConstraints()
+    }
+
+    override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
+        super.traitCollectionDidChange(previousTraitCollection)
+
+        self.contentView.backgroundColor = Style.Color.background
     }
 
     override func prepareForReuse() {
