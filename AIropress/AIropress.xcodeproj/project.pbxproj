@@ -47,8 +47,8 @@
 		3512F33D232BC9DA00368485 /* BrewingSceneView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3512F33B232BC9DA00368485 /* BrewingSceneView.swift */; };
 		3512F33F232C19B700368485 /* BrewingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3512F33E232C19B700368485 /* BrewingViewController.swift */; };
 		3512F340232C19B700368485 /* BrewingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3512F33E232C19B700368485 /* BrewingViewController.swift */; };
-		3512F342232C223300368485 /* UICollection+safeSubscript.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3512F341232C223300368485 /* UICollection+safeSubscript.swift */; };
-		3512F343232C223300368485 /* UICollection+safeSubscript.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3512F341232C223300368485 /* UICollection+safeSubscript.swift */; };
+		3512F342232C223300368485 /* Collection+safeSubscript.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3512F341232C223300368485 /* Collection+safeSubscript.swift */; };
+		3512F343232C223300368485 /* Collection+safeSubscript.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3512F341232C223300368485 /* Collection+safeSubscript.swift */; };
 		3512F345232C40C700368485 /* AllDoneVMTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3512F344232C40C700368485 /* AllDoneVMTests.swift */; };
 		3512F347232C429F00368485 /* AllDoneVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3512F346232C429F00368485 /* AllDoneVM.swift */; };
 		3512F348232C42B100368485 /* AllDoneVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3512F346232C429F00368485 /* AllDoneVM.swift */; };
@@ -155,6 +155,8 @@
 		35FF73F72328EE08008646DA /* BrewingVMTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35FF73F62328EE08008646DA /* BrewingVMTests.swift */; };
 		35FF73F82328EFD8008646DA /* BrewingPlan.swift in Sources */ = {isa = PBXBuildFile; fileRef = 352B6DB223285139004C43B8 /* BrewingPlan.swift */; };
 		470F73BE2378499500AAD8D1 /* AppOptionsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 470F73BD2378499500AAD8D1 /* AppOptionsTests.swift */; };
+		470F73C42378D22700AAD8D1 /* UIColor+darkMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 470F73C32378D22700AAD8D1 /* UIColor+darkMode.swift */; };
+		470F73C62378D8BB00AAD8D1 /* UIView+backgroundColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 470F73C52378D8BB00AAD8D1 /* UIView+backgroundColor.swift */; };
 		4799751A235E6A7100962405 /* PrismoEspressoPlan.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47997519235E6A7100962405 /* PrismoEspressoPlan.swift */; };
 		4799751C235E727200962405 /* PrismoEspressoPlan.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47997519235E6A7100962405 /* PrismoEspressoPlan.swift */; };
 		73CEEAB2EF96AA6276E48A9F /* Pods_AIropressTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4DA8033607392551CCA2F0A5 /* Pods_AIropressTests.framework */; };
@@ -202,7 +204,7 @@
 		3512F338232BC93300368485 /* BrewPhaseTimer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrewPhaseTimer.swift; sourceTree = "<group>"; };
 		3512F33B232BC9DA00368485 /* BrewingSceneView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrewingSceneView.swift; sourceTree = "<group>"; };
 		3512F33E232C19B700368485 /* BrewingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrewingViewController.swift; sourceTree = "<group>"; };
-		3512F341232C223300368485 /* UICollection+safeSubscript.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollection+safeSubscript.swift"; sourceTree = "<group>"; };
+		3512F341232C223300368485 /* Collection+safeSubscript.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Collection+safeSubscript.swift"; sourceTree = "<group>"; };
 		3512F344232C40C700368485 /* AllDoneVMTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllDoneVMTests.swift; sourceTree = "<group>"; };
 		3512F346232C429F00368485 /* AllDoneVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllDoneVM.swift; sourceTree = "<group>"; };
 		3512F349232C435600368485 /* AllDoneSceneView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllDoneSceneView.swift; sourceTree = "<group>"; };
@@ -263,6 +265,8 @@
 		35EC74082308BF1400964665 /* BrewVariableBundleCellVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrewVariableBundleCellVM.swift; sourceTree = "<group>"; };
 		35FF73F62328EE08008646DA /* BrewingVMTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrewingVMTests.swift; sourceTree = "<group>"; };
 		470F73BD2378499500AAD8D1 /* AppOptionsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppOptionsTests.swift; sourceTree = "<group>"; };
+		470F73C32378D22700AAD8D1 /* UIColor+darkMode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+darkMode.swift"; sourceTree = "<group>"; };
+		470F73C52378D8BB00AAD8D1 /* UIView+backgroundColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+backgroundColor.swift"; sourceTree = "<group>"; };
 		47997519235E6A7100962405 /* PrismoEspressoPlan.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrismoEspressoPlan.swift; sourceTree = "<group>"; };
 		4DA8033607392551CCA2F0A5 /* Pods_AIropressTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AIropressTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		73DCB98EDA12910FCCC07D77 /* Pods-AIropressTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AIropressTests.release.xcconfig"; path = "Target Support Files/Pods-AIropressTests/Pods-AIropressTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -326,12 +330,10 @@
 		350457F92309AE8A00F4B8DC /* Extension */ = {
 			isa = PBXGroup;
 			children = (
-				350457FA2309AEB500F4B8DC /* UINavigationController+BaseNavigationController.swift */,
-				3527AF13230DFFCA00ED0E26 /* UIView+fadeTransition.swift */,
-				3532AA9923105E0500C1F373 /* TinyEdgeInset+convienceInit.swift */,
+				470F73C72378D8C100AAD8D1 /* UI */,
 				3506807B231A9B8000604CE5 /* Double+toString.swift */,
-				3512F341232C223300368485 /* UICollection+safeSubscript.swift */,
 				3549D8C92333D27A00267796 /* Dictionary+merge.swift */,
+				3512F341232C223300368485 /* Collection+safeSubscript.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -560,6 +562,18 @@
 				73DCB98EDA12910FCCC07D77 /* Pods-AIropressTests.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		470F73C72378D8C100AAD8D1 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				470F73C32378D22700AAD8D1 /* UIColor+darkMode.swift */,
+				470F73C52378D8BB00AAD8D1 /* UIView+backgroundColor.swift */,
+				3527AF13230DFFCA00ED0E26 /* UIView+fadeTransition.swift */,
+				350457FA2309AEB500F4B8DC /* UINavigationController+BaseNavigationController.swift */,
+				3532AA9923105E0500C1F373 /* TinyEdgeInset+convienceInit.swift */,
+			);
+			path = UI;
 			sourceTree = "<group>";
 		};
 		4799751B235E6A7F00962405 /* Plan */ = {
@@ -815,6 +829,7 @@
 				350457EE23096CE300F4B8DC /* DesiredTasteViewController.swift in Sources */,
 				350457FB2309AEB500F4B8DC /* UINavigationController+BaseNavigationController.swift in Sources */,
 				3569D335231F300F00427450 /* PrepStepCellView.swift in Sources */,
+				470F73C42378D22700AAD8D1 /* UIColor+darkMode.swift in Sources */,
 				3549D8C823339C8100267796 /* RecipeValue.swift in Sources */,
 				3527AF0E230DF51700ED0E26 /* AIProcessingViewController.swift in Sources */,
 				35833E4D230752E4002F986B /* MainFlowController.swift in Sources */,
@@ -828,6 +843,7 @@
 				352A1FB6230F5AB300D7FE02 /* BaseTableViewCell.swift in Sources */,
 				3512F347232C429F00368485 /* AllDoneVM.swift in Sources */,
 				35833E5623075398002F986B /* BrewRecipe.swift in Sources */,
+				470F73C62378D8BB00AAD8D1 /* UIView+backgroundColor.swift in Sources */,
 				3512F34A232C435600368485 /* AllDoneSceneView.swift in Sources */,
 				350457F52309A47300F4B8DC /* AppOptions.swift in Sources */,
 				35EC74032308BEBC00964665 /* BaseViewModel.swift in Sources */,
@@ -851,7 +867,7 @@
 				3512F33C232BC9DA00368485 /* BrewingSceneView.swift in Sources */,
 				3552D3CE235E5E1200C0FF6F /* UserActivityType.swift in Sources */,
 				35072E4A230B475A00689F75 /* ConfigurableTableCell.swift in Sources */,
-				3512F342232C223300368485 /* UICollection+safeSubscript.swift in Sources */,
+				3512F342232C223300368485 /* Collection+safeSubscript.swift in Sources */,
 				35045800230A0C8F00F4B8DC /* BaseSceneView.swift in Sources */,
 				3527AF10230DF54700ED0E26 /* AIProcessingSceneView.swift in Sources */,
 				351A66BD23195F3800D1061B /* BrewPrepSceneView.swift in Sources */,
@@ -927,7 +943,7 @@
 				35833E5C230753EE002F986B /* FlowControl.swift in Sources */,
 				3527AF0C230DF4D500ED0E26 /* AIProcessingVM.swift in Sources */,
 				3512F345232C40C700368485 /* AllDoneVMTests.swift in Sources */,
-				3512F343232C223300368485 /* UICollection+safeSubscript.swift in Sources */,
+				3512F343232C223300368485 /* Collection+safeSubscript.swift in Sources */,
 				35EC74002308B75300964665 /* BrewVariable.swift in Sources */,
 				352A1FA3230EC59100D7FE02 /* SemiConstantCellVMTests.swift in Sources */,
 				3512F334232BC8DC00368485 /* BrewingVM.swift in Sources */,

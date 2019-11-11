@@ -23,6 +23,7 @@ identifier_name:
     - at
     - x
     - y
+    - Style
 
 line_length:
   warning: 120
