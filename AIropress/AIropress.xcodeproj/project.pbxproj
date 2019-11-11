@@ -160,6 +160,7 @@
 		470F73C82378DFD400AAD8D1 /* UIColor+darkMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 470F73C32378D22700AAD8D1 /* UIColor+darkMode.swift */; };
 		470F73C92378DFDA00AAD8D1 /* UIView+backgroundColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 470F73C52378D8BB00AAD8D1 /* UIView+backgroundColor.swift */; };
 		470F73CB2378E17400AAD8D1 /* Style.swift in Sources */ = {isa = PBXBuildFile; fileRef = 470F73CA2378E17400AAD8D1 /* Style.swift */; };
+		470F73CC2378F81C00AAD8D1 /* Style.swift in Sources */ = {isa = PBXBuildFile; fileRef = 470F73CA2378E17400AAD8D1 /* Style.swift */; };
 		4799751A235E6A7100962405 /* PrismoEspressoPlan.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47997519235E6A7100962405 /* PrismoEspressoPlan.swift */; };
 		4799751C235E727200962405 /* PrismoEspressoPlan.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47997519235E6A7100962405 /* PrismoEspressoPlan.swift */; };
 		73CEEAB2EF96AA6276E48A9F /* Pods_AIropressTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4DA8033607392551CCA2F0A5 /* Pods_AIropressTests.framework */; };
@@ -963,6 +964,7 @@
 				35EC740A2308BF5F00964665 /* BrewVariableBundleCellVM.swift in Sources */,
 				352A1FBF230F6CCA00D7FE02 /* BrewVariableBundleCellView.swift in Sources */,
 				35FF73F72328EE08008646DA /* BrewingVMTests.swift in Sources */,
+				470F73CC2378F81C00AAD8D1 /* Style.swift in Sources */,
 				35EC73F72308273500964665 /* BrewParametersTests.swift in Sources */,
 				352A1FB2230F54DB00D7FE02 /* ViewRecipeViewController.swift in Sources */,
 				3569D330231F1B2600427450 /* PrepParamsTests.swift in Sources */,
