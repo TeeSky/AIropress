@@ -40,6 +40,13 @@ class ViewRecipeSceneView: LabeledSceneView {
         addSubview(prepareButton)
     }
 
+    override func setColors() {
+        super.setColors()
+
+        tableView.backgroundColor = Style.Color.background
+        BaseSceneView.colorizeButton(prepareButton)
+    }
+
     override func setConstraints() {
         super.setConstraints()
 

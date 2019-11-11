@@ -96,7 +96,7 @@ class AeropressOrientationStringifier: ValueStringifier {
     }
 
     func toString(value: Double) -> String {
-        let defaultString = AppOptions.nonAvailableText
+        let defaultString = Options.nonAvailableText
 
         return AeropressBrewOrientation.fromDouble(value: value)?.valueText() ?? defaultString
     }
@@ -116,7 +116,7 @@ class ComandanteGrindSizeStringifier: ValueStringifier {
     }
 
     private func valueToLabel(value: Double) -> String {
-        let defaultString = AppOptions.nonAvailableText
+        let defaultString = Options.nonAvailableText
 
         switch value {
         case 1...10:
@@ -142,7 +142,7 @@ class BrewTypeStringifier: ValueStringifier {
     }
 
     func toString(value: Double) -> String {
-        let defaultString = AppOptions.nonAvailableText
+        let defaultString = Options.nonAvailableText
 
         switch value {
         case 0:

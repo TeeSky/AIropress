@@ -21,7 +21,6 @@ class BrewingSceneView: BaseSceneView {
         let label = UILabel()
         label.font = UIFont.systemFont(ofSize: 47, weight: .medium)
         label.textAlignment = .center
-        label.textColor = .black
         return label
     }()
 
@@ -52,6 +51,8 @@ class BrewingSceneView: BaseSceneView {
     }()
 
     override func addViews() {
+        super.addViews()
+
         addSubview(safeAreaContainer)
         addSubview(mainTimerLabel)
         addSubview(phaseLabelsContainer)
@@ -62,7 +63,15 @@ class BrewingSceneView: BaseSceneView {
         phaseLabelsContainer.addSubview(next2TimerLabel)
     }
 
+    override func setColors() {
+        super.setColors()
+
+        mainTimerLabel.textColor = Style.Color.text
+    }
+
     override func setConstraints() {
+        super.setConstraints()
+
         safeAreaContainer.edgesToSuperview(insets: TinyEdgeInsets(size: 15), usingSafeArea: true)
 
         mainTimerLabel.height(180)
@@ -100,17 +109,22 @@ class PhaseLabelView: UIView {
         self.init(frame: CGRect.zero)
     }
 
+    override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
+        super.traitCollectionDidChange(previousTraitCollection)
+
+        textLabel.textColor = Style.Color.text
+        timerLabel.textColor = Style.Color.text
+    }
+
     private func addViews() {
         textLabel = UILabel()
         textLabel.numberOfLines = 0
         textLabel.textAlignment = .left
-        textLabel.textColor = .black
         textLabel.lineBreakMode = .byTruncatingTail
 
         timerLabel = UILabel()
         timerLabel.alpha = 0.6
         timerLabel.textAlignment = .right
-        timerLabel.textColor = .black
 
         self.addSubview(textLabel)
         self.addSubview(timerLabel)
@@ -165,14 +179,16 @@ class PhaseLabelView: UIView {
         }
 
         func fontSizes() -> (text: CGFloat, timer: CGFloat) {
+            let sizes: (text: DefaultStyle.Font.Size, timer: DefaultStyle.Font.Size)
             switch self {
             case .normal:
-                return (AppOptions.fontSize.large, AppOptions.fontSize.normal)
+                sizes = (Style.Font.Size.large, Style.Font.Size.normal)
             case .small:
-                return (AppOptions.fontSize.normal, AppOptions.fontSize.small)
+                sizes = (Style.Font.Size.normal, Style.Font.Size.small)
             case .smallest:
-                return (AppOptions.fontSize.small, AppOptions.fontSize.tiny)
+                sizes = (Style.Font.Size.small, Style.Font.Size.tiny)
             }
+            return (sizes.text.rawValue, sizes.timer.rawValue)
         }
 
         func alpha() -> CGFloat {

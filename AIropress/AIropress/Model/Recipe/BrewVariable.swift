@@ -8,12 +8,12 @@
 
 import Foundation
 
-struct BrewVariableBundle: Equatable, Codable {
+public struct BrewVariableBundle: Equatable, Codable {
     let label: String
     let variables: [BrewVariable]
 }
 
-struct BrewVariable: Equatable, Codable {
+public struct BrewVariable: Equatable, Codable {
     typealias Id = Int
 
     static let confidenceVariableStepCount = 5
@@ -32,7 +32,7 @@ struct BrewVariable: Equatable, Codable {
 
 extension BrewVariable: Hashable {
 
-    func hash(into hasher: inout Hasher) {
+    public func hash(into hasher: inout Hasher) {
         hasher.combine(id)
     }
 }

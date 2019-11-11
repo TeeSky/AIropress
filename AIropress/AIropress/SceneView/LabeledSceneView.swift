@@ -16,15 +16,19 @@ class LabeledSceneView: BaseSceneView {
         return UIView()
     }()
 
+    private lazy var sceneLabel: UILabel = {
+        let label = UILabel()
+        label.text = getSceneLabelText()
+        label.textColor = Style.Color.text
+        label.textAlignment = .left
+        label.font = Style.Font.make(ofSize: .xlarge, weight: .heavy)
+        return label
+    }()
+
     lazy var sceneLabelContainer: UIView = {
         let container = UIView()
 
-        let label = UILabel()
-        label.text = getSceneLabelText()
-        label.textColor = .black
-        label.textAlignment = .left
-        label.font = UIFont.systemFont(ofSize: AppOptions.fontSize.xlarge, weight: .heavy)
-
+        let label = self.sceneLabel
         container.addSubview(label)
         label.centerYToSuperview()
 
@@ -32,11 +36,11 @@ class LabeledSceneView: BaseSceneView {
     }()
 
     lazy var contentContainer: UIView = {
-        return UIView()
+        UIView()
     }()
 
     lazy var bottomButtonContainer: UIView = {
-        return UIView()
+        UIView()
     }()
 
     func getSceneLabelText() -> String {
@@ -44,13 +48,24 @@ class LabeledSceneView: BaseSceneView {
     }
 
     override func addViews() {
+        super.addViews()
+
         addSubview(safeAreaContainer)
         addSubview(sceneLabelContainer)
         addSubview(contentContainer)
         addSubview(bottomButtonContainer)
     }
 
+    override func setColors() {
+        super.setColors()
+
+        safeAreaContainer.backgroundColor = Style.Color.background
+        sceneLabel.textColor = Style.Color.text
+    }
+
     override func setConstraints() {
+        super.setConstraints()
+
         safeAreaContainer.edgesToSuperview(insets: TinyEdgeInsets(horizontal: 15), usingSafeArea: true)
 
         sceneLabelContainer.height(120)

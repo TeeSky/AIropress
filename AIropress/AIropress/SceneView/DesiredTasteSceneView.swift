@@ -35,6 +35,13 @@ class DesiredTasteSceneView: LabeledSceneView {
         addSubview(calculateButton)
     }
 
+    override func setColors() {
+        super.setColors()
+
+        tableView.backgroundColor = Style.Color.background
+        BaseSceneView.colorizeButton(calculateButton)
+    }
+
     override func setConstraints() {
         super.setConstraints()
 

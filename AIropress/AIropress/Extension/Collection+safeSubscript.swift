@@ -1,5 +1,5 @@
 //
-//  UICollection+safeSubscript.swift
+//  Collection+safeSubscript.swift
 //  AIropress
 //
 //  Created by Tomas Skypala on 13/09/2019.

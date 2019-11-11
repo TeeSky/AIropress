@@ -92,7 +92,7 @@ class BrewVariableSlider: UIView, DiscreteSliderDelegate {
 
     private static func createStyledLabel() -> UILabel {
         let label = UILabel()
-        label.font = UIFont.systemFont(ofSize: AppOptions.fontSize.small, weight: .light)
+        label.font = Style.Font.make(ofSize: .small, weight: .light)
         return label
     }
 

@@ -15,7 +15,7 @@ struct MainViewControllerProvider: ViewControllerProvider {
         let controller: UIViewController
         switch scene {
         case .desiredTaste:
-            let desiredTasteVM = DesiredTasteVM(brewVariableBundles: AppOptions.brewVariableBundles)
+            let desiredTasteVM = DesiredTasteVM(brewVariableBundles: Options.brewVariableBundles)
             desiredTasteVM.flowController = flowController
             let desiredTasteViewController = DesiredTasteViewController()
             desiredTasteViewController.viewModel = desiredTasteVM
