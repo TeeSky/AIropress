@@ -22,14 +22,17 @@ class BrewPrepSceneView: LabeledSceneView {
         return tableView
     }()
 
-    private lazy var whatToDoLabelContainer: UIView = {
-        let container = UIView()
-
+    private lazy var whatToDoLabel: UILabel = {
         let label = UILabel()
         label.text = "What to do:"
-        label.textColor = Style.Color.text
         label.textAlignment = .left
         label.font = Style.Font.make(ofSize: .large)
+        return label
+    }()
+
+    private lazy var whatToDoLabelContainer: UIView = {
+        let container = UIView()
+        let label = whatToDoLabel
 
         container.addSubview(label)
         label.topToSuperview()
@@ -62,6 +65,7 @@ class BrewPrepSceneView: LabeledSceneView {
         super.setColors()
 
         tableView.backgroundColor = Style.Color.background
+        whatToDoLabel.textColor = Style.Color.text
         BaseSceneView.colorizeButton(brewButton)
     }
 
