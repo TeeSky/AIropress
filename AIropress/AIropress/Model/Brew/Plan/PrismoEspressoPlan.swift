@@ -12,7 +12,7 @@ struct PrismoEspressoPlan: BrewingPlan {
 
     static let pourDuration = 10.0
     static let stirDuration = 40.0
-    static let capOnDuration = 10.0
+    static let capOnDuration = 5.0
     static let plungeDuration = 10.0
 
     let orderedPhases: [BrewPhase]

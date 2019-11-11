@@ -21,6 +21,7 @@ class BaseTableViewCell<CV: BaseCellView>: UITableViewCell {
 
         cellView.addViews()
         self.contentView.addSubview(cellView)
+        self.contentView.backgroundColor = Style.Color.background
     }
 
     required init?(coder aDecoder: NSCoder) {
@@ -35,6 +36,12 @@ class BaseTableViewCell<CV: BaseCellView>: UITableViewCell {
         }
 
         super.updateConstraints()
+    }
+
+    override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
+        super.traitCollectionDidChange(previousTraitCollection)
+
+        self.contentView.backgroundColor = Style.Color.background
     }
 
     override func prepareForReuse() {

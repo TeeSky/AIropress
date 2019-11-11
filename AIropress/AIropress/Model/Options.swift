@@ -1,26 +1,14 @@
 //
-//  File.swift
+//  Options.swift
 //  AIropress
 //
 //  Created by Tomas Skypala on 18/08/2019.
 //  Copyright © 2019 Tomas Skypala. All rights reserved.
 //
 
-import Foundation
 import UIKit
 
-struct AppOptions {
-
-    static let brewVariableBundles = AppBrewVariableBundles.makeFromAssets().bundles
-    static let color = AppColor()
-    static let fontSize = AppFontSize()
-
-    static let nonAvailableText = "n/a"
-
-    private init() {}
-}
-
-struct AppBrewVariableBundles: Codable {
+public struct AppBrewVariableBundles: Codable {
 
     let bundles: [BrewVariableBundle]
 
@@ -45,24 +33,11 @@ struct AppBrewVariableBundles: Codable {
     }
 }
 
-struct AppColor {
+public enum DefaultOptions {
 
-    let button =  UIColor(red: 62/255, green: 39/255, blue: 35/255, alpha: 1)
-    let buttonPositive =  UIColor(red: 76/255, green: 175/255, blue: 80/255, alpha: 1)
-    let buttonNegative =  UIColor(red: 211/255, green: 47/255, blue: 47/255, alpha: 1)
+    public static let brewVariableBundles = AppBrewVariableBundles.makeFromAssets().bundles
+    public static let nonAvailableText = "n/a"
 
-    fileprivate init() {
-    }
 }
 
-struct AppFontSize {
-
-    let xlarge: CGFloat = 35
-    let large: CGFloat = 25
-    let normal: CGFloat = 20
-    let small: CGFloat = 17
-    let tiny: CGFloat = 12
-
-    fileprivate init() {
-    }
-}
+public let Options = DefaultOptions.self

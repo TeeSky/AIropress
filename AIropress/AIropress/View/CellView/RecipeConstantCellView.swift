@@ -14,13 +14,13 @@ class RecipeConstantCellView: BaseCellView {
 
     lazy var constantLabel: UILabel = {
         let label = UILabel()
-        label.font = UIFont.systemFont(ofSize: AppOptions.fontSize.normal, weight: .regular)
+        label.font = Style.Font.make(ofSize: .normal)
         return label
     }()
 
     lazy var constantValue: UILabel = {
         let label = UILabel()
-        label.font = UIFont.systemFont(ofSize: AppOptions.fontSize.normal, weight: .bold)
+        label.font = Style.Font.make(ofSize: .normal, weight: .bold)
         return label
     }()
 

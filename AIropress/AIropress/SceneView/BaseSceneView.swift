@@ -22,9 +22,8 @@ class BaseSceneView: UIView {
      This fuction is called by **BaseViewController** upon viewDidLoad.
      */
     func render() {
-        self.backgroundColor = .white
-
         self.addViews()
+        self.setColors()
         self.setConstraints()
     }
 
@@ -37,7 +36,16 @@ class BaseSceneView: UIView {
     }
 
     /**
-     Sets up all UI constraints of view.
+     Sets up colors of all UI components of the view.
+     
+     - Warning: This fuction is should be overriden by the subclass.
+     */
+    func setColors() {
+        self.backgroundColor = Style.Color.background
+    }
+
+    /**
+     Sets up all UI constraints of the view.
      
      - Warning: This fuction is should be overriden by the subclass.
      */
@@ -52,7 +60,7 @@ class BaseSceneView: UIView {
      - Returns: Commonly styled reset **UIButton**.
      */
     static func createNegativeButton(title: String = "Reset") -> UIButton {
-        let button = BaseSceneView.createButton(title: title, color: AppOptions.color.buttonNegative, width: 90.0)
+        let button = BaseSceneView.createButton(title: title, color: Style.Color.buttonNegative, width: 90.0)
         return button
     }
 
@@ -65,14 +73,25 @@ class BaseSceneView: UIView {
      
      - Returns: Commonly styled **UIButton**.
      */
-    static func createButton(title: String, color: UIColor = AppOptions.color.button,
-                             width: CGFloat = 150.0) -> UIButton {
+    static func createButton(
+        title: String,
+        color: UIColor = Style.Color.buttonNormal,
+        width: CGFloat = 150.0
+    ) -> UIButton {
         let button = UIButton()
         button.layer.cornerRadius = 5
         button.backgroundColor = color
-        button.setTitleColor(.white, for: .normal)
         button.setTitle(title, for: .normal)
         button.width(width)
         return button
+    }
+
+    static func colorizeButton(
+        _ button: UIButton,
+        backgroundColor: UIColor = Style.Color.buttonNormal,
+        textColor: UIColor = Style.Color.textButton
+    ) {
+        button.backgroundColor = backgroundColor
+        button.setTitleColor(textColor, for: .normal)
     }
 }
