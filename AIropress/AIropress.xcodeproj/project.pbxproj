@@ -11,7 +11,7 @@
 		350118E62315F10D00A4EE79 /* BrewPrepVMTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 350118E52315F10D00A4EE79 /* BrewPrepVMTests.swift */; };
 		350457EE23096CE300F4B8DC /* DesiredTasteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 350457ED23096CE300F4B8DC /* DesiredTasteViewController.swift */; };
 		350457F32309A3C900F4B8DC /* MainViewControllerProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 350457F22309A3C900F4B8DC /* MainViewControllerProvider.swift */; };
-		350457F52309A47300F4B8DC /* AppOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 350457F42309A47300F4B8DC /* AppOptions.swift */; };
+		350457F52309A47300F4B8DC /* Options.swift in Sources */ = {isa = PBXBuildFile; fileRef = 350457F42309A47300F4B8DC /* Options.swift */; };
 		350457F82309ACB400F4B8DC /* MainViewControllerProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 350457F22309A3C900F4B8DC /* MainViewControllerProvider.swift */; };
 		350457FB2309AEB500F4B8DC /* UINavigationController+BaseNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 350457FA2309AEB500F4B8DC /* UINavigationController+BaseNavigationController.swift */; };
 		350457FD230A07DA00F4B8DC /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 350457FC230A07DA00F4B8DC /* BaseViewController.swift */; };
@@ -21,7 +21,7 @@
 		3506807C231A9B8000604CE5 /* Double+toString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3506807B231A9B8000604CE5 /* Double+toString.swift */; };
 		35072E3D230AFBFB00689F75 /* DiscreteSliderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35072E3C230AFBFB00689F75 /* DiscreteSliderTests.swift */; };
 		35072E3F230B002000689F75 /* DiscreteSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35072E3E230B002000689F75 /* DiscreteSlider.swift */; };
-		35072E40230B0BD900689F75 /* AppOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 350457F42309A47300F4B8DC /* AppOptions.swift */; };
+		35072E40230B0BD900689F75 /* Options.swift in Sources */ = {isa = PBXBuildFile; fileRef = 350457F42309A47300F4B8DC /* Options.swift */; };
 		35072E41230B0BEA00689F75 /* DesiredTasteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 350457ED23096CE300F4B8DC /* DesiredTasteViewController.swift */; };
 		35072E42230B0BFA00689F75 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 350457FC230A07DA00F4B8DC /* BaseViewController.swift */; };
 		35072E43230B0C0200689F75 /* BaseSceneView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 350457FF230A0C8F00F4B8DC /* BaseSceneView.swift */; };
@@ -159,6 +159,7 @@
 		470F73C62378D8BB00AAD8D1 /* UIView+backgroundColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 470F73C52378D8BB00AAD8D1 /* UIView+backgroundColor.swift */; };
 		470F73C82378DFD400AAD8D1 /* UIColor+darkMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 470F73C32378D22700AAD8D1 /* UIColor+darkMode.swift */; };
 		470F73C92378DFDA00AAD8D1 /* UIView+backgroundColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 470F73C52378D8BB00AAD8D1 /* UIView+backgroundColor.swift */; };
+		470F73CB2378E17400AAD8D1 /* Style.swift in Sources */ = {isa = PBXBuildFile; fileRef = 470F73CA2378E17400AAD8D1 /* Style.swift */; };
 		4799751A235E6A7100962405 /* PrismoEspressoPlan.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47997519235E6A7100962405 /* PrismoEspressoPlan.swift */; };
 		4799751C235E727200962405 /* PrismoEspressoPlan.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47997519235E6A7100962405 /* PrismoEspressoPlan.swift */; };
 		73CEEAB2EF96AA6276E48A9F /* Pods_AIropressTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4DA8033607392551CCA2F0A5 /* Pods_AIropressTests.framework */; };
@@ -180,7 +181,7 @@
 		350118E52315F10D00A4EE79 /* BrewPrepVMTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrewPrepVMTests.swift; sourceTree = "<group>"; };
 		350457ED23096CE300F4B8DC /* DesiredTasteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesiredTasteViewController.swift; sourceTree = "<group>"; };
 		350457F22309A3C900F4B8DC /* MainViewControllerProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewControllerProvider.swift; sourceTree = "<group>"; };
-		350457F42309A47300F4B8DC /* AppOptions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppOptions.swift; sourceTree = "<group>"; };
+		350457F42309A47300F4B8DC /* Options.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Options.swift; sourceTree = "<group>"; };
 		350457FA2309AEB500F4B8DC /* UINavigationController+BaseNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UINavigationController+BaseNavigationController.swift"; sourceTree = "<group>"; };
 		350457FC230A07DA00F4B8DC /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		350457FF230A0C8F00F4B8DC /* BaseSceneView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseSceneView.swift; sourceTree = "<group>"; };
@@ -269,6 +270,7 @@
 		470F73BD2378499500AAD8D1 /* AppOptionsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppOptionsTests.swift; sourceTree = "<group>"; };
 		470F73C32378D22700AAD8D1 /* UIColor+darkMode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+darkMode.swift"; sourceTree = "<group>"; };
 		470F73C52378D8BB00AAD8D1 /* UIView+backgroundColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+backgroundColor.swift"; sourceTree = "<group>"; };
+		470F73CA2378E17400AAD8D1 /* Style.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Style.swift; sourceTree = "<group>"; };
 		47997519235E6A7100962405 /* PrismoEspressoPlan.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrismoEspressoPlan.swift; sourceTree = "<group>"; };
 		4DA8033607392551CCA2F0A5 /* Pods_AIropressTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AIropressTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		73DCB98EDA12910FCCC07D77 /* Pods-AIropressTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AIropressTests.release.xcconfig"; path = "Target Support Files/Pods-AIropressTests/Pods-AIropressTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -498,7 +500,8 @@
 			children = (
 				3546370523316A60006C8DA6 /* Recipe */,
 				3546370623316A90006C8DA6 /* Brew */,
-				350457F42309A47300F4B8DC /* AppOptions.swift */,
+				350457F42309A47300F4B8DC /* Options.swift */,
+				470F73CA2378E17400AAD8D1 /* Style.swift */,
 				35833E4F2307530E002F986B /* Scene.swift */,
 				3552D3CD235E5E1200C0FF6F /* UserActivityType.swift */,
 			);
@@ -847,7 +850,8 @@
 				35833E5623075398002F986B /* BrewRecipe.swift in Sources */,
 				470F73C62378D8BB00AAD8D1 /* UIView+backgroundColor.swift in Sources */,
 				3512F34A232C435600368485 /* AllDoneSceneView.swift in Sources */,
-				350457F52309A47300F4B8DC /* AppOptions.swift in Sources */,
+				350457F52309A47300F4B8DC /* Options.swift in Sources */,
+				470F73CB2378E17400AAD8D1 /* Style.swift in Sources */,
 				35EC74032308BEBC00964665 /* BaseViewModel.swift in Sources */,
 				35072E3F230B002000689F75 /* DiscreteSlider.swift in Sources */,
 				352A1FB4230F59BC00D7FE02 /* RecipeConstantCell.swift in Sources */,
@@ -929,7 +933,7 @@
 				352A1FA9230EF99F00D7FE02 /* ConstantCellVM.swift in Sources */,
 				352A1FB1230F54D800D7FE02 /* ViewRecipeSceneView.swift in Sources */,
 				35E0E5E423076B14004A86FD /* DesiredTasteVMTests.swift in Sources */,
-				35072E40230B0BD900689F75 /* AppOptions.swift in Sources */,
+				35072E40230B0BD900689F75 /* Options.swift in Sources */,
 				35833E58230753E5002F986B /* Scene.swift in Sources */,
 				3546370423316A31006C8DA6 /* RecipeConstant.swift in Sources */,
 				351A66B823194C4000D1061B /* PrepStep.swift in Sources */,

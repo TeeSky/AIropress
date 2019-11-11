@@ -14,7 +14,7 @@ class PrepStepCellView: BaseCellView {
 
     lazy var label: UILabel = {
         let label = UILabel()
-        label.font = UIFont.systemFont(ofSize: AppOptions.fontSize.small, weight: .regular)
+        label.font = Style.Font.make(ofSize: .small)
         label.textAlignment = .left
         label.numberOfLines = 0
 

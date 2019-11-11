@@ -14,6 +14,7 @@ class BrewPrepSceneView: LabeledSceneView {
 
     lazy var tableView: UITableView = {
         let tableView = UITableView()
+        tableView.backgroundColor = Style.Color.background
         tableView.allowsSelection = false
         tableView.separatorStyle = .none
         tableView.showsVerticalScrollIndicator = false
@@ -26,9 +27,9 @@ class BrewPrepSceneView: LabeledSceneView {
 
         let label = UILabel()
         label.text = "What to do:"
-        label.textColor = .black
+        label.textColor = Style.Color.text
         label.textAlignment = .left
-        label.font = UIFont.systemFont(ofSize: AppOptions.fontSize.large, weight: .regular)
+        label.font = Style.Font.make(ofSize: .large)
 
         container.addSubview(label)
         label.topToSuperview()
@@ -55,6 +56,13 @@ class BrewPrepSceneView: LabeledSceneView {
         addSubview(tableView)
         addSubview(resetButton)
         addSubview(brewButton)
+    }
+
+    override func setColors() {
+        super.setColors()
+
+        tableView.backgroundColor = Style.Color.background
+        BaseSceneView.colorizeButton(brewButton)
     }
 
     override func setConstraints() {

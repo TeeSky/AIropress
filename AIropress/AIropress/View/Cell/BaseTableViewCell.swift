@@ -15,12 +15,15 @@ class BaseTableViewCell<CV: BaseCellView>: UITableViewCell {
 
     var cellView: CV
 
+    open var contentBackgroundColor: UIColor = Style.Color.background
+
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         cellView = CV()
         super.init(style: style, reuseIdentifier: reuseIdentifier)
 
         cellView.addViews()
         self.contentView.addSubview(cellView)
+        self.contentView.backgroundColor = contentBackgroundColor
     }
 
     required init?(coder aDecoder: NSCoder) {
