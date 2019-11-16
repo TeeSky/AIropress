@@ -25,8 +25,10 @@ class BrewVariableBundleCellTests: XCTestCase {
     override func setUp() {
         super.setUp()
 
-        viewModel = MockBrewVariableBundleCellVM(variableBundle: MockBrewVars.tasteBundle,
-                                                 initialValues: MockBrewVars.tasteInitialValues)
+        viewModel = MockBrewVariableBundleCellVM(
+            variableBundle: MockBrewVars.tasteBundle,
+            initialValues: MockBrewVars.tasteInitialValues
+        )
         brewVariableBundleCell = BrewVariableBundleCell()
         brewVariableBundleCell.configure(viewModel: viewModel)
     }
@@ -49,9 +51,11 @@ class BrewVariableBundleCellTests: XCTestCase {
         let value = brewVariable.stepCount - 1
         let expectedSliderValueChange = (brewVariable, value)
 
-        let sliderValue = SliderValue(index: value,
-                                      raw: Float(value) / Float(brewVariable.stepCount),
-                                      text: "test")
+        let sliderValue = SliderValue(
+            index: value,
+            raw: Float(value) / Float(brewVariable.stepCount),
+            text: "test"
+        )
         let delegate = brewVariableBundleCell.cellView.sliders[variableIndex].delegate
         delegate!.onValueChanged(variable: brewVariable, to: sliderValue)
 

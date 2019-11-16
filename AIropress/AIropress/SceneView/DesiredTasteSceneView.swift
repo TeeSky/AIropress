@@ -7,8 +7,8 @@
 //
 
 import Foundation
-import UIKit
 import TinyConstraints
+import UIKit
 
 class DesiredTasteSceneView: LabeledSceneView {
 
@@ -21,7 +21,7 @@ class DesiredTasteSceneView: LabeledSceneView {
     }()
 
     lazy var calculateButton: UIButton = {
-        return BaseSceneView.createButton(title: "Calculate")
+        BaseSceneView.createButton(title: "Calculate")
     }()
 
     override func getSceneLabelText() -> String {
@@ -33,6 +33,13 @@ class DesiredTasteSceneView: LabeledSceneView {
 
         addSubview(tableView)
         addSubview(calculateButton)
+    }
+
+    override func setColors() {
+        super.setColors()
+
+        tableView.backgroundColor = Style.Color.background
+        BaseSceneView.colorizeButton(calculateButton)
     }
 
     override func setConstraints() {

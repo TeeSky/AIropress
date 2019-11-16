@@ -17,8 +17,8 @@ class DesiredTasteVM {
     weak var flowController: DesiredTasteSceneFC?
 
     init(brewVariableBundles: [BrewVariableBundle], values: [BrewVariable.Id: Double?] = [:]) {
-        self.brewParameters = BrewParameters(brewVariableBundles: brewVariableBundles, values: values)
-        self.cellVMs = []
+        brewParameters = BrewParameters(brewVariableBundles: brewVariableBundles, values: values)
+        cellVMs = []
 
         setupCellVMs(brewVariableBundles: brewVariableBundles)
     }
@@ -37,10 +37,10 @@ class DesiredTasteVM {
             //            var initialValues: [BrewVariable: Double] = variableBundle.variables.reduce([:]) { $0[$1] = brewParameters.valueMap[$1.id] }
             let initialValues = variableBundle.variables
                 .reduce([BrewVariable: Double]()) { (dict, variable) -> [BrewVariable: Double] in
-                var dict = dict
-                dict[variable] = brewParameters.valueMap[variable.id]
-                return dict
-            }
+                    var dict = dict
+                    dict[variable] = brewParameters.valueMap[variable.id]
+                    return dict
+                }
 
             let vm = BrewVariableBundleCellVM(variableBundle: variableBundle, initialValues: initialValues)
             vm.valueDelegate = self
@@ -54,13 +54,11 @@ extension DesiredTasteVM: VariableBundleCellValueDelegate {
     func onValueChanged(brewVariable: BrewVariable, value: Double) {
         brewParameters.valueMap[brewVariable.id] = value
     }
-
 }
 
 extension DesiredTasteVM: BaseTableVM {
 
     var cellViewModels: [BaseTableCellVM] {
-        return self.cellVMs
+        return cellVMs
     }
-
 }

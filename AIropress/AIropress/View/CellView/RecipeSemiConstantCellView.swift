@@ -7,21 +7,21 @@
 //
 
 import Foundation
-import UIKit
 import TinyConstraints
+import UIKit
 
 class RecipeSemiConstantCellView: BaseCellView {
 
     lazy var constantView: RecipeConstantCellView = {
-        return RecipeConstantCellView()
+        RecipeConstantCellView()
     }()
 
     lazy var confidenceSlider: BrewVariableSlider = {
-        return BrewVariableSlider()
+        BrewVariableSlider()
     }()
 
     private lazy var contentContainer: UIView = {
-        return UIView()
+        UIView()
     }()
 
     override func addViews() {

@@ -30,8 +30,10 @@ class BrewParametersTests: XCTestCase {
     func testInit() {
         let allVariables = brewVariableBundles.flatMap { $0.variables }
 
-        let brewParameters = BrewParameters(brewVariableBundles: brewVariableBundles,
-                                            values: values)
+        let brewParameters = BrewParameters(
+            brewVariableBundles: brewVariableBundles,
+            values: values
+        )
 
         for brewVariable in allVariables {
             let expectedValue = values[brewVariable.id] ?? BrewParameters.defaultBrewValue
@@ -39,5 +41,4 @@ class BrewParametersTests: XCTestCase {
             XCTAssertEqual(expectedValue, brewParameters.valueMap[brewVariable.id])
         }
     }
-
 }

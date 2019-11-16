@@ -8,18 +8,20 @@
 
 import Foundation
 
-struct BrewVariableBundle: Equatable {
+public struct BrewVariableBundle: Equatable, Codable {
     let label: String
     let variables: [BrewVariable]
 }
 
-struct BrewVariable: Equatable, Codable {
+public struct BrewVariable: Equatable, Codable {
     typealias Id = Int
 
     static let confidenceVariableStepCount = 5
-    static let confidenceVariableLabelSet = VariableLabelSet(mainLabel: "Confidence",
-                                                             minLabel: "Unconfident",
-                                                             maxLabel: "Confident")
+    static let confidenceVariableLabelSet = VariableLabelSet(
+        mainLabel: "Confidence",
+        minLabel: "Unconfident",
+        maxLabel: "Confident"
+    )
 
     let id: Id
     let stepCount: Int
@@ -32,7 +34,7 @@ struct BrewVariable: Equatable, Codable {
 
 extension BrewVariable: Hashable {
 
-    func hash(into hasher: inout Hasher) {
+    public func hash(into hasher: inout Hasher) {
         hasher.combine(id)
     }
 }

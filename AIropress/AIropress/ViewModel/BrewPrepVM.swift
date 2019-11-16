@@ -16,7 +16,7 @@ class BrewPrepVM {
     weak var flowController: BrewPrepSceneFC?
 
     init(prepParams: PrepParams) {
-        cellVMs = prepParams.prepSteps.enumerated().map { PrepStepCellVM(cellIndex: $0, prepStep: $1)}
+        cellVMs = prepParams.prepSteps.enumerated().map { PrepStepCellVM(cellIndex: $0, prepStep: $1) }
     }
 
     func configure(tableView: UITableView) {
@@ -39,5 +39,4 @@ extension BrewPrepVM: BaseTableVM {
     var cellViewModels: [BaseTableCellVM] {
         return cellVMs
     }
-
 }

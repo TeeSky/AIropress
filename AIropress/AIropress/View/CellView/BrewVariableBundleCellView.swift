@@ -7,8 +7,8 @@
 //
 
 import Foundation
-import UIKit
 import TinyConstraints
+import UIKit
 
 class BrewVariableBundleCellView: BaseCellView {
 
@@ -19,7 +19,7 @@ class BrewVariableBundleCellView: BaseCellView {
 
     lazy var label: UILabel = {
         let label = UILabel()
-        label.font = UIFont.systemFont(ofSize: AppOptions.fontSize.large, weight: .bold)
+        label.font = Style.Font.make(ofSize: .large, weight: .bold)
         return label
     }()
 

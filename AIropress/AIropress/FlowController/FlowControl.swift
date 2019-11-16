@@ -8,29 +8,29 @@
 
 import Foundation
 
-protocol DesiredTasteSceneFC: class {
+protocol DesiredTasteSceneFC: AnyObject {
     func onParametersSet(brewParameters: BrewParameters)
 }
 
-protocol AIProcessingSceneFC: class {
+protocol AIProcessingSceneFC: AnyObject {
     func onProcessingDone(recipe: BrewRecipe)
 }
 
-protocol ViewRecipeSceneFC: class {
+protocol ViewRecipeSceneFC: AnyObject {
     func onViewRecipeReset()
     func onPrepared(recipeValues: [Int: Double])
 }
 
-protocol BrewPrepSceneFC: class {
+protocol BrewPrepSceneFC: AnyObject {
     func onBrewPrepReset()
     func onBrewInitiated()
 }
 
-protocol BrewingSceneFC: class {
+protocol BrewingSceneFC: AnyObject {
     func onBrewStopped()
     func onBrewFinished()
 }
 
-protocol AllDoneSceneFC: class {
+protocol AllDoneSceneFC: AnyObject {
     func onMakeAnother()
 }

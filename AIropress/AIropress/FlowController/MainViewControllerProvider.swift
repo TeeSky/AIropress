@@ -15,30 +15,30 @@ struct MainViewControllerProvider: ViewControllerProvider {
         let controller: UIViewController
         switch scene {
         case .desiredTaste:
-            let desiredTasteVM = DesiredTasteVM(brewVariableBundles: AppOptions.brewVariableBundles)
+            let desiredTasteVM = DesiredTasteVM(brewVariableBundles: Options.brewVariableBundles)
             desiredTasteVM.flowController = flowController
             let desiredTasteViewController = DesiredTasteViewController()
             desiredTasteViewController.viewModel = desiredTasteVM
             controller = desiredTasteViewController
-        case .aiProcessing(let brewParameters):
+        case let .aiProcessing(brewParameters):
             let aiProcessingVM = AIProcessingVM(brewParameters: brewParameters)
             aiProcessingVM.flowController = flowController
             let aiProcessingViewController = AIProcessingViewController()
             aiProcessingViewController.viewModel = aiProcessingVM
             controller = aiProcessingViewController
-        case .viewRecipe(let recipe):
+        case let .viewRecipe(recipe):
             let viewRecipeVM = ViewRecipeVM(brewRecipe: recipe)
             viewRecipeVM.flowController = flowController
             let viewRecipeViewController = ViewRecipeViewController()
             viewRecipeViewController.viewModel = viewRecipeVM
             controller = viewRecipeViewController
-        case .brewPrep(let prepParams):
+        case let .brewPrep(prepParams):
             let brewPrepVM = BrewPrepVM(prepParams: prepParams)
             brewPrepVM.flowController = flowController
             let brewPrepViewController = BrewPrepViewController()
             brewPrepViewController.viewModel = brewPrepVM
             controller = brewPrepViewController
-        case .brewing(let brewPhases):
+        case let .brewing(brewPhases):
             let brewingVM = BrewingVM(brewPhases: brewPhases)
             brewingVM.flowController = flowController
             let brewingViewController = BrewingViewController()
@@ -55,5 +55,4 @@ struct MainViewControllerProvider: ViewControllerProvider {
         }
         return controller
     }
-
 }

@@ -26,9 +26,11 @@ class MockTimer: Timer {
         invalidated = true
     }
 
-    override open class func scheduledTimer(withTimeInterval interval: TimeInterval,
-                                            repeats: Bool,
-                                            block: @escaping (Timer) -> Void) -> Timer {
+    open override class func scheduledTimer(
+        withTimeInterval interval: TimeInterval,
+        repeats: Bool,
+        block: @escaping (Timer) -> Void
+    ) -> Timer {
         let timer = MockTimer()
         timer.interval = interval
         timer.repeats = repeats
@@ -68,9 +70,11 @@ class BrewPhaseTimerTests: XCTestCase {
         brewPhase = BrewPhase(duration: 5.5, label: "Wait.")
         timerDelegate = MockTimerDelegate()
 
-        brewPhaseTimer = BrewPhaseTimer(brewPhase: brewPhase,
-                                        delegate: timerDelegate,
-                                        timerProvider: MockTimer.self)
+        brewPhaseTimer = BrewPhaseTimer(
+            brewPhase: brewPhase,
+            delegate: timerDelegate,
+            timerProvider: MockTimer.self
+        )
     }
 
     func testPhaseTimer() {

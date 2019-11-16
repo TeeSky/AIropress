@@ -13,6 +13,7 @@ target 'AIropress' do
     inherit! :search_paths
 
     pod 'TinyConstraints'
+    pod 'SwiftFormat/CLI'
   end
 
 end

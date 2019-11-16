@@ -10,9 +10,15 @@ import XCTest
 
 class BrewRecipeTests: XCTestCase {
 
-    func testCreateFilterRecipe() {
-        let filterRecipe = BrewRecipe.createDefaultFilterRecipe(bundle: Bundle(for: type(of: self)))
+    func testCreateDefaultFilterRecipe() {
+        let filterRecipe = BrewRecipe.createDefaultFilterRecipe(bundle: Bundle(for: Self.self))
 
         XCTAssertNotNil(filterRecipe)
+    }
+
+    func testCreateDefaultPrismoEspressoRecipe() {
+        let espressoRecipe = BrewRecipe.createDefaultPrismoEspressoRecipe(bundle: Bundle(for: Self.self))
+
+        XCTAssertNotNil(espressoRecipe)
     }
 }

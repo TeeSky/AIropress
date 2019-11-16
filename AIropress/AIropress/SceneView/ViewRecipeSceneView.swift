@@ -7,8 +7,8 @@
 //
 
 import Foundation
-import UIKit
 import TinyConstraints
+import UIKit
 
 class ViewRecipeSceneView: LabeledSceneView {
 
@@ -21,11 +21,11 @@ class ViewRecipeSceneView: LabeledSceneView {
     }()
 
     lazy var resetButton: UIButton = {
-        return BaseSceneView.createNegativeButton()
+        BaseSceneView.createNegativeButton()
     }()
 
     lazy var prepareButton: UIButton = {
-        return BaseSceneView.createButton(title: "Prepare")
+        BaseSceneView.createButton(title: "Prepare")
     }()
 
     override func getSceneLabelText() -> String {
@@ -38,6 +38,13 @@ class ViewRecipeSceneView: LabeledSceneView {
         addSubview(tableView)
         addSubview(resetButton)
         addSubview(prepareButton)
+    }
+
+    override func setColors() {
+        super.setColors()
+
+        tableView.backgroundColor = Style.Color.background
+        BaseSceneView.colorizeButton(prepareButton)
     }
 
     override func setConstraints() {

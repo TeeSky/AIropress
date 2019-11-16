@@ -26,9 +26,8 @@ class RecipeConstant: Codable {
 
     init(id: Int, value: Double) {
         self.id = id
-        self.val = value
+        val = value
     }
-
 }
 
 extension RecipeConstant: Equatable {
@@ -36,7 +35,6 @@ extension RecipeConstant: Equatable {
     static func == (lhs: RecipeConstant, rhs: RecipeConstant) -> Bool {
         return lhs.id == rhs.id
     }
-
 }
 
 class RecipeSemiConstant: Codable {
@@ -54,7 +52,7 @@ class RecipeSemiConstant: Codable {
     }
 
     lazy var confidenceVariable: BrewVariable = {
-        return BrewVariable.createConfidenceVariable(id: confidenceId)
+        BrewVariable.createConfidenceVariable(id: confidenceId)
     }()
 
     private let const: RecipeConstant
@@ -63,10 +61,10 @@ class RecipeSemiConstant: Codable {
     private var confVal: Double
 
     init(id: Int, value: Double, confidenceVariableId: BrewVariable.Id, initialConfidenceValue: Double) {
-        self.const = RecipeConstant(id: id, value: value)
+        const = RecipeConstant(id: id, value: value)
 
-        self.confId = confidenceVariableId
-        self.confVal = initialConfidenceValue
+        confId = confidenceVariableId
+        confVal = initialConfidenceValue
     }
 }
 

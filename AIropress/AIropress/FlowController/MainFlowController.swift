@@ -39,7 +39,7 @@ class MainFlowController {
         switch launchMode {
         case .normal:
             switchTo(scene: .desiredTaste)
-        case .brewShortcut(let recipe):
+        case let .brewShortcut(recipe):
             skipToViewRecipe(recipe)
         }
     }
@@ -62,7 +62,6 @@ extension MainFlowController: DesiredTasteSceneFC {
     func onParametersSet(brewParameters: BrewParameters) {
         switchTo(scene: .aiProcessing(brewParameters: brewParameters))
     }
-
 }
 
 extension MainFlowController: AIProcessingSceneFC {
@@ -87,7 +86,6 @@ extension MainFlowController: ViewRecipeSceneFC {
         }
         switchTo(scene: .brewPrep(params: prepParams))
     }
-
 }
 
 extension MainFlowController: BrewPrepSceneFC {
@@ -101,8 +99,8 @@ extension MainFlowController: BrewPrepSceneFC {
         navigationController.pop(animated: false)
 
         guard let values = recipeValues else {
-           fatalError("Nil or insuficient recipeValues obtained.")
-       }
+            fatalError("Nil or insuficient recipeValues obtained.")
+        }
         let recipeValues = RecipeValue.createRecipeValueMap(from: values)
         let brewTypeValue = recipeValues[.brewType]
 
@@ -133,7 +131,6 @@ extension MainFlowController: BrewingSceneFC {
 
         switchTo(scene: .allDone)
     }
-
 }
 
 extension MainFlowController: AllDoneSceneFC {
@@ -141,5 +138,4 @@ extension MainFlowController: AllDoneSceneFC {
     func onMakeAnother() {
         navigationController.pop(animated: true)
     }
-
 }

@@ -12,8 +12,10 @@ enum AeropressBrewOrientation: String {
     case normal = "Screw on the filter holder and place the Aeropress on the cup."
     case inverted = "Insert plunger, turn the Aeropress upside-down."
 
-    private static let valueMap: [AeropressBrewOrientation: Double] = [.normal: 1,
-                                                                       .inverted: 2]
+    private static let valueMap: [AeropressBrewOrientation: Double] = [
+        .normal: 1,
+        .inverted: 2
+    ]
 
     static func fromDouble(value: Double) -> AeropressBrewOrientation? {
         var desiredOrientation: AeropressBrewOrientation?
@@ -43,7 +45,6 @@ enum AeropressBrewOrientation: String {
             return "inverted"
         }
     }
-
 }
 
 enum PrepStep {
@@ -58,17 +59,17 @@ enum PrepStep {
     func text() -> String {
         let text: String
         switch self {
-        case .preheatWater(let tempString):
+        case let .preheatWater(tempString):
             text = "Preheat filtered water to \(tempString)."
         case .rinseFilter:
             text = "Rinse brewing filter with hot water inside coffee cup."
         case .rinseAeropress:
             text = "Preheat the Aeropress tube and plunger too by rinsing with hot water."
-        case .orientate(let orientation):
+        case let .orientate(orientation):
             text = orientation.rawValue
         case .placeOnScale:
             text = "Place the Aeropress on scale, tare."
-        case .weighOutCoffee(let weightString):
+        case let .weighOutCoffee(weightString):
             text = "Put exactly \(weightString) of coffee into the Aeropress."
         case .prepareKettle:
             text = "Tare the scale again and prepare your brewing kettle with the hot water."

@@ -19,7 +19,7 @@ class BrewParameters {
     }
 
     init(brewVariables: [BrewVariable], values: [BrewVariable.Id: Double?]) {
-        self.valueMap = brewVariables.reduce(into: [BrewVariable.Id: Double]()) {
+        valueMap = brewVariables.reduce(into: [BrewVariable.Id: Double]()) {
             $0[$1.id] = values[$1.id] ?? BrewParameters.defaultBrewValue
         }
     }
@@ -30,5 +30,4 @@ extension BrewParameters: Equatable {
     static func == (lhs: BrewParameters, rhs: BrewParameters) -> Bool {
         return lhs.valueMap == rhs.valueMap
     }
-
 }

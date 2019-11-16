@@ -7,8 +7,8 @@
 //
 
 import Foundation
-import UIKit
 import TinyConstraints
+import UIKit
 
 class AIProcessingSceneView: BaseSceneView {
 
@@ -19,8 +19,7 @@ class AIProcessingSceneView: BaseSceneView {
 
     lazy var progressLabel: UILabel = {
         let label = UILabel()
-        label.font = UIFont.systemFont(ofSize: AppOptions.fontSize.xlarge, weight: .medium)
-        label.textColor = .black
+        label.font = Style.Font.make(ofSize: .xlarge, weight: .medium)
         return label
     }()
 
@@ -30,18 +29,33 @@ class AIProcessingSceneView: BaseSceneView {
     }()
 
     lazy var activityIndicator: UIActivityIndicatorView = {
-        let indicator = UIActivityIndicatorView(style: .gray)
+        let indicator: UIActivityIndicatorView
+        if #available(iOS 13, *) {
+            indicator = UIActivityIndicatorView(style: .large)
+        } else {
+            indicator = UIActivityIndicatorView(style: .gray)
+        }
         return indicator
     }()
 
     override func addViews() {
+        super.addViews()
+
         addSubview(safeAreaContainer)
         addSubview(progressLabel)
         addSubview(activityIndicatorContainer)
         activityIndicatorContainer.addSubview(activityIndicator)
     }
 
+    override func setColors() {
+        super.setColors()
+
+        progressLabel.textColor = Style.Color.text
+    }
+
     override func setConstraints() {
+        super.setConstraints()
+
         safeAreaContainer.edgesToSuperview(usingSafeArea: true)
 
         progressLabel.centerInSuperview()

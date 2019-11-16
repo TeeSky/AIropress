@@ -9,9 +9,7 @@
 import Foundation
 import UIKit
 
-class BrewVariableBundleCell: BaseTableViewCell<BrewVariableBundleCellView> {
-
-}
+class BrewVariableBundleCell: BaseTableViewCell<BrewVariableBundleCellView> {}
 
 extension BrewVariableBundleCell: ConfigurableTableCell {
 
@@ -22,7 +20,7 @@ extension BrewVariableBundleCell: ConfigurableTableCell {
         setupSliders(viewModel: viewModel)
 
         didSetConstraints = false
-        self.updateConstraints()
+        updateConstraints()
     }
 
     private func setupLabel(viewModel: BrewVariableBundleCellVM) {

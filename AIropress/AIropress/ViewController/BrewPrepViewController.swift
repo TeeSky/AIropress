@@ -28,11 +28,11 @@ class BrewPrepViewController: BaseViewController<BrewPrepSceneView> {
 
 extension BrewPrepViewController: UITableViewDataSource {
 
-    func numberOfSections(in tableView: UITableView) -> Int {
+    func numberOfSections(in _: UITableView) -> Int {
         return viewModel.numberOfSections()
     }
 
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(_: UITableView, numberOfRowsInSection section: Int) -> Int {
         return viewModel.numberOfRows(section: section)
     }
 
@@ -51,7 +51,7 @@ extension BrewPrepViewController: UITableViewDataSource {
 
 extension BrewPrepViewController: UITableViewDelegate {
 
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+    func tableView(_: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return viewModel.cellHeight(for: indexPath)
     }
 }

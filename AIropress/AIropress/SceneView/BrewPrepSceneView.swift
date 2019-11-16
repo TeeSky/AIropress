@@ -7,13 +7,14 @@
 //
 
 import Foundation
-import UIKit
 import TinyConstraints
+import UIKit
 
 class BrewPrepSceneView: LabeledSceneView {
 
     lazy var tableView: UITableView = {
         let tableView = UITableView()
+        tableView.backgroundColor = Style.Color.background
         tableView.allowsSelection = false
         tableView.separatorStyle = .none
         tableView.showsVerticalScrollIndicator = false
@@ -21,14 +22,17 @@ class BrewPrepSceneView: LabeledSceneView {
         return tableView
     }()
 
-    private lazy var whatToDoLabelContainer: UIView = {
-        let container = UIView()
-
+    private lazy var whatToDoLabel: UILabel = {
         let label = UILabel()
         label.text = "What to do:"
-        label.textColor = .black
         label.textAlignment = .left
-        label.font = UIFont.systemFont(ofSize: AppOptions.fontSize.large, weight: .regular)
+        label.font = Style.Font.make(ofSize: .large)
+        return label
+    }()
+
+    private lazy var whatToDoLabelContainer: UIView = {
+        let container = UIView()
+        let label = whatToDoLabel
 
         container.addSubview(label)
         label.topToSuperview()
@@ -37,11 +41,11 @@ class BrewPrepSceneView: LabeledSceneView {
     }()
 
     lazy var resetButton: UIButton = {
-        return BaseSceneView.createNegativeButton()
+        BaseSceneView.createNegativeButton()
     }()
 
     lazy var brewButton: UIButton = {
-        return BaseSceneView.createButton(title: "Brew")
+        BaseSceneView.createButton(title: "Brew")
     }()
 
     override func getSceneLabelText() -> String {
@@ -57,15 +61,23 @@ class BrewPrepSceneView: LabeledSceneView {
         addSubview(brewButton)
     }
 
+    override func setColors() {
+        super.setColors()
+
+        tableView.backgroundColor = Style.Color.background
+        whatToDoLabel.textColor = Style.Color.text
+        BaseSceneView.colorizeButton(brewButton)
+    }
+
     override func setConstraints() {
         super.setConstraints()
 
         whatToDoLabelContainer.height(55)
 
-        whatToDoLabelContainer.edges(to: contentContainer, excluding: LayoutEdge.init(arrayLiteral: [.bottom]))
+        whatToDoLabelContainer.edges(to: contentContainer, excluding: LayoutEdge(arrayLiteral: [.bottom]))
 
         tableView.topToBottom(of: whatToDoLabelContainer)
-        tableView.edges(to: contentContainer, excluding: LayoutEdge.init(arrayLiteral: [.top]))
+        tableView.edges(to: contentContainer, excluding: LayoutEdge(arrayLiteral: [.top]))
 
         resetButton.centerY(to: bottomButtonContainer)
         brewButton.centerY(to: bottomButtonContainer)

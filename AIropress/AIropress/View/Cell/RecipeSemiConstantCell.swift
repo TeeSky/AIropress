@@ -9,9 +9,7 @@
 import Foundation
 import UIKit
 
-class RecipeSemiConstantCell: BaseTableViewCell<RecipeSemiConstantCellView> {
-
-}
+class RecipeSemiConstantCell: BaseTableViewCell<RecipeSemiConstantCellView> {}
 
 extension RecipeSemiConstantCell: ConfigurableTableCell {
 
@@ -24,7 +22,7 @@ extension RecipeSemiConstantCell: ConfigurableTableCell {
         setupConfidenceSlider(viewModel: viewModel)
 
         didSetConstraints = false
-        self.updateConstraints()
+        updateConstraints()
     }
 
     private func setupConstantView(viewModel: SemiConstantCellVM) {
@@ -33,8 +31,10 @@ extension RecipeSemiConstantCell: ConfigurableTableCell {
     }
 
     private func setupConfidenceSlider(viewModel: SemiConstantCellVM) {
-        cellView.confidenceSlider.configure(brewVariable: viewModel.confidenceVariable,
-                                            initialValue: Float(viewModel.confidenceValue))
+        cellView.confidenceSlider.configure(
+            brewVariable: viewModel.confidenceVariable,
+            initialValue: Float(viewModel.confidenceValue)
+        )
         cellView.confidenceSlider.delegate = viewModel
     }
 }

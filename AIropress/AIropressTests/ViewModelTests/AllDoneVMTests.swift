@@ -15,7 +15,6 @@ class MockAllDoneSceneFC: AllDoneSceneFC {
     func onMakeAnother() {
         calledMakeAnother = true
     }
-
 }
 
 class AllDoneVMTests: XCTestCase {
@@ -37,5 +36,4 @@ class AllDoneVMTests: XCTestCase {
 
         XCTAssertEqual(expectedCalledMakeAnother, flowController.calledMakeAnother)
     }
-
 }
