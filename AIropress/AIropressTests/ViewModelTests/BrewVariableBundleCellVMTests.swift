@@ -27,8 +27,10 @@ class BrewVariableBundleCellVMTests: XCTestCase {
         super.setUp()
 
         brewVariableBundle = MockBrewVars.tasteBundle
-        variableBundleCellVM = BrewVariableBundleCellVM(variableBundle: brewVariableBundle,
-                                                        initialValues: MockBrewVars.tasteInitialValues)
+        variableBundleCellVM = BrewVariableBundleCellVM(
+            variableBundle: brewVariableBundle,
+            initialValues: MockBrewVars.tasteInitialValues
+        )
     }
 
     func testInit() {
@@ -36,8 +38,10 @@ class BrewVariableBundleCellVMTests: XCTestCase {
         let expectedVariables = brewVariableBundle.variables
         let expectedInitialValues = MockBrewVars.tasteInitialValues
 
-        let variableBundleCellVM = BrewVariableBundleCellVM(variableBundle: brewVariableBundle,
-                                                            initialValues: expectedInitialValues)
+        let variableBundleCellVM = BrewVariableBundleCellVM(
+            variableBundle: brewVariableBundle,
+            initialValues: expectedInitialValues
+        )
 
         XCTAssertEqual(expectedLabel, variableBundleCellVM.sliderLabel)
         XCTAssertEqual(expectedVariables, variableBundleCellVM.sliderVariables)
@@ -50,7 +54,7 @@ class BrewVariableBundleCellVMTests: XCTestCase {
     func testOnSliderValueChanged() {
         let expectedBrewVariable = MockBrewVars.bitternessVariable
         let valueIndex = 2
-        let expectedDoubleValue = Double((valueIndex + 1)) / Double(expectedBrewVariable.stepCount)
+        let expectedDoubleValue = Double(valueIndex + 1) / Double(expectedBrewVariable.stepCount)
         let expectedInitialSliderValue = Float(expectedDoubleValue)
         let valueDelegate = MockValueDelegate()
         variableBundleCellVM.valueDelegate = valueDelegate

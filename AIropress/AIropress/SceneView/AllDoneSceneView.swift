@@ -7,8 +7,8 @@
 //
 
 import Foundation
-import UIKit
 import TinyConstraints
+import UIKit
 
 class AllDoneSceneView: BaseSceneView {
 
@@ -23,7 +23,7 @@ class AllDoneSceneView: BaseSceneView {
     }()
 
     lazy var makeAnotherButton: UIButton = {
-        return BaseSceneView.createButton(title: "Make Another", color: Style.Color.buttonPositive)
+        BaseSceneView.createButton(title: "Make Another", color: Style.Color.buttonPositive)
     }()
 
     private lazy var allDoneLabel: UILabel = {

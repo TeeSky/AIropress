@@ -12,7 +12,7 @@ struct PrepParams {
     let prepSteps: [PrepStep]
 
     static func create(values: [Int: Double]) -> PrepParams? {
-        return self.create(recipeValues: RecipeValue.createRecipeValueMap(from: values))
+        return create(recipeValues: RecipeValue.createRecipeValueMap(from: values))
     }
 
     static func create(recipeValues: [RecipeValue: Double]) -> PrepParams? {
@@ -20,20 +20,21 @@ struct PrepParams {
             let coffeeAmount = recipeValues[.coffeeAmount],
             let orientationValue = recipeValues[.aeropressOrientation],
             let aeropressOrientation = AeropressBrewOrientation.fromDouble(value: orientationValue) else {
-                return nil
+            return nil
         }
 
         return PrepParams(waterTemp: tempValue, coffeeAmount: coffeeAmount, aeropressOrientation: aeropressOrientation)
     }
 
     init(waterTemp: Double, coffeeAmount: Double, aeropressOrientation: AeropressBrewOrientation) {
-        prepSteps = [.preheatWater(waterTemp.toTempString()),
-        .rinseFilter,
-        .rinseAeropress,
-        .orientate(aeropressOrientation),
-        .placeOnScale,
-        .weighOutCoffee(coffeeAmount.toWeightString()),
-        .prepareKettle]
+        prepSteps = [
+            .preheatWater(waterTemp.toTempString()),
+            .rinseFilter,
+            .rinseAeropress,
+            .orientate(aeropressOrientation),
+            .placeOnScale,
+            .weighOutCoffee(coffeeAmount.toWeightString()),
+            .prepareKettle
+        ]
     }
-
 }

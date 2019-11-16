@@ -20,7 +20,7 @@ struct AeroPressFilterPlan: BrewingPlan {
     let orderedPhases: [BrewPhase]
 
     static func create(values: [Int: Double]) -> AeroPressFilterPlan? {
-        return self.create(recipeValues: RecipeValue.createRecipeValueMap(from: values))
+        return create(recipeValues: RecipeValue.createRecipeValueMap(from: values))
     }
 
     static func create(recipeValues: [RecipeValue: Double]) -> AeroPressFilterPlan? {
@@ -28,11 +28,15 @@ struct AeroPressFilterPlan: BrewingPlan {
             let coffeeAmount = recipeValues[.coffeeAmount],
             let bloomDuration = recipeValues[.bloomDuration],
             let brewDuration = recipeValues[.brewDuration] else {
-                return nil
+            return nil
         }
 
-        return AeroPressFilterPlan(waterAmount: waterAmount, coffeeAmount: coffeeAmount,
-                                   bloomDuration: bloomDuration, brewDuration: brewDuration)
+        return AeroPressFilterPlan(
+            waterAmount: waterAmount,
+            coffeeAmount: coffeeAmount,
+            bloomDuration: bloomDuration,
+            brewDuration: brewDuration
+        )
     }
 
     init(waterAmount: Double, coffeeAmount: Double, bloomDuration: Double, brewDuration: Double) {
@@ -46,11 +50,15 @@ struct AeroPressFilterPlan: BrewingPlan {
         let nettoBrewDuration = brewDuration - pourDuration - stirDuration - capOnDuration
 
         orderedPhases = [
-            BrewPhase(duration: pourDuration,
-                      label: "Wet the coffee grounds with \(Int(bloomWaterAmount)) ml of water."),
+            BrewPhase(
+                duration: pourDuration,
+                label: "Wet the coffee grounds with \(Int(bloomWaterAmount)) ml of water."
+            ),
             BrewPhase(duration: bloomDuration, label: "Wait, the coffee is blooming."),
-            BrewPhase(duration: pourDuration,
-                      label: "Pour the rest of the water reaching total of \(Int(waterAmount)) ml."),
+            BrewPhase(
+                duration: pourDuration,
+                label: "Pour the rest of the water reaching total of \(Int(waterAmount)) ml."
+            ),
             BrewPhase(duration: stirDuration, label: "Carefully and slowly stir 3-4 times."),
             BrewPhase(duration: nettoBrewDuration, label: "Wait, the coffee is brewing."),
             BrewPhase(duration: capOnDuration, label: "Screw on the filter and place the Aeropress on the mug."),

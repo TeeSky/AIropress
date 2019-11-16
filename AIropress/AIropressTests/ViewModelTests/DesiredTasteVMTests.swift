@@ -15,7 +15,6 @@ private class MockDesiredTasteFlowController: DesiredTasteSceneFC {
     func onParametersSet(brewParameters: BrewParameters) {
         setParameters = brewParameters
     }
-
 }
 
 class DesiredTasteVMTests: XCTestCase {
@@ -34,8 +33,10 @@ class DesiredTasteVMTests: XCTestCase {
     func testInit() {
         let expectedBrewParameters = BrewParameters(brewVariableBundles: brewVariableBundles, values: [:])
         let unexpectedBrewParameters1 = BrewParameters(brewVariableBundles: [MockBrewVars.acidityBundle], values: [:])
-        let unexpectedBrewParameters2 = BrewParameters(brewVariableBundles: brewVariableBundles,
-                                                       values: [brewVariableBundles[0].variables[0].id: 0.9])
+        let unexpectedBrewParameters2 = BrewParameters(
+            brewVariableBundles: brewVariableBundles,
+            values: [brewVariableBundles[0].variables[0].id: 0.9]
+        )
 
         let desiredTasteVM = DesiredTasteVM(brewVariableBundles: brewVariableBundles)
 
@@ -61,12 +62,16 @@ class DesiredTasteVMTests: XCTestCase {
         let expectedCell2VMBrewVariableBundle = brewVariableBundles[cell2Path.row]
 
         let cell1VM = desiredTasteVM.cellViewModel(for: cell1Path)
-        XCTAssertEqual(expectedCell1VMBrewVariableBundle.variables,
-                       (cell1VM as? BrewVariableBundleCellVM)?.sliderVariables)
+        XCTAssertEqual(
+            expectedCell1VMBrewVariableBundle.variables,
+            (cell1VM as? BrewVariableBundleCellVM)?.sliderVariables
+        )
 
         let cell2VM = desiredTasteVM.cellViewModel(for: cell2Path)
-        XCTAssertEqual(expectedCell2VMBrewVariableBundle.variables,
-                       (cell2VM as? BrewVariableBundleCellVM)?.sliderVariables)
+        XCTAssertEqual(
+            expectedCell2VMBrewVariableBundle.variables,
+            (cell2VM as? BrewVariableBundleCellVM)?.sliderVariables
+        )
     }
 
     func testHeightForPath() {
@@ -88,8 +93,10 @@ class DesiredTasteVMTests: XCTestCase {
         // Change assurance
         XCTAssertNotEqual(expectedParameters.valueMap[brewVariableChange.0.id], brewVariableChange.1)
         expectedParameters.valueMap[brewVariableChange.0.id] = brewVariableChange.1
-        desiredTasteVM.cellVMs[0].valueDelegate?.onValueChanged(brewVariable: brewVariableChange.0,
-                                                                value: brewVariableChange.1)
+        desiredTasteVM.cellVMs[0].valueDelegate?.onValueChanged(
+            brewVariable: brewVariableChange.0,
+            value: brewVariableChange.1
+        )
 
         desiredTasteVM.onCalculateClicked()
 

@@ -8,7 +8,7 @@
 
 import Foundation
 
-protocol AIProcessingVMDelegate: class {
+protocol AIProcessingVMDelegate: AnyObject {
     func setProgressLabel(text: String)
     func setActivityIndicatorState(animating: Bool)
 }
@@ -40,7 +40,7 @@ class AIProcessingVM: BaseViewModel {
     }
 
     private func startProcessing() {
-        // TODO
+        // TODO: implement proper AI processing
     }
 
     private func onProcessingDone(recipe: BrewRecipe) {

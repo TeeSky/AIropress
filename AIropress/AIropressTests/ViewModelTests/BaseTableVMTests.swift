@@ -12,6 +12,7 @@ class MockTableCellVM: BaseTableCellVM {
     var identifier: String {
         return "MockTableCellVM"
     }
+
     var cellHeight: CGFloat {
         return CGFloat(id + 10)
     }
@@ -45,7 +46,7 @@ class BaseTableVMTests: XCTestCase {
     override func setUp() {
         super.setUp()
 
-        cellViewModels = Array(35...50).map { MockTableCellVM(id: $0) }
+        cellViewModels = Array(35 ... 50).map { MockTableCellVM(id: $0) }
         baseTableVM = MockTableVM(cellViewModels: cellViewModels)
     }
 
@@ -82,5 +83,4 @@ class BaseTableVMTests: XCTestCase {
             XCTAssertEqual(expectedCellHeight, cellHeight)
         }
     }
-
 }

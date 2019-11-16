@@ -10,7 +10,7 @@ import Foundation
 import TinyConstraints
 import UIKit
 
-protocol BrewVariableSliderDelegate: class {
+protocol BrewVariableSliderDelegate: AnyObject {
     func onValueChanged(variable: BrewVariable, to value: SliderValue)
 }
 
@@ -23,15 +23,15 @@ class BrewVariableSlider: UIView, DiscreteSliderDelegate {
     var variable: BrewVariable?
 
     lazy var minLabel: UILabel = {
-        return BrewVariableSlider.createStyledLabel()
+        BrewVariableSlider.createStyledLabel()
     }()
 
     lazy var maxLabel: UILabel = {
-        return BrewVariableSlider.createStyledLabel()
+        BrewVariableSlider.createStyledLabel()
     }()
 
     private lazy var sliderContainer: UIView = {
-        return UIView()
+        UIView()
     }()
 
     private lazy var slider: DiscreteSlider = {
@@ -40,7 +40,7 @@ class BrewVariableSlider: UIView, DiscreteSliderDelegate {
     }()
 
     private lazy var bottomLabelsContainer: UIView = {
-        return UIView()
+        UIView()
     }()
 
     private var didUpdateConstraints = false
@@ -50,7 +50,7 @@ class BrewVariableSlider: UIView, DiscreteSliderDelegate {
         addViews()
     }
 
-    required init?(coder aDecoder: NSCoder) {
+    required init?(coder _: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
 
@@ -65,13 +65,13 @@ class BrewVariableSlider: UIView, DiscreteSliderDelegate {
 
     override func updateConstraints() {
         if !didUpdateConstraints {
-            self.height(CGFloat(BrewVariableSlider.height))
+            height(CGFloat(BrewVariableSlider.height))
 
             sliderContainer.leftToSuperview()
             sliderContainer.rightToSuperview()
             slider.edgesToSuperview(insets: TinyEdgeInsets(horizontal: 10))
 
-            self.stack([sliderContainer, bottomLabelsContainer], axis: .vertical, spacing: 5)
+            stack([sliderContainer, bottomLabelsContainer], axis: .vertical, spacing: 5)
 
             minLabel.leftToSuperview()
             maxLabel.rightToSuperview()

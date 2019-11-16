@@ -17,8 +17,8 @@ class ViewRecipeVM {
     private(set) var hiddenValues: [Int: Double]
 
     init(brewRecipe: BrewRecipe) {
-        self.cellVMs = []
-        self.hiddenValues = [:]
+        cellVMs = []
+        hiddenValues = [:]
 
         setupCellVMs(brewRecipe: brewRecipe)
     }
@@ -74,6 +74,6 @@ class ViewRecipeVM {
 extension ViewRecipeVM: BaseTableVM {
 
     var cellViewModels: [BaseTableCellVM] {
-        return self.cellVMs
+        return cellVMs
     }
 }

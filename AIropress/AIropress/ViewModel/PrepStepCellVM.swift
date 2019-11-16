@@ -6,23 +6,23 @@
 //  Copyright © 2019 Tomas Skypala. All rights reserved.
 //
 
-import Foundation
 import CoreGraphics
+import Foundation
 
 class PrepStepCellVM {
 
     static let cellIdentifier: String = {
-        return "ConstantCellVM"
+        "ConstantCellVM"
     }()
 
     static let cellHeight: CGFloat = {
-        return 60
+        60
     }()
 
     let cellText: String
 
     init(cellIndex: Int, prepStep: PrepStep) {
-        self.cellText = "\(cellIndex + 1). \(prepStep.text())"
+        cellText = "\(cellIndex + 1). \(prepStep.text())"
     }
 }
 
@@ -35,5 +35,4 @@ extension PrepStepCellVM: BaseTableCellVM {
     var cellHeight: CGFloat {
         return PrepStepCellVM.cellHeight
     }
-
 }

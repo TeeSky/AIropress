@@ -11,12 +11,9 @@ import UIKit
 
 class BaseCellView: UIView {
 
-    func addViews() {
-    }
+    func addViews() {}
 
-    func setConstraints() {
-    }
+    func setConstraints() {}
 
-    func prepareForReuse() {
-    }
+    func prepareForReuse() {}
 }

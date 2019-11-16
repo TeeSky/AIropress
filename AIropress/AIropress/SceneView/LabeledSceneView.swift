@@ -7,13 +7,13 @@
 //
 
 import Foundation
-import UIKit
 import TinyConstraints
+import UIKit
 
 class LabeledSceneView: BaseSceneView {
 
     lazy var safeAreaContainer: UIView = {
-        return UIView()
+        UIView()
     }()
 
     private lazy var sceneLabel: UILabel = {
@@ -71,7 +71,9 @@ class LabeledSceneView: BaseSceneView {
         sceneLabelContainer.height(120)
         bottomButtonContainer.height(65)
 
-        safeAreaContainer.stack([sceneLabelContainer, contentContainer, bottomButtonContainer],
-                                axis: .vertical, spacing: 5)
+        safeAreaContainer.stack(
+            [sceneLabelContainer, contentContainer, bottomButtonContainer],
+            axis: .vertical, spacing: 5
+        )
     }
 }

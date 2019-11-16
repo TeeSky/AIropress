@@ -20,11 +20,11 @@ class BaseTableViewCell<CV: BaseCellView>: UITableViewCell {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
 
         cellView.addViews()
-        self.contentView.addSubview(cellView)
-        self.contentView.backgroundColor = Style.Color.background
+        contentView.addSubview(cellView)
+        contentView.backgroundColor = Style.Color.background
     }
 
-    required init?(coder aDecoder: NSCoder) {
+    required init?(coder _: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
 
@@ -41,7 +41,7 @@ class BaseTableViewCell<CV: BaseCellView>: UITableViewCell {
     override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
         super.traitCollectionDidChange(previousTraitCollection)
 
-        self.contentView.backgroundColor = Style.Color.background
+        contentView.backgroundColor = Style.Color.background
     }
 
     override func prepareForReuse() {

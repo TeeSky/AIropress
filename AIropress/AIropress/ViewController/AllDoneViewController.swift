@@ -15,8 +15,10 @@ class AllDoneViewController: BaseViewController<AllDoneSceneView> {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        sceneView.makeAnotherButton.addTarget(viewModel,
-                                              action: #selector(viewModel.onMakeAnotherClicked),
-                                              for: .touchUpInside)
+        sceneView.makeAnotherButton.addTarget(
+            viewModel,
+            action: #selector(viewModel.onMakeAnotherClicked),
+            for: .touchUpInside
+        )
     }
 }

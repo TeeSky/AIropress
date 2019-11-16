@@ -6,8 +6,8 @@
 //  Copyright © 2019 Tomas Skypala. All rights reserved.
 //
 
-import Foundation
 import CoreGraphics
+import Foundation
 
 class SemiConstantCellVM: ConstantCellVM {
 
@@ -38,15 +38,24 @@ class SemiConstantCellVM: ConstantCellVM {
     convenience init?(semiConstant: RecipeSemiConstant) {
         guard let stringifier = semiConstant.constant.stringifier else { return nil }
 
-        self.init(stringifier: stringifier,
-                  constantId: semiConstant.constant.id, constantValue: semiConstant.constant.value,
-                  confidenceVariable: semiConstant.confidenceVariable, confidenceValue: semiConstant.confidenceValue)
+        self.init(
+            stringifier: stringifier,
+            constantId: semiConstant.constant.id,
+            constantValue: semiConstant.constant.value,
+            confidenceVariable: semiConstant.confidenceVariable,
+            confidenceValue: semiConstant.confidenceValue
+        )
     }
 
-    init(stringifier: ValueStringifier, constantId: Int, constantValue: Double,
-         confidenceVariable: BrewVariable, confidenceValue: Double) {
-        self.variable = confidenceVariable
-        self.initialConfidenceValue = confidenceValue
+    init(
+        stringifier: ValueStringifier,
+        constantId: Int,
+        constantValue: Double,
+        confidenceVariable: BrewVariable,
+        confidenceValue: Double
+    ) {
+        variable = confidenceVariable
+        initialConfidenceValue = confidenceValue
 
         super.init(stringifier: stringifier, constantId: constantId, constantValue: constantValue)
     }
@@ -58,7 +67,7 @@ class SemiConstantCellVM: ConstantCellVM {
 
 extension SemiConstantCellVM: BrewVariableSliderDelegate {
 
-    func onValueChanged(variable: BrewVariable, to value: SliderValue) {
+    func onValueChanged(variable _: BrewVariable, to value: SliderValue) {
         onSliderValueChanged(to: value.raw)
     }
 }
@@ -72,5 +81,4 @@ extension SemiConstantCellVM {
     override var cellHeight: CGFloat {
         return SemiConstantCellVM.cellHeight
     }
-
 }

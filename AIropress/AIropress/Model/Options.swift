@@ -24,10 +24,10 @@ public struct AppBrewVariableBundles: Codable {
             let variableBundles = try? decoder.decode(
                 AppBrewVariableBundles.self,
                 from: asset!.data
-                ) as AppBrewVariableBundles
-            else {
-                fatalError("Could not decode AppBrewVariableBundles. Make sure there is " +
-                    "a proper \"BrewVariableBundles\" data asset available.")
+            ) as AppBrewVariableBundles
+        else {
+            fatalError("Could not decode AppBrewVariableBundles. Make sure there is " +
+                "a proper \"BrewVariableBundles\" data asset available.")
         }
         return variableBundles
     }
@@ -37,7 +37,6 @@ public enum DefaultOptions {
 
     public static let brewVariableBundles = AppBrewVariableBundles.makeFromAssets().bundles
     public static let nonAvailableText = "n/a"
-
 }
 
 public let Options = DefaultOptions.self

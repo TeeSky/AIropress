@@ -16,7 +16,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var flowController: MainFlowController?
 
-    func applicationDidFinishLaunching(_ application: UIApplication) {
+    func applicationDidFinishLaunching(_: UIApplication) {
 
         // Override point for customization after application launch.
         let navigationController = UINavigationController()
@@ -27,8 +27,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window.rootViewController = navigationController
         self.window = window
 
-        let flowController = MainFlowController(navigationController: navigationController,
-                                                viewControllerProvider: MainViewControllerProvider())
+        let flowController = MainFlowController(
+            navigationController: navigationController,
+            viewControllerProvider: MainViewControllerProvider()
+        )
         self.flowController = flowController
 
         window.makeKeyAndVisible()
@@ -37,34 +39,34 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
     func application(
-        _ application: UIApplication,
+        _: UIApplication,
         performActionFor shortcutItem: UIApplicationShortcutItem,
         completionHandler: @escaping (Bool) -> Void
     ) {
         completionHandler(handleShortcut(shortcutItem: shortcutItem))
     }
 
-    func applicationWillResignActive(_ application: UIApplication) {
+    func applicationWillResignActive(_: UIApplication) {
         // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
         // Use this method to pause ongoing tasks, disable timers, and invalidate graphics rendering callbacks. Games should use this method to pause the game.
     }
 
-    func applicationDidEnterBackground(_ application: UIApplication) {
+    func applicationDidEnterBackground(_: UIApplication) {
         // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later.
         // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
     }
 
-    func applicationWillEnterForeground(_ application: UIApplication) {
+    func applicationWillEnterForeground(_: UIApplication) {
         // Called as part of the transition from the background to the active state; here you can undo many of the changes made on entering the background.
         print("applicationWillEnterForeground")
     }
 
-    func applicationDidBecomeActive(_ application: UIApplication) {
+    func applicationDidBecomeActive(_: UIApplication) {
         // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
         print("applicationDidBecomeActive")
     }
 
-    func applicationWillTerminate(_ application: UIApplication) {
+    func applicationWillTerminate(_: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
 
@@ -89,5 +91,4 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
         return launchMode
     }
-
 }

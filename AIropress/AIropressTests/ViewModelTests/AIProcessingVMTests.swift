@@ -12,7 +12,7 @@ private class MockAIProcessingSceneFC: AIProcessingSceneFC {
 
     var expectation: XCTestExpectation?
 
-    func onProcessingDone(recipe: BrewRecipe) {
+    func onProcessingDone(recipe _: BrewRecipe) {
         expectation?.fulfill()
     }
 }
@@ -35,7 +35,6 @@ private class MockAIProcessingVMDelegate: AIProcessingVMDelegate {
     func setActivityIndicatorState(animating: Bool) {
         activitityIndicatorAnimating = animating
     }
-
 }
 
 class AIProcessingVMTests: XCTestCase {

@@ -6,14 +6,13 @@
 //  Copyright © 2019 Tomas Skypala. All rights reserved.
 //
 
-import Foundation
 import CoreGraphics
+import Foundation
 
 /**
  A common base view model type.
  */
-protocol BaseViewModel {
-}
+protocol BaseViewModel {}
 
 /**
  Base **UITableViewCell** view model type.
@@ -42,10 +41,10 @@ extension BaseTableVM {
 
     /**
      Returns total number of sections.
-     
+
      - Warning: Currently only single section table views are supported,
      this fuction therefore always returns 1.
-     
+
      - Returns: Total number of sections.
      */
     func numberOfSections() -> Int {
@@ -54,12 +53,12 @@ extension BaseTableVM {
 
     /**
      Returns total number of rows within specified section.
-     
+
      - Warning: Currently only single section table views are supported,
      section parameters must always be "0", otherwise fatalError will be thrown.
-     
+
      - Parameter section: Index of the section
-     
+
      - Returns: Total number of rows within the section.
      */
     func numberOfRows(section: Int) -> Int {
@@ -70,13 +69,13 @@ extension BaseTableVM {
 
     /**
      Retrieves view model for specified **IndexPath**.
-     
+
      - Warning: Currently only single section table views are supported,
      section parameter of the path must always be "0", otherwise fatalError
      will be thrown.
-     
+
      - Parameter path: Path of the cell
-     
+
      - Returns: Cell view model belonging to the path.
      */
     func cellViewModel(for path: IndexPath) -> BaseTableCellVM {
@@ -87,17 +86,16 @@ extension BaseTableVM {
 
     /**
      Returns view height for cell at specified **IndexPath**.
-     
+
      - Warning: Currently only single section table views are supported,
      section parameter of the path must always be "0", otherwise fatalError
      will be thrown.
-     
+
      - Parameter path: Path of the cell
-     
+
      - Returns: View height of cell belonging to the path.
      */
     func cellHeight(for path: IndexPath) -> CGFloat {
         return cellViewModel(for: path).cellHeight
     }
-
 }

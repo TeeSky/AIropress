@@ -41,5 +41,4 @@ extension BrewingViewController: BrewingVMDelegate {
         sceneView.next1TimerLabel.configure(with: textSets[safe: 1])
         sceneView.next2TimerLabel.configure(with: textSets[safe: 2])
     }
-
 }

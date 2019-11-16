@@ -15,14 +15,14 @@ extension UIColor {
 
         if #available(iOS 13, *) {
             color = UIColor { (UITraitCollection: UITraitCollection) -> UIColor in
-                    if UITraitCollection.userInterfaceStyle == .dark {
-                        /// Return the color for Dark Mode
-                        return dark
-                    } else {
-                        /// Return the color for Light Mode
-                        return light
-                    }
+                if UITraitCollection.userInterfaceStyle == .dark {
+                    /// Return the color for Dark Mode
+                    return dark
+                } else {
+                    /// Return the color for Light Mode
+                    return light
                 }
+            }
         } else {
             /// Return a fallback color for iOS 12 and lower.
             color = light

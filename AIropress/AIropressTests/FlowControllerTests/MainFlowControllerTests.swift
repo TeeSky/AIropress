@@ -22,20 +22,20 @@ private class MockViewControllerProvider: ViewControllerProvider {
     var receivedPrepParams: PrepParams?
     var receivedBrewPhases: [BrewPhase]?
 
-    func getViewController(_ flowController: MainFlowController, for scene: Scene) -> UIViewController {
+    func getViewController(_: MainFlowController, for scene: Scene) -> UIViewController {
         switch scene {
         case .desiredTaste:
             return desiredTasteSceneVC
-        case .aiProcessing(let parameters):
+        case let .aiProcessing(parameters):
             receivedBrewParameters = parameters
             return aiProcessingSceneVC
-        case .viewRecipe(let recipe):
+        case let .viewRecipe(recipe):
             receivedBrewRecipe = recipe
             return viewRecipeSceneVC
-        case .brewPrep(let params):
+        case let .brewPrep(params):
             receivedPrepParams = params
             return brewPrepSceneVC
-        case .brewing(let brewPhases):
+        case let .brewing(brewPhases):
             receivedBrewPhases = brewPhases
             return brewingSceneVC
         case .allDone:
@@ -56,7 +56,7 @@ private class MockNavigationController: BaseNavigationController {
         stack.append(viewController)
     }
 
-    func pop(animated: Bool) {
+    func pop(animated _: Bool) {
         didPop = true
         _ = stack.popLast()
     }
@@ -76,18 +76,22 @@ class MainFlowControllerTests: XCTestCase {
 
     override func setUp() {
         super.setUp()
-        self.continueAfterFailure = false
+        continueAfterFailure = false
 
         navigationController = MockNavigationController()
         viewControllerProvider = MockViewControllerProvider()
 
-        mainFlowController = MainFlowController(navigationController: navigationController,
-                                                viewControllerProvider: viewControllerProvider)
+        mainFlowController = MainFlowController(
+            navigationController: navigationController,
+            viewControllerProvider: viewControllerProvider
+        )
     }
 
     func testInit() {
-        let mainFlowController = MainFlowController(navigationController: navigationController,
-                                                    viewControllerProvider: viewControllerProvider)
+        let mainFlowController = MainFlowController(
+            navigationController: navigationController,
+            viewControllerProvider: viewControllerProvider
+        )
 
         XCTAssertNotNil(mainFlowController.navigationController)
         XCTAssertNotNil(mainFlowController.viewControllerProvider)
