@@ -7,8 +7,8 @@
 //
 
 import Foundation
-import UIKit
 import TinyConstraints
+import UIKit
 
 class BrewingSceneView: BaseSceneView {
 
@@ -25,7 +25,7 @@ class BrewingSceneView: BaseSceneView {
     }()
 
     private lazy var phaseLabelsContainer: UIView = {
-        return UIView()
+        UIView()
     }()
 
     lazy var currentPhaseTimerLabel: PhaseLabelView = {
@@ -47,7 +47,7 @@ class BrewingSceneView: BaseSceneView {
     }()
 
     lazy var stopButton: UIButton = {
-        return BaseSceneView.createNegativeButton(title: "Stop")
+        BaseSceneView.createNegativeButton(title: "Stop")
     }()
 
     override func addViews() {
@@ -77,15 +77,18 @@ class BrewingSceneView: BaseSceneView {
         mainTimerLabel.height(180)
         mainTimerLabel.edges(to: safeAreaContainer, excluding: .bottom)
 
-        phaseLabelsContainer.stack([currentPhaseTimerLabel, next1TimerLabel, next2TimerLabel],
-                                   axis: .vertical, spacing: 10)
-        phaseLabelsContainer.edges(to: safeAreaContainer, excluding: .init(arrayLiteral: [.top, .bottom]),
-                                   insets: .init(horizontal: 5))
+        phaseLabelsContainer.stack(
+            [currentPhaseTimerLabel, next1TimerLabel, next2TimerLabel],
+            axis: .vertical, spacing: 10
+        )
+        phaseLabelsContainer.edges(
+            to: safeAreaContainer, excluding: .init(arrayLiteral: [.top, .bottom]),
+            insets: .init(horizontal: 5)
+        )
         phaseLabelsContainer.centerYToSuperview()
 
         stopButton.edges(to: safeAreaContainer, excluding: .init(arrayLiteral: [.top, .right]))
     }
-
 }
 
 class PhaseLabelView: UIView {
@@ -126,8 +129,8 @@ class PhaseLabelView: UIView {
         timerLabel.alpha = 0.6
         timerLabel.textAlignment = .right
 
-        self.addSubview(textLabel)
-        self.addSubview(timerLabel)
+        addSubview(textLabel)
+        addSubview(timerLabel)
     }
 
     private func setConstraints() {
@@ -145,8 +148,8 @@ class PhaseLabelView: UIView {
         textLabel.font = UIFont.systemFont(ofSize: scale.fontSizes().text)
         timerLabel.font = UIFont.systemFont(ofSize: scale.fontSizes().timer)
 
-        self.alpha = scale.alpha()
-        self.height(scale.height())
+        alpha = scale.alpha()
+        height(scale.height())
         textLabel.bottomToSuperview(offset: -scale.fontSizes().timer)
     }
 

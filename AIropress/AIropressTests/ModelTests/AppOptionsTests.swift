@@ -15,5 +15,4 @@ class AppOptionsTests: XCTestCase {
 
         XCTAssertNotNil(variableBundles)
     }
-
 }

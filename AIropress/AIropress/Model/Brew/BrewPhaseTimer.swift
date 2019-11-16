@@ -8,7 +8,7 @@
 
 import Foundation
 
-protocol BrewPhaseTimerDelegate: class {
+protocol BrewPhaseTimerDelegate: AnyObject {
     func onPhaseEnd()
     func onPhaseTick(remainingSeconds: Double)
 }
@@ -28,29 +28,37 @@ class BrewPhaseTimer {
 
     weak var delegate: BrewPhaseTimerDelegate?
 
-    required init(brewPhase: BrewPhase, delegate: BrewPhaseTimerDelegate, autostartTimers: Bool = true,
-                  timerProvider: Timer.Type = Timer.self) {
-        self.currentTick = 0
-        self.phaseDuration = brewPhase.duration
+    required init(
+        brewPhase: BrewPhase,
+        delegate: BrewPhaseTimerDelegate,
+        autostartTimers: Bool = true,
+        timerProvider: Timer.Type = Timer.self
+    ) {
+        currentTick = 0
+        phaseDuration = brewPhase.duration
         self.delegate = delegate
 
         if autostartTimers { startTimers(provider: timerProvider) }
     }
 
     func startTimers(provider: Timer.Type) {
-        self.phaseTimer = provider.scheduledTimer(withTimeInterval: phaseDuration,
-                                                  repeats: false, block: onPhaseEnd)
-        self.tickTimer = provider.scheduledTimer(withTimeInterval: BrewPhaseTimer.tickDuration,
-                                                 repeats: true, block: onTick)
+        phaseTimer = provider.scheduledTimer(
+            withTimeInterval: phaseDuration,
+            repeats: false, block: onPhaseEnd
+        )
+        tickTimer = provider.scheduledTimer(
+            withTimeInterval: BrewPhaseTimer.tickDuration,
+            repeats: true, block: onTick
+        )
     }
 
-    private func onPhaseEnd(timer: Timer) {
+    private func onPhaseEnd(timer _: Timer) {
         delegate?.onPhaseEnd()
 
-        self.invalidate()
+        invalidate()
     }
 
-    private func onTick(timer: Timer) {
+    private func onTick(timer _: Timer) {
         currentTick += 1
 
         delegate?.onPhaseTick(remainingSeconds: phaseDuration - (Double(currentTick) * BrewPhaseTimer.tickDuration))

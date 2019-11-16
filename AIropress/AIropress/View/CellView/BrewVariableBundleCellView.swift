@@ -7,8 +7,8 @@
 //
 
 import Foundation
-import UIKit
 import TinyConstraints
+import UIKit
 
 class BrewVariableBundleCellView: BaseCellView {
 

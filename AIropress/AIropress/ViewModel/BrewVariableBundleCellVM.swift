@@ -6,17 +6,17 @@
 //  Copyright © 2019 Tomas Skypala. All rights reserved.
 //
 
-import Foundation
 import CoreGraphics
+import Foundation
 
-protocol VariableBundleCellValueDelegate: class {
+protocol VariableBundleCellValueDelegate: AnyObject {
     func onValueChanged(brewVariable: BrewVariable, value: Double)
 }
 
 class BrewVariableBundleCellVM {
 
     static let cellIdentifier: String = {
-        return "BrewVariableBundleCellVM"
+        "BrewVariableBundleCellVM"
     }()
 
     var sliderLabel: String {
@@ -34,7 +34,7 @@ class BrewVariableBundleCellVM {
 
     init(variableBundle: BrewVariableBundle, initialValues: [BrewVariable: Double]) {
         self.variableBundle = variableBundle
-        self.currentValues = initialValues
+        currentValues = initialValues
     }
 
     func onSliderValueChanged(brewVariable: BrewVariable, valueIndex: Int) {
@@ -59,7 +59,6 @@ extension BrewVariableBundleCellVM: BrewVariableSliderDelegate {
     func onValueChanged(variable: BrewVariable, to value: SliderValue) {
         onSliderValueChanged(brewVariable: variable, valueIndex: value.index)
     }
-
 }
 
 extension BrewVariableBundleCellVM: BaseTableCellVM {

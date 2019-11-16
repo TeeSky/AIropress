@@ -8,9 +8,7 @@
 
 import Foundation
 
-class PrepStepCell: BaseTableViewCell<PrepStepCellView> {
-
-}
+class PrepStepCell: BaseTableViewCell<PrepStepCellView> {}
 
 extension PrepStepCell: ConfigurableTableCell {
 
@@ -19,7 +17,6 @@ extension PrepStepCell: ConfigurableTableCell {
 
         cellView.label.text = prepStepCellVm.cellText
 
-        self.updateConstraints()
+        updateConstraints()
     }
-
 }

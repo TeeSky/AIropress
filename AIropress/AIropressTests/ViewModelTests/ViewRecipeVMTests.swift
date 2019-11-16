@@ -20,7 +20,6 @@ private class MockViewRecipeSceneFC: ViewRecipeSceneFC {
     func onPrepared(recipeValues: [Int: Double]) {
         self.recipeValues = recipeValues
     }
-
 }
 
 class ViewRecipeVMTests: XCTestCase {

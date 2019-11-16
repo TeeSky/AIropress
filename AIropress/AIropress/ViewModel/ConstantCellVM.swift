@@ -6,8 +6,8 @@
 //  Copyright © 2019 Tomas Skypala. All rights reserved.
 //
 
-import Foundation
 import CoreGraphics
+import Foundation
 
 class ConstantCellVM {
 
@@ -36,8 +36,8 @@ class ConstantCellVM {
     }
 
     init(stringifier: ValueStringifier, constantId: Int, constantValue: Double) {
-        self.labelText = stringifier.labelText()
-        self.valueText = stringifier.toString(value: constantValue)
+        labelText = stringifier.labelText()
+        valueText = stringifier.toString(value: constantValue)
 
         self.constantId = constantId
         self.constantValue = constantValue
@@ -55,5 +55,4 @@ extension ConstantCellVM: BaseTableCellVM {
     var cellHeight: CGFloat {
         return 35
     }
-
 }

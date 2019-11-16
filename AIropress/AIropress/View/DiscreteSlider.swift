@@ -16,7 +16,7 @@ struct SliderValue {
     let text: String
 }
 
-protocol DiscreteSliderDelegate: class {
+protocol DiscreteSliderDelegate: AnyObject {
     func onValueChanged(to value: SliderValue)
 }
 
@@ -29,7 +29,7 @@ class DiscreteSlider: UISlider {
             let sliderMax = newValue - 1
             guard sliderMax > 0 else { return }
 
-            values = Array(0...sliderMax).map { "\($0)" }
+            values = Array(0 ... sliderMax).map { "\($0)" }
         }
         get {
             return values?.count ?? 0
@@ -46,37 +46,40 @@ class DiscreteSlider: UISlider {
         didSet {
             guard let values = values else { return }
 
-            self.minimumValue = 0
-            self.maximumValue = Float(values.count - 1)
+            minimumValue = 0
+            maximumValue = Float(values.count - 1)
 
-            self.addTarget(self, action: #selector(actionTarget),
-                           for: .valueChanged) // TODO make sendAction work even without adding a target
+            addTarget(
+                self, action: #selector(actionTarget),
+                for: .valueChanged
+            ) // TODO: make sendAction work even without adding a target
         }
     }
 
     private var previousRoundValue: Int?
 
     @objc
-    func actionTarget() {
-    }
+    func actionTarget() {}
 
     override func sendAction(_ action: Selector, to target: Any?, for event: UIEvent?) {
         guard let values = values else { fatalError("Property values must be set beforehand.") }
 
-        let valueRounded = Int(self.value.rounded())
+        let valueRounded = Int(value.rounded())
         guard valueRounded != previousRoundValue else {
-            self.setValue(Float(valueRounded), animated: false)
+            setValue(Float(valueRounded), animated: false)
             print("slider return")
             return
         }
         print("slider send action valid, value: \(valueRounded)")
         previousRoundValue = valueRounded
 
-        self.setValue(Float(valueRounded), animated: true)
+        setValue(Float(valueRounded), animated: true)
 
-        let sliderValue = SliderValue(index: valueRounded,
-                                      raw: self.value / maximumValue,
-                                      text: values[valueRounded])
+        let sliderValue = SliderValue(
+            index: valueRounded,
+            raw: value / maximumValue,
+            text: values[valueRounded]
+        )
         delegate?.onValueChanged(to: sliderValue)
 
         super.sendAction(action, to: target, for: event)

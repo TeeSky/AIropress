@@ -25,7 +25,6 @@ class AIProcessingViewController: BaseViewController<AIProcessingSceneView> {
 
         viewModel.onSceneDidAppear()
     }
-
 }
 
 extension AIProcessingViewController: AIProcessingVMDelegate {
@@ -66,5 +65,4 @@ extension AIProcessingViewController: AIProcessingVMDelegate {
             }
         }
     }
-
 }

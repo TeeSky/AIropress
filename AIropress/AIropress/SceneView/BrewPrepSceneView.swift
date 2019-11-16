@@ -7,8 +7,8 @@
 //
 
 import Foundation
-import UIKit
 import TinyConstraints
+import UIKit
 
 class BrewPrepSceneView: LabeledSceneView {
 
@@ -41,11 +41,11 @@ class BrewPrepSceneView: LabeledSceneView {
     }()
 
     lazy var resetButton: UIButton = {
-        return BaseSceneView.createNegativeButton()
+        BaseSceneView.createNegativeButton()
     }()
 
     lazy var brewButton: UIButton = {
-        return BaseSceneView.createButton(title: "Brew")
+        BaseSceneView.createButton(title: "Brew")
     }()
 
     override func getSceneLabelText() -> String {
@@ -74,10 +74,10 @@ class BrewPrepSceneView: LabeledSceneView {
 
         whatToDoLabelContainer.height(55)
 
-        whatToDoLabelContainer.edges(to: contentContainer, excluding: LayoutEdge.init(arrayLiteral: [.bottom]))
+        whatToDoLabelContainer.edges(to: contentContainer, excluding: LayoutEdge(arrayLiteral: [.bottom]))
 
         tableView.topToBottom(of: whatToDoLabelContainer)
-        tableView.edges(to: contentContainer, excluding: LayoutEdge.init(arrayLiteral: [.top]))
+        tableView.edges(to: contentContainer, excluding: LayoutEdge(arrayLiteral: [.top]))
 
         resetButton.centerY(to: bottomButtonContainer)
         brewButton.centerY(to: bottomButtonContainer)

@@ -7,6 +7,15 @@
 	objects = {
 
 /* Begin PBXAggregateTarget section */
+		1CD0618C486973D5588EF20D2E8C0AEA /* SwiftFormat */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = 6B2B7DF197DF6A7CA487150557230A41 /* Build configuration list for PBXAggregateTarget "SwiftFormat" */;
+			buildPhases = (
+			);
+			dependencies = (
+			);
+			name = SwiftFormat;
+		};
 		52B60EC2A583F24ACBB69C113F5488B9 /* SwiftLint */ = {
 			isa = PBXAggregateTarget;
 			buildConfigurationList = AE7B4FB01588B9E6DF09CB79FC7CE7BD /* Build configuration list for PBXAggregateTarget "SwiftLint" */;
@@ -19,20 +28,20 @@
 /* End PBXAggregateTarget section */
 
 /* Begin PBXBuildFile section */
-		0D24FEFEF4298905C4AE3E9FC22DBC38 /* TinyConstraints.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3FE90AEC76A3DEFBB251D08DC5F3C84 /* TinyConstraints.swift */; };
+		0D24FEFEF4298905C4AE3E9FC22DBC38 /* TinyConstraints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7770F1111F5556213E7EDDED2A079BAD /* TinyConstraints.swift */; };
 		3F74B5625B1FD3C1E31336E61DE208AE /* Pods-AIropress-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 68C9C9D5C398DE5022167E4FFC68322B /* Pods-AIropress-dummy.m */; };
-		602071FBBC9CE2E7E138D4B67223D4A9 /* TinyConstraints-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 9654B9E87BACF3C3335846FB854544B5 /* TinyConstraints-dummy.m */; };
-		666176CB4A0098C84C4BA709F54184A8 /* Pods-AIropressTests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 17FDF41C90C98EB2D46C0DB27C9F99B9 /* Pods-AIropressTests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		78530DE49CEB41A856C15BE267CDC651 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */; };
-		7F686C87FC60238F640B1973302B6D08 /* TinyConstraints-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 8D37BCE20BB80D6BDB9951EA024B6C9D /* TinyConstraints-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		80C64F8B50FDB2E25A939480C3FEC43A /* TinyConstraints+superview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08D6B8E4970798F0B81E79113FB62BD3 /* TinyConstraints+superview.swift */; };
+		55CA1D09C6C0ACD098ECE0232063EE74 /* Pods-AIropressTests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 17FDF41C90C98EB2D46C0DB27C9F99B9 /* Pods-AIropressTests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		602071FBBC9CE2E7E138D4B67223D4A9 /* TinyConstraints-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B2012BA6BB80FE2BC2E69D82E7DA2DB /* TinyConstraints-dummy.m */; };
+		7F686C87FC60238F640B1973302B6D08 /* TinyConstraints-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = ABA037D87FB09E358277AB7D6510C6C9 /* TinyConstraints-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		80C64F8B50FDB2E25A939480C3FEC43A /* TinyConstraints+superview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 797AA68838D92D4EA62C1F7CACEE04D5 /* TinyConstraints+superview.swift */; };
 		B3B3B408A432AD9E50E1EE013E5B8FB7 /* Pods-AIropress-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = F1E731CCDC809DB97708EE2699A41167 /* Pods-AIropress-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		CBF8630B51B556B1D93FF064C433A66E /* Constraints.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1370B18C71F4D4B93F6A59825BEFA87 /* Constraints.swift */; };
-		CCAEE4BF0C676D5173590E04D29BAE92 /* TinyEdgeInsets.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0F0F4C4068DFC998DD26A09D0375919 /* TinyEdgeInsets.swift */; };
-		CFF984D0BDE08492C60CC2D9C75E2C96 /* Abstraction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 555D99DB9A58693857DB2C2738638696 /* Abstraction.swift */; };
-		D9CB3464DD03D5FE88E91E7852D3558D /* Pods-AIropressTests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FE1B4138278BCB172C46C95C3948532 /* Pods-AIropressTests-dummy.m */; };
-		DF7A6BC0D371FF7ECA74781F562C475F /* Stack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87FD52023C2B3A7D5B634F29D55E6404 /* Stack.swift */; };
-		EAB56C7B2652650A976538B12FBAC59D /* Constrainable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F0BC4AD448AFC9508D02CCCC952E016 /* Constrainable.swift */; };
+		BC2465787F34CCEB74196692A9F24295 /* Pods-AIropressTests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FE1B4138278BCB172C46C95C3948532 /* Pods-AIropressTests-dummy.m */; };
+		CBF8630B51B556B1D93FF064C433A66E /* Constraints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39EE47AA8E1A9C857A33AD50D2B93A29 /* Constraints.swift */; };
+		CCAEE4BF0C676D5173590E04D29BAE92 /* TinyEdgeInsets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49D3A22FD84E2C07D388CEBEF4931A06 /* TinyEdgeInsets.swift */; };
+		CFF984D0BDE08492C60CC2D9C75E2C96 /* Abstraction.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4B79F23E4A8B77A80D9C1210C9F619B /* Abstraction.swift */; };
+		DA4360CCDB812088B259B96AF5EA34AC /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */; };
+		DF7A6BC0D371FF7ECA74781F562C475F /* Stack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EB6506396976EBBD53B5AAF4A377D8F /* Stack.swift */; };
+		EAB56C7B2652650A976538B12FBAC59D /* Constrainable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E6BFBB26443E64413A8F1BDC0CD5E36 /* Constrainable.swift */; };
 		F4A0EC4FCD2B41A86AFDD0272F9D7D00 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */; };
 		F89DDE2BE4B4C16826AC30BBC21ACC57 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */; };
 /* End PBXBuildFile section */
@@ -45,6 +54,27 @@
 			remoteGlobalIDString = 52B60EC2A583F24ACBB69C113F5488B9;
 			remoteInfo = SwiftLint;
 		};
+		3F43C88538D2483943D13014DA6A5076 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 1CD0618C486973D5588EF20D2E8C0AEA;
+			remoteInfo = SwiftFormat;
+		};
+		4FFC9DD98C07D373301CB3BCF7C38552 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 45C4E325E7851DD54CC3AD44C7A71935;
+			remoteInfo = TinyConstraints;
+		};
+		640AB11611FBCFF404778171460D1C64 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = EDA8062C67198640F6747E67138CA24A;
+			remoteInfo = "Pods-AIropress";
+		};
 		8BF646040E481E6AF9E508E59EA893C8 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
@@ -52,71 +82,50 @@
 			remoteGlobalIDString = 45C4E325E7851DD54CC3AD44C7A71935;
 			remoteInfo = TinyConstraints;
 		};
-		C2419176AA99140EAA973C24CC72A949 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 45C4E325E7851DD54CC3AD44C7A71935;
-			remoteInfo = TinyConstraints;
-		};
-		E808B8506B72CAA6CAE92E6DBD6D58EF /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = EDA8062C67198640F6747E67138CA24A;
-			remoteInfo = "Pods-AIropress";
-		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		04704FED1F75422F9D9A6031234451E0 /* Pods-AIropress-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-AIropress-acknowledgements.plist"; sourceTree = "<group>"; };
 		072942906F2535E527EF5EA749EB255C /* Pods-AIropress-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-AIropress-acknowledgements.markdown"; sourceTree = "<group>"; };
-		08D6B8E4970798F0B81E79113FB62BD3 /* TinyConstraints+superview.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "TinyConstraints+superview.swift"; path = "TinyConstraints/Classes/TinyConstraints+superview.swift"; sourceTree = "<group>"; };
 		13EDD72AD443C6581E307047D80A49D5 /* Pods-AIropress.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-AIropress.release.xcconfig"; sourceTree = "<group>"; };
-		16ED0DC084145231CB73FF7DD60E8C30 /* SwiftLint.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SwiftLint.xcconfig; sourceTree = "<group>"; };
 		17FDF41C90C98EB2D46C0DB27C9F99B9 /* Pods-AIropressTests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-AIropressTests-umbrella.h"; sourceTree = "<group>"; };
 		248EB203AE249596FFC55952F5590D95 /* TinyConstraints.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = TinyConstraints.framework; path = TinyConstraints.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		2B2012BA6BB80FE2BC2E69D82E7DA2DB /* TinyConstraints-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "TinyConstraints-dummy.m"; sourceTree = "<group>"; };
 		3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.2.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
-		3559FAC68B5B180D2ADC9D1E034763C8 /* TinyConstraints-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "TinyConstraints-prefix.pch"; sourceTree = "<group>"; };
+		323575319124E98DDA4BFE3B3D81FC70 /* TinyConstraints.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = TinyConstraints.modulemap; sourceTree = "<group>"; };
+		39EE47AA8E1A9C857A33AD50D2B93A29 /* Constraints.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Constraints.swift; path = TinyConstraints/Classes/Constraints.swift; sourceTree = "<group>"; };
 		48F1A92D95393593CCEAC420C077D891 /* Pods-AIropressTests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-AIropressTests.modulemap"; sourceTree = "<group>"; };
+		49D3A22FD84E2C07D388CEBEF4931A06 /* TinyEdgeInsets.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = TinyEdgeInsets.swift; path = TinyConstraints/Classes/TinyEdgeInsets.swift; sourceTree = "<group>"; };
 		4D765F609D3CFA8D4F15780C803E373F /* Pods_AIropressTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_AIropressTests.framework; path = "Pods-AIropressTests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
-		555D99DB9A58693857DB2C2738638696 /* Abstraction.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Abstraction.swift; path = TinyConstraints/Classes/Abstraction.swift; sourceTree = "<group>"; };
-		5F0BC4AD448AFC9508D02CCCC952E016 /* Constrainable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Constrainable.swift; path = TinyConstraints/Classes/Constrainable.swift; sourceTree = "<group>"; };
+		4EB6506396976EBBD53B5AAF4A377D8F /* Stack.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Stack.swift; path = TinyConstraints/Classes/Stack.swift; sourceTree = "<group>"; };
 		60A28AC254B2492D5769160F29561B66 /* Pods-AIropress.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-AIropress.modulemap"; sourceTree = "<group>"; };
-		648FC3FCD1DFAB4E65B12042CC2ED8B9 /* TinyConstraints.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = TinyConstraints.xcconfig; sourceTree = "<group>"; };
 		65BB7684556A36E9605B56BA1199DD63 /* Pods-AIropress-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-AIropress-Info.plist"; sourceTree = "<group>"; };
 		68C9C9D5C398DE5022167E4FFC68322B /* Pods-AIropress-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-AIropress-dummy.m"; sourceTree = "<group>"; };
 		6C4AD36512C51B165BC38833A7405EB5 /* Pods_AIropress.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_AIropress.framework; path = "Pods-AIropress.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
-		87FD52023C2B3A7D5B634F29D55E6404 /* Stack.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Stack.swift; path = TinyConstraints/Classes/Stack.swift; sourceTree = "<group>"; };
-		8D37BCE20BB80D6BDB9951EA024B6C9D /* TinyConstraints-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "TinyConstraints-umbrella.h"; sourceTree = "<group>"; };
+		6EA4997BA425DAC8EE140669577AA948 /* TinyConstraints.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = TinyConstraints.xcconfig; sourceTree = "<group>"; };
+		7770F1111F5556213E7EDDED2A079BAD /* TinyConstraints.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = TinyConstraints.swift; path = TinyConstraints/Classes/TinyConstraints.swift; sourceTree = "<group>"; };
+		797AA68838D92D4EA62C1F7CACEE04D5 /* TinyConstraints+superview.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "TinyConstraints+superview.swift"; path = "TinyConstraints/Classes/TinyConstraints+superview.swift"; sourceTree = "<group>"; };
+		7E6BFBB26443E64413A8F1BDC0CD5E36 /* Constrainable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Constrainable.swift; path = TinyConstraints/Classes/Constrainable.swift; sourceTree = "<group>"; };
+		82E4A2652A6740B92CCBBE8000312A88 /* SwiftLint.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SwiftLint.xcconfig; sourceTree = "<group>"; };
+		9145A04B47248E48DCE6658C822925BF /* SwiftFormat.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SwiftFormat.xcconfig; sourceTree = "<group>"; };
 		9306189FFFF5F5B0925557D8A08F412D /* Pods-AIropress-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-AIropress-frameworks.sh"; sourceTree = "<group>"; };
-		9654B9E87BACF3C3335846FB854544B5 /* TinyConstraints-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "TinyConstraints-dummy.m"; sourceTree = "<group>"; };
-		9AF420B205A4D7D420098E76EB7B9113 /* TinyConstraints.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = TinyConstraints.modulemap; sourceTree = "<group>"; };
 		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		9FE1B4138278BCB172C46C95C3948532 /* Pods-AIropressTests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-AIropressTests-dummy.m"; sourceTree = "<group>"; };
+		ABA037D87FB09E358277AB7D6510C6C9 /* TinyConstraints-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "TinyConstraints-umbrella.h"; sourceTree = "<group>"; };
 		AD20B2FC5C3C0B44B99436DD3AB6A209 /* Pods-AIropressTests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-AIropressTests-frameworks.sh"; sourceTree = "<group>"; };
 		ADD012D0A904137C69C0BE36BC1006C4 /* Pods-AIropress.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-AIropress.debug.xcconfig"; sourceTree = "<group>"; };
 		B1C5491F3E24FFEADA80853240663151 /* Pods-AIropressTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-AIropressTests.release.xcconfig"; sourceTree = "<group>"; };
-		B3FE90AEC76A3DEFBB251D08DC5F3C84 /* TinyConstraints.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = TinyConstraints.swift; path = TinyConstraints/Classes/TinyConstraints.swift; sourceTree = "<group>"; };
+		B4B79F23E4A8B77A80D9C1210C9F619B /* Abstraction.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Abstraction.swift; path = TinyConstraints/Classes/Abstraction.swift; sourceTree = "<group>"; };
 		B755096288A25B252AC78FBA8302E0E1 /* Pods-AIropressTests-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-AIropressTests-Info.plist"; sourceTree = "<group>"; };
+		B75C2965BF2A42E1760DA4504982421B /* TinyConstraints-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "TinyConstraints-prefix.pch"; sourceTree = "<group>"; };
 		D0D598C1DB7EB1C7B4012332AB7183B7 /* Pods-AIropressTests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-AIropressTests-acknowledgements.plist"; sourceTree = "<group>"; };
-		E0F0F4C4068DFC998DD26A09D0375919 /* TinyEdgeInsets.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = TinyEdgeInsets.swift; path = TinyConstraints/Classes/TinyEdgeInsets.swift; sourceTree = "<group>"; };
-		E1370B18C71F4D4B93F6A59825BEFA87 /* Constraints.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Constraints.swift; path = TinyConstraints/Classes/Constraints.swift; sourceTree = "<group>"; };
+		F081A58E980CE42A038F87DCF4E694E6 /* TinyConstraints-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "TinyConstraints-Info.plist"; sourceTree = "<group>"; };
 		F1E731CCDC809DB97708EE2699A41167 /* Pods-AIropress-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-AIropress-umbrella.h"; sourceTree = "<group>"; };
 		F74BB35A026DA8DCD92669B857603335 /* Pods-AIropressTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-AIropressTests.debug.xcconfig"; sourceTree = "<group>"; };
 		FB4A86EFA14D49A71DCE2605421C86CD /* Pods-AIropressTests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-AIropressTests-acknowledgements.markdown"; sourceTree = "<group>"; };
-		FFC8D0A2B399374FA497A4856D20320F /* TinyConstraints-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "TinyConstraints-Info.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		092F4BDC7E4C8B0C5CFF7F3E3E135730 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				78530DE49CEB41A856C15BE267CDC651 /* Foundation.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		36535A7B888AFE58F76BDA6B07CEB9C6 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -133,6 +142,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		F09F8A0162861AC28430D651C546242E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DA4360CCDB812088B259B96AF5EA34AC /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -145,18 +162,13 @@
 			name = "Targets Support Files";
 			sourceTree = "<group>";
 		};
-		19EDE1D730D9FF1429CCA7CA55D99759 /* Support Files */ = {
+		2C4A69A331459DAD5ACDB5D0B18F56B2 /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				9AF420B205A4D7D420098E76EB7B9113 /* TinyConstraints.modulemap */,
-				648FC3FCD1DFAB4E65B12042CC2ED8B9 /* TinyConstraints.xcconfig */,
-				9654B9E87BACF3C3335846FB854544B5 /* TinyConstraints-dummy.m */,
-				FFC8D0A2B399374FA497A4856D20320F /* TinyConstraints-Info.plist */,
-				3559FAC68B5B180D2ADC9D1E034763C8 /* TinyConstraints-prefix.pch */,
-				8D37BCE20BB80D6BDB9951EA024B6C9D /* TinyConstraints-umbrella.h */,
+				9145A04B47248E48DCE6658C822925BF /* SwiftFormat.xcconfig */,
 			);
 			name = "Support Files";
-			path = "../Target Support Files/TinyConstraints";
+			path = "../Target Support Files/SwiftFormat";
 			sourceTree = "<group>";
 		};
 		300BDDF9F0180D57BBB1AAF42D3CAD28 /* Pods-AIropress */ = {
@@ -176,13 +188,32 @@
 			path = "Target Support Files/Pods-AIropress";
 			sourceTree = "<group>";
 		};
-		44CFF60946A6D87720FFD8C61E46A13D /* Support Files */ = {
+		49EE1F2658523DFF82A4526BEC8FF6B0 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				16ED0DC084145231CB73FF7DD60E8C30 /* SwiftLint.xcconfig */,
+				8A6D85020DB83D5559F686D17C16A178 /* SwiftFormat */,
+				5583826E24BAA0118915FD9015C96403 /* SwiftLint */,
+				F7224278A6C78067BC70AA8ED6A8CCC7 /* TinyConstraints */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		508898EFACB65C7A55135628B0C06B70 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				82E4A2652A6740B92CCBBE8000312A88 /* SwiftLint.xcconfig */,
 			);
 			name = "Support Files";
 			path = "../Target Support Files/SwiftLint";
+			sourceTree = "<group>";
+		};
+		5583826E24BAA0118915FD9015C96403 /* SwiftLint */ = {
+			isa = PBXGroup;
+			children = (
+				508898EFACB65C7A55135628B0C06B70 /* Support Files */,
+			);
+			name = SwiftLint;
+			path = SwiftLint;
 			sourceTree = "<group>";
 		};
 		6A0D87B13AE66716343B2633EF41BD16 /* Products */ = {
@@ -195,22 +226,13 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		6BED8DC7E84A5E25AB5F51132441D65C /* SwiftLint */ = {
+		8A6D85020DB83D5559F686D17C16A178 /* SwiftFormat */ = {
 			isa = PBXGroup;
 			children = (
-				44CFF60946A6D87720FFD8C61E46A13D /* Support Files */,
+				2C4A69A331459DAD5ACDB5D0B18F56B2 /* Support Files */,
 			);
-			name = SwiftLint;
-			path = SwiftLint;
-			sourceTree = "<group>";
-		};
-		7CEF62326975475A8C5DF8EF65E5C269 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				6BED8DC7E84A5E25AB5F51132441D65C /* SwiftLint */,
-				EDED0093618FBECA2A0124BC39207DE2 /* TinyConstraints */,
-			);
-			name = Pods;
+			name = SwiftFormat;
+			path = SwiftFormat;
 			sourceTree = "<group>";
 		};
 		C0834CEBB1379A84116EF29F93051C60 /* iOS */ = {
@@ -221,12 +243,26 @@
 			name = iOS;
 			sourceTree = "<group>";
 		};
+		C60B5A82ED0233BCD4BDF168296D2F5E /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				323575319124E98DDA4BFE3B3D81FC70 /* TinyConstraints.modulemap */,
+				6EA4997BA425DAC8EE140669577AA948 /* TinyConstraints.xcconfig */,
+				2B2012BA6BB80FE2BC2E69D82E7DA2DB /* TinyConstraints-dummy.m */,
+				F081A58E980CE42A038F87DCF4E694E6 /* TinyConstraints-Info.plist */,
+				B75C2965BF2A42E1760DA4504982421B /* TinyConstraints-prefix.pch */,
+				ABA037D87FB09E358277AB7D6510C6C9 /* TinyConstraints-umbrella.h */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/TinyConstraints";
+			sourceTree = "<group>";
+		};
 		CF1408CF629C7361332E53B88F7BD30C = {
 			isa = PBXGroup;
 			children = (
 				9D940727FF8FB9C785EB98E56350EF41 /* Podfile */,
 				D210D550F4EA176C3123ED886F8F87F5 /* Frameworks */,
-				7CEF62326975475A8C5DF8EF65E5C269 /* Pods */,
+				49EE1F2658523DFF82A4526BEC8FF6B0 /* Pods */,
 				6A0D87B13AE66716343B2633EF41BD16 /* Products */,
 				0C5D6468331DC2B0706889848F8CD4F9 /* Targets Support Files */,
 			);
@@ -257,17 +293,17 @@
 			path = "Target Support Files/Pods-AIropressTests";
 			sourceTree = "<group>";
 		};
-		EDED0093618FBECA2A0124BC39207DE2 /* TinyConstraints */ = {
+		F7224278A6C78067BC70AA8ED6A8CCC7 /* TinyConstraints */ = {
 			isa = PBXGroup;
 			children = (
-				555D99DB9A58693857DB2C2738638696 /* Abstraction.swift */,
-				5F0BC4AD448AFC9508D02CCCC952E016 /* Constrainable.swift */,
-				E1370B18C71F4D4B93F6A59825BEFA87 /* Constraints.swift */,
-				87FD52023C2B3A7D5B634F29D55E6404 /* Stack.swift */,
-				B3FE90AEC76A3DEFBB251D08DC5F3C84 /* TinyConstraints.swift */,
-				08D6B8E4970798F0B81E79113FB62BD3 /* TinyConstraints+superview.swift */,
-				E0F0F4C4068DFC998DD26A09D0375919 /* TinyEdgeInsets.swift */,
-				19EDE1D730D9FF1429CCA7CA55D99759 /* Support Files */,
+				B4B79F23E4A8B77A80D9C1210C9F619B /* Abstraction.swift */,
+				7E6BFBB26443E64413A8F1BDC0CD5E36 /* Constrainable.swift */,
+				39EE47AA8E1A9C857A33AD50D2B93A29 /* Constraints.swift */,
+				4EB6506396976EBBD53B5AAF4A377D8F /* Stack.swift */,
+				7770F1111F5556213E7EDDED2A079BAD /* TinyConstraints.swift */,
+				797AA68838D92D4EA62C1F7CACEE04D5 /* TinyConstraints+superview.swift */,
+				49D3A22FD84E2C07D388CEBEF4931A06 /* TinyEdgeInsets.swift */,
+				C60B5A82ED0233BCD4BDF168296D2F5E /* Support Files */,
 			);
 			name = TinyConstraints;
 			path = TinyConstraints;
@@ -276,19 +312,19 @@
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		41F4AF9FB6062AB55D7D8A64F384FA50 /* Headers */ = {
-			isa = PBXHeadersBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				666176CB4A0098C84C4BA709F54184A8 /* Pods-AIropressTests-umbrella.h in Headers */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		98FE3D0A640F390EA7AEA8E88F47DEDA /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				7F686C87FC60238F640B1973302B6D08 /* TinyConstraints-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B9422C2C08E33040D087BC05EC2DE5EA /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				55CA1D09C6C0ACD098ECE0232063EE74 /* Pods-AIropressTests-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -323,18 +359,19 @@
 		};
 		7BD99562F6621099138C189B46FB762B /* Pods-AIropressTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = CB4AEC1C18F43C5B47AA0A9D621E1E38 /* Build configuration list for PBXNativeTarget "Pods-AIropressTests" */;
+			buildConfigurationList = 028DF68EE61BC10877433E78C515B8C9 /* Build configuration list for PBXNativeTarget "Pods-AIropressTests" */;
 			buildPhases = (
-				41F4AF9FB6062AB55D7D8A64F384FA50 /* Headers */,
-				081FCF2F9CADB4195F8F383B0A87813E /* Sources */,
-				092F4BDC7E4C8B0C5CFF7F3E3E135730 /* Frameworks */,
-				376B8BE9BBD72F71225A9C1468A5F366 /* Resources */,
+				B9422C2C08E33040D087BC05EC2DE5EA /* Headers */,
+				3AC7AE9E282039591F18AFA85F527A35 /* Sources */,
+				F09F8A0162861AC28430D651C546242E /* Frameworks */,
+				F7A3530B9B6026AB1A5984215CC97BFF /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				C7C1DE224E97D26CD1EBAA19CA024562 /* PBXTargetDependency */,
-				B613CE593989A9021958052854EB31DF /* PBXTargetDependency */,
+				F560C9E6D9376772C60B8B98B319A4E3 /* PBXTargetDependency */,
+				90DCC0C8C2CEA5F1D0A78A5F7758FC93 /* PBXTargetDependency */,
+				81760735C56B458EFCC654DB12EDBECA /* PBXTargetDependency */,
 			);
 			name = "Pods-AIropressTests";
 			productName = "Pods-AIropressTests";
@@ -384,6 +421,7 @@
 			targets = (
 				EDA8062C67198640F6747E67138CA24A /* Pods-AIropress */,
 				7BD99562F6621099138C189B46FB762B /* Pods-AIropressTests */,
+				1CD0618C486973D5588EF20D2E8C0AEA /* SwiftFormat */,
 				52B60EC2A583F24ACBB69C113F5488B9 /* SwiftLint */,
 				45C4E325E7851DD54CC3AD44C7A71935 /* TinyConstraints */,
 			);
@@ -391,13 +429,6 @@
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		376B8BE9BBD72F71225A9C1468A5F366 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		7465A1319E37DADA12A8BAEB409143AA /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -412,14 +443,21 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		F7A3530B9B6026AB1A5984215CC97BFF /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		081FCF2F9CADB4195F8F383B0A87813E /* Sources */ = {
+		3AC7AE9E282039591F18AFA85F527A35 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D9CB3464DD03D5FE88E91E7852D3558D /* Pods-AIropressTests-dummy.m in Sources */,
+				BC2465787F34CCEB74196692A9F24295 /* Pods-AIropressTests-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -449,23 +487,23 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		81760735C56B458EFCC654DB12EDBECA /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = TinyConstraints;
+			target = 45C4E325E7851DD54CC3AD44C7A71935 /* TinyConstraints */;
+			targetProxy = 4FFC9DD98C07D373301CB3BCF7C38552 /* PBXContainerItemProxy */;
+		};
+		90DCC0C8C2CEA5F1D0A78A5F7758FC93 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = SwiftFormat;
+			target = 1CD0618C486973D5588EF20D2E8C0AEA /* SwiftFormat */;
+			targetProxy = 3F43C88538D2483943D13014DA6A5076 /* PBXContainerItemProxy */;
+		};
 		96780D4B40B6F0EFD00646A4295EF9E1 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = SwiftLint;
 			target = 52B60EC2A583F24ACBB69C113F5488B9 /* SwiftLint */;
 			targetProxy = 3C525CA9030DF134A722B456ACC293D3 /* PBXContainerItemProxy */;
-		};
-		B613CE593989A9021958052854EB31DF /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = TinyConstraints;
-			target = 45C4E325E7851DD54CC3AD44C7A71935 /* TinyConstraints */;
-			targetProxy = C2419176AA99140EAA973C24CC72A949 /* PBXContainerItemProxy */;
-		};
-		C7C1DE224E97D26CD1EBAA19CA024562 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = "Pods-AIropress";
-			target = EDA8062C67198640F6747E67138CA24A /* Pods-AIropress */;
-			targetProxy = E808B8506B72CAA6CAE92E6DBD6D58EF /* PBXContainerItemProxy */;
 		};
 		E810CA71B893F22D71970F75427A2404 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
@@ -473,10 +511,16 @@
 			target = 45C4E325E7851DD54CC3AD44C7A71935 /* TinyConstraints */;
 			targetProxy = 8BF646040E481E6AF9E508E59EA893C8 /* PBXContainerItemProxy */;
 		};
+		F560C9E6D9376772C60B8B98B319A4E3 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "Pods-AIropress";
+			target = EDA8062C67198640F6747E67138CA24A /* Pods-AIropress */;
+			targetProxy = 640AB11611FBCFF404778171460D1C64 /* PBXContainerItemProxy */;
+		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		0D5102BA02A47E809642220B36A37DBF /* Debug */ = {
+		25CB3FBF7989979881D054DE0D846FD4 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = F74BB35A026DA8DCD92669B857603335 /* Pods-AIropressTests.debug.xcconfig */;
 			buildSettings = {
@@ -551,6 +595,62 @@
 				VERSION_INFO_PREFIX = "";
 			};
 			name = Debug;
+		};
+		4FFEC4DAE760BCDB199550E7E8BDC8E5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = B1C5491F3E24FFEADA80853240663151 /* Pods-AIropressTests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-AIropressTests/Pods-AIropressTests-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-AIropressTests/Pods-AIropressTests.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		61D16562C88F67A248B236668FAC8E96 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9145A04B47248E48DCE6658C822925BF /* SwiftFormat.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
 		};
 		6410F571BA8C1AEC6A19403F1B61B0B5 /* Debug */ = {
 			isa = XCBuildConfiguration;
@@ -657,7 +757,7 @@
 		};
 		808EA8BE922628A603EFF6A61532F38E /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 648FC3FCD1DFAB4E65B12042CC2ED8B9 /* TinyConstraints.xcconfig */;
+			baseConfigurationReference = 6EA4997BA425DAC8EE140669577AA948 /* TinyConstraints.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -692,7 +792,7 @@
 		};
 		84D7C4574E8F0F3095623F0E06F5B402 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 16ED0DC084145231CB73FF7DD60E8C30 /* SwiftLint.xcconfig */;
+			baseConfigurationReference = 82E4A2652A6740B92CCBBE8000312A88 /* SwiftLint.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
@@ -767,9 +867,9 @@
 			};
 			name = Release;
 		};
-		DEED47E09AF743F48544C1C4FEADEF47 /* Debug */ = {
+		A8A39F86ED80874B567AC60703BA6FA1 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 16ED0DC084145231CB73FF7DD60E8C30 /* SwiftLint.xcconfig */;
+			baseConfigurationReference = 9145A04B47248E48DCE6658C822925BF /* SwiftFormat.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
@@ -783,48 +883,25 @@
 			};
 			name = Debug;
 		};
-		E214B0B674CA4E8AF6C598E3CC94CF2C /* Release */ = {
+		DEED47E09AF743F48544C1C4FEADEF47 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = B1C5491F3E24FFEADA80853240663151 /* Pods-AIropressTests.release.xcconfig */;
+			baseConfigurationReference = 82E4A2652A6740B92CCBBE8000312A88 /* SwiftLint.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
-				CLANG_ENABLE_OBJC_WEAK = NO;
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "Target Support Files/Pods-AIropressTests/Pods-AIropressTests-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 12.4;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
 				);
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-AIropressTests/Pods-AIropressTests.modulemap";
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
 			};
-			name = Release;
+			name = Debug;
 		};
 		F94F9A7A89188A502D190530F866A5BE /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 648FC3FCD1DFAB4E65B12042CC2ED8B9 /* TinyConstraints.xcconfig */;
+			baseConfigurationReference = 6EA4997BA425DAC8EE140669577AA948 /* TinyConstraints.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -861,6 +938,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		028DF68EE61BC10877433E78C515B8C9 /* Build configuration list for PBXNativeTarget "Pods-AIropressTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				25CB3FBF7989979881D054DE0D846FD4 /* Debug */,
+				4FFEC4DAE760BCDB199550E7E8BDC8E5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -870,20 +956,20 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
+		6B2B7DF197DF6A7CA487150557230A41 /* Build configuration list for PBXAggregateTarget "SwiftFormat" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A8A39F86ED80874B567AC60703BA6FA1 /* Debug */,
+				61D16562C88F67A248B236668FAC8E96 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		AE7B4FB01588B9E6DF09CB79FC7CE7BD /* Build configuration list for PBXAggregateTarget "SwiftLint" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				DEED47E09AF743F48544C1C4FEADEF47 /* Debug */,
 				84D7C4574E8F0F3095623F0E06F5B402 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		CB4AEC1C18F43C5B47AA0A9D621E1E38 /* Build configuration list for PBXNativeTarget "Pods-AIropressTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				0D5102BA02A47E809642220B36A37DBF /* Debug */,
-				E214B0B674CA4E8AF6C598E3CC94CF2C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

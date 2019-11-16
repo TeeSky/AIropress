@@ -22,15 +22,15 @@ enum RecipeValue: Int {
 
     case hiddenValuePlaceholder = 299
 
-    static let stringifiers: [RecipeValue: ValueStringifier] =
-        [.aeropressOrientation: AeropressOrientationStringifier(),
-         .grindSize: ComandanteGrindSizeStringifier(),
-         .coffeeAmount: SimpleUnitStringifier(label: "Coffee", unit: "g"),
-         .waterAmount: SimpleUnitStringifier(label: "Water", unit: "ml"),
-         .temperature: SimpleUnitStringifier(label: "Temperature", unit: "C"),
-         .totalBrewDuration: TimeStringifier(label: "Total brewing time"),
-         .bloomDuration: TimeStringifier(label: "Bloom time"),
-         .brewType: BrewTypeStringifier()
+    static let stringifiers: [RecipeValue: ValueStringifier] = [
+        .aeropressOrientation: AeropressOrientationStringifier(),
+        .grindSize: ComandanteGrindSizeStringifier(),
+        .coffeeAmount: SimpleUnitStringifier(label: "Coffee", unit: "g"),
+        .waterAmount: SimpleUnitStringifier(label: "Water", unit: "ml"),
+        .temperature: SimpleUnitStringifier(label: "Temperature", unit: "C"),
+        .totalBrewDuration: TimeStringifier(label: "Total brewing time"),
+        .bloomDuration: TimeStringifier(label: "Bloom time"),
+        .brewType: BrewTypeStringifier()
     ]
 
     func stringifier() -> ValueStringifier? {
@@ -41,7 +41,7 @@ enum RecipeValue: Int {
         var recipeValueMap: [RecipeValue: Double] = [:]
 
         for (id, value) in valueMap {
-            if let recipeValueId = RecipeValue.init(rawValue: id) {
+            if let recipeValueId = RecipeValue(rawValue: id) {
                 recipeValueMap[recipeValueId] = value
             }
         }
@@ -71,7 +71,6 @@ class SimpleUnitStringifier: ValueStringifier {
     func toString(value: Double) -> String {
         return "\(value) \(unit)"
     }
-
 }
 
 class TimeStringifier: SimpleUnitStringifier {
@@ -83,13 +82,11 @@ class TimeStringifier: SimpleUnitStringifier {
     override func toString(value: Double) -> String {
         return "\(value.asStopwatchString())"
     }
-
 }
 
 class AeropressOrientationStringifier: ValueStringifier {
 
-    init() {
-    }
+    init() {}
 
     func labelText() -> String {
         return "Aerop. orientation"
@@ -104,8 +101,7 @@ class AeropressOrientationStringifier: ValueStringifier {
 
 class ComandanteGrindSizeStringifier: ValueStringifier {
 
-    init() {
-    }
+    init() {}
 
     func labelText() -> String {
         return "Grind size"
@@ -119,15 +115,15 @@ class ComandanteGrindSizeStringifier: ValueStringifier {
         let defaultString = Options.nonAvailableText
 
         switch value {
-        case 1...10:
+        case 1 ... 10:
             return "very fine"
-        case 10...15:
+        case 10 ... 15:
             return "fine"
-        case 15...20:
+        case 15 ... 20:
             return "normal"
-        case 20...27:
+        case 20 ... 27:
             return "coarse"
-        case 27...31:
+        case 27 ... 31:
             return "very coarse"
         default:
             return defaultString
@@ -153,5 +149,4 @@ class BrewTypeStringifier: ValueStringifier {
             return defaultString
         }
     }
-
 }

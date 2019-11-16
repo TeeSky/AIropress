@@ -9,9 +9,7 @@
 import Foundation
 import UIKit
 
-class RecipeConstantCell: BaseTableViewCell<RecipeConstantCellView> {
-
-}
+class RecipeConstantCell: BaseTableViewCell<RecipeConstantCellView> {}
 
 extension RecipeConstantCell: ConfigurableTableCell {
 
@@ -22,6 +20,6 @@ extension RecipeConstantCell: ConfigurableTableCell {
         cellView.constantValue.text = viewModel.cellValueText
 
         didSetConstraints = false
-        self.updateConstraints()
+        updateConstraints()
     }
 }

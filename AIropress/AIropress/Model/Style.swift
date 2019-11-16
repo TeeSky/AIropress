@@ -21,13 +21,13 @@ public enum DefaultStyle {
         public static let buttonPositive = positiveGreen
         public static let buttonNegative = negativeRed
 
-        private static let brownDark = UIColor(red: 62/255, green: 39/255, blue: 35/255, alpha: 1)
-        private static let brownLight = UIColor(red: 141/255, green: 110/255, blue: 99/255, alpha: 1)
+        private static let brownDark = UIColor(red: 62 / 255, green: 39 / 255, blue: 35 / 255, alpha: 1)
+        private static let brownLight = UIColor(red: 141 / 255, green: 110 / 255, blue: 99 / 255, alpha: 1)
 
-        private static let brownLightest = UIColor(red: 239/255, green: 235/255, blue: 233/255, alpha: 1)
+        private static let brownLightest = UIColor(red: 239 / 255, green: 235 / 255, blue: 233 / 255, alpha: 1)
 
-        private static let positiveGreen = UIColor(red: 76/255, green: 175/255, blue: 80/255, alpha: 1)
-        private static let negativeRed = UIColor(red: 211/255, green: 47/255, blue: 47/255, alpha: 1)
+        private static let positiveGreen = UIColor(red: 76 / 255, green: 175 / 255, blue: 80 / 255, alpha: 1)
+        private static let negativeRed = UIColor(red: 211 / 255, green: 47 / 255, blue: 47 / 255, alpha: 1)
     }
 
     public enum Font {

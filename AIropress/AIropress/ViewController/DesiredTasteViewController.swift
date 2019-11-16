@@ -21,19 +21,21 @@ class DesiredTasteViewController: BaseViewController<DesiredTasteSceneView> {
         sceneView.tableView.dataSource = self
         sceneView.tableView.delegate = self
 
-        sceneView.calculateButton.addTarget(viewModel,
-                                            action: #selector(viewModel.onCalculateClicked),
-                                            for: .touchUpInside)
+        sceneView.calculateButton.addTarget(
+            viewModel,
+            action: #selector(viewModel.onCalculateClicked),
+            for: .touchUpInside
+        )
     }
 }
 
 extension DesiredTasteViewController: UITableViewDataSource {
 
-    func numberOfSections(in tableView: UITableView) -> Int {
+    func numberOfSections(in _: UITableView) -> Int {
         return viewModel.numberOfSections()
     }
 
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(_: UITableView, numberOfRowsInSection section: Int) -> Int {
         return viewModel.numberOfRows(section: section)
     }
 
@@ -52,7 +54,7 @@ extension DesiredTasteViewController: UITableViewDataSource {
 
 extension DesiredTasteViewController: UITableViewDelegate {
 
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+    func tableView(_: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return viewModel.cellHeight(for: indexPath)
     }
 }
