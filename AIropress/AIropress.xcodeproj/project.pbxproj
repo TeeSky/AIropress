@@ -1321,7 +1321,7 @@
 				35076C53230468F6006BBDDF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Format;
+			defaultConfigurationName = Release;
 		};
 		35076C54230468F6006BBDDF /* Build configuration list for PBXNativeTarget "AIropress" */ = {
 			isa = XCConfigurationList;
@@ -1331,7 +1331,7 @@
 				35076C56230468F6006BBDDF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Format;
+			defaultConfigurationName = Release;
 		};
 		35076C57230468F6006BBDDF /* Build configuration list for PBXNativeTarget "AIropressTests" */ = {
 			isa = XCConfigurationList;
@@ -1341,7 +1341,7 @@
 				35076C59230468F6006BBDDF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Format;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
