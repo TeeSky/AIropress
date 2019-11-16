@@ -600,7 +600,8 @@
 			buildConfigurationList = 35076C54230468F6006BBDDF /* Build configuration list for PBXNativeTarget "AIropress" */;
 			buildPhases = (
 				EF8CEA5F341D9C3F5F3CE224 /* [CP] Check Pods Manifest.lock */,
-				35167BA92336DFD2003FCD92 /* Run Script */,
+				35167BA92336DFD2003FCD92 /* Run Script - SwiftLint autocorrect */,
+				3575DC3D2380690F00DDE35E /* Run Script - SwiftFormat */,
 				35076C33230468F5006BBDDF /* Sources */,
 				35167BA82336DA5C003FCD92 /* Run Script - SwiftLint check */,
 				35076C34230468F5006BBDDF /* Frameworks */,
@@ -712,7 +713,7 @@
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/SwiftLint/swiftlint\"\n";
 		};
-		35167BA92336DFD2003FCD92 /* Run Script */ = {
+		35167BA92336DFD2003FCD92 /* Run Script - SwiftLint autocorrect */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -721,7 +722,7 @@
 			);
 			inputPaths = (
 			);
-			name = "Run Script";
+			name = "Run Script - SwiftLint autocorrect";
 			outputFileListPaths = (
 			);
 			outputPaths = (
@@ -729,6 +730,24 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/SwiftLint/swiftlint\" autocorrect\n";
+		};
+		3575DC3D2380690F00DDE35E /* Run Script - SwiftFormat */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 8;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "Run Script - SwiftFormat";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/SwiftFormat/CommandLineTool/swiftformat\" \"${SRCROOT}/\"\n";
 		};
 		AFAF644CABFBF9D301313641 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;

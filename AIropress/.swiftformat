@@ -1,0 +1,19 @@
+# SETUP
+--swiftversion 5.1
+--exclude Pods
+
+# DISABLED
+--disable blankLinesAtStartOfScope
+
+# WRAPPING
+--wraparguments before-first
+--wrapcollections before-first
+--elseposition same-line
+
+# TRIMMING
+--semicolons never
+--commas inline
+--trimwhitespace always
+
+
+
