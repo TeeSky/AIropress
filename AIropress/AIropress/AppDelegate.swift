@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Firebase
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -18,7 +19,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func applicationDidFinishLaunching(_: UIApplication) {
 
-        // Override point for customization after application launch.
+        // Init
         let navigationController = UINavigationController()
         navigationController.setNavigationBarHidden(true, animated: false)
         self.navigationController = navigationController
@@ -33,9 +34,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         )
         self.flowController = flowController
 
-        window.makeKeyAndVisible()
+        // Start Firebase
+
+        FirebaseApp.configure()
+
+        // Start flow controller
 
         flowController.startFlow(launchMode: .normal)
+
+        // Make visible
+
+        window.makeKeyAndVisible()
     }
 
     func application(
