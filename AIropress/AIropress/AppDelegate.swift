@@ -37,6 +37,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Start Firebase
 
         FirebaseApp.configure()
+        FStore.configure()
 
         // Start flow controller
 
