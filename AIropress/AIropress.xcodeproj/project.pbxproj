@@ -53,8 +53,8 @@
 		3512F347232C429F00368485 /* BrewDoneVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3512F346232C429F00368485 /* BrewDoneVM.swift */; };
 		3512F348232C42B100368485 /* BrewDoneVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3512F346232C429F00368485 /* BrewDoneVM.swift */; };
 		3512F34A232C435600368485 /* BrewDoneSceneView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3512F349232C435600368485 /* BrewDoneSceneView.swift */; };
-		3512F34C232C448300368485 /* AllDoneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3512F34B232C448300368485 /* AllDoneViewController.swift */; };
-		3512F34D232C45D400368485 /* AllDoneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3512F34B232C448300368485 /* AllDoneViewController.swift */; };
+		3512F34C232C448300368485 /* BrewDoneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3512F34B232C448300368485 /* BrewDoneViewController.swift */; };
+		3512F34D232C45D400368485 /* BrewDoneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3512F34B232C448300368485 /* BrewDoneViewController.swift */; };
 		3512F34E232C45D800368485 /* BrewDoneSceneView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3512F349232C435600368485 /* BrewDoneSceneView.swift */; };
 		35167BA22336CCE8003FCD92 /* BrewRecipeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35167BA12336CCE8003FCD92 /* BrewRecipeTests.swift */; };
 		35167BA42336D30E003FCD92 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 35076C41230468F6006BBDDF /* Assets.xcassets */; };
@@ -155,6 +155,8 @@
 		35EC740A2308BF5F00964665 /* BrewVariableBundleCellVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35EC74082308BF1400964665 /* BrewVariableBundleCellVM.swift */; };
 		35EDE3502381D1A6009421CE /* Encodable+stringDictionary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35EDE34F2381D1A6009421CE /* Encodable+stringDictionary.swift */; };
 		35EDE3522381D901009421CE /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 35EDE3512381D901009421CE /* GoogleService-Info.plist */; };
+		35EDE3542381DAD2009421CE /* UILabel+init.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35EDE3532381DAD2009421CE /* UILabel+init.swift */; };
+		35EDE3562381DB8E009421CE /* Operator+optionalAssign.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35EDE3552381DB8E009421CE /* Operator+optionalAssign.swift */; };
 		35FF73F72328EE08008646DA /* BrewingVMTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35FF73F62328EE08008646DA /* BrewingVMTests.swift */; };
 		35FF73F82328EFD8008646DA /* BrewingPlan.swift in Sources */ = {isa = PBXBuildFile; fileRef = 352B6DB223285139004C43B8 /* BrewingPlan.swift */; };
 		470F73BE2378499500AAD8D1 /* AppOptionsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 470F73BD2378499500AAD8D1 /* AppOptionsTests.swift */; };
@@ -215,7 +217,7 @@
 		3512F344232C40C700368485 /* BrewDoneVMTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrewDoneVMTests.swift; sourceTree = "<group>"; };
 		3512F346232C429F00368485 /* BrewDoneVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrewDoneVM.swift; sourceTree = "<group>"; };
 		3512F349232C435600368485 /* BrewDoneSceneView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrewDoneSceneView.swift; sourceTree = "<group>"; };
-		3512F34B232C448300368485 /* AllDoneViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllDoneViewController.swift; sourceTree = "<group>"; };
+		3512F34B232C448300368485 /* BrewDoneViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrewDoneViewController.swift; sourceTree = "<group>"; };
 		35167BA12336CCE8003FCD92 /* BrewRecipeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrewRecipeTests.swift; sourceTree = "<group>"; };
 		351A66B023194BDE00D1061B /* BrewPrepVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrewPrepVM.swift; sourceTree = "<group>"; };
 		351A66B323194BFE00D1061B /* PrepParams.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrepParams.swift; sourceTree = "<group>"; };
@@ -273,6 +275,8 @@
 		35EC74082308BF1400964665 /* BrewVariableBundleCellVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrewVariableBundleCellVM.swift; sourceTree = "<group>"; };
 		35EDE34F2381D1A6009421CE /* Encodable+stringDictionary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Encodable+stringDictionary.swift"; sourceTree = "<group>"; };
 		35EDE3512381D901009421CE /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		35EDE3532381DAD2009421CE /* UILabel+init.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+init.swift"; sourceTree = "<group>"; };
+		35EDE3552381DB8E009421CE /* Operator+optionalAssign.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Operator+optionalAssign.swift"; sourceTree = "<group>"; };
 		35FF73F62328EE08008646DA /* BrewingVMTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrewingVMTests.swift; sourceTree = "<group>"; };
 		470F73BD2378499500AAD8D1 /* AppOptionsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppOptionsTests.swift; sourceTree = "<group>"; };
 		470F73C32378D22700AAD8D1 /* UIColor+darkMode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+darkMode.swift"; sourceTree = "<group>"; };
@@ -327,7 +331,7 @@
 				352A1FAD230F544F00D7FE02 /* ViewRecipeViewController.swift */,
 				351A66C42319CBE800D1061B /* BrewPrepViewController.swift */,
 				3512F33E232C19B700368485 /* BrewingViewController.swift */,
-				3512F34B232C448300368485 /* AllDoneViewController.swift */,
+				3512F34B232C448300368485 /* BrewDoneViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -348,6 +352,7 @@
 				3549D8C92333D27A00267796 /* Dictionary+merge.swift */,
 				3512F341232C223300368485 /* Collection+safeSubscript.swift */,
 				35EDE34F2381D1A6009421CE /* Encodable+stringDictionary.swift */,
+				35EDE3552381DB8E009421CE /* Operator+optionalAssign.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -599,6 +604,7 @@
 				3527AF13230DFFCA00ED0E26 /* UIView+fadeTransition.swift */,
 				350457FA2309AEB500F4B8DC /* UINavigationController+BaseNavigationController.swift */,
 				3532AA9923105E0500C1F373 /* TinyEdgeInset+convienceInit.swift */,
+				35EDE3532381DAD2009421CE /* UILabel+init.swift */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -904,10 +910,11 @@
 				3512F333232BC8DC00368485 /* BrewingVM.swift in Sources */,
 				354F1B112381C33D00664F76 /* FStore.swift in Sources */,
 				35072E4D230B47D500689F75 /* BrewVariableBundleCell.swift in Sources */,
+				35EDE3562381DB8E009421CE /* Operator+optionalAssign.swift in Sources */,
 				3546370823316AD0006C8DA6 /* AeroPressFilterPlan.swift in Sources */,
 				350457FD230A07DA00F4B8DC /* BaseViewController.swift in Sources */,
 				351A66BA23194C4C00D1061B /* PrepStepCellVM.swift in Sources */,
-				3512F34C232C448300368485 /* AllDoneViewController.swift in Sources */,
+				3512F34C232C448300368485 /* BrewDoneViewController.swift in Sources */,
 				3549D8CA2333D27A00267796 /* Dictionary+merge.swift in Sources */,
 				3506807C231A9B8000604CE5 /* Double+toString.swift in Sources */,
 				3532AA9823105C4700C1F373 /* RecipeConstantCellView.swift in Sources */,
@@ -933,7 +940,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3512F34D232C45D400368485 /* AllDoneViewController.swift in Sources */,
+				3512F34D232C45D400368485 /* BrewDoneViewController.swift in Sources */,
 				35072E41230B0BEA00689F75 /* DesiredTasteViewController.swift in Sources */,
 				35072E4B230B475A00689F75 /* ConfigurableTableCell.swift in Sources */,
 				35833E5B230753EC002F986B /* MainFlowController.swift in Sources */,
