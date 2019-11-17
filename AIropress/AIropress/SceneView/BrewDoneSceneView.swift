@@ -10,52 +10,83 @@ import Foundation
 import TinyConstraints
 import UIKit
 
-class BrewDoneSceneView: BaseSceneView {
+class BrewDoneSceneView: LabeledSceneView {
 
-    lazy var brewDoneLabelContainer: UIView = {
+    private lazy var rateSwitchLabel: UILabel = {
+        UILabel(text: "Rate?", textAlignment: .center)
+    }()
+
+    lazy var rateSwitch: UISwitch = {
+        UISwitch(.normal)
+    }()
+
+    lazy var tableView: UITableView = {
+        let tableView = UITableView()
+        tableView.allowsSelection = false
+        tableView.separatorStyle = .none
+        tableView.showsVerticalScrollIndicator = false
+        return tableView
+    }()
+
+    lazy var rateSwitchContainer: UIView = {
         let container = UIView()
 
-        let label = brewDoneLabel
+        let label = rateSwitchLabel
+        let rSwitch = rateSwitch
         container.addSubview(label)
-        label.centerXToSuperview()
+        container.addSubview(rSwitch)
+
+        label.leftToSuperview()
+        label.centerYToSuperview()
+
+        rSwitch.rightToSuperview()
+        rSwitch.centerYToSuperview()
 
         return container
     }()
 
-    lazy var makeAnotherButton: UIButton = {
-        BaseSceneView.createButton(title: "Make Another", color: Style.Color.buttonPositive)
+    lazy var bottomButton: UIButton = {
+        UIButton(.positive(withTitle: "Make Another"))
     }()
 
-    private lazy var brewDoneLabel: UILabel = {
-        let label = UILabel()
-        label.text = "Brew done"
-        label.textAlignment = .center
-        label.font = Style.Font.make(ofSize: .xlarge, weight: .medium)
-        return label
-    }()
-    
+    override func getSceneLabelText() -> String {
+        return "Brew done"
+    }
+
     override func addViews() {
         super.addViews()
 
-        addSubview(brewDoneLabelContainer)
-        addSubview(makeAnotherButton)
+        addSubview(rateSwitchContainer)
+        addSubview(tableView)
+        addSubview(bottomButton)
     }
 
     override func setColors() {
         super.setColors()
 
-        brewDoneLabel.textColor = Style.Color.text
-        BaseSceneView.colorizeButton(makeAnotherButton)
+        BaseSceneView.colorizeButton(bottomButton)
+        BaseSceneView.colorizeSwitch(rateSwitch)
     }
 
     override func setConstraints() {
         super.setConstraints()
 
-        brewDoneLabelContainer.height(120)
+        rateSwitchContainer.height(70)
+        rateSwitchContainer.edges(to: contentContainer, excluding: .bottom)
 
-        brewDoneLabelContainer.centerInSuperview()
+        tableView.topToBottom(of: rateSwitchContainer)
+        tableView.edges(to: contentContainer, excluding: .top)
 
-        makeAnotherButton.centerXToSuperview()
-        makeAnotherButton.bottomToSuperview(offset: -15, usingSafeArea: true)
+        bottomButton.center(in: bottomButtonContainer)
+    }
+
+    func setRateOn(_ rateOn: Bool) {
+        if rateOn {
+            tableView.isHidden = false
+            bottomButton.titleLabel?.text = "Save & Finish"
+        } else {
+            tableView.isHidden = true
+            bottomButton.titleLabel?.text = "Make Another"
+        }
     }
 }

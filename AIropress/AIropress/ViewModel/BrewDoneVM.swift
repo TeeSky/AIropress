@@ -8,12 +8,12 @@
 
 import Foundation
 
-class BrewDoneVM: BaseViewModel {
+class BrewDoneVM: VariableBundleVM {
 
     weak var flowController: BrewDoneSceneFC?
 
     @objc
-    func onMakeAnotherClicked() {
+    func onMakeAnotherTapped() {
         flowController?.onMakeAnother()
     }
 }

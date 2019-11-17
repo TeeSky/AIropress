@@ -92,4 +92,11 @@ class BaseSceneView: UIView {
         button.backgroundColor = backgroundColor
         button.setTitleColor(textColor, for: .normal)
     }
+
+    static func colorizeSwitch(
+        _ uiSwitch: UISwitch,
+        tintColor: UIColor = Style.Color.tint
+    ) {
+        uiSwitch.onTintColor = tintColor
+    }
 }
