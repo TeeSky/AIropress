@@ -36,6 +36,7 @@ class BrewVariableSlider: UIView, DiscreteSliderDelegate {
 
     private lazy var slider: DiscreteSlider = {
         let slider = DiscreteSlider()
+        slider.tintColor = Style.Color.tint
         return slider
     }()
 
@@ -101,5 +102,11 @@ class BrewVariableSlider: UIView, DiscreteSliderDelegate {
             fatalError("Property variable must be set beforehand (by calling configure fuction).")
         }
         delegate?.onValueChanged(variable: variable, to: value)
+    }
+
+    override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
+        super.traitCollectionDidChange(previousTraitCollection)
+
+        slider.tintColor = Style.Color.tint
     }
 }
