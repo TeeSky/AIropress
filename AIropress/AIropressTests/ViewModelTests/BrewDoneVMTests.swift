@@ -1,5 +1,5 @@
 //
-//  AllDoneVMTests.swift
+//  BrewDoneVMTests.swift
 //  AIropressTests
 //
 //  Created by Tomas Skypala on 13/09/2019.
@@ -8,7 +8,7 @@
 
 import XCTest
 
-class MockAllDoneSceneFC: AllDoneSceneFC {
+class MockBrewDoneSceneFC: BrewDoneSceneFC {
 
     var calledMakeAnother: Bool?
 
@@ -17,22 +17,22 @@ class MockAllDoneSceneFC: AllDoneSceneFC {
     }
 }
 
-class AllDoneVMTests: XCTestCase {
+class BrewDoneVMTests: XCTestCase {
 
-    var allDoneVM: AllDoneVM!
+    var brewDoneVM: BrewDoneVM!
 
     override func setUp() {
         super.setUp()
 
-        allDoneVM = AllDoneVM()
+        brewDoneVM = BrewDoneVM()
     }
 
     func testOnMakeAnother() {
         let expectedCalledMakeAnother = true
-        let flowController = MockAllDoneSceneFC()
-        allDoneVM.flowController = flowController
+        let flowController = MockBrewDoneSceneFC()
+        brewDoneVM.flowController = flowController
 
-        allDoneVM.onMakeAnotherClicked()
+        brewDoneVM.onMakeAnotherClicked()
 
         XCTAssertEqual(expectedCalledMakeAnother, flowController.calledMakeAnother)
     }

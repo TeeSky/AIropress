@@ -133,7 +133,7 @@ extension MainFlowController: BrewingSceneFC {
     }
 }
 
-extension MainFlowController: AllDoneSceneFC {
+extension MainFlowController: BrewDoneSceneFC {
 
     func onMakeAnother() {
         navigationController.pop(animated: true)

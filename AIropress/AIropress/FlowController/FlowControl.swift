@@ -31,6 +31,6 @@ protocol BrewingSceneFC: AnyObject {
     func onBrewFinished()
 }
 
-protocol AllDoneSceneFC: AnyObject {
+protocol BrewDoneSceneFC: AnyObject {
     func onMakeAnother()
 }

@@ -1,5 +1,5 @@
 //
-//  AllDoneViewController.swift
+//  BrewDoneViewController.swift
 //  AIropress
 //
 //  Created by Tomas Skypala on 13/09/2019.
@@ -8,9 +8,9 @@
 
 import Foundation
 
-class AllDoneViewController: BaseViewController<AllDoneSceneView> {
+class BrewDoneViewController: BaseViewController<BrewDoneSceneView> {
 
-    var viewModel: AllDoneVM!
+    var viewModel: BrewDoneVM!
 
     override func viewDidLoad() {
         super.viewDidLoad()

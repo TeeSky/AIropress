@@ -45,9 +45,9 @@ struct MainViewControllerProvider: ViewControllerProvider {
             brewingViewController.viewModel = brewingVM
             controller = brewingViewController
         case .allDone:
-            let allDoneVM = AllDoneVM()
+            let allDoneVM = BrewDoneVM()
             allDoneVM.flowController = flowController
-            let allDoneViewController = AllDoneViewController()
+            let allDoneViewController = BrewDoneViewController()
             allDoneViewController.viewModel = allDoneVM
             controller = allDoneViewController
 //        default:

@@ -1,5 +1,5 @@
 //
-//  AllDoneVM.swift
+//  BrewDoneVM.swift
 //  AIropress
 //
 //  Created by Tomas Skypala on 13/09/2019.
@@ -8,9 +8,9 @@
 
 import Foundation
 
-class AllDoneVM: BaseViewModel {
+class BrewDoneVM: BaseViewModel {
 
-    weak var flowController: AllDoneSceneFC?
+    weak var flowController: BrewDoneSceneFC?
 
     @objc
     func onMakeAnotherClicked() {

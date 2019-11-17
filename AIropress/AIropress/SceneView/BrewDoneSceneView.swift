@@ -1,5 +1,5 @@
 //
-//  AllDoneSceneView.swift
+//  BrewDoneSceneView.swift
 //  AIropress
 //
 //  Created by Tomas Skypala on 13/09/2019.
@@ -10,12 +10,12 @@ import Foundation
 import TinyConstraints
 import UIKit
 
-class AllDoneSceneView: BaseSceneView {
+class BrewDoneSceneView: BaseSceneView {
 
-    lazy var allDoneLabelContainer: UIView = {
+    lazy var brewDoneLabelContainer: UIView = {
         let container = UIView()
 
-        let label = allDoneLabel
+        let label = brewDoneLabel
         container.addSubview(label)
         label.centerXToSuperview()
 
@@ -26,34 +26,34 @@ class AllDoneSceneView: BaseSceneView {
         BaseSceneView.createButton(title: "Make Another", color: Style.Color.buttonPositive)
     }()
 
-    private lazy var allDoneLabel: UILabel = {
+    private lazy var brewDoneLabel: UILabel = {
         let label = UILabel()
-        label.text = "All done"
+        label.text = "Brew done"
         label.textAlignment = .center
         label.font = Style.Font.make(ofSize: .xlarge, weight: .medium)
         return label
     }()
-
+    
     override func addViews() {
         super.addViews()
 
-        addSubview(allDoneLabelContainer)
+        addSubview(brewDoneLabelContainer)
         addSubview(makeAnotherButton)
     }
 
     override func setColors() {
         super.setColors()
 
-        allDoneLabel.textColor = Style.Color.text
+        brewDoneLabel.textColor = Style.Color.text
         BaseSceneView.colorizeButton(makeAnotherButton)
     }
 
     override func setConstraints() {
         super.setConstraints()
 
-        allDoneLabelContainer.height(120)
+        brewDoneLabelContainer.height(120)
 
-        allDoneLabelContainer.centerInSuperview()
+        brewDoneLabelContainer.centerInSuperview()
 
         makeAnotherButton.centerXToSuperview()
         makeAnotherButton.bottomToSuperview(offset: -15, usingSafeArea: true)
