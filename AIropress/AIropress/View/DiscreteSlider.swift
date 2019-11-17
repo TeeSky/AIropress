@@ -67,10 +67,8 @@ class DiscreteSlider: UISlider {
         let valueRounded = Int(value.rounded())
         guard valueRounded != previousRoundValue else {
             setValue(Float(valueRounded), animated: false)
-            print("slider return")
             return
         }
-        print("slider send action valid, value: \(valueRounded)")
         previousRoundValue = valueRounded
 
         setValue(Float(valueRounded), animated: true)
