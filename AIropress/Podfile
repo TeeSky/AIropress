@@ -9,6 +9,11 @@ target 'AIropress' do
 
   pod 'TinyConstraints'
 
+  # Essential Firebase pod for Google Analytics
+  pod 'Firebase/Analytics'
+  # Other Firebase products
+  # https://firebase.google.com/docs/ios/setup#available-pods
+
 
   target 'AIropressTests' do
     inherit! :search_paths
