@@ -158,6 +158,7 @@
 		35EDE3542381DAD2009421CE /* UILabel+init.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35EDE3532381DAD2009421CE /* UILabel+init.swift */; };
 		35EDE3562381DB8E009421CE /* Operator+optionalAssign.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35EDE3552381DB8E009421CE /* Operator+optionalAssign.swift */; };
 		35EDE3582381E0B7009421CE /* UIButton+init.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35EDE3572381E0B7009421CE /* UIButton+init.swift */; };
+		35EDE35A2381FBE7009421CE /* UISwitch+init.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35EDE3592381FBE7009421CE /* UISwitch+init.swift */; };
 		35FF73F72328EE08008646DA /* BrewingVMTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35FF73F62328EE08008646DA /* BrewingVMTests.swift */; };
 		35FF73F82328EFD8008646DA /* BrewingPlan.swift in Sources */ = {isa = PBXBuildFile; fileRef = 352B6DB223285139004C43B8 /* BrewingPlan.swift */; };
 		470F73BE2378499500AAD8D1 /* AppOptionsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 470F73BD2378499500AAD8D1 /* AppOptionsTests.swift */; };
@@ -279,6 +280,7 @@
 		35EDE3532381DAD2009421CE /* UILabel+init.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+init.swift"; sourceTree = "<group>"; };
 		35EDE3552381DB8E009421CE /* Operator+optionalAssign.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Operator+optionalAssign.swift"; sourceTree = "<group>"; };
 		35EDE3572381E0B7009421CE /* UIButton+init.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+init.swift"; sourceTree = "<group>"; };
+		35EDE3592381FBE7009421CE /* UISwitch+init.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UISwitch+init.swift"; sourceTree = "<group>"; };
 		35FF73F62328EE08008646DA /* BrewingVMTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrewingVMTests.swift; sourceTree = "<group>"; };
 		470F73BD2378499500AAD8D1 /* AppOptionsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppOptionsTests.swift; sourceTree = "<group>"; };
 		470F73C32378D22700AAD8D1 /* UIColor+darkMode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+darkMode.swift"; sourceTree = "<group>"; };
@@ -608,6 +610,7 @@
 				3532AA9923105E0500C1F373 /* TinyEdgeInset+convienceInit.swift */,
 				35EDE3532381DAD2009421CE /* UILabel+init.swift */,
 				35EDE3572381E0B7009421CE /* UIButton+init.swift */,
+				35EDE3592381FBE7009421CE /* UISwitch+init.swift */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -921,6 +924,7 @@
 				3549D8CA2333D27A00267796 /* Dictionary+merge.swift in Sources */,
 				3506807C231A9B8000604CE5 /* Double+toString.swift in Sources */,
 				3532AA9823105C4700C1F373 /* RecipeConstantCellView.swift in Sources */,
+				35EDE35A2381FBE7009421CE /* UISwitch+init.swift in Sources */,
 				3532AA9E23106AA800C1F373 /* RecipeSemiConstantCellView.swift in Sources */,
 				35045802230A0E3300F4B8DC /* DesiredTasteSceneView.swift in Sources */,
 				35833E522307534F002F986B /* FlowControl.swift in Sources */,
