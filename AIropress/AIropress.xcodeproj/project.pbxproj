@@ -122,7 +122,6 @@
 		3549D8CA2333D27A00267796 /* Dictionary+merge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3549D8C92333D27A00267796 /* Dictionary+merge.swift */; };
 		3549D8CB2333D39100267796 /* RecipeValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3549D8C723339C8100267796 /* RecipeValue.swift */; };
 		3549D8CC2333D39400267796 /* Dictionary+merge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3549D8C92333D27A00267796 /* Dictionary+merge.swift */; };
-		354F1B072381AA2700664F76 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 354F1B052381AA2300664F76 /* GoogleService-Info.plist */; };
 		354F1B112381C33D00664F76 /* FStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 354F1B102381C33D00664F76 /* FStore.swift */; };
 		3552D3CE235E5E1200C0FF6F /* UserActivityType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3552D3CD235E5E1200C0FF6F /* UserActivityType.swift */; };
 		3560123E23071AEA003AF91D /* MainFlowControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3560123C23071AEA003AF91D /* MainFlowControllerTests.swift */; };
@@ -155,6 +154,7 @@
 		35EC74092308BF1400964665 /* BrewVariableBundleCellVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35EC74082308BF1400964665 /* BrewVariableBundleCellVM.swift */; };
 		35EC740A2308BF5F00964665 /* BrewVariableBundleCellVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35EC74082308BF1400964665 /* BrewVariableBundleCellVM.swift */; };
 		35EDE3502381D1A6009421CE /* Encodable+stringDictionary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35EDE34F2381D1A6009421CE /* Encodable+stringDictionary.swift */; };
+		35EDE3522381D901009421CE /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 35EDE3512381D901009421CE /* GoogleService-Info.plist */; };
 		35FF73F72328EE08008646DA /* BrewingVMTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35FF73F62328EE08008646DA /* BrewingVMTests.swift */; };
 		35FF73F82328EFD8008646DA /* BrewingPlan.swift in Sources */ = {isa = PBXBuildFile; fileRef = 352B6DB223285139004C43B8 /* BrewingPlan.swift */; };
 		470F73BE2378499500AAD8D1 /* AppOptionsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 470F73BD2378499500AAD8D1 /* AppOptionsTests.swift */; };
@@ -251,7 +251,6 @@
 		3546370723316AD0006C8DA6 /* AeroPressFilterPlan.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AeroPressFilterPlan.swift; sourceTree = "<group>"; };
 		3549D8C723339C8100267796 /* RecipeValue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeValue.swift; sourceTree = "<group>"; };
 		3549D8C92333D27A00267796 /* Dictionary+merge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Dictionary+merge.swift"; sourceTree = "<group>"; };
-		354F1B052381AA2300664F76 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		354F1B102381C33D00664F76 /* FStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FStore.swift; sourceTree = "<group>"; };
 		3552D3CD235E5E1200C0FF6F /* UserActivityType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserActivityType.swift; sourceTree = "<group>"; };
 		3560123C23071AEA003AF91D /* MainFlowControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainFlowControllerTests.swift; sourceTree = "<group>"; };
@@ -273,6 +272,7 @@
 		35EC74052308BEE300964665 /* DesiredTasteVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesiredTasteVM.swift; sourceTree = "<group>"; };
 		35EC74082308BF1400964665 /* BrewVariableBundleCellVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrewVariableBundleCellVM.swift; sourceTree = "<group>"; };
 		35EDE34F2381D1A6009421CE /* Encodable+stringDictionary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Encodable+stringDictionary.swift"; sourceTree = "<group>"; };
+		35EDE3512381D901009421CE /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		35FF73F62328EE08008646DA /* BrewingVMTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrewingVMTests.swift; sourceTree = "<group>"; };
 		470F73BD2378499500AAD8D1 /* AppOptionsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppOptionsTests.swift; sourceTree = "<group>"; };
 		470F73C32378D22700AAD8D1 /* UIColor+darkMode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+darkMode.swift"; sourceTree = "<group>"; };
@@ -421,6 +421,7 @@
 				35076C41230468F6006BBDDF /* Assets.xcassets */,
 				35076C43230468F6006BBDDF /* LaunchScreen.storyboard */,
 				35076C46230468F6006BBDDF /* Info.plist */,
+				35EDE3512381D901009421CE /* GoogleService-Info.plist */,
 			);
 			path = AIropress;
 			sourceTree = "<group>";
@@ -434,7 +435,6 @@
 				35EC73F52308270800964665 /* ModelTests */,
 				35072E51230B4AD400689F75 /* ViewTests */,
 				35076C51230468F6006BBDDF /* Info.plist */,
-				354F1B052381AA2300664F76 /* GoogleService-Info.plist */,
 				35EC73F823082D7100964665 /* XCTestCase+setUp.swift */,
 			);
 			path = AIropressTests;
@@ -702,7 +702,7 @@
 			files = (
 				35076C45230468F6006BBDDF /* LaunchScreen.storyboard in Resources */,
 				35076C42230468F6006BBDDF /* Assets.xcassets in Resources */,
-				354F1B072381AA2700664F76 /* GoogleService-Info.plist in Resources */,
+				35EDE3522381D901009421CE /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
