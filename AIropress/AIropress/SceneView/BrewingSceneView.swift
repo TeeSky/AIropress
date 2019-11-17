@@ -67,6 +67,7 @@ class BrewingSceneView: BaseSceneView {
         super.setColors()
 
         mainTimerLabel.textColor = Style.Color.text
+        BaseSceneView.colorizeButton(stopButton, backgroundColor: Style.Color.buttonNegative)
     }
 
     override func setConstraints() {

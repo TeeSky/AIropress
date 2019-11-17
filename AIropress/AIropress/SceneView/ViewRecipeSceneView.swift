@@ -45,6 +45,7 @@ class ViewRecipeSceneView: LabeledSceneView {
 
         tableView.backgroundColor = Style.Color.background
         BaseSceneView.colorizeButton(prepareButton)
+        BaseSceneView.colorizeButton(resetButton, backgroundColor: Style.Color.buttonNegative)
     }
 
     override func setConstraints() {
