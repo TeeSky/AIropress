@@ -32,7 +32,7 @@ public enum DefaultStyle {
 
     public enum Font {
 
-        public static func make(ofSize size: Size, weight: UIFont.Weight = .regular) -> UIFont {
+        public static func make(ofSize size: Size = .normal, weight: UIFont.Weight = .regular) -> UIFont {
             return UIFont.systemFont(ofSize: size.rawValue, weight: weight)
         }
 

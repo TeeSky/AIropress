@@ -12,14 +12,12 @@ extension UILabel {
 
     convenience init(
         text: String? = nil,
-        textColor: UIColor? = nil,
         textAlignment: NSTextAlignment? = nil,
-        font: UIFont? = nil
+        font: UIFont = Style.Font.make()
     ) {
         self.init()
 
         self.text ?= text
-        self.textColor ?= textColor
         self.textAlignment ?= textAlignment
         self.font ?= font
     }
