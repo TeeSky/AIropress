@@ -5,6 +5,7 @@ target 'AIropress' do
   use_frameworks!
 
   pod 'SwiftLint'
+  pod 'SwiftFormat/CLI'
 
   pod 'TinyConstraints'
 
@@ -13,7 +14,6 @@ target 'AIropress' do
     inherit! :search_paths
 
     pod 'TinyConstraints'
-    pod 'SwiftFormat/CLI'
   end
 
 end
