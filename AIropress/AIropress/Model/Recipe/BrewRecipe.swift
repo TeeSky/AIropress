@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-struct BrewRecipe: Equatable, Codable {
+struct BrewRecipe: Equatable {
     let constants: [RecipeConstant]
     let semiConstants: [RecipeSemiConstant]
 
@@ -39,4 +39,8 @@ struct BrewRecipe: Equatable, Codable {
         }
         return recipe
     }
+}
+
+extension BrewRecipe: FSObject {
+    static var collectionId: String { "brew-recipes" }
 }
