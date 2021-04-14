@@ -1,10 +1,18 @@
 PODS:
+  - RxCocoa (6.1.0):
+    - RxRelay (= 6.1.0)
+    - RxSwift (= 6.1.0)
+  - RxRelay (6.1.0):
+    - RxSwift (= 6.1.0)
+  - RxSwift (6.1.0)
   - SnapKit (5.0.1)
   - SwiftFormat/CLI (0.40.11)
   - SwiftLint (0.34.0)
   - TinyConstraints (4.0.1)
 
 DEPENDENCIES:
+  - RxCocoa (= 6.1.0)
+  - RxSwift (= 6.1.0)
   - SnapKit (~> 5.0.0)
   - SwiftFormat/CLI
   - SwiftLint
@@ -16,14 +24,20 @@ SPEC REPOS:
     - SwiftLint
     - TinyConstraints
   trunk:
+    - RxCocoa
+    - RxRelay
+    - RxSwift
     - SnapKit
 
 SPEC CHECKSUMS:
+  RxCocoa: 5c51f02d562cbd94629f6c26cf0c80fe4ab8d343
+  RxRelay: 483e1a19fad961b41f0b0c0bee506f46c1ae14fe
+  RxSwift: a834e5c538e89eca0cae86f403f4fbf0336786ce
   SnapKit: 97b92857e3df3a0c71833cce143274bf6ef8e5eb
   SwiftFormat: 304f39cab266d39c9d60f4fceec37ed6f43b931c
   SwiftLint: 79d48a17c6565dc286c37efb8322c7b450f95c67
   TinyConstraints: 8dd91295e56797648c7bc335dd20e1d91ec4c192
 
-PODFILE CHECKSUM: 4e4385c0252360d0a813d97fa2346657f0a71e42
+PODFILE CHECKSUM: 94bd0a5eb41e1eac1cbe766621c2b6a83537fd6a
 
 COCOAPODS: 1.10.1
