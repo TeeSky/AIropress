@@ -15,36 +15,36 @@ protocol BrewingVMDelegate: AnyObject {
 
 class BrewingVM: BaseViewModel, BrewPhaseTimerDelegate {
 
+    weak var delegate: BrewingVMDelegate?
+    weak var flowController: BrewingSceneFC?
+
     private(set) var completedPhasesDuration: Double
     private(set) var currentTotalTicks: Int
     private(set) var currentBrewPhaseIndex: Int
     private(set) var currentBrewPhaseTimer: BrewPhaseTimer?
     private(set) var brewFinished: Bool
 
-    lazy var totalBrewTime: Double = {
-        brewPhases.map { $0.duration }.reduce(0, +)
-    }()
+    private lazy var totalBrewTime: Double = allBrewPhases.map(\.duration).reduce(0, +)
 
-    var nextPhaseTexts: [PhaseTextSet] {
+    var phaseTexts: [PhaseTextSet] {
         let startIndex = currentBrewPhaseIndex
-        let endIndex = min(startIndex + 2, brewPhases.count - 1)
+        let endIndex = min(startIndex + 2, allBrewPhases.count - 1)
 
-        let nextBrewPhases = Array(brewPhases[startIndex ... endIndex])
-        return nextBrewPhases.map { PhaseTextSet(labelText: $0.label, timerText: $0.duration.asStopwatchString()) }
+        let nextBrewPhases = Array(allBrewPhases[startIndex ... endIndex])
+        return nextBrewPhases.map(PhaseTextSet.init(brewPhase:))
     }
 
-    let brewPhases: [BrewPhase]
-    let brewTimerType: BrewPhaseTimer.Type
-
-    weak var delegate: BrewingVMDelegate?
-    weak var flowController: BrewingSceneFC?
+    private let allBrewPhases: [BrewPhase]
+    private let brewTimerType: BrewPhaseTimer.Type
 
     init(brewPhases: [BrewPhase], startPhaseIndex: Int = 0, timerType: BrewPhaseTimer.Type = BrewPhaseTimer.self) {
+
+        allBrewPhases = brewPhases
+
         completedPhasesDuration = 0
         currentTotalTicks = 0
         brewFinished = false
         currentBrewPhaseIndex = startPhaseIndex
-        self.brewPhases = brewPhases
         brewTimerType = timerType
     }
 
@@ -73,9 +73,9 @@ class BrewingVM: BaseViewModel, BrewPhaseTimerDelegate {
     }
 
     internal func onPhaseEnd() {
-        completedPhasesDuration += brewPhases[currentBrewPhaseIndex].duration
+        completedPhasesDuration += allBrewPhases[currentBrewPhaseIndex].duration
         currentBrewPhaseIndex += 1
-        guard currentBrewPhaseIndex < brewPhases.count else {
+        guard currentBrewPhaseIndex < allBrewPhases.count else {
             onBrewFinished()
             return
         }
@@ -88,11 +88,11 @@ class BrewingVM: BaseViewModel, BrewPhaseTimerDelegate {
             mainTimerText: (totalBrewTime - completedPhasesDuration).asStopwatchString(),
             currentPhaseTimerText: nil
         )
-        delegate?.setPhaseTexts(textSets: nextPhaseTexts)
+        delegate?.setPhaseTexts(textSets: phaseTexts)
 
         currentTotalTicks = 0
         currentBrewPhaseTimer = brewTimerType.init(
-            brewPhase: brewPhases[currentBrewPhaseIndex],
+            brewPhase: allBrewPhases[currentBrewPhaseIndex],
             delegate: self
         )
     }
