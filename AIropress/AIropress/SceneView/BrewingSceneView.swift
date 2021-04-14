@@ -2,65 +2,38 @@
 //  BrewingSceneView.swift
 //  AIropress
 //
-//  Created by Tomas Skypala on 13/09/2019.
-//  Copyright © 2019 Tomas Skypala. All rights reserved.
+//  Created by Tomáš Skýpala on 14.04.2021.
+//  Copyright © 2021 Tomas Skypala. All rights reserved.
 //
 
-import Foundation
-import TinyConstraints
+import SnapKit
 import UIKit
 
-class BrewingSceneView: BaseSceneView {
+final class BrewingSceneView: BaseSceneView {
 
-    lazy var safeAreaContainer: UIView = {
-        let container = UIView()
-        return container
-    }()
+    let mainTimerLabel = UILabel(font: .systemFont(ofSize: 47, weight: .medium))
 
-    lazy var mainTimerLabel: UILabel = {
-        let label = UILabel()
-        label.font = UIFont.systemFont(ofSize: 47, weight: .medium)
-        label.textAlignment = .center
-        return label
-    }()
+    let currentPhaseTimerLabel = PhaseLabelView(scale: .normal)
+    let next1TimerLabel = PhaseLabelView(scale: .small)
+    let next2TimerLabel = PhaseLabelView(scale: .smallest)
 
-    private lazy var phaseLabelsContainer: UIView = {
-        UIView()
-    }()
+    let stopButton = BaseSceneView.createNegativeButton(title: "Stop")
 
-    lazy var currentPhaseTimerLabel: PhaseLabelView = {
-        let phaseLabel = PhaseLabelView()
-        phaseLabel.setScale(scale: .normal)
-        return phaseLabel
-    }()
+    private lazy var phaseLabelsStackView: UIStackView = {
+        let stackView = UIStackView(
+            arrangedSubviews: [currentPhaseTimerLabel, next1TimerLabel, next2TimerLabel]
+        )
+        stackView.axis = .vertical
+        stackView.distribution = .equalSpacing
+        stackView.spacing = 10
 
-    lazy var next1TimerLabel: PhaseLabelView = {
-        let phaseLabel = PhaseLabelView()
-        phaseLabel.setScale(scale: .small)
-        return phaseLabel
-    }()
-
-    lazy var next2TimerLabel: PhaseLabelView = {
-        let phaseLabel = PhaseLabelView()
-        phaseLabel.setScale(scale: .smallest)
-        return phaseLabel
-    }()
-
-    lazy var stopButton: UIButton = {
-        BaseSceneView.createNegativeButton(title: "Stop")
+        return stackView
     }()
 
     override func addViews() {
         super.addViews()
 
-        addSubview(safeAreaContainer)
-        addSubview(mainTimerLabel)
-        addSubview(phaseLabelsContainer)
-        addSubview(stopButton)
-
-        phaseLabelsContainer.addSubview(currentPhaseTimerLabel)
-        phaseLabelsContainer.addSubview(next1TimerLabel)
-        phaseLabelsContainer.addSubview(next2TimerLabel)
+        addSubviews(mainTimerLabel, phaseLabelsStackView, stopButton)
     }
 
     override func setColors() {
@@ -70,23 +43,24 @@ class BrewingSceneView: BaseSceneView {
     }
 
     override func setConstraints() {
-        super.setConstraints()
 
-        safeAreaContainer.edgesToSuperview(insets: TinyEdgeInsets(size: 15), usingSafeArea: true)
+        let mainTimerLabelTopOffset = 90
+        mainTimerLabel.snp.makeConstraints { make in
+            make.centerX.equalTo(self.snp.centerX)
+            make.top.equalTo(self.safeAreaLayoutGuide.snp.top).offset(mainTimerLabelTopOffset)
+        }
 
-        mainTimerLabel.height(180)
-        mainTimerLabel.edges(to: safeAreaContainer, excluding: .bottom)
+        let phaseLabelSideInset = 24
+        phaseLabelsStackView.snp.makeConstraints { make in
+            make.leading.equalTo(self.safeAreaLayoutGuide.snp.leading).inset(phaseLabelSideInset)
+            make.trailing.equalTo(self.safeAreaLayoutGuide.snp.trailing).inset(phaseLabelSideInset)
+            make.centerY.equalTo(self.snp.centerY)
+        }
 
-        phaseLabelsContainer.stack(
-            [currentPhaseTimerLabel, next1TimerLabel, next2TimerLabel],
-            axis: .vertical, spacing: 10
-        )
-        phaseLabelsContainer.edges(
-            to: safeAreaContainer, excluding: .init(arrayLiteral: [.top, .bottom]),
-            insets: .init(horizontal: 5)
-        )
-        phaseLabelsContainer.centerYToSuperview()
-
-        stopButton.edges(to: safeAreaContainer, excluding: .init(arrayLiteral: [.top, .right]))
+        let buttonSideInset = 12
+        stopButton.snp.makeConstraints { make in
+            make.bottom.equalTo(self.safeAreaLayoutGuide.snp.bottom).inset(buttonSideInset)
+            make.trailing.equalTo(self.safeAreaLayoutGuide.snp.trailing).inset(buttonSideInset)
+        }
     }
 }
