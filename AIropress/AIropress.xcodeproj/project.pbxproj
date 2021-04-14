@@ -161,6 +161,7 @@
 		470F73C92378DFDA00AAD8D1 /* UIView+backgroundColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 470F73C52378D8BB00AAD8D1 /* UIView+backgroundColor.swift */; };
 		470F73CB2378E17400AAD8D1 /* Style.swift in Sources */ = {isa = PBXBuildFile; fileRef = 470F73CA2378E17400AAD8D1 /* Style.swift */; };
 		470F73CC2378F81C00AAD8D1 /* Style.swift in Sources */ = {isa = PBXBuildFile; fileRef = 470F73CA2378E17400AAD8D1 /* Style.swift */; };
+		473D023E262782F200319FF0 /* PhaseLabelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 473D023D262782F200319FF0 /* PhaseLabelView.swift */; };
 		4799751A235E6A7100962405 /* PrismoEspressoPlan.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47997519235E6A7100962405 /* PrismoEspressoPlan.swift */; };
 		4799751C235E727200962405 /* PrismoEspressoPlan.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47997519235E6A7100962405 /* PrismoEspressoPlan.swift */; };
 		73CEEAB2EF96AA6276E48A9F /* Pods_AIropressTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4DA8033607392551CCA2F0A5 /* Pods_AIropressTests.framework */; };
@@ -272,6 +273,7 @@
 		470F73C32378D22700AAD8D1 /* UIColor+darkMode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+darkMode.swift"; sourceTree = "<group>"; };
 		470F73C52378D8BB00AAD8D1 /* UIView+backgroundColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+backgroundColor.swift"; sourceTree = "<group>"; };
 		470F73CA2378E17400AAD8D1 /* Style.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Style.swift; sourceTree = "<group>"; };
+		473D023D262782F200319FF0 /* PhaseLabelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhaseLabelView.swift; sourceTree = "<group>"; };
 		47997519235E6A7100962405 /* PrismoEspressoPlan.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrismoEspressoPlan.swift; sourceTree = "<group>"; };
 		4DA8033607392551CCA2F0A5 /* Pods_AIropressTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AIropressTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		73DCB98EDA12910FCCC07D77 /* Pods-AIropressTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AIropressTests.release.xcconfig"; path = "Target Support Files/Pods-AIropressTests/Pods-AIropressTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -368,6 +370,7 @@
 				35072E3E230B002000689F75 /* DiscreteSlider.swift */,
 				35072E49230B475A00689F75 /* ConfigurableTableCell.swift */,
 				35124274230C5CA600C692DD /* BrewVariableSlider.swift */,
+				473D023D262782F200319FF0 /* PhaseLabelView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -876,6 +879,7 @@
 				3512F34A232C435600368485 /* AllDoneSceneView.swift in Sources */,
 				350457F52309A47300F4B8DC /* Options.swift in Sources */,
 				470F73CB2378E17400AAD8D1 /* Style.swift in Sources */,
+				473D023E262782F200319FF0 /* PhaseLabelView.swift in Sources */,
 				35EC74032308BEBC00964665 /* BaseViewModel.swift in Sources */,
 				35072E3F230B002000689F75 /* DiscreteSlider.swift in Sources */,
 				352A1FB4230F59BC00D7FE02 /* RecipeConstantCell.swift in Sources */,
