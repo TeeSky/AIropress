@@ -276,9 +276,11 @@
 		4DA8033607392551CCA2F0A5 /* Pods_AIropressTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AIropressTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		73DCB98EDA12910FCCC07D77 /* Pods-AIropressTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AIropressTests.release.xcconfig"; path = "Target Support Files/Pods-AIropressTests/Pods-AIropressTests.release.xcconfig"; sourceTree = "<group>"; };
 		82F617CABEF1402A5A3CB0AE /* Pods-AIropress.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AIropress.release.xcconfig"; path = "Target Support Files/Pods-AIropress/Pods-AIropress.release.xcconfig"; sourceTree = "<group>"; };
+		A0345FC84D934D5DD22754E8 /* Pods-AIropress.format.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AIropress.format.xcconfig"; path = "Target Support Files/Pods-AIropress/Pods-AIropress.format.xcconfig"; sourceTree = "<group>"; };
 		C5DE7E97D5832D15F91D83EE /* Pods_AIropress.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AIropress.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DB3017CA310FD2AA0059EE18 /* Pods-AIropress.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AIropress.debug.xcconfig"; path = "Target Support Files/Pods-AIropress/Pods-AIropress.debug.xcconfig"; sourceTree = "<group>"; };
 		DD14950032619E994894DF06 /* Pods-AIropressTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AIropressTests.debug.xcconfig"; path = "Target Support Files/Pods-AIropressTests/Pods-AIropressTests.debug.xcconfig"; sourceTree = "<group>"; };
+		FB792758141312D87B401E96 /* Pods-AIropressTests.format.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AIropressTests.format.xcconfig"; path = "Target Support Files/Pods-AIropressTests/Pods-AIropressTests.format.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -566,6 +568,8 @@
 				82F617CABEF1402A5A3CB0AE /* Pods-AIropress.release.xcconfig */,
 				DD14950032619E994894DF06 /* Pods-AIropressTests.debug.xcconfig */,
 				73DCB98EDA12910FCCC07D77 /* Pods-AIropressTests.release.xcconfig */,
+				A0345FC84D934D5DD22754E8 /* Pods-AIropress.format.xcconfig */,
+				FB792758141312D87B401E96 /* Pods-AIropressTests.format.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -1274,7 +1278,7 @@
 		};
 		3575DC3F2380950400DDE35E /* Format */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = DB3017CA310FD2AA0059EE18 /* Pods-AIropress.debug.xcconfig */;
+			baseConfigurationReference = A0345FC84D934D5DD22754E8 /* Pods-AIropress.format.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -1293,7 +1297,7 @@
 		};
 		3575DC402380950400DDE35E /* Format */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = DD14950032619E994894DF06 /* Pods-AIropressTests.debug.xcconfig */;
+			baseConfigurationReference = FB792758141312D87B401E96 /* Pods-AIropressTests.format.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = B4UQ3LXCE4;

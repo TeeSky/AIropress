@@ -6,8 +6,9 @@ target 'AIropress' do
 
   pod 'SwiftLint'
 
+  # UI
   pod 'TinyConstraints'
-
+  pod 'SnapKit', '~> 5.0.0'
 
   target 'AIropressTests' do
     inherit! :search_paths
