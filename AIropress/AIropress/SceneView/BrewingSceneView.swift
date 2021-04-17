@@ -46,21 +46,21 @@ final class BrewingSceneView: BaseSceneView {
 
         let mainTimerLabelTopOffset = 90
         mainTimerLabel.snp.makeConstraints { make in
-            make.centerX.equalTo(self.snp.centerX)
-            make.top.equalTo(self.safeAreaLayoutGuide.snp.top).offset(mainTimerLabelTopOffset)
+            make.centerX.equalTo(snp.centerX)
+            make.top.equalTo(safeAreaLayoutGuide.snp.top).offset(mainTimerLabelTopOffset)
         }
 
         let phaseLabelSideInset = 24
         phaseLabelsStackView.snp.makeConstraints { make in
-            make.leading.equalTo(self.safeAreaLayoutGuide.snp.leading).inset(phaseLabelSideInset)
-            make.trailing.equalTo(self.safeAreaLayoutGuide.snp.trailing).inset(phaseLabelSideInset)
-            make.centerY.equalTo(self.snp.centerY)
+            make.leading.equalTo(safeAreaLayoutGuide.snp.leading).inset(phaseLabelSideInset)
+            make.trailing.equalTo(safeAreaLayoutGuide.snp.trailing).inset(phaseLabelSideInset)
+            make.centerY.equalTo(snp.centerY)
         }
 
         let buttonSideInset = 12
         stopButton.snp.makeConstraints { make in
-            make.bottom.equalTo(self.safeAreaLayoutGuide.snp.bottom).inset(buttonSideInset)
-            make.trailing.equalTo(self.safeAreaLayoutGuide.snp.trailing).inset(buttonSideInset)
+            make.bottom.equalTo(safeAreaLayoutGuide.snp.bottom).inset(buttonSideInset)
+            make.trailing.equalTo(safeAreaLayoutGuide.snp.trailing).inset(buttonSideInset)
         }
     }
 }
