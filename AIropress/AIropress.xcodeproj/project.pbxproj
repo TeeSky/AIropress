@@ -165,6 +165,7 @@
 		47601A2F262794D200AE1D6B /* UILabel+Init.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47601A2E262794D200AE1D6B /* UILabel+Init.swift */; };
 		4799751A235E6A7100962405 /* PrismoEspressoPlan.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47997519235E6A7100962405 /* PrismoEspressoPlan.swift */; };
 		4799751C235E727200962405 /* PrismoEspressoPlan.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47997519235E6A7100962405 /* PrismoEspressoPlan.swift */; };
+		47AB41072628C751001DCF2C /* BrewingTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47AB41062628C751001DCF2C /* BrewingTimer.swift */; };
 		73CEEAB2EF96AA6276E48A9F /* Pods_AIropressTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4DA8033607392551CCA2F0A5 /* Pods_AIropressTests.framework */; };
 		85AF326F656DC5FB03F26AAF /* Pods_AIropress.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C5DE7E97D5832D15F91D83EE /* Pods_AIropress.framework */; };
 /* End PBXBuildFile section */
@@ -278,6 +279,7 @@
 		473D023D262782F200319FF0 /* PhaseLabelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhaseLabelView.swift; sourceTree = "<group>"; };
 		47601A2E262794D200AE1D6B /* UILabel+Init.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+Init.swift"; sourceTree = "<group>"; };
 		47997519235E6A7100962405 /* PrismoEspressoPlan.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrismoEspressoPlan.swift; sourceTree = "<group>"; };
+		47AB41062628C751001DCF2C /* BrewingTimer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrewingTimer.swift; sourceTree = "<group>"; };
 		4DA8033607392551CCA2F0A5 /* Pods_AIropressTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AIropressTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		73DCB98EDA12910FCCC07D77 /* Pods-AIropressTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AIropressTests.release.xcconfig"; path = "Target Support Files/Pods-AIropressTests/Pods-AIropressTests.release.xcconfig"; sourceTree = "<group>"; };
 		82F617CABEF1402A5A3CB0AE /* Pods-AIropress.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AIropress.release.xcconfig"; path = "Target Support Files/Pods-AIropress/Pods-AIropress.release.xcconfig"; sourceTree = "<group>"; };
@@ -482,6 +484,7 @@
 				351A66B323194BFE00D1061B /* PrepParams.swift */,
 				3512F335232BC90D00368485 /* PhaseTextSet.swift */,
 				3512F338232BC93300368485 /* BrewPhaseTimer.swift */,
+				47AB41062628C751001DCF2C /* BrewingTimer.swift */,
 			);
 			path = Brew;
 			sourceTree = "<group>";
@@ -883,6 +886,7 @@
 				3512F347232C429F00368485 /* AllDoneVM.swift in Sources */,
 				35833E5623075398002F986B /* BrewRecipe.swift in Sources */,
 				470F73C62378D8BB00AAD8D1 /* UIView+backgroundColor.swift in Sources */,
+				47AB41072628C751001DCF2C /* BrewingTimer.swift in Sources */,
 				3512F34A232C435600368485 /* AllDoneSceneView.swift in Sources */,
 				350457F52309A47300F4B8DC /* Options.swift in Sources */,
 				470F73CB2378E17400AAD8D1 /* Style.swift in Sources */,
