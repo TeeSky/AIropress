@@ -2,108 +2,117 @@
 //  BrewingVM.swift
 //  AIropress
 //
-//  Created by Tomas Skypala on 13/09/2019.
-//  Copyright © 2019 Tomas Skypala. All rights reserved.
+//  Created by Tomas Skypala on 15/04/2021.
+//  Copyright © 2021 Tomas Skypala. All rights reserved.
 //
 
 import Foundation
+import RxSwift
 
-protocol BrewingVMDelegate: AnyObject {
-    func setTimerTexts(mainTimerText: String, currentPhaseTimerText: String?)
-    func setPhaseTexts(textSets: [PhaseTextSet])
-}
+class BrewingVM: BaseViewModel {
 
-class BrewingVM: BaseViewModel, BrewPhaseTimerDelegate {
-
-    weak var delegate: BrewingVMDelegate?
     weak var flowController: BrewingSceneFC?
 
-    private(set) var completedPhasesDuration: Double
-    private(set) var currentTotalTicks: Int
-    private(set) var currentBrewPhaseIndex: Int
-    private(set) var currentBrewPhaseTimer: BrewPhaseTimer?
-    private(set) var brewFinished: Bool
+    // MARK: - Observables
 
-    private lazy var totalBrewTime: Double = allBrewPhases.map(\.duration).reduce(0, +)
+    let mainTimerText: BehaviorSubject<String>
+    let currentPhaseTimerText = BehaviorSubject<String?>(value: nil)
+    let phaseTexts: BehaviorSubject<[PhaseTextSet]>
 
-    var phaseTexts: [PhaseTextSet] {
-        let startIndex = currentBrewPhaseIndex
-        let endIndex = min(startIndex + 2, allBrewPhases.count - 1)
+    // MARK: - Internal Props
 
-        let nextBrewPhases = Array(allBrewPhases[startIndex ... endIndex])
-        return nextBrewPhases.map(PhaseTextSet.init(brewPhase:))
-    }
+    private var currentBrewPhaseTimer: BrewTiming?
+    private var remainingSeconds: Double
+
+    // MARK: - Dependencies
 
     private let allBrewPhases: [BrewPhase]
-    private let brewTimerType: BrewPhaseTimer.Type
+    private let brewTimerType: BrewTiming.Type
 
-    init(brewPhases: [BrewPhase], startPhaseIndex: Int = 0, timerType: BrewPhaseTimer.Type = BrewPhaseTimer.self) {
+    private let disposeBag = DisposeBag()
+
+    // MARK: - Init
+
+    init(brewPhases: [BrewPhase], timerType: BrewTiming.Type = BrewingTimer.self) {
 
         allBrewPhases = brewPhases
-
-        completedPhasesDuration = 0
-        currentTotalTicks = 0
-        brewFinished = false
-        currentBrewPhaseIndex = startPhaseIndex
         brewTimerType = timerType
+
+        remainingSeconds = allBrewPhases.map(\.duration).reduce(0, +)
+        mainTimerText = .init(value: remainingSeconds.asStopwatchString())
+        phaseTexts = .init(value: [])
     }
 
-    @objc
-    func onStopClicked() {
-        guard !brewFinished else { return }
+    // MARK: - Handling
+
+    func viewDidAppear() {
+        initiateBrewPhase(withIndex: 0)
+    }
+
+    func stopTapped() {
 
         currentBrewPhaseTimer?.invalidate()
         flowController?.onBrewStopped()
     }
 
-    func onSceneDidAppear() {
-        initiateBrewPhase()
+    // MARK: - Brew Handling Helpers
+
+    private func initiateBrewPhase(withIndex brewPhaseIndex: Int) {
+
+        let brewPhaseDuration = Int(allBrewPhases[brewPhaseIndex].duration)
+        let timer = brewTimerType.init(brewPhaseDuration: brewPhaseDuration, autostart: false)
+
+        timer.elapsedSeconds
+            .subscribe(
+                onNext: { [weak self] seconds in
+                    self?.brewPhaseTimerDidTick(elapsedSeconds: seconds, brewPhaseDuration: brewPhaseDuration)
+                },
+                onError: nil,
+                onCompleted: { [weak self] in
+                    self?.brewPhaseTimerDidFinish(brewPhaseIndex: brewPhaseIndex)
+                },
+                onDisposed: nil
+            )
+            .disposed(by: disposeBag)
+
+        currentBrewPhaseTimer = timer
+        phaseTexts.onNext(Self.makePhaseTexts(startIndex: brewPhaseIndex, allBrewPhases: allBrewPhases))
+        timer.isRunning.onNext(true)
     }
 
-    internal func onPhaseTick(remainingSeconds: Double) {
-        currentTotalTicks += 1
+    private func brewPhaseTimerDidTick(elapsedSeconds: Int, brewPhaseDuration: Int) {
+        guard elapsedSeconds > 0 else { return }
 
-        let totalRemainingSeconds = (totalBrewTime - Double(currentTotalTicks) -
-            completedPhasesDuration).rounded(.towardZero)
-        let mainTimerText = totalRemainingSeconds.asStopwatchString()
+        currentPhaseTimerText.onNext(Double(brewPhaseDuration - elapsedSeconds).asStopwatchString())
 
-        let phaseTimerText = remainingSeconds.asStopwatchString()
-
-        delegate?.setTimerTexts(mainTimerText: mainTimerText, currentPhaseTimerText: phaseTimerText)
+        remainingSeconds -= 1
+        mainTimerText.onNext(remainingSeconds.asStopwatchString())
     }
 
-    internal func onPhaseEnd() {
-        completedPhasesDuration += allBrewPhases[currentBrewPhaseIndex].duration
-        currentBrewPhaseIndex += 1
-        guard currentBrewPhaseIndex < allBrewPhases.count else {
-            onBrewFinished()
+    private func brewPhaseTimerDidFinish(brewPhaseIndex: Int) {
+        let nextBrewPhaseIndex = brewPhaseIndex + 1
+        guard nextBrewPhaseIndex < allBrewPhases.count else {
+            brewDidFinish()
             return
         }
 
-        initiateBrewPhase()
+        initiateBrewPhase(withIndex: nextBrewPhaseIndex)
     }
 
-    private func initiateBrewPhase() {
-        delegate?.setTimerTexts(
-            mainTimerText: (totalBrewTime - completedPhasesDuration).asStopwatchString(),
-            currentPhaseTimerText: nil
-        )
-        delegate?.setPhaseTexts(textSets: phaseTexts)
-
-        currentTotalTicks = 0
-        currentBrewPhaseTimer = brewTimerType.init(
-            brewPhase: allBrewPhases[currentBrewPhaseIndex],
-            delegate: self
-        )
-    }
-
-    private func onBrewFinished() {
-        brewFinished = true
-        delegate?.setTimerTexts(mainTimerText: 0.asStopwatchString(), currentPhaseTimerText: nil)
-        delegate?.setPhaseTexts(textSets: [])
+    private func brewDidFinish() {
+        mainTimerText.onNext(0.asStopwatchString())
+        currentPhaseTimerText.onNext(nil)
+        phaseTexts.onNext([])
 
         DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
             self.flowController?.onBrewFinished()
         }
+    }
+
+    private static func makePhaseTexts(startIndex: Int = 0, allBrewPhases: [BrewPhase]) -> [PhaseTextSet] {
+        let endIndex = min(startIndex + 2, allBrewPhases.count - 1)
+
+        let nextBrewPhases = Array(allBrewPhases[startIndex ... endIndex])
+        return nextBrewPhases.map(PhaseTextSet.init(brewPhase:))
     }
 }

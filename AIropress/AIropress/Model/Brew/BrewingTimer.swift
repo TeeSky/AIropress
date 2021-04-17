@@ -14,7 +14,7 @@ protocol BrewTiming {
     var elapsedSeconds: BehaviorSubject<Int> { get }
     var isRunning: BehaviorSubject<Bool> { get }
 
-    init(brewPhaseDuration: Double, autostart: Bool)
+    init(brewPhaseDuration: Int, autostart: Bool)
 
     func invalidate()
 }
@@ -24,11 +24,11 @@ final class BrewingTimer: BrewTiming {
     let elapsedSeconds = BehaviorSubject<Int>(value: 0)
     let isRunning = BehaviorSubject<Bool>(value: false)
 
-    private let brewPhaseDuration: Double
+    private let brewPhaseDuration: Int
 
     private let disposeBag = DisposeBag()
 
-    init(brewPhaseDuration: Double, autostart: Bool) {
+    init(brewPhaseDuration: Int, autostart: Bool) {
         self.brewPhaseDuration = brewPhaseDuration
 
         isRunning
@@ -38,7 +38,7 @@ final class BrewingTimer: BrewTiming {
 
                 return .interval(.seconds(1), scheduler: MainScheduler.instance)
             }
-            .take(until: { $0 == Int(brewPhaseDuration - 1) }, behavior: .inclusive)
+            .take(until: { $0 == brewPhaseDuration - 1 }, behavior: .inclusive)
             .map { $0 + 1 }
             .subscribe(elapsedSeconds)
             .disposed(by: disposeBag)
