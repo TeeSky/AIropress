@@ -73,18 +73,16 @@ class BrewingVM: BaseViewModel {
     private func initiateBrewPhase(withIndex brewPhaseIndex: Int) {
         currentBrewPhaseIndex.accept(brewPhaseIndex)
         let brewPhaseDuration = Int(allBrewPhases[brewPhaseIndex].duration)
-        let timer = brewTimerType.init(brewPhaseDuration: brewPhaseDuration, autostart: false)
+        let timer = brewTimerType.init(brewPhaseDuration: brewPhaseDuration)
 
         timer.elapsedSeconds
             .subscribe(
                 onNext: { [weak self] seconds in
                     self?.brewPhaseTimerDidTick(elapsedSeconds: seconds, brewPhaseDuration: brewPhaseDuration)
                 },
-                onError: nil,
                 onCompleted: { [weak self] in
                     self?.brewPhaseTimerDidFinish(brewPhaseIndex: brewPhaseIndex)
-                },
-                onDisposed: nil
+                }
             )
             .disposed(by: disposeBag)
 

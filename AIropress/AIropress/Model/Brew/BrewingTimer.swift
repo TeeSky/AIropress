@@ -7,14 +7,13 @@
 //
 
 import RxSwift
-import RxCocoa
 
 protocol BrewTiming {
 
     var elapsedSeconds: BehaviorSubject<Int> { get }
     var isRunning: BehaviorSubject<Bool> { get }
 
-    init(brewPhaseDuration: Int, autostart: Bool)
+    init(brewPhaseDuration: Int)
 
     func invalidate()
 }
@@ -28,7 +27,7 @@ final class BrewingTimer: BrewTiming {
 
     private let disposeBag = DisposeBag()
 
-    init(brewPhaseDuration: Int, autostart: Bool) {
+    init(brewPhaseDuration: Int) {
         self.brewPhaseDuration = brewPhaseDuration
 
         isRunning
@@ -42,10 +41,6 @@ final class BrewingTimer: BrewTiming {
             .map { $0 + 1 }
             .subscribe(elapsedSeconds)
             .disposed(by: disposeBag)
-
-        if autostart {
-            isRunning.onNext(true)
-        }
     }
 
     func invalidate() {
