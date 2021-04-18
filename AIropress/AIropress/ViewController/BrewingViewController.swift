@@ -6,39 +6,46 @@
 //  Copyright © 2019 Tomas Skypala. All rights reserved.
 //
 
-import Foundation
+import RxSwift
+import RxCocoa
 
 class BrewingViewController: BaseViewController<BrewingSceneView> {
 
     var viewModel: BrewingVM!
 
+    let disposeBag = DisposeBag()
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        viewModel.delegate = self
+        sceneView.stopButton.rx.tap
+            .subscribe(onNext: { [weak self] _ in
+                self?.viewModel.stopTapped()
+            })
+            .disposed(by: disposeBag)
 
-        sceneView.stopButton.addTarget(viewModel, action: #selector(viewModel.onStopClicked), for: .touchUpInside)
+        viewModel.mainTimerTextDriver
+            .drive(sceneView.mainTimerLabel.rx.text)
+            .disposed(by: disposeBag)
+
+        viewModel.currentPhaseTimerTextDriver
+            .drive(sceneView.currentPhaseTimerLabel.timerLabel.rx.text)
+            .disposed(by: disposeBag)
+
+        viewModel.phaseTextsDriver
+            .drive(onNext: { [weak self] phaseTexts in
+                guard let self = self else { return }
+
+                self.sceneView.currentPhaseTimerLabel.configure(with: phaseTexts[safe: 0])
+                self.sceneView.next1TimerLabel.configure(with: phaseTexts[safe: 1])
+                self.sceneView.next2TimerLabel.configure(with: phaseTexts[safe: 2])
+            })
+            .disposed(by: disposeBag)
     }
 
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
 
-        viewModel.onSceneDidAppear()
-    }
-}
-
-extension BrewingViewController: BrewingVMDelegate {
-
-    func setTimerTexts(mainTimerText: String, currentPhaseTimerText: String?) {
-        sceneView.mainTimerLabel.text = mainTimerText
-        if let currentPhaseTimerText = currentPhaseTimerText {
-            sceneView.currentPhaseTimerLabel.timerLabel.text = currentPhaseTimerText
-        }
-    }
-
-    func setPhaseTexts(textSets: [PhaseTextSet]) {
-        sceneView.currentPhaseTimerLabel.configure(with: textSets[safe: 0])
-        sceneView.next1TimerLabel.configure(with: textSets[safe: 1])
-        sceneView.next2TimerLabel.configure(with: textSets[safe: 2])
+        viewModel.viewDidAppear()
     }
 }

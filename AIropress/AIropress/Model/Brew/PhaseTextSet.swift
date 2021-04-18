@@ -11,4 +11,9 @@ import Foundation
 struct PhaseTextSet: Equatable {
     let labelText: String
     let timerText: String
+
+    init(brewPhase: BrewPhase) {
+        labelText = brewPhase.label
+        timerText = brewPhase.duration.asStopwatchString()
+    }
 }
