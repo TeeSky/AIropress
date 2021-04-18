@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import RxCocoa
 import RxSwift
 
 class BrewingVM: BaseViewModel {
@@ -15,14 +16,20 @@ class BrewingVM: BaseViewModel {
 
     // MARK: - Observables
 
-    let mainTimerText: BehaviorSubject<String>
-    let currentPhaseTimerText = BehaviorSubject<String?>(value: nil)
-    let phaseTexts: BehaviorSubject<[PhaseTextSet]>
+    let mainTimerTextDriver: Driver<String>
+    let currentPhaseTimerTextDriver: Driver<String?>
+
+    private(set) lazy var phaseTextsDriver: Driver<[PhaseTextSet]> = currentBrewPhaseIndex
+        .asDriver()
+        .map({ [weak self] in Self.makePhaseTexts(startIndex: $0, allBrewPhases: self?.allBrewPhases ?? [])})
 
     // MARK: - Internal Props
 
     private var currentBrewPhaseTimer: BrewTiming?
-    private var remainingSeconds: Double
+
+    private let currentBrewPhaseIndex = BehaviorRelay<Int>(value: 0)
+    private let remainingSeconds: BehaviorRelay<Double>
+    private let brewPhaseRemainingSeconds: BehaviorRelay<Double>
 
     // MARK: - Dependencies
 
@@ -38,9 +45,15 @@ class BrewingVM: BaseViewModel {
         allBrewPhases = brewPhases
         brewTimerType = timerType
 
-        remainingSeconds = allBrewPhases.map(\.duration).reduce(0, +)
-        mainTimerText = .init(value: remainingSeconds.asStopwatchString())
-        phaseTexts = .init(value: [])
+        remainingSeconds = .init(value: allBrewPhases.map(\.duration).reduce(0, +))
+        mainTimerTextDriver = remainingSeconds
+            .asDriver()
+            .map({ $0.asStopwatchString() })
+
+        brewPhaseRemainingSeconds = .init(value: brewPhases.first?.duration ?? 0)
+        currentPhaseTimerTextDriver = brewPhaseRemainingSeconds
+            .asDriver()
+            .map({ $0.asStopwatchString() })
     }
 
     // MARK: - Handling
@@ -58,7 +71,7 @@ class BrewingVM: BaseViewModel {
     // MARK: - Brew Handling Helpers
 
     private func initiateBrewPhase(withIndex brewPhaseIndex: Int) {
-
+        currentBrewPhaseIndex.accept(brewPhaseIndex)
         let brewPhaseDuration = Int(allBrewPhases[brewPhaseIndex].duration)
         let timer = brewTimerType.init(brewPhaseDuration: brewPhaseDuration, autostart: false)
 
@@ -76,17 +89,14 @@ class BrewingVM: BaseViewModel {
             .disposed(by: disposeBag)
 
         currentBrewPhaseTimer = timer
-        phaseTexts.onNext(Self.makePhaseTexts(startIndex: brewPhaseIndex, allBrewPhases: allBrewPhases))
         timer.isRunning.onNext(true)
     }
 
     private func brewPhaseTimerDidTick(elapsedSeconds: Int, brewPhaseDuration: Int) {
         guard elapsedSeconds > 0 else { return }
 
-        currentPhaseTimerText.onNext(Double(brewPhaseDuration - elapsedSeconds).asStopwatchString())
-
-        remainingSeconds -= 1
-        mainTimerText.onNext(remainingSeconds.asStopwatchString())
+        brewPhaseRemainingSeconds.accept(Double(brewPhaseDuration - elapsedSeconds))
+        remainingSeconds.accept(remainingSeconds.value - 1)
     }
 
     private func brewPhaseTimerDidFinish(brewPhaseIndex: Int) {
@@ -100,9 +110,6 @@ class BrewingVM: BaseViewModel {
     }
 
     private func brewDidFinish() {
-        mainTimerText.onNext(0.asStopwatchString())
-        currentPhaseTimerText.onNext(nil)
-        phaseTexts.onNext([])
 
         DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
             self.flowController?.onBrewFinished()

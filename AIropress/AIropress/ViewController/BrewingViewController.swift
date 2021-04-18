@@ -24,16 +24,16 @@ class BrewingViewController: BaseViewController<BrewingSceneView> {
             })
             .disposed(by: disposeBag)
 
-        viewModel.mainTimerText
-            .bind(to: sceneView.mainTimerLabel.rx.text)
+        viewModel.mainTimerTextDriver
+            .drive(sceneView.mainTimerLabel.rx.text)
             .disposed(by: disposeBag)
 
-        viewModel.currentPhaseTimerText
-            .bind(to: sceneView.currentPhaseTimerLabel.timerLabel.rx.text)
+        viewModel.currentPhaseTimerTextDriver
+            .drive(sceneView.currentPhaseTimerLabel.timerLabel.rx.text)
             .disposed(by: disposeBag)
 
-        viewModel.phaseTexts
-            .bind(onNext: { [weak self] phaseTexts in
+        viewModel.phaseTextsDriver
+            .drive(onNext: { [weak self] phaseTexts in
                 guard let self = self else { return }
 
                 self.sceneView.currentPhaseTimerLabel.configure(with: phaseTexts[safe: 0])
